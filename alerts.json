@@ -1,0 +1,3255 @@
+[
+  {
+    "timestamp": "2026-02-13T21:38:28.416503",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 21 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 21
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.421128",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 22 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 22
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.423301",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 23 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 23
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.425906",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 24 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 24
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.428769",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 25 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 25
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.431543",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 26 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 26
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.433531",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 27 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 27
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.435503",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 28 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 28
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.437729",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 29 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 29
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.439575",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.441329",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.444009",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.449126",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.451339",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.453450",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.455743",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.458335",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.461958",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.467367",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.469616",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.471803",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.473997",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.479206",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.486369",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.489781",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.493842",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.498740",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.501384",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.504301",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.509687",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.514078",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.517922",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.521203",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.525750",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.528483",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.531886",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.534597",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.538282",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.542181",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.545364",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.549025",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.551988",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.556564",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.560070",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.563065",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.566883",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.570868",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.574980",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.578160",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.582246",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.585613",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.591205",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.594446",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.598555",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.602054",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.607107",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.610962",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.614623",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.618162",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.623280",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.627117",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.632013",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.636023",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.641239",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.645347",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.649603",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.653959",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.659319",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.664032",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.667515",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.673068",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.676912",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.683483",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.689311",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.693637",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.700979",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.705430",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.710017",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.714892",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.718840",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.724468",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.728229",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 101 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 101
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.733356",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.738734",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 102 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 102
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.743687",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.748034",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 103 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 103
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.752265",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.757732",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 104 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 104
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.764244",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.772250",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 105 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 105
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.776871",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.781483",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 106 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 106
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.786836",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.791462",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 107 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 107
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.797046",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.803122",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 108 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 108
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.808479",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.813996",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 109 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 109
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.819286",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.825018",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 110 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 110
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.830455",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.835086",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 111 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 111
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.841371",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.847394",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 112 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 112
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.853958",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.858987",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 113 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 113
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.865085",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.872714",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 114 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 114
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.878464",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.883646",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 115 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 115
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.890602",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.897341",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 116 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 116
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.903384",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.909069",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 117 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 117
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.917170",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.923728",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 118 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 118
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.931003",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.938307",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 119 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 119
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.943898",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.950068",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 120 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 120
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.956869",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.964553",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 121 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 121
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.973317",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.978724",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 122 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 122
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.984997",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.991675",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 123 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 123
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:28.998168",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.006200",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 124 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 124
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.012818",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.021083",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 125 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 125
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.029795",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.036123",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 126 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 126
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.042778",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.049872",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 127 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 127
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.061068",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.069428",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 128 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 128
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.076387",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.085852",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 129 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 129
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.092178",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.100645",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 130 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 130
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.107386",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.117526",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 131 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 131
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.124976",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.132977",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 132 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 132
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.141330",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.151130",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 133 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 133
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.158307",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.169255",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 134 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 134
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.178377",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.189498",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 135 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 135
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.201670",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.211356",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 136 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 136
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.221852",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.235030",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 137 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 137
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.242575",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.256005",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 138 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 138
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.264825",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.273281",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 139 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 139
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.283929",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.291956",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 140 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 140
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.301358",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.308745",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 141 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 141
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.318792",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.339871",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 142 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 142
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.380129",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.390289",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 143 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 143
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.407049",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.416372",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 144 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 144
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.425792",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.439939",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 145 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 145
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.451600",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.458408",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 146 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 146
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.468149",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.476861",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 147 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 147
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.487117",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.496611",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 148 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 148
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.504756",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.515013",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 149 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 149
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.523808",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.532081",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 150 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 150
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.540992",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.550078",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 151 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 151
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.559660",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.571015",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 152 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 152
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.586685",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.600036",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 153 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 153
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.611306",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.631798",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 154 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 154
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.642850",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.653816",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 155 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 155
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.665607",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.676874",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 156 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 156
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.687663",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.696829",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 157 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 157
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.706685",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.716884",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 158 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 158
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.726379",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.736821",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 159 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 159
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.745319",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.754811",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 160 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 160
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.763087",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.772494",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 161 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 161
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.781256",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.791575",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 162 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 162
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.801491",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.811990",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 163 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 163
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.822253",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.830540",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 164 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 164
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.839973",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.849026",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 165 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 165
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.858428",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.867829",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 166 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 166
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.876863",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.886468",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 167 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 167
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.895486",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.905521",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 168 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 168
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.914935",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.924561",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 169 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 169
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.936227",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.945921",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 170 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 170
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.956528",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.965450",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 171 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 171
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.975787",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.986657",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 172 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 172
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:29.996740",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.007806",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 173 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 173
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.018608",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.027057",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 174 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 174
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.038036",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.047013",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 175 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 175
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.057007",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.066445",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 176 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 176
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.076545",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.088164",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 177 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 177
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.097645",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.107434",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 178 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 178
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.118033",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.126888",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 179 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 179
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.138150",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 30 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 30
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.147258",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 180 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 180
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.157724",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.167524",
+    "alert_type": "DGA_DOMAIN",
+    "severity": "HIGH",
+    "message": "Potential DGA domain detected: mxkzhedusdaizij.com. (entropy: 3.51)",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "domain": "mxkzhedusdaizij.com.",
+      "entropy": 3.5068905956085183
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.178472",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.189208",
+    "alert_type": "DGA_DOMAIN",
+    "severity": "HIGH",
+    "message": "Potential DGA domain detected: umfgvumtpwblrhr.com. (entropy: 3.51)",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "domain": "umfgvumtpwblrhr.com.",
+      "entropy": 3.5068905956085183
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.199739",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.209212",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.220960",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.230590",
+    "alert_type": "DGA_DOMAIN",
+    "severity": "HIGH",
+    "message": "Potential DGA domain detected: lfxowtbxemzhpvw.com. (entropy: 3.64)",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "domain": "lfxowtbxemzhpvw.com.",
+      "entropy": 3.640223928941851
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.241381",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.251007",
+    "alert_type": "DGA_DOMAIN",
+    "severity": "HIGH",
+    "message": "Potential DGA domain detected: nrvkfupovklhctf.com. (entropy: 3.51)",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "domain": "nrvkfupovklhctf.com.",
+      "entropy": 3.506890595608518
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.261293",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.271943",
+    "alert_type": "DGA_DOMAIN",
+    "severity": "HIGH",
+    "message": "Potential DGA domain detected: wtafupiubdenwmv.com. (entropy: 3.64)",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "domain": "wtafupiubdenwmv.com.",
+      "entropy": 3.640223928941851
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.281687",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.292213",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.302766",
+    "alert_type": "DGA_DOMAIN",
+    "severity": "HIGH",
+    "message": "Potential DGA domain detected: smcvjaqyvhplhro.com. (entropy: 3.64)",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "domain": "smcvjaqyvhplhro.com.",
+      "entropy": 3.6402239289418516
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.312953",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "8.8.8.8",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.326386",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.341977",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 181 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 181
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.352798",
+    "alert_type": "ABNORMAL_SIZE",
+    "severity": "MEDIUM",
+    "message": "Abnormally large packet detected: 10040 bytes",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "packet_size": 10040
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.367288",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.376410",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 182 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 182
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.387972",
+    "alert_type": "ABNORMAL_SIZE",
+    "severity": "MEDIUM",
+    "message": "Abnormally large packet detected: 10040 bytes",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "packet_size": 10040
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.400059",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.410820",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 183 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 183
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.422751",
+    "alert_type": "ABNORMAL_SIZE",
+    "severity": "MEDIUM",
+    "message": "Abnormally large packet detected: 10040 bytes",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "packet_size": 10040
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.439248",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.449964",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 184 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 184
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.460060",
+    "alert_type": "ABNORMAL_SIZE",
+    "severity": "MEDIUM",
+    "message": "Abnormally large packet detected: 10040 bytes",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "packet_size": 10040
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.473214",
+    "alert_type": "PORT_SCAN",
+    "severity": "HIGH",
+    "message": "Port scan detected from 192.168.1.18: 31 unique ports in 60s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "ports_scanned": 31
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.484561",
+    "alert_type": "SYN_FLOOD",
+    "severity": "CRITICAL",
+    "message": "SYN flood detected from 192.168.1.18: 185 SYN packets in 10s",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "source": "192.168.1.18",
+      "syn_count": 185
+    }
+  },
+  {
+    "timestamp": "2026-02-13T21:38:30.496090",
+    "alert_type": "ABNORMAL_SIZE",
+    "severity": "MEDIUM",
+    "message": "Abnormally large packet detected: 10040 bytes",
+    "source_ip": "192.168.1.18",
+    "destination_ip": "192.168.1.100",
+    "additional_info": {
+      "packet_size": 10040
+    }
+  }
+]

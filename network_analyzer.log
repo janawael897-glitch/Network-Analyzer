@@ -1,0 +1,310 @@
+2026-02-13 21:30:08,417 - __main__ - INFO - Analyzing PCAP file: data\pcaps\v6-http.cap
+2026-02-13 21:30:08,472 - __main__ - INFO - Loaded 55 packets from data\pcaps\v6-http.cap
+2026-02-13 21:30:08,485 - __main__ - INFO - 
+============================================================
+2026-02-13 21:30:08,486 - __main__ - INFO - ANALYSIS COMPLETE
+2026-02-13 21:30:08,486 - __main__ - INFO - ============================================================
+2026-02-13 21:30:08,486 - __main__ - INFO - Total packets processed: 55
+2026-02-13 21:30:08,487 - __main__ - INFO - Total time: 0.07 seconds
+2026-02-13 21:30:08,487 - __main__ - INFO - Average rate: 811.81 packets/sec
+2026-02-13 21:30:08,488 - __main__ - INFO - No alerts detected
+2026-02-13 21:38:28,371 - __main__ - INFO - Analyzing PCAP file: data\pcaps\malicious_traffic.pcap
+2026-02-13 21:38:28,413 - __main__ - INFO - Loaded 195 packets from data\pcaps\malicious_traffic.pcap
+2026-02-13 21:38:28,416 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 21 unique ports in 60s
+2026-02-13 21:38:28,421 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 22 unique ports in 60s
+2026-02-13 21:38:28,423 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 23 unique ports in 60s
+2026-02-13 21:38:28,425 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 24 unique ports in 60s
+2026-02-13 21:38:28,428 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 25 unique ports in 60s
+2026-02-13 21:38:28,431 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 26 unique ports in 60s
+2026-02-13 21:38:28,433 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 27 unique ports in 60s
+2026-02-13 21:38:28,435 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 28 unique ports in 60s
+2026-02-13 21:38:28,437 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 29 unique ports in 60s
+2026-02-13 21:38:28,439 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,441 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,444 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,449 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,451 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,453 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,455 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,458 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,462 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,467 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,469 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,471 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,474 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,479 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,486 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,489 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,493 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,498 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,501 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,504 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,509 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,514 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,517 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,521 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,525 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,528 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,531 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,534 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,538 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,542 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,545 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,549 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,552 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,556 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,560 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,563 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,566 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,570 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,575 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,578 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,582 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,585 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,591 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,594 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,598 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,602 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,607 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,610 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,614 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,618 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,623 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,627 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,632 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,636 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,641 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,645 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,649 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,653 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,659 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,664 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,667 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,673 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,676 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,683 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,689 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,693 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,701 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,705 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,710 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,714 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,718 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,724 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,728 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 101 SYN packets in 10s
+2026-02-13 21:38:28,733 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,738 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 102 SYN packets in 10s
+2026-02-13 21:38:28,743 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,748 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 103 SYN packets in 10s
+2026-02-13 21:38:28,752 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,757 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 104 SYN packets in 10s
+2026-02-13 21:38:28,764 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,772 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 105 SYN packets in 10s
+2026-02-13 21:38:28,776 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,781 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 106 SYN packets in 10s
+2026-02-13 21:38:28,786 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,791 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 107 SYN packets in 10s
+2026-02-13 21:38:28,797 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,803 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 108 SYN packets in 10s
+2026-02-13 21:38:28,808 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,814 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 109 SYN packets in 10s
+2026-02-13 21:38:28,819 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,825 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 110 SYN packets in 10s
+2026-02-13 21:38:28,830 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,835 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 111 SYN packets in 10s
+2026-02-13 21:38:28,841 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,847 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 112 SYN packets in 10s
+2026-02-13 21:38:28,853 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,859 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 113 SYN packets in 10s
+2026-02-13 21:38:28,865 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,872 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 114 SYN packets in 10s
+2026-02-13 21:38:28,878 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,883 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 115 SYN packets in 10s
+2026-02-13 21:38:28,890 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,897 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 116 SYN packets in 10s
+2026-02-13 21:38:28,903 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,909 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 117 SYN packets in 10s
+2026-02-13 21:38:28,917 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,923 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 118 SYN packets in 10s
+2026-02-13 21:38:28,931 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,938 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 119 SYN packets in 10s
+2026-02-13 21:38:28,943 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,950 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 120 SYN packets in 10s
+2026-02-13 21:38:28,956 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,964 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 121 SYN packets in 10s
+2026-02-13 21:38:28,973 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,978 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 122 SYN packets in 10s
+2026-02-13 21:38:28,985 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:28,991 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 123 SYN packets in 10s
+2026-02-13 21:38:28,998 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,006 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 124 SYN packets in 10s
+2026-02-13 21:38:29,012 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,021 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 125 SYN packets in 10s
+2026-02-13 21:38:29,030 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,036 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 126 SYN packets in 10s
+2026-02-13 21:38:29,042 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,049 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 127 SYN packets in 10s
+2026-02-13 21:38:29,061 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,069 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 128 SYN packets in 10s
+2026-02-13 21:38:29,076 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,085 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 129 SYN packets in 10s
+2026-02-13 21:38:29,092 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,100 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 130 SYN packets in 10s
+2026-02-13 21:38:29,107 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,117 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 131 SYN packets in 10s
+2026-02-13 21:38:29,125 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,133 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 132 SYN packets in 10s
+2026-02-13 21:38:29,141 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,151 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 133 SYN packets in 10s
+2026-02-13 21:38:29,158 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,169 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 134 SYN packets in 10s
+2026-02-13 21:38:29,178 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,189 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 135 SYN packets in 10s
+2026-02-13 21:38:29,201 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,211 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 136 SYN packets in 10s
+2026-02-13 21:38:29,221 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,235 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 137 SYN packets in 10s
+2026-02-13 21:38:29,242 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,256 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 138 SYN packets in 10s
+2026-02-13 21:38:29,264 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,273 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 139 SYN packets in 10s
+2026-02-13 21:38:29,283 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,292 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 140 SYN packets in 10s
+2026-02-13 21:38:29,301 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,308 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 141 SYN packets in 10s
+2026-02-13 21:38:29,318 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,339 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 142 SYN packets in 10s
+2026-02-13 21:38:29,380 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,390 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 143 SYN packets in 10s
+2026-02-13 21:38:29,407 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,416 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 144 SYN packets in 10s
+2026-02-13 21:38:29,425 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,440 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 145 SYN packets in 10s
+2026-02-13 21:38:29,451 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,458 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 146 SYN packets in 10s
+2026-02-13 21:38:29,468 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,476 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 147 SYN packets in 10s
+2026-02-13 21:38:29,487 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,496 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 148 SYN packets in 10s
+2026-02-13 21:38:29,504 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,515 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 149 SYN packets in 10s
+2026-02-13 21:38:29,523 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,532 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 150 SYN packets in 10s
+2026-02-13 21:38:29,541 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,550 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 151 SYN packets in 10s
+2026-02-13 21:38:29,559 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,571 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 152 SYN packets in 10s
+2026-02-13 21:38:29,586 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,600 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 153 SYN packets in 10s
+2026-02-13 21:38:29,611 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,631 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 154 SYN packets in 10s
+2026-02-13 21:38:29,642 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,653 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 155 SYN packets in 10s
+2026-02-13 21:38:29,665 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,676 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 156 SYN packets in 10s
+2026-02-13 21:38:29,687 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,696 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 157 SYN packets in 10s
+2026-02-13 21:38:29,706 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,716 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 158 SYN packets in 10s
+2026-02-13 21:38:29,726 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,736 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 159 SYN packets in 10s
+2026-02-13 21:38:29,745 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,754 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 160 SYN packets in 10s
+2026-02-13 21:38:29,763 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,772 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 161 SYN packets in 10s
+2026-02-13 21:38:29,781 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,791 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 162 SYN packets in 10s
+2026-02-13 21:38:29,801 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,812 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 163 SYN packets in 10s
+2026-02-13 21:38:29,822 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,830 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 164 SYN packets in 10s
+2026-02-13 21:38:29,840 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,849 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 165 SYN packets in 10s
+2026-02-13 21:38:29,858 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,867 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 166 SYN packets in 10s
+2026-02-13 21:38:29,876 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,886 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 167 SYN packets in 10s
+2026-02-13 21:38:29,895 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,905 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 168 SYN packets in 10s
+2026-02-13 21:38:29,914 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,924 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 169 SYN packets in 10s
+2026-02-13 21:38:29,936 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,946 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 170 SYN packets in 10s
+2026-02-13 21:38:29,956 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,965 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 171 SYN packets in 10s
+2026-02-13 21:38:29,975 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:29,986 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 172 SYN packets in 10s
+2026-02-13 21:38:29,996 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:30,007 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 173 SYN packets in 10s
+2026-02-13 21:38:30,018 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:30,027 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 174 SYN packets in 10s
+2026-02-13 21:38:30,038 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:30,047 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 175 SYN packets in 10s
+2026-02-13 21:38:30,057 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:30,066 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 176 SYN packets in 10s
+2026-02-13 21:38:30,076 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:30,088 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 177 SYN packets in 10s
+2026-02-13 21:38:30,097 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:30,107 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 178 SYN packets in 10s
+2026-02-13 21:38:30,118 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:30,126 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 179 SYN packets in 10s
+2026-02-13 21:38:30,138 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 30 unique ports in 60s
+2026-02-13 21:38:30,147 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 180 SYN packets in 10s
+2026-02-13 21:38:30,157 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,167 - __main__ - WARNING - ALERT: DGA_DOMAIN - Potential DGA domain detected: mxkzhedusdaizij.com. (entropy: 3.51)
+2026-02-13 21:38:30,178 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,189 - __main__ - WARNING - ALERT: DGA_DOMAIN - Potential DGA domain detected: umfgvumtpwblrhr.com. (entropy: 3.51)
+2026-02-13 21:38:30,199 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,209 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,220 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,230 - __main__ - WARNING - ALERT: DGA_DOMAIN - Potential DGA domain detected: lfxowtbxemzhpvw.com. (entropy: 3.64)
+2026-02-13 21:38:30,241 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,251 - __main__ - WARNING - ALERT: DGA_DOMAIN - Potential DGA domain detected: nrvkfupovklhctf.com. (entropy: 3.51)
+2026-02-13 21:38:30,261 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,272 - __main__ - WARNING - ALERT: DGA_DOMAIN - Potential DGA domain detected: wtafupiubdenwmv.com. (entropy: 3.64)
+2026-02-13 21:38:30,281 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,292 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,302 - __main__ - WARNING - ALERT: DGA_DOMAIN - Potential DGA domain detected: smcvjaqyvhplhro.com. (entropy: 3.64)
+2026-02-13 21:38:30,312 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,326 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,342 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 181 SYN packets in 10s
+2026-02-13 21:38:30,352 - __main__ - WARNING - ALERT: ABNORMAL_SIZE - Abnormally large packet detected: 10040 bytes
+2026-02-13 21:38:30,367 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,376 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 182 SYN packets in 10s
+2026-02-13 21:38:30,388 - __main__ - WARNING - ALERT: ABNORMAL_SIZE - Abnormally large packet detected: 10040 bytes
+2026-02-13 21:38:30,400 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,410 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 183 SYN packets in 10s
+2026-02-13 21:38:30,422 - __main__ - WARNING - ALERT: ABNORMAL_SIZE - Abnormally large packet detected: 10040 bytes
+2026-02-13 21:38:30,439 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,450 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 184 SYN packets in 10s
+2026-02-13 21:38:30,460 - __main__ - WARNING - ALERT: ABNORMAL_SIZE - Abnormally large packet detected: 10040 bytes
+2026-02-13 21:38:30,473 - __main__ - WARNING - ALERT: PORT_SCAN - Port scan detected from 192.168.1.18: 31 unique ports in 60s
+2026-02-13 21:38:30,484 - __main__ - WARNING - ALERT: SYN_FLOOD - SYN flood detected from 192.168.1.18: 185 SYN packets in 10s
+2026-02-13 21:38:30,496 - __main__ - WARNING - ALERT: ABNORMAL_SIZE - Abnormally large packet detected: 10040 bytes
+2026-02-13 21:38:30,506 - __main__ - INFO - 
+============================================================
+2026-02-13 21:38:30,506 - __main__ - INFO - ANALYSIS COMPLETE
+2026-02-13 21:38:30,507 - __main__ - INFO - ============================================================
+2026-02-13 21:38:30,507 - __main__ - INFO - Total packets processed: 195
+2026-02-13 21:38:30,507 - __main__ - INFO - Total time: 2.13 seconds
+2026-02-13 21:38:30,507 - __main__ - INFO - Average rate: 91.34 packets/sec
+2026-02-13 21:38:30,508 - __main__ - INFO - 
+============================================================
+ALERT SUMMARY
+============================================================
+Total Alerts: 271
+
+By Type:
+  PORT_SCAN: 175
+  SYN_FLOOD: 85
+  DGA_DOMAIN: 6
+  ABNORMAL_SIZE: 5
+
+By Severity:
+  HIGH: 181
+  CRITICAL: 85
+  MEDIUM: 5
+============================================================
+
+2026-02-13 21:51:36,106 - __main__ - INFO - Analyzing PCAP file: data\pcaps\downloaded_file.pcap
+2026-02-13 21:51:36,106 - __main__ - ERROR - Error analyzing PCAP: [Errno 2] No such file or directory: 'data\\pcaps\\downloaded_file.pcap'
