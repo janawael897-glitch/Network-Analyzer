@@ -2,8 +2,8 @@ from scapy.all import *
 import random
 import string
 
-print("Generating test threat traffic...")sss
-ssss
+print("Generating test threat traffic...")
+
 # 1. Simulate Port Scan (SYN scan to multiple ports)
 print("Creating port scan packets...")
 port_scan_packets = []
