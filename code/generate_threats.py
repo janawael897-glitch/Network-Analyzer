@@ -5,7 +5,7 @@ import string
 print("Generating test threat traffic...")
 
 # 1. Simulate Port Scan (SYN scan to multiple ports)
-print("Creating port scan packets...")ssss
+print("Creating port scan packets...")
 port_scan_packets = []
 for port in range(80, 110):  # Scan ports 80-109 (30 ports)
     pkt = IP(dst="192.168.1.100")/TCP(dport=port, flags="S")
