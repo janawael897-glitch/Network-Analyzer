@@ -1,0 +1,303 @@
+{
+  "running": true,
+  "start_time": "2026-04-18T21:49:37.993592",
+  "total_packets": 5968,
+  "rate": 17.0,
+  "runtime_seconds": 428,
+  "protocols": {
+    "TCP": 763,
+    "UDP": 1508,
+    "ICMP": 39,
+    "Other": 3658
+  },
+  "top_ips": {
+    "192.168.1.10": 990,
+    "8.8.4.4": 91,
+    "95.101.234.25": 83,
+    "142.251.39.163": 75,
+    "13.107.213.62": 71,
+    "192.168.1.60": 70,
+    "192.168.1.8": 62,
+    "8.8.8.8": 60,
+    "172.217.17.35": 60,
+    "172.217.20.106": 59
+  },
+  "recent_alerts": [
+    {
+      "timestamp": "2026-04-18T21:54:45.796639",
+      "alert_type": "ABNORMAL_SIZE",
+      "severity": "MEDIUM",
+      "message": "Abnormally large packet: 12474 bytes from 95.101.234.25",
+      "source_ip": "95.101.234.25",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "packet_size": 12474
+      }
+    }
+  ],
+  "ml_recent_alerts": [
+    {
+      "timestamp": "2026-04-18T21:56:40.989536",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 95.101.234.25 (score: -0.645)",
+      "source_ip": "95.101.234.25",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.6446,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:36.943174",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 162.159.137.232 (score: -0.654)",
+      "source_ip": "162.159.137.232",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.6542,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:35.859026",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from ? (score: -0.573)",
+      "source_ip": "?",
+      "destination_ip": "?",
+      "additional_info": {
+        "ml_score": -0.5727,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:33.465346",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 192.168.1.10 (score: -0.576)",
+      "source_ip": "192.168.1.10",
+      "destination_ip": "192.168.1.8",
+      "additional_info": {
+        "ml_score": -0.5764,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:32.693144",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 192.168.1.1 (score: -0.567)",
+      "source_ip": "192.168.1.1",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.567,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:31.950110",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 192.168.1.6 (score: -0.573)",
+      "source_ip": "192.168.1.6",
+      "destination_ip": "224.0.0.2",
+      "additional_info": {
+        "ml_score": -0.5728,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:31.062167",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 18.97.36.72 (score: -0.646)",
+      "source_ip": "18.97.36.72",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.6456,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:30.647182",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 162.159.133.234 (score: -0.645)",
+      "source_ip": "162.159.133.234",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.6454,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:30.233339",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 13.89.179.10 (score: -0.646)",
+      "source_ip": "13.89.179.10",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.6456,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:28.709778",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 151.101.2.137 (score: -0.646)",
+      "source_ip": "151.101.2.137",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.6459,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:28.152113",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 13.107.213.62 (score: -0.644)",
+      "source_ip": "13.107.213.62",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.6444,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:28.015809",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 98.66.133.184 (score: -0.646)",
+      "source_ip": "98.66.133.184",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.6456,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:27.603721",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 172.217.20.106 (score: -0.642)",
+      "source_ip": "172.217.20.106",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.642,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:27.055254",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 102.132.103.60 (score: -0.644)",
+      "source_ip": "102.132.103.60",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.6441,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:26.601322",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 192.168.1.7 (score: -0.573)",
+      "source_ip": "192.168.1.7",
+      "destination_ip": "224.0.0.2",
+      "additional_info": {
+        "ml_score": -0.5728,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:22.183327",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 192.168.1.8 (score: -0.623)",
+      "source_ip": "192.168.1.8",
+      "destination_ip": "239.255.255.250",
+      "additional_info": {
+        "ml_score": -0.623,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:20.832062",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from ? (score: -0.626)",
+      "source_ip": "?",
+      "destination_ip": "?",
+      "additional_info": {
+        "ml_score": -0.6258,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:19.735956",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 8.8.8.8 (score: -0.647)",
+      "source_ip": "8.8.8.8",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.6465,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:18.228504",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 192.168.1.10 (score: -0.620)",
+      "source_ip": "192.168.1.10",
+      "destination_ip": "224.0.0.251",
+      "additional_info": {
+        "ml_score": -0.6203,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    },
+    {
+      "timestamp": "2026-04-18T21:56:17.988026",
+      "alert_type": "ML_ANOMALY",
+      "severity": "CRITICAL",
+      "message": "ML anomaly detected from 192.168.1.2 (score: -0.567)",
+      "source_ip": "192.168.1.2",
+      "destination_ip": "192.168.1.10",
+      "additional_info": {
+        "ml_score": -0.5666,
+        "threshold": -0.46707005025226117,
+        "detector": "IsolationForest"
+      }
+    }
+  ],
+  "ml_total": 262,
+  "bytes_total": 957910,
+  "last_updated": "2026-04-18T21:56:46.836069"
+}

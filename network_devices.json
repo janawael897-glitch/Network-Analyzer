@@ -1,0 +1,64 @@
+{
+  "scan_time": "2026-04-18T23:55:25.312255",
+  "local_ip": "192.168.1.10",
+  "network_range": "192.168.1.0/24",
+  "total_found": 7,
+  "devices": [
+    {
+      "ip": "192.168.1.10",
+      "mac": "48:A4:72:CB:AC:D7",
+      "hostname": "DESKTOP-30V03TJ",
+      "vendor": "Unknown",
+      "is_local": true,
+      "last_seen": "2026-04-18T23:54:56.420998"
+    },
+    {
+      "ip": "192.168.1.1",
+      "mac": "74:DA:88:DC:47:C6",
+      "hostname": "Unknown",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:07.167191"
+    },
+    {
+      "ip": "192.168.1.2",
+      "mac": "2C:16:BD:AB:CB:6E",
+      "hostname": "Unknown",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:12.191223"
+    },
+    {
+      "ip": "192.168.1.6",
+      "mac": "12:60:CE:DB:8C:C0",
+      "hostname": "Unknown",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:18.795547"
+    },
+    {
+      "ip": "192.168.1.7",
+      "mac": "1A:2B:99:1F:0F:A7",
+      "hostname": "Unknown",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:02.042684"
+    },
+    {
+      "ip": "192.168.1.8",
+      "mac": "3C:6A:D2:0D:3F:F0",
+      "hostname": "Unknown",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:25.307451"
+    },
+    {
+      "ip": "192.168.1.60",
+      "mac": "00:15:99:E0:36:70",
+      "hostname": "SEC001599E03670",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:20.222888"
+    }
+  ]
+}
