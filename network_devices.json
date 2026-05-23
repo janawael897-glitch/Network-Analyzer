@@ -1,0 +1,123 @@
+<<<<<<< HEAD
+{
+  "scan_time": "2026-05-23T02:03:23.694152",
+  "local_ip": "192.168.1.25",
+  "gateway_ip": "192.168.1.1",
+  "network_range": "192.168.1.0/24",
+  "total_found": 4,
+  "devices": [
+    {
+      "ip": "192.168.1.25",
+      "mac": "C4:23:60:8D:95:2D",
+      "hostname": "DESKTOP-KAPPV7V",
+      "vendor": "Unknown",
+      "device_type": "Windows PC",
+      "icon": "\ud83d\udda5\ufe0f",
+      "confidence": "Medium",
+      "is_local": true,
+      "is_gateway": false,
+      "last_seen": "2026-05-23T02:03:23.694152"
+    },
+    {
+      "ip": "192.168.1.1",
+      "mac": "C4:27:28:46:C8:F8",
+      "hostname": "192.168.1.1",
+      "vendor": "Unknown",
+      "device_type": "Router",
+      "icon": "\ud83c\udf10",
+      "confidence": "High",
+      "is_local": false,
+      "is_gateway": true,
+      "last_seen": "2026-05-23T02:03:17.751166"
+    },
+    {
+      "ip": "192.168.1.3",
+      "mac": "1A:9B:9C:2E:D5:A9",
+      "hostname": "192.168.1.3",
+      "vendor": "Unknown",
+      "device_type": "Linux/Android",
+      "icon": "\ud83d\udc27",
+      "confidence": "Medium",
+      "is_local": false,
+      "is_gateway": false,
+      "last_seen": "2026-05-23T02:03:21.813631"
+    },
+    {
+      "ip": "192.168.1.4",
+      "mac": "DC:29:19:6B:42:80",
+      "hostname": "192.168.1.4",
+      "vendor": "AltoBeam-IoT",
+      "device_type": "Linux/Android",
+      "icon": "\ud83d\udc27",
+      "confidence": "Medium",
+      "is_local": false,
+      "is_gateway": false,
+      "last_seen": "2026-05-23T02:03:19.919398"
+    }
+  ]
+=======
+{
+  "scan_time": "2026-04-18T23:55:25.312255",
+  "local_ip": "192.168.1.10",
+  "network_range": "192.168.1.0/24",
+  "total_found": 7,
+  "devices": [
+    {
+      "ip": "192.168.1.10",
+      "mac": "48:A4:72:CB:AC:D7",
+      "hostname": "DESKTOP-30V03TJ",
+      "vendor": "Unknown",
+      "is_local": true,
+      "last_seen": "2026-04-18T23:54:56.420998"
+    },
+    {
+      "ip": "192.168.1.1",
+      "mac": "74:DA:88:DC:47:C6",
+      "hostname": "Unknown",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:07.167191"
+    },
+    {
+      "ip": "192.168.1.2",
+      "mac": "2C:16:BD:AB:CB:6E",
+      "hostname": "Unknown",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:12.191223"
+    },
+    {
+      "ip": "192.168.1.6",
+      "mac": "12:60:CE:DB:8C:C0",
+      "hostname": "Unknown",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:18.795547"
+    },
+    {
+      "ip": "192.168.1.7",
+      "mac": "1A:2B:99:1F:0F:A7",
+      "hostname": "Unknown",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:02.042684"
+    },
+    {
+      "ip": "192.168.1.8",
+      "mac": "3C:6A:D2:0D:3F:F0",
+      "hostname": "Unknown",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:25.307451"
+    },
+    {
+      "ip": "192.168.1.60",
+      "mac": "00:15:99:E0:36:70",
+      "hostname": "SEC001599E03670",
+      "vendor": "Unknown",
+      "is_local": false,
+      "last_seen": "2026-04-18T23:55:20.222888"
+    }
+  ]
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+}

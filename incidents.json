@@ -1,0 +1,7435 @@
+[
+  {
+    "id": "INC-304A3B10",
+    "incident_id": "INC-7672E069",
+    "timestamp": "2026-05-19T22:35:18.954865+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 8,
+    "duration_s": 161.8,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (162s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-1EFBCEFA",
+    "incident_id": "INC-0DE98D8A",
+    "timestamp": "2026-05-19T22:35:18.988999+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 4,
+    "duration_s": 161.0,
+    "status": "open",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-B54EBAD3",
+    "incident_id": "INC-B23B8D14",
+    "timestamp": "2026-05-19T22:35:34.477450+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 8,
+    "duration_s": 177.3,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-EB56944B",
+    "incident_id": "INC-D0D6FDC1",
+    "timestamp": "2026-05-19T22:40:06.035596+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 5.3,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-20T00:38:58.911293+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-D85F13A5",
+    "incident_id": "INC-536AC3B3",
+    "timestamp": "2026-05-19T22:40:21.363189+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 22.0,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T22:40:48.043136+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-B694D1B3",
+    "incident_id": "INC-A39EB495",
+    "timestamp": "2026-05-19T22:40:21.389271+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 21.3,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:40:48.043136+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-89CBE117",
+    "incident_id": "INC-40BD6DB3",
+    "timestamp": "2026-05-19T22:40:36.798466+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 37.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T22:40:48.043136+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-FA2A8E3B",
+    "incident_id": "INC-397F28C0",
+    "timestamp": "2026-05-19T22:40:52.015843+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 4,
+    "duration_s": 52.6,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (53s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T22:46:05.263294+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-CA552531",
+    "incident_id": "INC-30966DDC",
+    "timestamp": "2026-05-19T22:40:52.016901+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 51.9,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:46:05.263294+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-AD1F5985",
+    "incident_id": "INC-19675580",
+    "timestamp": "2026-05-19T22:42:06.586321+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 12.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:46:05.263294+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-22D004B3",
+    "incident_id": "INC-19DAEC25",
+    "timestamp": "2026-05-19T22:45:23.792437+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 11.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:46:05.263294+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-253B6CB9",
+    "incident_id": "INC-A9F34EA5",
+    "timestamp": "2026-05-19T22:45:53.956477+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 4,
+    "duration_s": 43.1,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (43s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:46:05.263294+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-68F517F4",
+    "incident_id": "INC-A1BA8D71",
+    "timestamp": "2026-05-19T22:45:54.039876+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 40.1,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:46:05.263294+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-5DCF11D7",
+    "incident_id": "INC-A18845B7",
+    "timestamp": "2026-05-19T22:46:09.315812+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 4,
+    "duration_s": 58.5,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (58s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:47:16.235288+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-2B84F985",
+    "incident_id": "INC-6F992434",
+    "timestamp": "2026-05-19T22:46:09.390175+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 57.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:47:16.235288+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-6FE783CC",
+    "incident_id": "INC-5617F69A",
+    "timestamp": "2026-05-19T22:46:09.459103+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 55.6,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:47:16.235288+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-E2BE8BA6",
+    "incident_id": "INC-C027D721",
+    "timestamp": "2026-05-19T22:54:31.812945+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 5.9,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T22:55:58.052491+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-87CB9ED5",
+    "incident_id": "INC-F878B776",
+    "timestamp": "2026-05-19T22:56:02.679856+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 6,
+    "duration_s": 96.8,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (97s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:57:30.445477+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-0380CEA5",
+    "incident_id": "INC-72F6B746",
+    "timestamp": "2026-05-19T22:56:02.705043+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 11.5,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:57:30.445477+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-CC45CA32",
+    "incident_id": "INC-B5DECD42",
+    "timestamp": "2026-05-19T22:56:18.060804+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 6,
+    "duration_s": 112.1,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T22:57:30.445477+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-78B79FB7",
+    "incident_id": "INC-815E8584",
+    "timestamp": "2026-05-19T22:57:34.391872+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 6,
+    "duration_s": 188.5,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (188s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:02:30.614672+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-4A3079EC",
+    "incident_id": "INC-2BF5B653",
+    "timestamp": "2026-05-19T22:57:34.425965+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 103.3,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:02:30.614672+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-2971CF65",
+    "incident_id": "INC-6FF06C72",
+    "timestamp": "2026-05-19T22:57:49.804057+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 6,
+    "duration_s": 203.9,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:02:30.614672+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-7A39EBFF",
+    "incident_id": "INC-0FF76E1A",
+    "timestamp": "2026-05-19T22:59:20.584065+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 1.6,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:02:30.614672+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-9347CFDA",
+    "incident_id": "INC-237810E9",
+    "timestamp": "2026-05-19T23:03:22.444567+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 5.3,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:05:15.474438+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-8568E108",
+    "incident_id": "INC-368820A8",
+    "timestamp": "2026-05-19T23:03:22.503419+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 5.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:05:15.474438+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-36424754",
+    "incident_id": "INC-EA00819E",
+    "timestamp": "2026-05-19T23:03:22.568944+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 4.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:05:15.474438+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-3B547888",
+    "incident_id": "INC-A6A08F10",
+    "timestamp": "2026-05-19T23:03:37.795929+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 20.7,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:05:15.474438+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-31BFCE17",
+    "incident_id": "INC-559AB43D",
+    "timestamp": "2026-05-19T23:08:02.125612+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 10.6,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:09:14.421402+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-92303ADA",
+    "incident_id": "INC-249A338E",
+    "timestamp": "2026-05-19T23:08:02.150092+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 10.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:09:14.421402+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-4C24C2BB",
+    "incident_id": "INC-3DD066A8",
+    "timestamp": "2026-05-19T23:08:02.178240+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 9.7,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:09:14.421402+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-2B21ADA1",
+    "incident_id": "INC-CBDAF3D3",
+    "timestamp": "2026-05-19T23:08:02.193607+00:00",
+    "src_ip": "4.247.188.233",
+    "source_ip": "4.247.188.233",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 5.3,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-916A0930",
+    "incident_id": "INC-4EA8C237",
+    "timestamp": "2026-05-19T23:08:17.805441+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 26.3,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:09:14.421402+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-B7BB3C0C",
+    "incident_id": "INC-D6BCD6CE",
+    "timestamp": "2026-05-19T23:09:17.981275+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 4,
+    "duration_s": 86.4,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (86s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:14:14.475731+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-FD9496C8",
+    "incident_id": "INC-E1938101",
+    "timestamp": "2026-05-19T23:09:18.007059+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 86.3,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:14:14.475731+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-8425A5DD",
+    "incident_id": "INC-A8A1EBAB",
+    "timestamp": "2026-05-19T23:09:18.030942+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 85.5,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:14:14.475731+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-BD700F75",
+    "incident_id": "INC-015FF918",
+    "timestamp": "2026-05-19T23:09:33.071380+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 101.5,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:14:14.475731+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-7CBC142C",
+    "incident_id": "INC-C4EEE896",
+    "timestamp": "2026-05-19T23:12:03.265295+00:00",
+    "src_ip": "160.79.104.10",
+    "source_ip": "160.79.104.10",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 7.8,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-94FC80E7",
+    "incident_id": "INC-076C85C6",
+    "timestamp": "2026-05-19T23:13:48.416220+00:00",
+    "src_ip": "2.20.169.205",
+    "source_ip": "2.20.169.205",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 2.6,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:51:19.631128+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-7A34FC23",
+    "incident_id": "INC-0A75F82C",
+    "timestamp": "2026-05-19T23:13:48.420060+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 3,
+    "duration_s": 2.3,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T23:27:08.789050+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-F1D09618",
+    "incident_id": "INC-2B54373E",
+    "timestamp": "2026-05-19T23:14:03.856037+00:00",
+    "src_ip": "2.20.169.205",
+    "source_ip": "2.20.169.205",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 18.0,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-8B0DBE12",
+    "incident_id": "INC-AA0B6553",
+    "timestamp": "2026-05-19T23:14:03.862942+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 17.8,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-20T00:38:58.911293+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-2AE5A00D",
+    "incident_id": "INC-A92652A9",
+    "timestamp": "2026-05-19T23:14:03.864756+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 14.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-20T00:38:58.911293+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-B288E450",
+    "incident_id": "INC-BFE460B0",
+    "timestamp": "2026-05-19T23:14:03.872796+00:00",
+    "src_ip": "192.168.1.60",
+    "source_ip": "192.168.1.60",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 13.9,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:46:19.539330+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-BEF693E7",
+    "incident_id": "INC-9098E194",
+    "timestamp": "2026-05-19T23:14:03.878037+00:00",
+    "src_ip": "207.45.72.1",
+    "source_ip": "207.45.72.1",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 12.6,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-1D165250",
+    "incident_id": "INC-E476C8D8",
+    "timestamp": "2026-05-19T23:14:03.896945+00:00",
+    "src_ip": "196.204.69.201",
+    "source_ip": "196.204.69.201",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 12.2,
+    "status": "open",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-5504361A",
+    "incident_id": "INC-52E5DBBC",
+    "timestamp": "2026-05-19T23:14:19.326938+00:00",
+    "src_ip": "196.204.69.201",
+    "source_ip": "196.204.69.201",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 27.6,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-4590B080",
+    "incident_id": "INC-822C4722",
+    "timestamp": "2026-05-19T23:14:19.333177+00:00",
+    "src_ip": "196.204.69.193",
+    "source_ip": "196.204.69.193",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 7.2,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-8675D768",
+    "incident_id": "INC-F3280D92",
+    "timestamp": "2026-05-19T23:22:38.966357+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 13.5,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:24:12.248236+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-EB6CB733",
+    "incident_id": "INC-2496E7DE",
+    "timestamp": "2026-05-19T23:22:54.019989+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 28.5,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T23:24:12.248236+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-01AEA900",
+    "incident_id": "INC-12E1DDC4",
+    "timestamp": "2026-05-19T23:22:54.023704+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 9.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:24:12.248236+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-25467F47",
+    "incident_id": "INC-EEBC9B8A",
+    "timestamp": "2026-05-19T23:22:54.034157+00:00",
+    "src_ip": "199.232.58.132",
+    "source_ip": "199.232.58.132",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 8.0,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-98D17CD1",
+    "incident_id": "INC-44FF5AFC",
+    "timestamp": "2026-05-19T23:23:09.497577+00:00",
+    "src_ip": "199.232.58.132",
+    "source_ip": "199.232.58.132",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 23.5,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-FA7DC9B5",
+    "incident_id": "INC-ECF6C802",
+    "timestamp": "2026-05-19T23:23:39.555223+00:00",
+    "src_ip": "192.168.1.51",
+    "source_ip": "192.168.1.51",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 9.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-65A38F6B",
+    "incident_id": "INC-30462BF4",
+    "timestamp": "2026-05-19T23:23:39.555565+00:00",
+    "src_ip": "192.168.1.60",
+    "source_ip": "192.168.1.60",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 6.6,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:24:12.248236+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-C7ACB2E6",
+    "incident_id": "INC-6578F3C0",
+    "timestamp": "2026-05-19T23:23:54.624575+00:00",
+    "src_ip": "192.168.1.51",
+    "source_ip": "192.168.1.51",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 24.0,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-A9FFB7E7",
+    "incident_id": "INC-C7368302",
+    "timestamp": "2026-05-19T23:23:54.679120+00:00",
+    "src_ip": "102.132.103.41",
+    "source_ip": "102.132.103.41",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 2.3,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-AA7D195D",
+    "incident_id": "INC-221D6AF1",
+    "timestamp": "2026-05-19T23:24:09.757014+00:00",
+    "src_ip": "34.110.219.136",
+    "source_ip": "34.110.219.136",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 1.7,
+    "status": "open",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-B23644FB",
+    "incident_id": "INC-A1EC80AB",
+    "timestamp": "2026-05-19T23:24:24.784702+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 6,
+    "duration_s": 119.3,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (119s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-0AEA2D77",
+    "incident_id": "INC-F539B2CD",
+    "timestamp": "2026-05-19T23:24:24.785100+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 100.2,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:27:08.789050+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-C2CAD9D5",
+    "incident_id": "INC-D350667B",
+    "timestamp": "2026-05-19T23:24:24.785593+00:00",
+    "src_ip": "192.168.1.60",
+    "source_ip": "192.168.1.60",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 51.9,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:27:08.789050+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-AC61B22A",
+    "incident_id": "INC-6251B087",
+    "timestamp": "2026-05-19T23:24:40.041029+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 8,
+    "duration_s": 134.6,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T23:27:08.789050+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-BFCECDE7",
+    "incident_id": "INC-9A0C9FD3",
+    "timestamp": "2026-05-19T23:24:40.062683+00:00",
+    "src_ip": "34.110.219.136",
+    "source_ip": "34.110.219.136",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 4,
+    "duration_s": 32.0,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (32s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-FCF36594",
+    "incident_id": "INC-C0503791",
+    "timestamp": "2026-05-19T23:25:55.592947+00:00",
+    "src_ip": "192.168.1.4",
+    "source_ip": "192.168.1.4",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 10.2,
+    "status": "open",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-7B4E7C6E",
+    "incident_id": "INC-ACC1B2BB",
+    "timestamp": "2026-05-19T23:27:10.841073+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 12,
+    "duration_s": 285.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-550054A6",
+    "incident_id": "INC-E38369F8",
+    "timestamp": "2026-05-19T23:27:25.862525+00:00",
+    "src_ip": "192.168.1.60",
+    "source_ip": "192.168.1.60",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 3.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-145A3782",
+    "incident_id": "INC-303F313D",
+    "timestamp": "2026-05-19T23:28:40.915034+00:00",
+    "src_ip": "192.168.1.51",
+    "source_ip": "192.168.1.51",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 14,
+    "duration_s": 310.3,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-73D1D135",
+    "incident_id": "INC-C6607C9E",
+    "timestamp": "2026-05-19T23:28:56.058322+00:00",
+    "src_ip": "192.168.1.51",
+    "source_ip": "192.168.1.51",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 16,
+    "duration_s": 325.5,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (325s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-BF279DBB",
+    "incident_id": "INC-6C65A93A",
+    "timestamp": "2026-05-19T23:28:56.069092+00:00",
+    "src_ip": "102.132.103.41",
+    "source_ip": "102.132.103.41",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 12,
+    "duration_s": 303.7,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (304s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-306EB744",
+    "incident_id": "INC-2890F53E",
+    "timestamp": "2026-05-19T23:29:11.378242+00:00",
+    "src_ip": "102.132.103.41",
+    "source_ip": "102.132.103.41",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 14,
+    "duration_s": 319.0,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-705FF43F",
+    "incident_id": "INC-5D330F17",
+    "timestamp": "2026-05-19T23:29:26.462110+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 16,
+    "duration_s": 421.0,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (421s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-F13E22CA",
+    "incident_id": "INC-B6065E25",
+    "timestamp": "2026-05-19T23:29:41.580714+00:00",
+    "src_ip": "142.251.155.1",
+    "source_ip": "142.251.155.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 3.4,
+    "status": "open",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-CE5D63E6",
+    "incident_id": "INC-B8D7B794",
+    "timestamp": "2026-05-19T23:29:41.591327+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 2.1,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-8A63C823",
+    "incident_id": "INC-A789C370",
+    "timestamp": "2026-05-19T23:29:41.595574+00:00",
+    "src_ip": "54.149.159.88",
+    "source_ip": "54.149.159.88",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 2.0,
+    "status": "open",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-D62C2455",
+    "incident_id": "INC-DB08E1F4",
+    "timestamp": "2026-05-19T23:29:56.748931+00:00",
+    "src_ip": "34.1.238.35",
+    "source_ip": "34.1.238.35",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 11.1,
+    "status": "open",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-D00A7FA6",
+    "incident_id": "INC-9586163B",
+    "timestamp": "2026-05-19T23:32:21.700105+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 24.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-052A9B93",
+    "incident_id": "INC-69033195",
+    "timestamp": "2026-05-19T23:33:36.809505+00:00",
+    "src_ip": "192.168.1.60",
+    "source_ip": "192.168.1.60",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 6.6,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-68448C77",
+    "incident_id": "INC-ABD1289C",
+    "timestamp": "2026-05-19T23:33:51.960037+00:00",
+    "src_ip": "192.168.1.51",
+    "source_ip": "192.168.1.51",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 6,
+    "duration_s": 105.6,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-4B6196C4",
+    "incident_id": "INC-A41D97D4",
+    "timestamp": "2026-05-19T23:34:07.096749+00:00",
+    "src_ip": "192.168.1.51",
+    "source_ip": "192.168.1.51",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 6,
+    "duration_s": 120.8,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (121s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-18BB49EE",
+    "incident_id": "INC-A09CFCAA",
+    "timestamp": "2026-05-19T23:34:22.187644+00:00",
+    "src_ip": "102.132.103.41",
+    "source_ip": "102.132.103.41",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 4,
+    "duration_s": 92.7,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:36:20.573303+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-597F6075",
+    "incident_id": "INC-7B1B5CFF",
+    "timestamp": "2026-05-19T23:34:52.390327+00:00",
+    "src_ip": "72.62.26.247",
+    "source_ip": "72.62.26.247",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 5.4,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-1FC55F7B",
+    "incident_id": "INC-5DE10327",
+    "timestamp": "2026-05-19T23:35:07.955635+00:00",
+    "src_ip": "72.62.26.247",
+    "source_ip": "72.62.26.247",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 20.9,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-94A59E29",
+    "incident_id": "INC-3512FE53",
+    "timestamp": "2026-05-19T23:35:07.963846+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 1.6,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-20T00:35:10.291511+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-C602837E",
+    "incident_id": "INC-D5A8AA23",
+    "timestamp": "2026-05-19T23:36:23.048523+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 8,
+    "duration_s": 265.8,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:39:56.985350+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-E85CCE33",
+    "incident_id": "INC-BEED32E0",
+    "timestamp": "2026-05-19T23:36:53.180230+00:00",
+    "src_ip": "2.22.5.197",
+    "source_ip": "2.22.5.197",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 14.7,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-E6FF6E5D",
+    "incident_id": "INC-696170FB",
+    "timestamp": "2026-05-19T23:36:53.185002+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 10.6,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T23:39:56.985350+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-E93F814E",
+    "incident_id": "INC-3545F4BF",
+    "timestamp": "2026-05-19T23:37:08.430657+00:00",
+    "src_ip": "2.22.5.197",
+    "source_ip": "2.22.5.197",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 30.0,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-FC199A02",
+    "incident_id": "INC-DEB5F714",
+    "timestamp": "2026-05-19T23:37:08.443502+00:00",
+    "src_ip": "160.79.104.10",
+    "source_ip": "160.79.104.10",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 9.4,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:39:56.985350+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-D365E929",
+    "incident_id": "INC-636FCBDC",
+    "timestamp": "2026-05-19T23:37:23.587380+00:00",
+    "src_ip": "160.79.104.10",
+    "source_ip": "160.79.104.10",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 24.6,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-5BC7CC39",
+    "incident_id": "INC-0B98FB99",
+    "timestamp": "2026-05-19T23:37:53.822790+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 6,
+    "duration_s": 71.2,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:39:56.985350+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-592F6B5C",
+    "incident_id": "INC-AED41635",
+    "timestamp": "2026-05-19T23:37:53.871536+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 2.6,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:39:56.985350+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-36904D33",
+    "incident_id": "INC-9F83A43A",
+    "timestamp": "2026-05-19T23:39:38.071712+00:00",
+    "src_ip": "140.82.113.21",
+    "source_ip": "140.82.113.21",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 1.5,
+    "status": "open",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-C060C1A5",
+    "incident_id": "INC-C1BAE72F",
+    "timestamp": "2026-05-19T23:40:08.187082+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 10,
+    "duration_s": 206.7,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (207s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:41:19.481770+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-8FCCFBEA",
+    "incident_id": "INC-F357D8C4",
+    "timestamp": "2026-05-19T23:40:08.193193+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 4,
+    "duration_s": 138.1,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:41:19.481770+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-0F8E3CBA",
+    "incident_id": "INC-CED5A4C9",
+    "timestamp": "2026-05-19T23:40:23.325706+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 12,
+    "duration_s": 221.8,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:41:19.481770+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-EAE4BADE",
+    "incident_id": "INC-5062F3B3",
+    "timestamp": "2026-05-19T23:40:38.431975+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 15.1,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:41:19.481770+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-99006B71",
+    "incident_id": "INC-B71C0FDF",
+    "timestamp": "2026-05-19T23:41:23.665585+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 12,
+    "duration_s": 282.2,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (282s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:44:03.694299+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-548089B6",
+    "incident_id": "INC-25E995F9",
+    "timestamp": "2026-05-19T23:41:23.676014+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 4,
+    "duration_s": 213.5,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:44:03.694299+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-871002BD",
+    "incident_id": "INC-3510D06D",
+    "timestamp": "2026-05-19T23:41:23.676830+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 60.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:44:03.694299+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-75C0FDD7",
+    "incident_id": "INC-D84E8686",
+    "timestamp": "2026-05-19T23:41:38.752042+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 16,
+    "duration_s": 297.3,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:44:03.694299+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-E64514FE",
+    "incident_id": "INC-E77A7C4D",
+    "timestamp": "2026-05-19T23:43:09.141897+00:00",
+    "src_ip": "192.168.1.60",
+    "source_ip": "192.168.1.60",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 12.1,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-4B363644",
+    "incident_id": "INC-726637FE",
+    "timestamp": "2026-05-19T23:43:09.151585+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 11.8,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T23:44:03.694299+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-E74452F2",
+    "incident_id": "INC-955FE1D6",
+    "timestamp": "2026-05-19T23:43:09.156521+00:00",
+    "src_ip": "216.239.38.135",
+    "source_ip": "216.239.38.135",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 10.4,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-D70306AF",
+    "incident_id": "INC-36ADFBF4",
+    "timestamp": "2026-05-19T23:43:09.163849+00:00",
+    "src_ip": "192.168.1.51",
+    "source_ip": "192.168.1.51",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 9.8,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T23:44:03.694299+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-C549B0CC",
+    "incident_id": "INC-59C685F2",
+    "timestamp": "2026-05-19T23:43:24.649964+00:00",
+    "src_ip": "216.239.38.135",
+    "source_ip": "216.239.38.135",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 25.9,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-958FB141",
+    "incident_id": "INC-59EC8DD1",
+    "timestamp": "2026-05-19T23:43:39.837904+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 42.5,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:44:03.694299+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-AE491806",
+    "incident_id": "INC-4F3B1DBF",
+    "timestamp": "2026-05-19T23:43:39.885785+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 0.8,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:44:03.694299+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-0BDCC203",
+    "incident_id": "INC-2E1411B6",
+    "timestamp": "2026-05-19T23:43:55.078088+00:00",
+    "src_ip": "216.239.38.223",
+    "source_ip": "216.239.38.223",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 14.4,
+    "status": "open",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-E37ADFE4",
+    "incident_id": "INC-04D7A146",
+    "timestamp": "2026-05-19T23:43:55.091125+00:00",
+    "src_ip": "102.132.103.41",
+    "source_ip": "102.132.103.41",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 11.9,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:44:03.694299+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-5AC9264C",
+    "incident_id": "INC-7FCF9E28",
+    "timestamp": "2026-05-19T23:44:10.120736+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 20,
+    "duration_s": 448.6,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (449s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:46:19.539330+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-974BAFB7",
+    "incident_id": "INC-3B463AC9",
+    "timestamp": "2026-05-19T23:44:10.123117+00:00",
+    "src_ip": "172.20.10.1",
+    "source_ip": "172.20.10.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 8,
+    "duration_s": 380.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:46:19.539330+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-66B74AF4",
+    "incident_id": "INC-C195D28B",
+    "timestamp": "2026-05-19T23:44:10.124410+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 6,
+    "duration_s": 72.8,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (73s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:46:19.539330+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-4B775E72",
+    "incident_id": "INC-F2E34637",
+    "timestamp": "2026-05-19T23:44:10.126668+00:00",
+    "src_ip": "192.168.1.51",
+    "source_ip": "192.168.1.51",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 4,
+    "duration_s": 70.8,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (71s duration)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T23:46:19.539330+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-5FEC87CF",
+    "incident_id": "INC-A3E00122",
+    "timestamp": "2026-05-19T23:44:10.128349+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 31.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:46:19.539330+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-CA2A4A88",
+    "incident_id": "INC-844BFBD3",
+    "timestamp": "2026-05-19T23:44:10.130397+00:00",
+    "src_ip": "102.132.103.41",
+    "source_ip": "102.132.103.41",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 26.9,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:46:19.539330+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-F6846AA4",
+    "incident_id": "INC-DA06D1D7",
+    "timestamp": "2026-05-19T23:44:10.134424+00:00",
+    "src_ip": "2.20.169.205",
+    "source_ip": "2.20.169.205",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 4,
+    "duration_s": 6.5,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:46:19.539330+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-12028E1D",
+    "incident_id": "INC-C26C4C38",
+    "timestamp": "2026-05-19T23:44:25.411428+00:00",
+    "src_ip": "172.20.10.3",
+    "source_ip": "172.20.10.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 20,
+    "duration_s": 463.9,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:46:19.539330+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-77F66D9E",
+    "incident_id": "INC-ABAC6883",
+    "timestamp": "2026-05-19T23:44:25.412104+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 6,
+    "duration_s": 88.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:46:19.539330+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-377C36F5",
+    "incident_id": "INC-77C214EE",
+    "timestamp": "2026-05-19T23:44:25.414076+00:00",
+    "src_ip": "2.20.169.205",
+    "source_ip": "2.20.169.205",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 21.8,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:46:19.539330+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-133F9814",
+    "incident_id": "INC-A3927CB5",
+    "timestamp": "2026-05-19T23:44:40.453573+00:00",
+    "src_ip": "192.168.1.60",
+    "source_ip": "192.168.1.60",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 4,
+    "duration_s": 103.5,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-747FA56A",
+    "incident_id": "INC-2AA8797B",
+    "timestamp": "2026-05-19T23:46:25.624831+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 12,
+    "duration_s": 208.3,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (208s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:51:19.631128+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-DD5C452E",
+    "incident_id": "INC-06A98775",
+    "timestamp": "2026-05-19T23:46:25.625127+00:00",
+    "src_ip": "192.168.1.51",
+    "source_ip": "192.168.1.51",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 6,
+    "duration_s": 206.3,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (206s duration)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-19T23:51:19.631128+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-CB81C20B",
+    "incident_id": "INC-8D5DAA1A",
+    "timestamp": "2026-05-19T23:46:25.625450+00:00",
+    "src_ip": "102.132.103.41",
+    "source_ip": "102.132.103.41",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 4,
+    "duration_s": 162.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:51:19.631128+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-4139E7F9",
+    "incident_id": "INC-F0E25E7E",
+    "timestamp": "2026-05-19T23:46:25.625743+00:00",
+    "src_ip": "2.20.169.205",
+    "source_ip": "2.20.169.205",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 6,
+    "duration_s": 142.0,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (142s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-584558F7",
+    "incident_id": "INC-15574B12",
+    "timestamp": "2026-05-19T23:46:40.789439+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 14,
+    "duration_s": 223.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:51:19.631128+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-ED0B5939",
+    "incident_id": "INC-E033CEB0",
+    "timestamp": "2026-05-19T23:46:40.790103+00:00",
+    "src_ip": "2.20.169.205",
+    "source_ip": "2.20.169.205",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 6,
+    "duration_s": 157.2,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:51:19.631128+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-90FDA517",
+    "incident_id": "INC-67E92729",
+    "timestamp": "2026-05-19T23:47:25.977787+00:00",
+    "src_ip": "3.175.86.78",
+    "source_ip": "3.175.86.78",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 2.4,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-4C493FC5",
+    "incident_id": "INC-F98DA197",
+    "timestamp": "2026-05-19T23:49:11.917840+00:00",
+    "src_ip": "192.168.1.3",
+    "source_ip": "192.168.1.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 5.4,
+    "status": "open",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-E3E0A003",
+    "incident_id": "INC-51B6859E",
+    "timestamp": "2026-05-19T23:49:26.991592+00:00",
+    "src_ip": "104.18.32.47",
+    "source_ip": "104.18.32.47",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 7.3,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-76043EC4",
+    "incident_id": "INC-0640E265",
+    "timestamp": "2026-05-19T23:51:27.266306+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 26,
+    "duration_s": 509.9,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (510s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:56:19.672561+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-3F641DF9",
+    "incident_id": "INC-C814B81A",
+    "timestamp": "2026-05-19T23:51:42.322563+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 28,
+    "duration_s": 525.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:56:19.672561+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-A9477EBB",
+    "incident_id": "INC-4E19C269",
+    "timestamp": "2026-05-19T23:52:42.431075+00:00",
+    "src_ip": "172.64.155.209",
+    "source_ip": "172.64.155.209",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 8.8,
+    "status": "open",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-2E3698CC",
+    "incident_id": "INC-D2EA2514",
+    "timestamp": "2026-05-19T23:53:27.500681+00:00",
+    "src_ip": "192.168.1.60",
+    "source_ip": "192.168.1.60",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 14.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:56:19.672561+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-2482E66A",
+    "incident_id": "INC-886CAB0A",
+    "timestamp": "2026-05-19T23:53:27.501432+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 11.3,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:56:19.672561+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-E7A925B5",
+    "incident_id": "INC-B01D89FD",
+    "timestamp": "2026-05-19T23:54:12.550929+00:00",
+    "src_ip": "192.168.1.3",
+    "source_ip": "192.168.1.3",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 6,
+    "duration_s": 306.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-19T23:56:19.672561+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-936F60F5",
+    "incident_id": "INC-4688C0F1",
+    "timestamp": "2026-05-19T23:56:27.681904+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 38,
+    "duration_s": 810.3,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (810s duration)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-20T00:34:14.543357+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-A7068B61",
+    "incident_id": "INC-7385ABFB",
+    "timestamp": "2026-05-19T23:56:27.682826+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 6,
+    "duration_s": 191.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-20T00:34:14.543357+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-A10154C3",
+    "incident_id": "INC-A2A5A204",
+    "timestamp": "2026-05-19T23:56:42.732049+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 65,
+    "risk_score": 65,
+    "event_count": 38,
+    "duration_s": 825.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-20T00:34:14.543357+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-50EF3443",
+    "incident_id": "INC-0635F660",
+    "timestamp": "2026-05-19T23:57:57.830269+00:00",
+    "src_ip": "95.101.234.92",
+    "source_ip": "95.101.234.92",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 14.6,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-99298351",
+    "incident_id": "INC-599ACC82",
+    "timestamp": "2026-05-20T00:03:42.251834+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 0.8,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-20T00:34:14.543357+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-3141C602",
+    "incident_id": "INC-43823C57",
+    "timestamp": "2026-05-20T00:03:57.335390+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 14.7,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-20T00:34:14.543357+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-C5CC61CD",
+    "incident_id": "INC-EC200ED3",
+    "timestamp": "2026-05-20T00:04:12.434600+00:00",
+    "src_ip": "192.168.1.60",
+    "source_ip": "192.168.1.60",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 70,
+    "risk_score": 70,
+    "event_count": 2,
+    "duration_s": 12.7,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": false,
+      "ml_burst": false
+    },
+    "alert_types": [
+      "HIGH_PACKET_RATE"
+    ],
+    "closed_at": "2026-05-20T00:34:14.543357+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-2B0C9A51",
+    "incident_id": "INC-405D1FE6",
+    "timestamp": "2026-05-20T00:34:29.316377+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Recon + Exploit",
+    "attack_chain": "Recon + Exploit",
+    "severity": "HIGH",
+    "confidence": 76,
+    "risk_score": 76,
+    "event_count": 4,
+    "duration_s": 10.9,
+    "status": "closed",
+    "explanation": [
+      "Port scan followed by anomalous traffic",
+      "Attack chain: Reconnaissance \u2192 Exploitation",
+      "Multiple anomalous flows after scan",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST",
+      "ML_OTHER"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-FCD949BE",
+    "incident_id": "INC-05653C48",
+    "timestamp": "2026-05-20T00:34:29.317043+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 60,
+    "risk_score": 60,
+    "event_count": 2,
+    "duration_s": 9.1,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": false,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "PORT_SCAN"
+    ],
+    "closed_at": "2026-05-20T00:35:10.291511+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-100C27DA",
+    "incident_id": "INC-3C0E63FC",
+    "timestamp": "2026-05-20T00:34:44.411824+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 72,
+    "risk_score": 72,
+    "event_count": 4,
+    "duration_s": 26.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST",
+      "ML_OTHER"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-AAF13E11",
+    "incident_id": "INC-464494CD",
+    "timestamp": "2026-05-20T00:34:59.458625+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 83,
+    "risk_score": 83,
+    "event_count": 4,
+    "duration_s": 41.1,
+    "status": "open",
+    "explanation": [
+      "ML anomaly burst (4 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (41s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST",
+      "ML_OTHER"
+    ]
+  },
+  {
+    "id": "INC-64CE3A9B",
+    "incident_id": "INC-46BF58A1",
+    "timestamp": "2026-05-20T00:35:14.546363+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Recon + Exploit",
+    "attack_chain": "Recon + Exploit",
+    "severity": "HIGH",
+    "confidence": 75,
+    "risk_score": 75,
+    "event_count": 3,
+    "duration_s": 54.3,
+    "status": "closed",
+    "explanation": [
+      "Port scan followed by anomalous traffic",
+      "Attack chain: Reconnaissance \u2192 Exploitation"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-FA045BAA",
+    "incident_id": "INC-65ED4207",
+    "timestamp": "2026-05-20T00:35:14.552931+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 74,
+    "risk_score": 74,
+    "event_count": 3,
+    "duration_s": 51.8,
+    "status": "closed",
+    "explanation": [
+      "ML anomaly burst (3 events)",
+      "Sustained anomalous activity (52s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-D067E1B3",
+    "incident_id": "INC-95123953",
+    "timestamp": "2026-05-20T00:35:30.241158+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 3,
+    "duration_s": 70.0,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY"
+    ]
+  },
+  {
+    "id": "INC-DBA05521",
+    "incident_id": "INC-63416C19",
+    "timestamp": "2026-05-20T00:35:30.242246+00:00",
+    "src_ip": "102.132.97.40",
+    "source_ip": "102.132.97.40",
+    "category": "Recon + Exploit",
+    "attack_chain": "Recon + Exploit",
+    "severity": "HIGH",
+    "confidence": 75,
+    "risk_score": 75,
+    "event_count": 3,
+    "duration_s": 16.5,
+    "status": "open",
+    "explanation": [
+      "Port scan followed by anomalous traffic",
+      "Attack chain: Reconnaissance \u2192 Exploitation"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-55CA86F3",
+    "incident_id": "INC-C86CCF85",
+    "timestamp": "2026-05-20T00:35:45.575405+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 85,
+    "risk_score": 85,
+    "event_count": 5,
+    "duration_s": 85.4,
+    "status": "open",
+    "explanation": [
+      "Repeated ML anomalies (5 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (85s)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY"
+    ]
+  },
+  {
+    "id": "INC-3B79EC6F",
+    "incident_id": "INC-85BBCA96",
+    "timestamp": "2026-05-20T00:35:45.576022+00:00",
+    "src_ip": "102.132.97.40",
+    "source_ip": "102.132.97.40",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 5,
+    "duration_s": 31.9,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-5725EB85",
+    "incident_id": "INC-5B28779F",
+    "timestamp": "2026-05-20T00:35:45.576332+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 72,
+    "risk_score": 72,
+    "event_count": 3,
+    "duration_s": 16.8,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY"
+    ]
+  },
+  {
+    "id": "INC-ACCEB525",
+    "incident_id": "INC-03AA8BA3",
+    "timestamp": "2026-05-20T00:36:01.068244+00:00",
+    "src_ip": "102.132.97.40",
+    "source_ip": "102.132.97.40",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 93,
+    "risk_score": 93,
+    "event_count": 5,
+    "duration_s": 47.4,
+    "status": "open",
+    "explanation": [
+      "ML anomaly burst (5 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (47s)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-BF980610",
+    "incident_id": "INC-88A6AA64",
+    "timestamp": "2026-05-20T00:36:01.069496+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 76,
+    "risk_score": 76,
+    "event_count": 3,
+    "duration_s": 32.3,
+    "status": "open",
+    "explanation": [
+      "Repeated ML anomalies (3 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (32s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY"
+    ]
+  },
+  {
+    "id": "INC-E3EF4A10",
+    "incident_id": "INC-1243DDC8",
+    "timestamp": "2026-05-20T00:36:16.351167+00:00",
+    "src_ip": "102.132.97.32",
+    "source_ip": "102.132.97.32",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 36.0,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-3AEFDD53",
+    "incident_id": "INC-5A6B5174",
+    "timestamp": "2026-05-20T00:36:31.425882+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 81,
+    "risk_score": 81,
+    "event_count": 17,
+    "duration_s": 133.0,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (133s duration)",
+      "ML anomaly burst detected",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 3
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ]
+  },
+  {
+    "id": "INC-E404B8F7",
+    "incident_id": "INC-0B9475C0",
+    "timestamp": "2026-05-20T00:36:31.427656+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 63,
+    "risk_score": 47,
+    "event_count": 9,
+    "duration_s": 128.7,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine",
+      "High volume of anomalous flows (9)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST_AGGREGATED",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-8D870718",
+    "incident_id": "INC-F0F892C8",
+    "timestamp": "2026-05-20T00:36:46.538207+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Recon + Exploit",
+    "attack_chain": "Recon + Exploit",
+    "severity": "HIGH",
+    "confidence": 81,
+    "risk_score": 81,
+    "event_count": 11,
+    "duration_s": 143.8,
+    "status": "open",
+    "explanation": [
+      "Port scan followed by anomalous traffic",
+      "Attack chain: Reconnaissance \u2192 Exploitation",
+      "Multiple anomalous flows after scan",
+      "High event density (11 events)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY",
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ]
+  },
+  {
+    "id": "INC-18519236",
+    "incident_id": "INC-EADBABFC",
+    "timestamp": "2026-05-20T00:36:46.539967+00:00",
+    "src_ip": "102.132.97.32",
+    "source_ip": "102.132.97.32",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 83,
+    "risk_score": 83,
+    "event_count": 3,
+    "duration_s": 66.2,
+    "status": "open",
+    "explanation": [
+      "ML anomaly burst (3 events)",
+      "Sustained anomalous activity (66s)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_OTHER"
+    ]
+  },
+  {
+    "id": "INC-092821B1",
+    "incident_id": "INC-91A9A74C",
+    "timestamp": "2026-05-20T00:37:01.875019+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 72,
+    "risk_score": 72,
+    "event_count": 12,
+    "duration_s": 159.1,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY",
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ]
+  },
+  {
+    "id": "INC-02893700",
+    "incident_id": "INC-847108B0",
+    "timestamp": "2026-05-20T00:37:32.222188+00:00",
+    "src_ip": "43.172.213.173",
+    "source_ip": "43.172.213.173",
+    "category": "Recon + Exploit",
+    "attack_chain": "Recon + Exploit",
+    "severity": "HIGH",
+    "confidence": 75,
+    "risk_score": 75,
+    "event_count": 3,
+    "duration_s": 11.9,
+    "status": "open",
+    "explanation": [
+      "Port scan followed by anomalous traffic",
+      "Attack chain: Reconnaissance \u2192 Exploitation"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY"
+    ]
+  },
+  {
+    "id": "INC-0A2ED06B",
+    "incident_id": "INC-7748DC20",
+    "timestamp": "2026-05-20T00:37:47.317818+00:00",
+    "src_ip": "43.172.213.173",
+    "source_ip": "43.172.213.173",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 4,
+    "duration_s": 27.0,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-D1A414E1",
+    "incident_id": "INC-662F0E3E",
+    "timestamp": "2026-05-20T00:37:47.318370+00:00",
+    "src_ip": "43.102.214.251",
+    "source_ip": "43.102.214.251",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 16.4,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-E3ED1C21",
+    "incident_id": "INC-EBCF1163",
+    "timestamp": "2026-05-20T00:37:47.319113+00:00",
+    "src_ip": "43.116.96.101",
+    "source_ip": "43.116.96.101",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 15.9,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-434EDF9F",
+    "incident_id": "INC-7B6F98EE",
+    "timestamp": "2026-05-20T00:37:47.319781+00:00",
+    "src_ip": "43.116.78.105",
+    "source_ip": "43.116.78.105",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 15.5,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-7BE0CA7A",
+    "incident_id": "INC-ACF8F9A7",
+    "timestamp": "2026-05-20T00:37:47.320207+00:00",
+    "src_ip": "43.153.102.204",
+    "source_ip": "43.153.102.204",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 15.2,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-C6F4B499",
+    "incident_id": "INC-36EEA629",
+    "timestamp": "2026-05-20T00:37:47.320558+00:00",
+    "src_ip": "43.117.42.154",
+    "source_ip": "43.117.42.154",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 14.9,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-8C9C2102",
+    "incident_id": "INC-73CDB1A7",
+    "timestamp": "2026-05-20T00:37:47.320887+00:00",
+    "src_ip": "43.102.30.154",
+    "source_ip": "43.102.30.154",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 14.6,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-89741CBB",
+    "incident_id": "INC-73A32B15",
+    "timestamp": "2026-05-20T00:37:47.321388+00:00",
+    "src_ip": "43.102.232.104",
+    "source_ip": "43.102.232.104",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 14.2,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-6A957B7E",
+    "incident_id": "INC-3EDF847E",
+    "timestamp": "2026-05-20T00:37:47.321743+00:00",
+    "src_ip": "165.154.218.240",
+    "source_ip": "165.154.218.240",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 13.9,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-F5B85285",
+    "incident_id": "INC-BE5A7E01",
+    "timestamp": "2026-05-20T00:37:47.322121+00:00",
+    "src_ip": "43.116.9.224",
+    "source_ip": "43.116.9.224",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 13.5,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-995BA0DE",
+    "incident_id": "INC-9C0F8BD6",
+    "timestamp": "2026-05-20T00:37:47.322767+00:00",
+    "src_ip": "43.116.101.244",
+    "source_ip": "43.116.101.244",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 12.9,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-F9A312B9",
+    "incident_id": "INC-34F7ADC7",
+    "timestamp": "2026-05-20T00:37:47.323434+00:00",
+    "src_ip": "43.102.106.242",
+    "source_ip": "43.102.106.242",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 12.6,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-804EFA27",
+    "incident_id": "INC-772C7D38",
+    "timestamp": "2026-05-20T00:37:47.324132+00:00",
+    "src_ip": "101.47.170.215",
+    "source_ip": "101.47.170.215",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 11.7,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-BB51C059",
+    "incident_id": "INC-2C5576CA",
+    "timestamp": "2026-05-20T00:37:47.324732+00:00",
+    "src_ip": "101.47.169.24",
+    "source_ip": "101.47.169.24",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 11.0,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-D04D4275",
+    "incident_id": "INC-A0A13D10",
+    "timestamp": "2026-05-20T00:37:47.325582+00:00",
+    "src_ip": "43.116.104.105",
+    "source_ip": "43.116.104.105",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 9.9,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-7413CC00",
+    "incident_id": "INC-50881E8B",
+    "timestamp": "2026-05-20T00:37:47.326244+00:00",
+    "src_ip": "43.102.225.75",
+    "source_ip": "43.102.225.75",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 60,
+    "risk_score": 45,
+    "event_count": 2,
+    "duration_s": 9.5,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-66992E91",
+    "incident_id": "INC-E6E2A3EC",
+    "timestamp": "2026-05-20T00:38:02.522846+00:00",
+    "src_ip": "43.172.213.173",
+    "source_ip": "43.172.213.173",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 93,
+    "risk_score": 93,
+    "event_count": 4,
+    "duration_s": 42.2,
+    "status": "open",
+    "explanation": [
+      "ML anomaly burst (4 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (42s)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST"
+    ]
+  },
+  {
+    "id": "INC-5114AA30",
+    "incident_id": "INC-679DF4EA",
+    "timestamp": "2026-05-20T00:38:32.743587+00:00",
+    "src_ip": "172.64.148.235",
+    "source_ip": "172.64.148.235",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "MEDIUM",
+    "confidence": 45,
+    "risk_score": 33,
+    "event_count": 3,
+    "duration_s": 234.5,
+    "status": "open",
+    "explanation": [
+      "Repeated ML anomalies detected",
+      "Provider classified as trusted \u2014 monitoring only (no non-ML indicators)",
+      "Event count: 3"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_AGGREGATED"
+    ]
+  },
+  {
+    "id": "INC-75C435B4",
+    "incident_id": "INC-A17A0FF2",
+    "timestamp": "2026-05-20T00:39:32.835090+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Recon + Exploit",
+    "attack_chain": "Recon + Exploit",
+    "severity": "HIGH",
+    "confidence": 81,
+    "risk_score": 81,
+    "event_count": 32,
+    "duration_s": 314.5,
+    "status": "open",
+    "explanation": [
+      "Port scan followed by anomalous traffic",
+      "Attack chain: Reconnaissance \u2192 Exploitation",
+      "Multiple anomalous flows after scan",
+      "High event density (32 events)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 3
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ]
+  },
+  {
+    "id": "INC-0271519A",
+    "incident_id": "INC-F7BF313B",
+    "timestamp": "2026-05-20T00:39:47.884780+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 76,
+    "risk_score": 76,
+    "event_count": 35,
+    "duration_s": 329.5,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP",
+      "Elevated packet rate during scan",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 3
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ]
+  },
+  {
+    "id": "INC-5D66FA7C",
+    "incident_id": "INC-C4CC1C64",
+    "timestamp": "2026-05-20T00:40:02.918466+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 83,
+    "risk_score": 83,
+    "event_count": 35,
+    "duration_s": 344.5,
+    "status": "closed",
+    "explanation": [
+      "ML anomaly burst (35 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (345s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 3
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-3C625609",
+    "incident_id": "INC-EC1174D6",
+    "timestamp": "2026-05-20T00:40:18.129394+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Recon + Exploit",
+    "attack_chain": "Recon + Exploit",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 13,
+    "duration_s": 357.9,
+    "status": "open",
+    "explanation": [
+      "Port scan followed by anomalous traffic",
+      "Attack chain: Reconnaissance \u2192 Exploitation",
+      "High event density (13 events)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY"
+    ]
+  },
+  {
+    "id": "INC-9DB3F9B7",
+    "incident_id": "INC-22F63DBA",
+    "timestamp": "2026-05-20T00:40:18.210116+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 83,
+    "risk_score": 83,
+    "event_count": 24,
+    "duration_s": 355.5,
+    "status": "open",
+    "explanation": [
+      "ML anomaly burst (24 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (355s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY",
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ]
+  },
+  {
+    "id": "INC-15B3D95E",
+    "incident_id": "INC-D2B34A2B",
+    "timestamp": "2026-05-20T00:40:34.391656+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 80,
+    "risk_score": 80,
+    "event_count": 13,
+    "duration_s": 374.2,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-5B76FEB2",
+    "incident_id": "INC-7935C291",
+    "timestamp": "2026-05-20T00:40:49.701928+00:00",
+    "src_ip": "208.95.112.1",
+    "source_ip": "208.95.112.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 85,
+    "risk_score": 85,
+    "event_count": 13,
+    "duration_s": 389.5,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies (13 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (389s)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-DF4BB075",
+    "incident_id": "INC-07559C3D",
+    "timestamp": "2026-05-20T00:40:49.717077+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 72,
+    "risk_score": 72,
+    "event_count": 15,
+    "duration_s": 321.0,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER_AGGREGATED",
+      "ML_OTHER"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-85F7160A",
+    "incident_id": "INC-872523A8",
+    "timestamp": "2026-05-20T00:41:05.964525+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 76,
+    "risk_score": 76,
+    "event_count": 15,
+    "duration_s": 337.2,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies (15 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (337s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER_AGGREGATED",
+      "ML_OTHER"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-23A7D826",
+    "incident_id": "INC-E763932C",
+    "timestamp": "2026-05-20T00:41:05.970004+00:00",
+    "src_ip": "160.79.104.10",
+    "source_ip": "160.79.104.10",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "CRITICAL",
+    "confidence": 90,
+    "risk_score": 100,
+    "event_count": 5,
+    "duration_s": 33.4,
+    "status": "open",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (33s duration)",
+      "ML anomaly burst detected"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-DF0905CC",
+    "incident_id": "INC-F3353A98",
+    "timestamp": "2026-05-20T00:41:21.050227+00:00",
+    "src_ip": "160.79.104.10",
+    "source_ip": "160.79.104.10",
+    "category": "Recon + Exploit",
+    "attack_chain": "Recon + Exploit",
+    "severity": "CRITICAL",
+    "confidence": 90,
+    "risk_score": 100,
+    "event_count": 7,
+    "duration_s": 48.5,
+    "status": "open",
+    "explanation": [
+      "Port scan followed by anomalous traffic",
+      "Attack chain: Reconnaissance \u2192 Exploitation",
+      "Multiple anomalous flows after scan",
+      "High event density (7 events)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 3
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "PORT_SCAN",
+      "HIGH_PACKET_RATE"
+    ]
+  },
+  {
+    "id": "INC-701A0038",
+    "incident_id": "INC-EAF2CF00",
+    "timestamp": "2026-05-20T00:41:36.166773+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 81,
+    "risk_score": 81,
+    "event_count": 46,
+    "duration_s": 437.8,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (438s duration)",
+      "ML anomaly burst detected",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 3
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-C71A616B",
+    "incident_id": "INC-1AA7464A",
+    "timestamp": "2026-05-20T00:41:36.170034+00:00",
+    "src_ip": "160.79.104.10",
+    "source_ip": "160.79.104.10",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 85,
+    "risk_score": 85,
+    "event_count": 8,
+    "duration_s": 63.6,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP",
+      "Elevated packet rate during scan"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 3
+    },
+    "alert_types": [
+      "ML_ANOMALY_BURST",
+      "HIGH_PACKET_RATE",
+      "ML_ANOMALY",
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ]
+  },
+  {
+    "id": "INC-BC876C23",
+    "incident_id": "INC-65C4CB51",
+    "timestamp": "2026-05-20T00:41:51.297825+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Recon + Exploit",
+    "attack_chain": "Recon + Exploit",
+    "severity": "HIGH",
+    "confidence": 81,
+    "risk_score": 81,
+    "event_count": 28,
+    "duration_s": 448.6,
+    "status": "closed",
+    "explanation": [
+      "Port scan followed by anomalous traffic",
+      "Attack chain: Reconnaissance \u2192 Exploitation",
+      "Multiple anomalous flows after scan",
+      "High event density (28 events)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY",
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-FE3B6EE1",
+    "incident_id": "INC-AA0C83CD",
+    "timestamp": "2026-05-20T00:41:51.427786+00:00",
+    "src_ip": "160.79.104.10",
+    "source_ip": "160.79.104.10",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 93,
+    "risk_score": 93,
+    "event_count": 8,
+    "duration_s": 78.9,
+    "status": "open",
+    "explanation": [
+      "ML anomaly burst (8 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (79s)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 3
+    },
+    "alert_types": [
+      "ML_ANOMALY_BURST",
+      "HIGH_PACKET_RATE",
+      "ML_ANOMALY",
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ]
+  },
+  {
+    "id": "INC-7369CD88",
+    "incident_id": "INC-C3C9466B",
+    "timestamp": "2026-05-20T00:42:07.526316+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 72,
+    "risk_score": 72,
+    "event_count": 28,
+    "duration_s": 464.8,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY",
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-378600AD",
+    "incident_id": "INC-42987607",
+    "timestamp": "2026-05-20T00:42:22.978134+00:00",
+    "src_ip": "192.168.1.29",
+    "source_ip": "192.168.1.29",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 72,
+    "risk_score": 72,
+    "event_count": 4,
+    "duration_s": 72.9,
+    "status": "open",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_AGGREGATED",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-7B03E8F3",
+    "incident_id": "INC-1C647DDE",
+    "timestamp": "2026-05-20T00:42:38.308949+00:00",
+    "src_ip": "192.168.1.29",
+    "source_ip": "192.168.1.29",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 76,
+    "risk_score": 76,
+    "event_count": 4,
+    "duration_s": 88.3,
+    "status": "open",
+    "explanation": [
+      "Repeated ML anomalies (4 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (88s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_AGGREGATED",
+      "PORT_SCAN"
+    ]
+  },
+  {
+    "id": "INC-EF4D0B0C",
+    "incident_id": "INC-97B599FF",
+    "timestamp": "2026-05-20T00:43:38.520280+00:00",
+    "src_ip": "172.64.148.235",
+    "source_ip": "172.64.148.235",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "MEDIUM",
+    "confidence": 45,
+    "risk_score": 33,
+    "event_count": 7,
+    "duration_s": 540.2,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies detected",
+      "Provider classified as trusted \u2014 monitoring only (no non-ML indicators)",
+      "Event count: 7"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-20T00:43:58.936008+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-400C7957",
+    "incident_id": "INC-604EE030",
+    "timestamp": "2026-05-20T00:44:08.973228+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "DDoS Pattern",
+    "attack_chain": "DDoS Pattern",
+    "severity": "HIGH",
+    "confidence": 81,
+    "risk_score": 81,
+    "event_count": 63,
+    "duration_s": 590.6,
+    "status": "closed",
+    "explanation": [
+      "Abnormal packet rate",
+      "Persistent attack (591s duration)",
+      "ML anomaly burst detected",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 3
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T00:13:26.767536+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-A5388219",
+    "incident_id": "INC-B7BA96C2",
+    "timestamp": "2026-05-20T00:44:08.974310+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Recon + Exploit",
+    "attack_chain": "Recon + Exploit",
+    "severity": "HIGH",
+    "confidence": 81,
+    "risk_score": 81,
+    "event_count": 34,
+    "duration_s": 586.2,
+    "status": "closed",
+    "explanation": [
+      "Port scan followed by anomalous traffic",
+      "Attack chain: Reconnaissance \u2192 Exploitation",
+      "Multiple anomalous flows after scan",
+      "High event density (34 events)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY",
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T00:13:26.767536+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-84A8C9B3",
+    "incident_id": "INC-1CE8E21C",
+    "timestamp": "2026-05-20T00:44:08.975602+00:00",
+    "src_ip": "172.64.148.235",
+    "source_ip": "172.64.148.235",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "MEDIUM",
+    "confidence": 45,
+    "risk_score": 33,
+    "event_count": 7,
+    "duration_s": 570.7,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies detected",
+      "Provider classified as trusted \u2014 monitoring only (no non-ML indicators)",
+      "Event count: 7"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T00:13:26.767536+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-3BC1D64A",
+    "incident_id": "INC-1759CAD4",
+    "timestamp": "2026-05-20T00:44:08.976825+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 72,
+    "risk_score": 72,
+    "event_count": 24,
+    "duration_s": 520.2,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER_AGGREGATED",
+      "ML_OTHER"
+    ],
+    "closed_at": "2026-05-22T00:13:26.767536+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-9F16B591",
+    "incident_id": "INC-5764ABDB",
+    "timestamp": "2026-05-20T00:44:24.098577+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 83,
+    "risk_score": 83,
+    "event_count": 65,
+    "duration_s": 605.7,
+    "status": "closed",
+    "explanation": [
+      "ML anomaly burst (65 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (606s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 3
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T00:13:26.767536+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-81C9D4D9",
+    "incident_id": "INC-52B34141",
+    "timestamp": "2026-05-20T00:44:24.099270+00:00",
+    "src_ip": "192.168.1.7",
+    "source_ip": "192.168.1.7",
+    "category": "Reconnaissance",
+    "attack_chain": "Reconnaissance",
+    "severity": "HIGH",
+    "confidence": 72,
+    "risk_score": 72,
+    "event_count": 34,
+    "duration_s": 601.4,
+    "status": "closed",
+    "explanation": [
+      "Port scan detected",
+      "ML anomaly from same source IP",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY",
+      "PORT_SCAN",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T00:13:26.767536+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-A4A82EA7",
+    "incident_id": "INC-69DF5C3A",
+    "timestamp": "2026-05-20T00:44:24.101657+00:00",
+    "src_ip": "192.168.1.1",
+    "source_ip": "192.168.1.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 76,
+    "risk_score": 76,
+    "event_count": 24,
+    "duration_s": 535.4,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies (24 events)",
+      "Port scan preceding anomaly",
+      "Sustained anomalous activity (535s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 2
+    },
+    "alert_types": [
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER_AGGREGATED",
+      "ML_OTHER"
+    ],
+    "closed_at": "2026-05-22T00:13:26.767536+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-D4FA06C7",
+    "incident_id": "INC-85A9FB0D",
+    "timestamp": "2026-05-20T00:44:39.181629+00:00",
+    "src_ip": "192.168.1.2",
+    "source_ip": "192.168.1.2",
+    "category": "Recon + Exploit",
+    "attack_chain": "Recon + Exploit",
+    "severity": "HIGH",
+    "confidence": 81,
+    "risk_score": 81,
+    "event_count": 65,
+    "duration_s": 620.8,
+    "status": "closed",
+    "explanation": [
+      "Port scan followed by anomalous traffic",
+      "Attack chain: Reconnaissance \u2192 Exploitation",
+      "Multiple anomalous flows after scan",
+      "High event density (65 events)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": true,
+      "syn_flood": false,
+      "high_rate": true,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 3
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "HIGH_PACKET_RATE",
+      "PORT_SCAN",
+      "ML_ANOMALY",
+      "ML_OTHER",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T00:13:26.767536+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-6714BB58",
+    "incident_id": "INC-37AD140E",
+    "timestamp": "2026-05-22T20:11:14.814069+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 74,
+    "risk_score": 74,
+    "event_count": 3,
+    "duration_s": 58.9,
+    "status": "open",
+    "explanation": [
+      "ML anomaly burst (3 events)",
+      "Sustained anomalous activity (59s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ]
+  },
+  {
+    "id": "INC-1D669481",
+    "incident_id": "INC-BEE5135E",
+    "timestamp": "2026-05-22T21:18:56.913195+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 67,
+    "risk_score": 67,
+    "event_count": 3,
+    "duration_s": 154.8,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies (3 events)",
+      "Sustained anomalous activity (155s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY"
+    ],
+    "closed_at": "2026-05-22T21:19:24.385709+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-864DCE09",
+    "incident_id": "INC-DCF6B0C1",
+    "timestamp": "2026-05-22T21:19:26.957206+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 67,
+    "risk_score": 67,
+    "event_count": 3,
+    "duration_s": 184.9,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies (3 events)",
+      "Sustained anomalous activity (185s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY"
+    ],
+    "closed_at": "2026-05-22T21:20:26.687538+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-AF8B9CA7",
+    "incident_id": "INC-6E22337C",
+    "timestamp": "2026-05-22T21:20:27.021805+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 67,
+    "risk_score": 67,
+    "event_count": 5,
+    "duration_s": 244.9,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies (5 events)",
+      "Sustained anomalous activity (245s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY"
+    ],
+    "closed_at": "2026-05-22T21:25:26.757554+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-9589A4CA",
+    "incident_id": "INC-BCD0EF8D",
+    "timestamp": "2026-05-22T21:25:27.192740+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 67,
+    "risk_score": 67,
+    "event_count": 11,
+    "duration_s": 545.1,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies (11 events)",
+      "Sustained anomalous activity (545s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY"
+    ],
+    "closed_at": "2026-05-22T21:30:11.243539+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-085483CD",
+    "incident_id": "INC-B0B82976",
+    "timestamp": "2026-05-22T21:27:57.712935+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 63,
+    "risk_score": 47,
+    "event_count": 15,
+    "duration_s": 695.6,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine",
+      "High volume of anomalous flows (15)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY"
+    ]
+  },
+  {
+    "id": "INC-E6D08850",
+    "incident_id": "INC-8E17FB3B",
+    "timestamp": "2026-05-22T21:31:54.150483+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 67,
+    "risk_score": 67,
+    "event_count": 3,
+    "duration_s": 80.7,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies (3 events)",
+      "Sustained anomalous activity (81s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T21:34:23.995077+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-715E8534",
+    "incident_id": "INC-FA7EE924",
+    "timestamp": "2026-05-22T21:34:24.277145+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 67,
+    "risk_score": 67,
+    "event_count": 5,
+    "duration_s": 230.8,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies (5 events)",
+      "Sustained anomalous activity (231s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T21:39:24.035245+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-240DF907",
+    "incident_id": "INC-38D9FE40",
+    "timestamp": "2026-05-22T21:39:24.454920+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 67,
+    "risk_score": 67,
+    "event_count": 10,
+    "duration_s": 531.0,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies (10 events)",
+      "Sustained anomalous activity (531s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T21:44:24.056298+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-EC22FC19",
+    "incident_id": "INC-216665E6",
+    "timestamp": "2026-05-22T21:39:39.510631+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 63,
+    "risk_score": 47,
+    "event_count": 12,
+    "duration_s": 546.1,
+    "status": "closed",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine",
+      "High volume of anomalous flows (12)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T21:44:24.056298+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-F8F6EDE7",
+    "incident_id": "INC-B7D3200C",
+    "timestamp": "2026-05-22T21:44:24.879714+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 74,
+    "risk_score": 74,
+    "event_count": 18,
+    "duration_s": 831.4,
+    "status": "closed",
+    "explanation": [
+      "ML anomaly burst (18 events)",
+      "Sustained anomalous activity (831s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T21:44:38.888278+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-F5C7B204",
+    "incident_id": "INC-9F2A6F78",
+    "timestamp": "2026-05-22T21:44:39.913025+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 74,
+    "risk_score": 74,
+    "event_count": 19,
+    "duration_s": 846.5,
+    "status": "closed",
+    "explanation": [
+      "ML anomaly burst (19 events)",
+      "Sustained anomalous activity (846s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T21:49:24.095179+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-9EA1EE52",
+    "incident_id": "INC-87395409",
+    "timestamp": "2026-05-22T21:44:54.960472+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 63,
+    "risk_score": 47,
+    "event_count": 19,
+    "duration_s": 861.5,
+    "status": "closed",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine",
+      "High volume of anomalous flows (19)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T21:49:24.095179+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-0300B8AF",
+    "incident_id": "INC-86AE512B",
+    "timestamp": "2026-05-22T21:49:25.085765+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 74,
+    "risk_score": 74,
+    "event_count": 27,
+    "duration_s": 1131.6,
+    "status": "closed",
+    "explanation": [
+      "ML anomaly burst (27 events)",
+      "Sustained anomalous activity (1132s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T21:54:24.110741+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-C71DAB90",
+    "incident_id": "INC-B2B0F400",
+    "timestamp": "2026-05-22T21:49:40.111733+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 63,
+    "risk_score": 47,
+    "event_count": 27,
+    "duration_s": 1146.7,
+    "status": "closed",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine",
+      "High volume of anomalous flows (27)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T21:54:24.110741+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-C5CAEB6C",
+    "incident_id": "INC-0B4D5B8C",
+    "timestamp": "2026-05-22T21:54:25.205467+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 74,
+    "risk_score": 74,
+    "event_count": 29,
+    "duration_s": 1431.8,
+    "status": "closed",
+    "explanation": [
+      "ML anomaly burst (29 events)",
+      "Sustained anomalous activity (1432s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T21:59:24.122458+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-CA3304F2",
+    "incident_id": "INC-14985D2D",
+    "timestamp": "2026-05-22T21:54:40.227501+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 63,
+    "risk_score": 47,
+    "event_count": 30,
+    "duration_s": 1446.8,
+    "status": "closed",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine",
+      "High volume of anomalous flows (30)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T21:59:24.122458+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-EE7EE322",
+    "incident_id": "INC-FD8B5CF8",
+    "timestamp": "2026-05-22T21:59:25.319648+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 74,
+    "risk_score": 74,
+    "event_count": 33,
+    "duration_s": 1731.9,
+    "status": "closed",
+    "explanation": [
+      "ML anomaly burst (33 events)",
+      "Sustained anomalous activity (1732s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T22:04:24.133639+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-77E44A64",
+    "incident_id": "INC-FDF79C1A",
+    "timestamp": "2026-05-22T21:59:40.344607+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 63,
+    "risk_score": 47,
+    "event_count": 33,
+    "duration_s": 1746.9,
+    "status": "closed",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine",
+      "High volume of anomalous flows (33)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T22:04:24.133639+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-4D090C44",
+    "incident_id": "INC-87ACDEFC",
+    "timestamp": "2026-05-22T22:04:25.441738+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 67,
+    "risk_score": 67,
+    "event_count": 3,
+    "duration_s": 184.9,
+    "status": "closed",
+    "explanation": [
+      "Repeated ML anomalies (3 events)",
+      "Sustained anomalous activity (185s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": false,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY"
+    ],
+    "closed_at": "2026-05-22T22:50:36.310867+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-E629C929",
+    "incident_id": "INC-17D60851",
+    "timestamp": "2026-05-22T22:48:26.398246+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 74,
+    "risk_score": 74,
+    "event_count": 4,
+    "duration_s": 59.6,
+    "status": "closed",
+    "explanation": [
+      "ML anomaly burst (4 events)",
+      "Sustained anomalous activity (60s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T22:50:36.310867+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-A6F2A929",
+    "incident_id": "INC-FACB83FD",
+    "timestamp": "2026-05-22T22:50:41.472534+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 74,
+    "risk_score": 74,
+    "event_count": 8,
+    "duration_s": 194.7,
+    "status": "closed",
+    "explanation": [
+      "ML anomaly burst (8 events)",
+      "Sustained anomalous activity (195s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T22:55:36.325333+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-47FE8BA2",
+    "incident_id": "INC-CC9E52BE",
+    "timestamp": "2026-05-22T22:51:11.620079+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 63,
+    "risk_score": 47,
+    "event_count": 9,
+    "duration_s": 224.8,
+    "status": "closed",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine",
+      "High volume of anomalous flows (9)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T22:55:36.325333+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-CB1ADB3D",
+    "incident_id": "INC-FCE4AA21",
+    "timestamp": "2026-05-22T22:55:41.934386+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 74,
+    "risk_score": 74,
+    "event_count": 17,
+    "duration_s": 495.1,
+    "status": "closed",
+    "explanation": [
+      "ML anomaly burst (17 events)",
+      "Sustained anomalous activity (495s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T23:00:36.338139+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-B630C272",
+    "incident_id": "INC-167DB516",
+    "timestamp": "2026-05-22T22:55:56.974163+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 63,
+    "risk_score": 47,
+    "event_count": 17,
+    "duration_s": 510.2,
+    "status": "closed",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine",
+      "High volume of anomalous flows (17)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ],
+    "closed_at": "2026-05-22T23:00:36.338139+00:00",
+    "closed_by": "sweep"
+  },
+  {
+    "id": "INC-0B2AE448",
+    "incident_id": "INC-C0E93918",
+    "timestamp": "2026-05-22T23:00:42.062076+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Intrusion Attempt",
+    "attack_chain": "Intrusion Attempt",
+    "severity": "HIGH",
+    "confidence": 74,
+    "risk_score": 74,
+    "event_count": 25,
+    "duration_s": 795.2,
+    "status": "open",
+    "explanation": [
+      "ML anomaly burst (25 events)",
+      "Sustained anomalous activity (795s)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ]
+  },
+  {
+    "id": "INC-93D4EBA1",
+    "incident_id": "INC-6162A43C",
+    "timestamp": "2026-05-22T23:00:57.086677+00:00",
+    "src_ip": "172.19.32.1",
+    "source_ip": "172.19.32.1",
+    "category": "Suspicious Traffic Burst",
+    "attack_chain": "Suspicious Traffic Burst",
+    "severity": "MEDIUM",
+    "confidence": 63,
+    "risk_score": 47,
+    "event_count": 25,
+    "duration_s": 810.3,
+    "status": "open",
+    "explanation": [
+      "Anomalous traffic burst detected by ML engine",
+      "High volume of anomalous flows (25)",
+      "Provider context: Private Network (threshold adjusted)"
+    ],
+    "evidence": {
+      "port_scan": false,
+      "syn_flood": false,
+      "high_rate": false,
+      "ml_anomaly": true,
+      "ml_burst": true,
+      "indicator_count": 1
+    },
+    "alert_types": [
+      "ML_ANOMALY",
+      "ML_ANOMALY_BURST",
+      "ML_ANOMALY_AGGREGATED",
+      "ML_ANOMALY_BURST_AGGREGATED"
+    ]
+  }
+]

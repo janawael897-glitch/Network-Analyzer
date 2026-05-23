@@ -1,0 +1,70 @@
+(venv) D:\network-analyzer-project jeeeeeeeeee>python -c "
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>import sys
+'import' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>sys.path.insert(0,'code')
+'sys.path.insert' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>from ml_detector import get_detector
+'from' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>d = get_detector()
+'d' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>print('Threshold:', d.iso_threshold)
+Unable to initialize device PRN
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>print('Ready:', d.ready)
+Unable to initialize device PRN
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>
+(venv) D:\network-analyzer-project jeeeeeeeeee>from scapy.all import sniff
+'from' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>from scapy.layers.inet import IP
+'from' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>
+(venv) D:\network-analyzer-project jeeeeeeeeee>count = [0]
+'count' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>def test_pkt(pkt):
+'def' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>    if count[0] >= 20:
+> was unexpected at this time.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>        return
+'return' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>    if pkt.haslayer(IP):
+The syntax of the command is incorrect.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>        result = d.score_packet(pkt)
+'result' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>        count[0] += 1
+'count[0]' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>        print(f'Pkt {count[0]}: src={pkt[IP].src} -> alert={result is not None} | {result[\"alert_type\"] if result else \"no alert\"}')
+The system cannot find the path specified.
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>
+(venv) D:\network-analyzer-project jeeeeeeeeee>print('Capturing 20 packets...')
+Unable to initialize device PRN
+
+(venv) D:\network-analyzer-project jeeeeeeeeee>sniff(count=20, prn=test_pkt, store=False)
+'sniff' is not recognized as an internal or external command,
+operable program or batch file.
