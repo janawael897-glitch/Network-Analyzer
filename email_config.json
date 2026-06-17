@@ -1,0 +1,20 @@
+<<<<<<< HEAD
+{
+  "enabled": false,
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": 587,
+  "sender": "",
+  "password": "",
+  "recipient": "",
+  "min_severity": "HIGH"
+=======
+{
+  "enabled": false,
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": 587,
+  "sender": "",
+  "password": "",
+  "recipient": "",
+  "min_severity": "HIGH"
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+}

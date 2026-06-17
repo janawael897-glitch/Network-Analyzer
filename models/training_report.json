@@ -1,0 +1,18 @@
+{
+  "trained_at": "2026-05-22T20:17:01.733001",
+  "training_time_s": 11.78,
+  "n_train_samples": 6000,
+  "normal_only_training": true,
+  "leakage_free": true,
+  "threshold": -0.546,
+  "precision": 0.6435,
+  "recall": 1.0,
+  "f1": 0.7831,
+  "false_positive_rate": 0.1847,
+  "true_positives": 500,
+  "false_positives": 277,
+  "true_negatives": 1223,
+  "false_negatives": 0,
+  "test_normal": 1500,
+  "test_malicious": 500
+}

@@ -1,0 +1,72 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+# PacketGuard — Requirements
+# Python 3.9+
+# Install: pip install -r requirements.txt
+
+# ── Core packet capture & analysis ───────────────────────────────
+scapy>=2.5.0
+
+# ── Data processing ───────────────────────────────────────────────
+numpy>=1.21.0
+pandas>=1.3.0
+
+# ── Machine Learning (CICIDS2017 Random Forest) ───────────────────
+scikit-learn>=1.0.0
+joblib>=1.1.0
+
+# ── Web framework & API ───────────────────────────────────────────
+flask>=2.0.0
+flask-cors>=3.0.10
+
+# ── Network utilities ─────────────────────────────────────────────
+netifaces>=0.11.0
+psutil>=5.9.0
+
+# ── Utilities ─────────────────────────────────────────────────────
+python-dateutil>=2.8.0
+python-dotenv>=0.19.0
+=======
+# Network Analyzer Requirements
+=======
+# PacketGuard — Requirements
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+# Python 3.9+
+# Install: pip install -r requirements.txt
+
+# ── Core packet capture & analysis ───────────────────────────────
+scapy>=2.5.0
+
+# ── Data processing ───────────────────────────────────────────────
+numpy>=1.21.0
+pandas>=1.3.0
+
+# ── Machine Learning (CICIDS2017 Random Forest) ───────────────────
+scikit-learn>=1.0.0
+joblib>=1.1.0
+
+# ── Web framework & API ───────────────────────────────────────────
+flask>=2.0.0
+flask-cors>=3.0.10
+
+# ── Network utilities ─────────────────────────────────────────────
+netifaces>=0.11.0
+psutil>=5.9.0
+
+# ── Geo-IP (offline MaxMind database — optional but recommended) ──
+# After install, download GeoLite2-City.mmdb from maxmind.com (free)
+# and place it in the project root.  Falls back to ipapi.co if absent.
+geoip2>=4.6.0
+
+# ── Utilities ─────────────────────────────────────────────────────
+python-dateutil>=2.8.0
+python-dotenv>=0.19.0
+<<<<<<< HEAD
+pyyaml>=6.0
+
+# Optional: For advanced features
+# torch>=1.10.0  # PyTorch for deep learning
+# imbalanced-learn>=0.9.0  # For handling imbalanced datasets (SMOTE)
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)

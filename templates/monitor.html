@@ -1,0 +1,968 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+﻿<!DOCTYPE html>
+=======
+<!DOCTYPE html>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+﻿<!DOCTYPE html>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<title>PacketGuard â€” Live Monitor</title>
+=======
+<title>PacketGuard — Live Monitor</title>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+<title>PacketGuard â€” Live Monitor</title>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#020508;--surface:#060c14;--surface2:#0a1520;
+  --border:#0f2035;--border2:#1a3050;
+  --accent:#00d4ff;--accent2:#ff2d6b;--accent3:#00ff9d;--warn:#ffb800;
+  --text:#b8cfe8;--text2:#6a8aaa;--white:#e8f4ff;
+  --card:rgba(6,12,20,0.95);--danger:#ef4444;
+  --fm:'Share Tech Mono',monospace;--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif;
+}
+<<<<<<< HEAD
+<<<<<<< HEAD
+html{scroll-behavior:auto}
+=======
+html{scroll-behavior:smooth}
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+html{scroll-behavior:auto}
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+body{background:var(--bg);color:var(--text);font-family:var(--fb);overflow-x:hidden;min-height:100vh}
+
+/* BG */
+.bg-orbs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);animation:od 20s ease-in-out infinite alternate}
+.orb1{width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,255,.055),transparent 70%);top:-200px;left:-100px}
+.orb2{width:500px;height:500px;background:radial-gradient(circle,rgba(0,255,157,.04),transparent 70%);bottom:-100px;right:-100px;animation-delay:-10s}
+@keyframes od{0%{transform:translate(0,0)}100%{transform:translate(30px,25px)}}
+.bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:50px 50px;opacity:.35;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:62px;
+  background:rgba(2,5,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:17px;font-weight:800;color:var(--white);letter-spacing:2px;text-decoration:none}
+.nav-logo-icon{width:30px;height:30px;border-radius:6px;background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(0,255,157,.1));
+  border:1px solid rgba(0,212,255,.3);display:flex;align-items:center;justify-content:center;
+  font-family:var(--fm);font-size:10px;color:var(--accent);font-weight:700;box-shadow:0 0 12px rgba(0,212,255,.2)}
+.nav-r{display:flex;align-items:center;gap:14px}
+.user-pill{display:flex;align-items:center;gap:8px;padding:5px 14px;border-radius:20px;
+  background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.15);
+  font-family:var(--fm);font-size:11px;color:var(--accent)}
+.udot{width:7px;height:7px;border-radius:50%;background:var(--accent3);animation:bl 1.5s ease-in-out infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
+.btn-dash{padding:7px 18px;border-radius:6px;font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:1px;
+  background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);color:var(--accent);cursor:pointer;transition:all .2s;text-decoration:none}
+.btn-dash:hover{background:rgba(0,212,255,.18);box-shadow:0 0 20px rgba(0,212,255,.2)}
+.btn-logout{padding:7px 14px;border-radius:6px;font-size:12px;background:transparent;
+  border:1px solid rgba(239,68,68,.3);color:#ef4444;cursor:pointer;font-family:var(--fb);transition:all .2s}
+.btn-logout:hover{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.6)}
+
+/* MAIN */
+main{position:relative;z-index:1;padding:100px 40px 60px;max-width:1100px;margin:0 auto}
+
+/* HERO */
+.hero{text-align:center;margin-bottom:3rem;animation:fu .6s ease both}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:20px;
+  background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.18);
+  font-family:var(--fm);font-size:11px;color:var(--accent);letter-spacing:2px;margin-bottom:1.4rem}
+.hero-badge .bdot{width:6px;height:6px;border-radius:50%;background:var(--accent3);animation:bl 1.5s ease-in-out infinite}
+.hero h1{font-family:var(--fd);font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:1rem}
+<<<<<<< HEAD
+<<<<<<< HEAD
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+=======
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+.hero p{font-size:1rem;color:var(--text2);max-width:520px;margin:0 auto}
+
+/* CONTROL PANEL */
+.panel{background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:2rem;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);margin-bottom:2rem;animation:fu .6s .1s ease both;position:relative;overflow:hidden}
+.panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(0,212,255,.3),transparent)}
+.panel-title{font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--accent);margin-bottom:1.4rem;
+  display:flex;align-items:center;gap:8px}
+.panel-title::before{content:'';width:16px;height:1px;background:var(--accent)}
+.input-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:1.4rem}
+.pg-input{flex:1;min-width:200px;padding:.9rem 1.1rem;background:rgba(4,10,18,.8);
+  border:1px solid var(--border2);border-radius:8px;color:var(--white);font-size:.95rem;font-family:var(--fb);
+  transition:border-color .2s,box-shadow .2s}
+.pg-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,255,.12)}
+.pg-input option{background:#040a12}
+
+/* Feature toggles */
+.features-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1.6rem}
+.feat-toggle{display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:8px;
+  background:rgba(0,212,255,.04);border:1px solid var(--border2);cursor:pointer;transition:all .2s;
+  font-size:13px;color:var(--text2);font-family:var(--fb);user-select:none}
+.feat-toggle:hover{border-color:rgba(0,212,255,.3);color:var(--text)}
+.feat-toggle.active{background:rgba(0,212,255,.1);border-color:rgba(0,212,255,.4);color:var(--accent)}
+.feat-toggle i{font-size:12px}
+.feat-toggle .toggle-dot{width:8px;height:8px;border-radius:50%;background:var(--border2);transition:background .2s}
+.feat-toggle.active .toggle-dot{background:var(--accent3)}
+
+.start-btn{width:100%;padding:1rem;border-radius:10px;font-family:var(--fd);font-weight:700;font-size:1rem;
+  letter-spacing:2px;cursor:pointer;transition:all .25s;text-transform:uppercase;
+  background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(0,255,157,.08));
+  border:1px solid rgba(0,212,255,.4);color:var(--white);
+  box-shadow:0 0 30px rgba(0,212,255,.1)}
+.start-btn:hover{box-shadow:0 0 50px rgba(0,212,255,.25);border-color:rgba(0,212,255,.7);transform:translateY(-2px)}
+.start-btn.running{background:linear-gradient(135deg,rgba(239,68,68,.15),rgba(239,68,68,.08));
+  border-color:rgba(239,68,68,.4);box-shadow:0 0 30px rgba(239,68,68,.1)}
+.start-btn.running:hover{box-shadow:0 0 50px rgba(239,68,68,.25);border-color:rgba(239,68,68,.7)}
+
+/* DASHBOARD STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:1.5rem;animation:fu .6s .2s ease both}
+.stat-card{background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:1.4rem;
+  transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent-line,rgba(0,212,255,.25)),transparent)}
+.stat-card:hover{border-color:rgba(0,212,255,.3);transform:translateY(-3px)}
+.stat-card:nth-child(2){--accent-line:rgba(0,255,157,.25)}
+.stat-card:nth-child(3){--accent-line:rgba(255,184,0,.25)}
+.stat-card:nth-child(4){--accent-line:rgba(239,68,68,.25)}
+.stat-label{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--text2);margin-bottom:.8rem;text-transform:uppercase}
+.stat-val{font-family:var(--fm);font-size:2rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:.4rem}
+.stat-val small{font-size:.9rem;color:var(--text2)}
+.stat-sub{font-size:.85rem;color:var(--text2)}
+
+/* RISK SCALE */
+.risk-card{background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:1.6rem;
+  margin-bottom:1.5rem;animation:fu .6s .25s ease both}
+.risk-title{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--text2);margin-bottom:1.2rem;text-transform:uppercase}
+.scale-bar{height:14px;border-radius:999px;
+  background:linear-gradient(to right,#10b981 0%,#f59e0b 50%,#ef4444 100%);
+  position:relative;margin-bottom:.8rem;box-shadow:0 0 20px rgba(0,0,0,.3)}
+.scale-indicator{position:absolute;top:50%;transform:translate(-50%,-50%);
+  width:5px;height:200%;background:white;border-radius:2px;
+  box-shadow:0 0 10px rgba(255,255,255,.8);transition:left .5s ease}
+.scale-labels{display:flex;justify-content:space-between;font-family:var(--fm);font-size:11px;margin-bottom:.8rem}
+.scale-labels .low{color:#10b981}.scale-labels .med{color:#f59e0b}.scale-labels .high{color:#ef4444}
+.risk-info{font-family:var(--fm);font-size:12px;color:var(--text2);text-align:center}
+
+/* LIVE GRAPH PLACEHOLDER */
+.graph-card{background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:1.6rem;
+  margin-bottom:1.5rem;animation:fu .6s .3s ease both}
+.graph-title{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--text2);margin-bottom:1rem;text-transform:uppercase}
+.graph-body{height:180px;display:flex;align-items:center;justify-content:center;
+  gap:12px;color:var(--text2);font-family:var(--fm);font-size:12px;
+  border:1px dashed var(--border2);border-radius:8px}
+.graph-bars{display:flex;align-items:flex-end;gap:4px;height:80px}
+.bar{width:8px;border-radius:3px 3px 0 0;background:rgba(0,212,255,.3);animation:bh 1.5s ease-in-out infinite alternate}
+@keyframes bh{0%{transform:scaleY(.3)}100%{transform:scaleY(1)}}
+
+/* PORTS */
+.ports-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;animation:fu .6s .35s ease both}
+.port-card{background:rgba(4,10,18,.8);border:1px solid var(--border2);border-radius:10px;padding:1.2rem}
+.port-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+.port-num{font-family:var(--fm);font-size:1.4rem;font-weight:700;color:var(--accent)}
+.port-badge{padding:3px 10px;border-radius:4px;font-family:var(--fm);font-size:10px;font-weight:700;letter-spacing:1px}
+.port-badge.open{background:rgba(0,255,157,.08);color:var(--accent3);border:1px solid rgba(0,255,157,.2)}
+.port-badge.closed{background:rgba(239,68,68,.08);color:#ef4444;border:1px solid rgba(239,68,68,.2)}
+.port-badge.filter{background:rgba(255,184,0,.08);color:var(--warn);border:1px solid rgba(255,184,0,.2)}
+.port-svc{font-family:var(--fm);font-size:.8rem;color:var(--text2)}
+
+/* ALERT SECTION */
+.alert-card{background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:1.6rem;
+  margin-bottom:1.5rem;animation:fu .6s .28s ease both;max-height:300px;overflow-y:auto}
+.alert-card::-webkit-scrollbar{width:4px}
+.alert-card::-webkit-scrollbar-track{background:var(--surface)}
+.alert-card::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.alert-line{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-family:var(--fm);font-size:11px}
+.alert-line:last-child{border-bottom:none}
+.alert-time{color:var(--text2);min-width:70px}
+.alert-badge{padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:1px}
+.badge-CRITICAL{background:rgba(255,45,85,.1);color:#ff2d55;border:1px solid rgba(255,45,85,.2)}
+.badge-HIGH{background:rgba(255,100,0,.1);color:#ff6400;border:1px solid rgba(255,100,0,.2)}
+.badge-MEDIUM{background:rgba(255,184,0,.08);color:var(--warn);border:1px solid rgba(255,184,0,.2)}
+.alert-msg{color:var(--text);flex:1}
+.empty-state{text-align:center;padding:2rem;color:var(--text2);font-family:var(--fm);font-size:12px}
+
+/* BOTTOM NAV */
+.bottom-bar{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;
+  padding:1.2rem 1.6rem;background:var(--card);border:1px solid var(--border2);border-radius:12px;
+  animation:fu .6s .4s ease both}
+.bb-info{font-family:var(--fm);font-size:11px;color:var(--text2)}
+.bb-info span{color:var(--accent)}
+.btn-full-dash{padding:10px 24px;border-radius:8px;font-family:var(--fd);font-weight:700;font-size:13px;
+  letter-spacing:1.5px;background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(157,111,255,.1));
+  border:1px solid rgba(0,212,255,.4);color:var(--white);cursor:pointer;transition:all .2s;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px}
+.btn-full-dash:hover{box-shadow:0 0 30px rgba(0,212,255,.2);transform:translateY(-2px)}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+/* DASHBOARD always visible */
+#live-dashboard{display:block}
+#live-dashboard.show #dash-waiting{display:none}
+#dash-waiting{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:3rem 2rem;gap:1rem;color:var(--text2);font-family:var(--fm);font-size:13px;
+  letter-spacing:1px;text-align:center;
+}
+#dash-waiting .wait-icon{font-size:2.5rem;color:var(--border2);margin-bottom:.5rem}
+.stats-grid,.risk-card,.alert-card,.graph-card,.bottom-bar,#portsSection{
+  opacity:0;pointer-events:none;transition:opacity .4s ease;
+}
+#live-dashboard.show .stats-grid,
+#live-dashboard.show .risk-card,
+#live-dashboard.show .alert-card,
+#live-dashboard.show .graph-card,
+#live-dashboard.show .bottom-bar{
+  opacity:1;pointer-events:auto;
+}
+
+[data-theme="light"]{
+  --bg:#ffffff;--surface:#f4f7fb;--surface2:#edf1f7;
+  --border:#d0dce8;--border2:#b8ccde;
+  --text:#1a2f48;--text2:#5a7a9a;--white:#1a2f48;
+  --card:rgba(255,255,255,0.98);--accent:#0077aa;--accent3:#00aa66;
+}
+[data-theme="light"] body{background:#ffffff;background-image:none}
+[data-theme="light"] body::before{display:none}
+[data-theme="light"] body::after{display:none}
+[data-theme="light"] nav{background:rgba(255,255,255,.95);border-bottom:1px solid var(--border)}
+[data-theme="light"] .panel{background:#ffffff;border-color:var(--border);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+[data-theme="light"] .stat-card{background:#ffffff;border-color:var(--border);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+[data-theme="light"] .stat-num{color:var(--text)}
+[data-theme="light"] .start-btn{background:linear-gradient(135deg,rgba(0,119,170,.15),rgba(0,170,102,.1));border-color:rgba(0,119,170,.4)}
+[data-theme="light"] .toggle-feature{background:rgba(0,119,170,.06);border-color:var(--border)}
+[data-theme="light"] .toggle-feature.active{background:rgba(0,119,170,.12);border-color:rgba(0,119,170,.4)}
+[data-theme="light"] .finput,.finput-wrap input{background:#f4f7fb;border-color:var(--border);color:var(--text)}
+[data-theme="light"] .pg-input{background:#f4f7fb;border-color:var(--border);color:var(--text)}
+[data-theme="light"] .pg-input option{background:#ffffff;color:var(--text)}
+[data-theme="light"] select{background:#f4f7fb;border-color:var(--border);color:var(--text)}
+[data-theme="light"] .alert-card{background:#f8fafc;border-color:var(--border)}
+[data-theme="light"] .alert-item{border-color:var(--border)}
+[data-theme="light"] .bottom-bar{background:#ffffff;border-color:var(--border)}
+[data-theme="light"] .hero h1{color:var(--text)}
+[data-theme="light"] .hero h1 span{-webkit-text-fill-color:var(--accent)}
+
+/* Theme toggle button */
+.btn-theme{padding:7px 12px;border-radius:6px;font-size:14px;background:transparent;
+  border:1px solid var(--border2);color:var(--text2);cursor:pointer;transition:all .2s;line-height:1}
+.btn-theme:hover{border-color:var(--accent);color:var(--accent)}
+
+<<<<<<< HEAD
+=======
+/* HIDDEN DASHBOARD */
+#live-dashboard{display:none}
+#live-dashboard.show{display:block}
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+</style>
+</head>
+<body>
+
+<div class="bg-orbs"><div class="orb orb1"></div><div class="orb orb2"></div></div>
+<div class="bg-grid"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">
+    <div class="nav-logo-icon">PG</div>
+    PACKETGUARD
+  </a>
+  <div class="nav-r">
+    <div class="user-pill"><div class="udot"></div><span id="nav-username">User</span></div>
+    <a class="btn-dash" href="/dashboard">Full Dashboard</a>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <button class="btn-theme" id="theme-btn" onclick="toggleTheme()" title="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+=======
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+    <button class="btn-theme" id="theme-btn" onclick="toggleTheme()" title="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+    <button class="btn-logout" onclick="handleLogout()">Log Out</button>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge"><div class="bdot"></div>LIVE NETWORK MONITOR</div>
+    <h1>Start <span>Protecting</span> Your Network</h1>
+    <p>Enter a target IP, choose your scan options and features, then launch real-time packet monitoring.</p>
+  </div>
+
+  <!-- CONTROL PANEL -->
+  <div class="panel">
+    <div class="panel-title">// MONITOR CONFIGURATION</div>
+
+    <div class="input-row">
+      <input type="text" class="pg-input" id="targetIp" placeholder="Target IP / Range (e.g. 192.168.1.0/24)" value="192.168.1.1"/>
+      <select class="pg-input" id="scanType">
+        <option>Quick Scan (top 100 ports)</option>
+        <option selected>Standard (top 1000 ports)</option>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <option>Full (1â€“65535)</option>
+=======
+        <option>Full (1–65535)</option>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+        <option>Full (1â€“65535)</option>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+      </select>
+      <select class="pg-input" id="scanMode">
+        <option value="monitor">Monitor Only</option>
+        <option value="scan">Scan + Monitor</option>
+        <option value="deep">Deep Analysis</option>
+      </select>
+    </div>
+
+    <!-- Feature toggles -->
+    <div class="features-row" id="featureToggles">
+      <div class="feat-toggle active" data-feat="ml" onclick="toggleFeature(this)">
+        <div class="toggle-dot"></div><i class="fa-solid fa-brain"></i> ML Detection
+      </div>
+      <div class="feat-toggle active" data-feat="alerts" onclick="toggleFeature(this)">
+        <div class="toggle-dot"></div><i class="fa-solid fa-bell"></i> Real-Time Alerts
+      </div>
+      <div class="feat-toggle" data-feat="ports" onclick="toggleFeature(this)">
+        <div class="toggle-dot"></div><i class="fa-solid fa-network-wired"></i> Port Scanner
+      </div>
+      <div class="feat-toggle active" data-feat="rate" onclick="toggleFeature(this)">
+        <div class="toggle-dot"></div><i class="fa-solid fa-gauge-high"></i> Rate Monitor
+      </div>
+      <div class="feat-toggle" data-feat="geo" onclick="toggleFeature(this)">
+        <div class="toggle-dot"></div><i class="fa-solid fa-location-dot"></i> Geo Tracking
+      </div>
+      <div class="feat-toggle" data-feat="block" onclick="toggleFeature(this)">
+        <div class="toggle-dot"></div><i class="fa-solid fa-ban"></i> IP Blocking
+      </div>
+    </div>
+
+    <button class="start-btn" id="startBtn" onclick="toggleMonitor()">
+      <i class="fa-solid fa-play" id="startIcon"></i>&nbsp;&nbsp;<span id="startLabel">START PROTECTION</span>
+    </button>
+  </div>
+
+  <!-- LIVE DASHBOARD (shown after start) -->
+  <div id="live-dashboard">
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+    <!-- WAITING STATE -->
+    <div id="dash-waiting">
+      <div class="wait-icon"><i class="fa-solid fa-shield"></i></div>
+      <div>Click <strong style="color:var(--accent)">START PROTECTION</strong> to begin live monitoring</div>
+    </div>
+
+<<<<<<< HEAD
+=======
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+    <!-- STAT CARDS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Monitored Target</div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <div class="stat-val" id="d-ip" style="font-size:1.2rem">â€”</div>
+=======
+        <div class="stat-val" id="d-ip" style="font-size:1.2rem">—</div>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+        <div class="stat-val" id="d-ip" style="font-size:1.2rem">â€”</div>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+        <div class="stat-sub" id="d-session">Session not started</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Packets Captured</div>
+        <div class="stat-val" id="d-packets">0</div>
+        <div class="stat-sub">Since session started</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Live Traffic Rate</div>
+        <div class="stat-val" id="d-pps">0 <small>pkt/s</small></div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <div class="stat-sub"><span id="d-kbs">0 KB/s</span> &nbsp;â€¢&nbsp; <span id="d-change">+0%</span></div>
+=======
+        <div class="stat-sub"><span id="d-kbs">0 KB/s</span> &nbsp;•&nbsp; <span id="d-change">+0%</span></div>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+        <div class="stat-sub"><span id="d-kbs">0 KB/s</span> &nbsp;â€¢&nbsp; <span id="d-change">+0%</span></div>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Suspicious Packets</div>
+        <div class="stat-val" id="d-susp" style="color:#f59e0b">0</div>
+        <div class="stat-sub">Flagged by anomaly detector</div>
+      </div>
+    </div>
+
+    <!-- RISK SCALE -->
+    <div class="risk-card">
+      <div class="risk-title">Malicious Traffic Risk Level</div>
+      <div class="scale-bar"><div class="scale-indicator" id="riskIndicator" style="left:15%"></div></div>
+      <div class="scale-labels"><span class="low">Safe</span><span class="med">Warning</span><span class="high">Critical</span></div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div class="risk-info">Current Risk: <strong id="riskLevel" style="color:#10b981">Low</strong> &nbsp;â€¢&nbsp; <span id="d-susp2">0</span> suspicious packets</div>
+=======
+      <div class="risk-info">Current Risk: <strong id="riskLevel" style="color:#10b981">Low</strong> &nbsp;•&nbsp; <span id="d-susp2">0</span> suspicious packets</div>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+      <div class="risk-info">Current Risk: <strong id="riskLevel" style="color:#10b981">Low</strong> &nbsp;â€¢&nbsp; <span id="d-susp2">0</span> suspicious packets</div>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+    </div>
+
+    <!-- ALERTS FEED (shown if alerts feature active) -->
+    <div class="alert-card" id="alertSection">
+      <div class="panel-title" style="margin-bottom:1rem">// LIVE ALERTS FEED</div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div id="alertFeed"><div class="empty-state"><i class="fa-solid fa-shield-check" style="font-size:1.5rem;margin-bottom:.5rem;display:block;color:var(--accent3)"></i>No threats detected â€” network is clean</div></div>
+=======
+      <div id="alertFeed"><div class="empty-state"><i class="fa-solid fa-shield-check" style="font-size:1.5rem;margin-bottom:.5rem;display:block;color:var(--accent3)"></i>No threats detected — network is clean</div></div>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+      <div id="alertFeed"><div class="empty-state"><i class="fa-solid fa-shield-check" style="font-size:1.5rem;margin-bottom:.5rem;display:block;color:var(--accent3)"></i>No threats detected â€” network is clean</div></div>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+    </div>
+
+    <!-- LIVE GRAPH -->
+    <div class="graph-card">
+      <div class="graph-title">Live Traffic Flow</div>
+      <div class="graph-body">
+        <div class="graph-bars" id="graphBars"></div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <span>Real-time visualization â€” Chart.js in production build</span>
+=======
+        <span>Real-time visualization — Chart.js in production build</span>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+        <span>Real-time visualization â€” Chart.js in production build</span>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+      </div>
+    </div>
+
+    <!-- PORT RESULTS (shown if port scanner active) -->
+    <div id="portsSection" style="display:none">
+      <div class="panel-title" style="margin-bottom:1rem;margin-top:1rem">// PORT SCAN RESULTS</div>
+      <div class="ports-grid" id="portsGrid"></div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bottom-bar">
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div class="bb-info">Session active on <span id="bb-ip">â€”</span> &nbsp;â€¢&nbsp; Runtime: <span id="bb-runtime">00:00</span> &nbsp;â€¢&nbsp; <span id="bb-feat-count">0</span> features enabled</div>
+      <a class="btn-full-dash" id="dashBtn" href="/dashboard"><i class="fa-solid fa-chart-line"></i> Open Full Dashboard</a>
+=======
+      <div class="bb-info">Session active on <span id="bb-ip">—</span> &nbsp;•&nbsp; Runtime: <span id="bb-runtime">00:00</span> &nbsp;•&nbsp; <span id="bb-feat-count">0</span> features enabled</div>
+      <a class="btn-full-dash" href="/dashboard"><i class="fa-solid fa-chart-line"></i> Open Full Dashboard</a>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+      <div class="bb-info">Session active on <span id="bb-ip">â€”</span> &nbsp;â€¢&nbsp; Runtime: <span id="bb-runtime">00:00</span> &nbsp;â€¢&nbsp; <span id="bb-feat-count">0</span> features enabled</div>
+      <a class="btn-full-dash" id="dashBtn" href="/dashboard"><i class="fa-solid fa-chart-line"></i> Open Full Dashboard</a>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+    </div>
+
+  </div>
+</main>
+
+<script>
+<<<<<<< HEAD
+<<<<<<< HEAD
+// â”€â”€ Session guard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+=======
+// ── Session guard ────────────────────────────────────────────────
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+// â”€â”€ Session guard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+document.documentElement.style.visibility = 'hidden';
+(async function(){
+  try {
+    const res  = await fetch('/api/auth/me');
+    const data = await res.json();
+    if (data.success && data.user) {
+      document.getElementById('nav-username').textContent = data.user.name || data.user.email;
+      document.documentElement.style.visibility = 'visible';
+      // Auto-fill real network IP
+      try {
+        const ni = await (await fetch('/api/network_info')).json();
+        if (ni.local_ip && ni.local_ip !== '127.0.0.1') {
+          document.getElementById('targetIp').value = ni.network_range || ni.local_ip;
+        }
+      } catch(e) {}
+      return;
+    }
+  } catch(e) {}
+  window.location.href = '/';
+})();
+
+function handleLogout() {
+  fetch('/api/auth/logout', { method: 'POST' }).finally(() => { window.location.href = '/'; });
+}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+// â”€â”€ Feature toggles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+=======
+// ── Feature toggles ──────────────────────────────────────────────
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+// â”€â”€ Feature toggles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+function toggleFeature(el) {
+  el.classList.toggle('active');
+  updateFeatureCount();
+}
+function updateFeatureCount() {
+  const count = document.querySelectorAll('.feat-toggle.active').length;
+  const el = document.getElementById('bb-feat-count');
+  if (el) el.textContent = count;
+}
+updateFeatureCount();
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+// â”€â”€ Live monitoring â€” real data from /api/live_state & /api/alerts â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+let monitoring = false, monInterval = null, alertPollInterval = null;
+let startTime = null, lastAlertCount = 0;
+=======
+// ── Monitoring simulation ────────────────────────────────────────
+let monitoring = false, monInterval = null;
+let totalPkts = 0, suspicious = 0, risk = 15, startTime = null;
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+// â”€â”€ Live monitoring â€” real data from /api/live_state & /api/alerts â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+let monitoring = false, monInterval = null, alertPollInterval = null;
+let startTime = null, lastAlertCount = 0;
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+
+function toggleMonitor() {
+  const btn   = document.getElementById('startBtn');
+  const icon  = document.getElementById('startIcon');
+  const label = document.getElementById('startLabel');
+  const dash  = document.getElementById('live-dashboard');
+
+  if (!monitoring) {
+    monitoring = true;
+    startTime  = Date.now();
+    btn.classList.add('running');
+    icon.className = 'fa-solid fa-stop';
+    label.textContent = 'STOP PROTECTION';
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+
+    const ip = document.getElementById('targetIp').value || '192.168.1.1';
+    document.getElementById('d-ip').textContent      = ip;
+    document.getElementById('d-session').textContent = 'Active monitoring session';
+    document.getElementById('bb-ip').textContent     = ip;
+
+    dash.classList.add('show');
+<<<<<<< HEAD
+=======
+    const ip = document.getElementById('targetIp').value || '192.168.1.1';
+    document.getElementById('d-ip').textContent     = ip;
+    document.getElementById('d-session').textContent = 'Active monitoring session';
+    document.getElementById('bb-ip').textContent    = ip;
+
+    dash.classList.add('show');
+    setTimeout(() => dash.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+
+    // Init graph bars
+    const gb = document.getElementById('graphBars');
+    gb.innerHTML = '';
+    for (let i = 0; i < 20; i++) {
+      const b = document.createElement('div');
+      b.className = 'bar';
+      b.style.height = Math.random() * 60 + 20 + 'px';
+      b.style.animationDelay = (i * 0.07) + 's';
+      gb.appendChild(b);
+    }
+
+    // Port scan if selected
+    const mode = document.getElementById('scanMode').value;
+    const portFeat = document.querySelector('[data-feat="ports"]');
+    if (mode === 'scan' || (portFeat && portFeat.classList.contains('active'))) {
+      renderPorts();
+    }
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+    // Start real data polling
+    updateLiveState();
+    monInterval      = setInterval(updateLiveState, 2000);
+    alertPollInterval = setInterval(pollAlerts, 3000);
+    setInterval(updateRuntime, 1000);
+
+<<<<<<< HEAD
+=======
+    monInterval = setInterval(updateStats, 1800);
+    setInterval(updateRuntime, 1000);
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+  } else {
+    monitoring = false;
+    btn.classList.remove('running');
+    icon.className = 'fa-solid fa-play';
+    label.textContent = 'START PROTECTION';
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+    document.getElementById('d-session').textContent = 'Session stopped';
+    clearInterval(monInterval);
+    clearInterval(alertPollInterval);
+  }
+}
+
+// â”€â”€ Real data from /api/live_state (polled every 2s) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+async function updateLiveState() {
+  if (!monitoring) return;
+  try {
+    const res  = await fetch('/api/live_state');
+    const data = await res.json();
+
+    // Packets
+    const pkts = data.total_packets || 0;
+    document.getElementById('d-packets').textContent = pkts.toLocaleString();
+
+    // Rate
+    const rate = data.rate || 0;
+    const kbs  = ((rate * 500) / 1024).toFixed(1);  // rough bytes estimate
+    document.getElementById('d-pps').innerHTML = `${rate.toFixed(1)} <small>pkt/s</small>`;
+    document.getElementById('d-kbs').textContent = `${kbs} KB/s`;
+
+    // Suspicious = total alerts
+    const susp = data.suspicious_count || 0;
+    document.getElementById('d-susp').textContent  = susp;
+    document.getElementById('d-susp2').textContent = susp;
+
+    // Risk level based on real suspicious count
+    let risk = 15;
+    if (susp > 20)     risk = 90;
+    else if (susp > 10) risk = 65;
+    else if (susp > 4)  risk = 40;
+    else if (susp > 0)  risk = 25;
+
+    document.getElementById('riskIndicator').style.left = `${risk}%`;
+    let level = 'Low', color = '#10b981';
+    if (risk > 70)      { level = 'Critical'; color = '#ef4444'; }
+    else if (risk > 35) { level = 'Warning';  color = '#f59e0b'; }
+    const rl = document.getElementById('riskLevel');
+    rl.textContent = level; rl.style.color = color;
+
+    // Animate graph bar with real rate
+    const bars = document.querySelectorAll('#graphBars .bar');
+    if (bars.length) {
+      const b = bars[Math.floor(Math.random() * bars.length)];
+      const h = Math.min(95, 15 + rate * 2);
+      b.style.height = h + 'px';
+      b.style.background = risk > 60 ? 'rgba(239,68,68,.5)' : risk > 35 ? 'rgba(255,184,0,.4)' : 'rgba(0,212,255,.4)';
+    }
+
+    // Change indicator
+    const chEl = document.getElementById('d-change');
+    const running = data.running;
+    chEl.textContent = running ? 'â— LIVE' : 'â—‹ Idle';
+    chEl.style.color = running ? '#10b981' : '#6b7280';
+
+  } catch(e) {
+    // Backend not reachable â€” show offline state quietly
+    document.getElementById('d-change').textContent = 'Offline';
+    document.getElementById('d-change').style.color = '#6b7280';
+  }
+}
+
+// â”€â”€ Real alerts from /api/alerts (polled every 3s) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+async function pollAlerts() {
+  if (!monitoring) return;
+  try {
+    const alertFeat = document.querySelector('[data-feat="alerts"]');
+    if (!alertFeat || !alertFeat.classList.contains('active')) return;
+
+    const res    = await fetch('/api/alerts');
+    const alerts = await res.json();
+    if (!Array.isArray(alerts)) return;
+
+    // Only show new alerts since last poll
+    if (alerts.length <= lastAlertCount) return;
+    const newAlerts = alerts.slice(lastAlertCount);
+    lastAlertCount  = alerts.length;
+
+    const feed = document.getElementById('alertFeed');
+    if (feed.querySelector('.empty-state')) feed.innerHTML = '';
+
+    newAlerts.reverse().forEach(a => {
+      const sev = a.severity || 'MEDIUM';
+      const msg = a.message  || a.alert_type || 'Threat detected';
+      const src = a.source_ip      ? `<span style="color:#f97316">${a.source_ip}</span>` : '';
+      const dst = a.destination_ip ? `<span style="color:#00c8ff">${a.destination_ip}</span>` : '';
+      const ips = (src && dst) ? ` &nbsp;Â·&nbsp; ${src} â†’ ${dst}` : (src || dst);
+
+      const ts  = new Date(a.timestamp);
+      const t   = isNaN(ts) ? '' : ts.toLocaleTimeString('en-GB');
+
+      const div = document.createElement('div');
+      div.className = 'alert-line';
+      div.innerHTML = `
+        <span class="alert-time">${t}</span>
+        <span class="alert-badge badge-${sev}">${sev}</span>
+        <span class="alert-msg">${msg}${ips}</span>`;
+      feed.prepend(div);
+      while (feed.children.length > 30) feed.removeChild(feed.lastChild);
+    });
+
+  } catch(e) { /* silently skip */ }
+<<<<<<< HEAD
+=======
+    clearInterval(monInterval);
+  }
+}
+
+function updateStats() {
+  if (!monitoring) return;
+
+  const newPkts = Math.floor(Math.random() * 120) + 30;
+  totalPkts += newPkts;
+  const pps  = Math.floor(newPkts / 1.8);
+  const kbs  = (pps * (Math.random() * 800 + 200) / 1024).toFixed(1);
+  const chg  = (Math.random() * 40 - 20).toFixed(1);
+
+  document.getElementById('d-packets').textContent = totalPkts.toLocaleString();
+  document.getElementById('d-pps').innerHTML = `${pps} <small>pkt/s</small>`;
+  document.getElementById('d-kbs').textContent = `${kbs} KB/s`;
+  const chEl = document.getElementById('d-change');
+  chEl.textContent = chg >= 0 ? `+${chg}%` : `${chg}%`;
+  chEl.style.color = chg >= 0 ? '#10b981' : '#ef4444';
+
+  // Risk simulation
+  if (Math.random() > .82) { suspicious += Math.floor(Math.random() * 3) + 1; risk = Math.min(100, risk + 9); }
+  else if (Math.random() > .4) { risk = Math.max(0, risk - 3); }
+
+  document.getElementById('d-susp').textContent  = suspicious;
+  document.getElementById('d-susp2').textContent = suspicious;
+  document.getElementById('riskIndicator').style.left = `${risk}%`;
+
+  let level = 'Low', color = '#10b981';
+  if (risk > 70) { level = 'Critical'; color = '#ef4444'; }
+  else if (risk > 35) { level = 'Warning'; color = '#f59e0b'; }
+  const rl = document.getElementById('riskLevel');
+  rl.textContent = level; rl.style.color = color;
+
+  // Fake alert if alerts feature on and high risk
+  const alertFeat = document.querySelector('[data-feat="alerts"]');
+  if (alertFeat && alertFeat.classList.contains('active') && risk > 40 && Math.random() > .7) {
+    addFakeAlert();
+  }
+
+  // Animate graph bar
+  const bars = document.querySelectorAll('#graphBars .bar');
+  if (bars.length) {
+    const b = bars[Math.floor(Math.random() * bars.length)];
+    b.style.height = (Math.random() * 70 + 15) + 'px';
+    b.style.background = risk > 60 ? 'rgba(239,68,68,.5)' : risk > 35 ? 'rgba(255,184,0,.4)' : 'rgba(0,212,255,.4)';
+  }
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+}
+
+function updateRuntime() {
+  if (!monitoring || !startTime) return;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  const s   = Math.floor((Date.now() - startTime) / 1000);
+  const m   = String(Math.floor(s / 60)).padStart(2,'0');
+=======
+  const s = Math.floor((Date.now() - startTime) / 1000);
+  const m = String(Math.floor(s / 60)).padStart(2,'0');
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+  const s   = Math.floor((Date.now() - startTime) / 1000);
+  const m   = String(Math.floor(s / 60)).padStart(2,'0');
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+  const sec = String(s % 60).padStart(2,'0');
+  document.getElementById('bb-runtime').textContent = `${m}:${sec}`;
+}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+async function renderPorts() {
+  const ip       = document.getElementById('targetIp').value || '127.0.0.1';
+  const scanType = document.getElementById('scanType').value || 'Standard (top 1000 ports)';
+  const grid     = document.getElementById('portsGrid');
+  const section  = document.getElementById('portsSection');
+
+  // Show loading state
+  section.style.display = 'block';
+  grid.innerHTML = `
+    <div style="grid-column:1/-1;text-align:center;padding:2rem;
+      font-family:var(--fm);font-size:12px;color:var(--text2);">
+      <i class="fa-solid fa-spinner fa-spin" style="font-size:1.5rem;
+        margin-bottom:.8rem;display:block;color:var(--accent)"></i>
+      Scanning ports on ${ip} â€” this may take a moment...
+    </div>`;
+
+  try {
+    const res  = await fetch('/api/ports', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ target: ip, scan_type: scanType })
+    });
+    const data = await res.json();
+
+    if (!data.success) {
+      grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;
+        padding:2rem;font-family:var(--fm);font-size:12px;color:#ef4444;">
+        <i class="fa-solid fa-circle-exclamation" style="margin-right:8px"></i>
+        ${data.error || 'Scan failed'}</div>`;
+      return;
+    }
+
+    if (!data.ports || data.ports.length === 0) {
+      grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;
+        padding:2rem;font-family:var(--fm);font-size:12px;color:var(--text2);">
+        <i class="fa-solid fa-shield-check" style="font-size:1.5rem;
+          margin-bottom:.8rem;display:block;color:var(--accent3)"></i>
+        No open or filtered ports found on ${ip}</div>`;
+      return;
+    }
+
+    grid.innerHTML = data.ports.map(p => {
+      const statusClass = p.status === 'open' ? 'open' :
+                          p.status === 'filtered' ? 'filter' : 'closed';
+      return `
+        <div class="port-card">
+          <div class="port-header">
+            <span class="port-num">${p.port}</span>
+            <span class="port-badge ${statusClass}">${p.status.toUpperCase()}</span>
+          </div>
+          <div class="port-svc">${p.service}</div>
+        </div>`;
+    }).join('');
+
+    // Show summary line above grid
+    const summary = document.createElement('div');
+    summary.style.cssText = 'grid-column:1/-1;font-family:var(--fm);font-size:11px;' +
+      'color:var(--text2);margin-bottom:.5rem;';
+    summary.innerHTML = `Scanned <span style="color:var(--accent)">${data.total_scanned}</span> ports â€” ` +
+      `<span style="color:var(--accent3)">${data.open_count} open</span>`;
+    grid.prepend(summary);
+
+  } catch(err) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;
+      padding:2rem;font-family:var(--fm);font-size:12px;color:#ef4444;">
+      Connection error: ${err.message}</div>`;
+  }
+}
+
+// â”€â”€ Theme toggle â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function toggleTheme(){
+  const html = document.documentElement;
+  const isLight = html.getAttribute('data-theme') === 'light';
+  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  document.getElementById('theme-btn').innerHTML = isLight ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+  localStorage.setItem('pg-theme', isLight ? 'dark' : 'light');
+}
+// Apply saved theme on load
+(function(){
+  const saved = localStorage.getItem('pg-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
+  const btn = document.getElementById('theme-btn');
+  if(btn) btn.innerHTML = saved === 'light' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+})();
+
+<<<<<<< HEAD
+=======
+const ALERT_TYPES = [
+  {sev:'HIGH',    msg:'Port scan detected from 185.220.101.45: 42 unique ports'},
+  {sev:'CRITICAL',msg:'SYN flood targeting 192.168.1.1: 180 SYN packets in 10s'},
+  {sev:'HIGH',    msg:'High packet rate from 192.168.1.105: 38 pkt/s'},
+  {sev:'MEDIUM',  msg:'Suspicious DNS queries: 12 queries in 5s'},
+  {sev:'CRITICAL',msg:'SSH brute force from 45.33.32.156: 28 failed attempts'},
+];
+let alertIdx = 0;
+function addFakeAlert() {
+  const feed = document.getElementById('alertFeed');
+  // Clear empty state
+  if (feed.querySelector('.empty-state')) feed.innerHTML = '';
+  const a = ALERT_TYPES[alertIdx % ALERT_TYPES.length];
+  alertIdx++;
+  const div = document.createElement('div');
+  div.className = 'alert-line';
+  div.innerHTML = `
+    <span class="alert-time">${new Date().toLocaleTimeString('en-GB')}</span>
+    <span class="alert-badge badge-${a.sev}">${a.sev}</span>
+    <span class="alert-msg">${a.msg}</span>`;
+  feed.prepend(div);
+  // Keep max 20
+  while (feed.children.length > 20) feed.removeChild(feed.lastChild);
+}
+
+function renderPorts() {
+  const data = [
+    {port:22,svc:'SSH',status:'open'},
+    {port:80,svc:'HTTP',status:'open'},
+    {port:443,svc:'HTTPS',status:'open'},
+    {port:23,svc:'Telnet',status:'closed'},
+    {port:3306,svc:'MySQL',status:'filter'},
+    {port:8080,svc:'HTTP-Alt',status:'open'},
+    {port:21,svc:'FTP',status:'closed'},
+    {port:3389,svc:'RDP',status:'filter'},
+  ];
+  const grid = document.getElementById('portsGrid');
+  grid.innerHTML = data.map(p => `
+    <div class="port-card">
+      <div class="port-header">
+        <span class="port-num">${p.port}</span>
+        <span class="port-badge ${p.status}">${p.status.toUpperCase()}</span>
+      </div>
+      <div class="port-svc">${p.svc}</div>
+    </div>`).join('');
+  document.getElementById('portsSection').style.display = 'block';
+}
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+</script>
+</body>
+</html>

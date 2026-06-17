@@ -1,0 +1,11 @@
+{
+  "trained": true,
+  "samples": 6000,
+  "precision": 0.6435,
+  "recall": 1.0,
+  "f1": 0.7831,
+  "threshold": -0.546,
+  "trained_at": "2026-05-22T20:17:01.733001",
+  "leakage_free": true,
+  "normal_only_training": true
+}

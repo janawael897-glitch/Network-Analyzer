@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PacketGuard — Network Threat Detection</title>
+<<<<<<< HEAD
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+=======
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous"/>
+<style>@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Tajawal:wght@300;400;500;700&display=swap');</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-LvivTLcjkLYFfkEFMrSSPpuQMBz2r4SlBkGlNkb5TxMJnoxHsZMdoWX5MMHKieSP+4P2GELwxLGD7FJi2ALiw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+[data-theme="dark"]{
+  --bg:#020508;--surface:#060c14;--surface2:#0a1520;
+  --border:#0f2035;--border2:#1a3050;
+  --accent:#00d4ff;--accent2:#ff2d6b;--accent3:#00ff9d;--warn:#ffb800;--purple:#9d6fff;
+  --text:#b8cfe8;--text2:#6a8aaa;--white:#e8f4ff;
+  --card:rgba(6,12,20,0.92);--modal:#060e18;--inp:#040a12;--inp-b:#1a3050;--sh:rgba(0,0,0,.65);
+  --danger:#ef4444;--primary:#3b82f6;
+}
+[data-theme="light"]{
+  --bg:#f0f4f8;--surface:#ffffff;--surface2:#f8fafc;
+  --border:#d0dce8;--border2:#b8ccde;
+  --accent:#0088cc;--accent2:#e0145a;--accent3:#00aa66;--warn:#e09000;--purple:#6a3fcc;
+  --text:#2a4060;--text2:#6a8aaa;--white:#0a1525;
+  --card:rgba(255,255,255,.96);--modal:#ffffff;--inp:#f4f8fc;--inp-b:#c0d4e8;--sh:rgba(0,0,0,.12);
+  --danger:#ef4444;--primary:#3b82f6;
+}
+:root{--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--fm:'Share Tech Mono',monospace;--fa:'Tajawal',sans-serif;}
+<<<<<<< HEAD
+<<<<<<< HEAD
+html{scroll-behavior:auto}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);overflow-x:hidden;line-height:1.6}
+=======
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);overflow-x:hidden;line-height:1.6;transition:background .3s,color .3s}
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+html{scroll-behavior:auto}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);overflow-x:hidden;line-height:1.6}
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+[lang="ar"] *{font-family:var(--fa),var(--fb)}
+
+/* BG EFFECTS */
+.bg-orbs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);animation:od 18s ease-in-out infinite alternate}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,rgba(0,212,255,.06),transparent 70%);top:-250px;left:-150px}
+.orb2{width:500px;height:500px;background:radial-gradient(circle,rgba(157,111,255,.05),transparent 70%);top:40%;right:-100px;animation-delay:-8s}
+.orb3{width:400px;height:400px;background:radial-gradient(circle,rgba(0,255,157,.04),transparent 70%);bottom:-100px;left:35%;animation-delay:-15s}
+[data-theme="light"] .orb1{background:radial-gradient(circle,rgba(0,136,204,.07),transparent 70%)}
+[data-theme="light"] .orb2{background:radial-gradient(circle,rgba(106,63,204,.05),transparent 70%)}
+@keyframes od{0%{transform:translate(0,0) scale(1)}100%{transform:translate(40px,30px) scale(1.1)}}
+.bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.4;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:66px;background:rgba(2,5,8,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background .3s}
+[data-theme="light"] nav{background:rgba(240,244,248,.93)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:18px;font-weight:800;color:var(--white);letter-spacing:2px;text-transform:uppercase;text-decoration:none}
+.nav-logo-icon{width:32px;height:32px;border-radius:7px;flex-shrink:0;background:linear-gradient(135deg,rgba(0,212,255,.16),rgba(157,111,255,.14));border:1px solid rgba(0,212,255,.35);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:11px;color:var(--accent);font-weight:700;box-shadow:0 0 14px rgba(0,212,255,.2)}
+.nav-c{display:flex;align-items:center;gap:30px}
+.nav-c a{font-size:14px;font-weight:500;color:var(--text2);text-decoration:none;transition:color .2s}
+.nav-c a:hover{color:var(--accent)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.lang-sw{position:relative}
+.lang-btn{display:flex;align-items:center;gap:6px;padding:7px 11px;border-radius:6px;cursor:pointer;background:transparent;border:1px solid var(--border2);color:var(--text2);font-size:12px;font-family:var(--fm);transition:all .2s}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+.lang-dd{position:absolute;top:calc(100% + 8px);right:0;background:var(--modal);border:1px solid var(--border2);border-radius:8px;overflow:hidden;min-width:130px;box-shadow:0 12px 40px var(--sh);display:none;z-index:200}
+.lang-dd.open{display:block;animation:ddin .2s ease}
+@keyframes ddin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.lang-opt{display:flex;align-items:center;gap:10px;padding:10px 16px;cursor:pointer;font-size:13px;color:var(--text);transition:background .15s}
+.lang-opt:hover{background:rgba(0,212,255,.06)}
+.lang-opt.active{color:var(--accent)}
+.theme-btn{width:34px;height:34px;border-radius:7px;cursor:pointer;background:transparent;border:1px solid var(--border2);color:var(--text2);font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.ndiv{width:1px;height:18px;background:var(--border2);margin:0 2px}
+.btn-nl{padding:7px 16px;border-radius:6px;font-size:13px;font-weight:500;background:transparent;border:1px solid var(--border2);color:var(--text);cursor:pointer;transition:all .2s;font-family:var(--fb)}
+.btn-nl:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ns{padding:7px 16px;border-radius:6px;font-size:13px;font-weight:600;background:linear-gradient(135deg,rgba(0,212,255,.14),rgba(157,111,255,.1));border:1px solid rgba(0,212,255,.4);color:var(--white);cursor:pointer;transition:all .2s;font-family:var(--fb);box-shadow:0 0 14px rgba(0,212,255,.1)}
+.btn-ns:hover{box-shadow:0 0 24px rgba(0,212,255,.22);border-color:rgba(0,212,255,.6)}
+
+/* HERO */
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 40px 80px}
+.h-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:20px;margin-bottom:28px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);font-family:var(--fm);font-size:11px;color:var(--accent);letter-spacing:2px;animation:fu .7s ease both}
+.bdot{width:6px;height:6px;border-radius:50%;background:var(--accent3);animation:bl 1.5s ease-in-out infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
+.h-title{font-family:var(--fd);font-size:clamp(52px,9vw,106px);font-weight:800;line-height:.92;letter-spacing:-3px;color:var(--white);animation:fu .7s .1s ease both}
+.h-title .glow{color:var(--accent);text-shadow:0 0 50px rgba(0,212,255,.5),0 0 100px rgba(0,212,255,.2)}
+.h-title .sub{display:block;font-size:clamp(34px,5vw,64px);background:linear-gradient(135deg,var(--text) 0%,var(--text2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-1px;margin-top:6px}
+.h-desc{max-width:540px;font-size:16px;font-weight:300;color:var(--text2);margin:26px auto 42px;line-height:1.75;animation:fu .7s .2s ease both}
+.h-actions{display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap;animation:fu .7s .3s ease both}
+.btn-p{display:inline-flex;align-items:center;gap:10px;padding:13px 30px;border-radius:8px;background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(157,111,255,.1));border:1px solid rgba(0,212,255,.4);color:var(--white);font-family:var(--fd);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;cursor:pointer;box-shadow:0 0 26px rgba(0,212,255,.14);transition:all .3s}
+.btn-p:hover{box-shadow:0 0 46px rgba(0,212,255,.3);border-color:rgba(0,212,255,.7);transform:translateY(-2px)}
+.btn-o{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:8px;background:transparent;border:1px solid var(--border2);color:var(--text2);font-size:14px;text-decoration:none;cursor:pointer;transition:all .3s}
+.btn-o:hover{border-color:rgba(0,212,255,.3);color:var(--text)}
+@keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* STATS BAR */
+.stats{position:relative;z-index:1;display:flex;justify-content:center;padding:0 40px 80px;animation:fu .7s .4s ease both}
+.si{text-align:center;padding:22px 42px;border:1px solid var(--border);background:var(--card);backdrop-filter:blur(10px)}
+.si:first-child{border-radius:10px 0 0 10px}
+.si:last-child{border-radius:0 10px 10px 0}
+.si+.si{border-left:none}
+.sn{font-family:var(--fm);font-size:28px;color:var(--white);display:block}
+.sn span{font-size:15px;color:var(--accent)}
+.sl{font-size:11px;color:var(--text2);letter-spacing:1px;margin-top:3px;text-transform:uppercase}
+
+/* SECTION COMMON */
+section{position:relative;z-index:1;padding:96px 60px}
+.stag{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+.stag::before{content:'//';opacity:.5}
+.stitle{font-family:var(--fd);font-size:clamp(28px,3.8vw,44px);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:13px}
+.ssub{font-size:15px;color:var(--text2);max-width:460px;line-height:1.7}
+
+/* FEATURES */
+.fi{max-width:1200px;margin:0 auto}
+.fh{margin-bottom:52px}
+.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fc{padding:26px;border-radius:12px;background:var(--card);border:1px solid var(--border);position:relative;overflow:hidden;transition:border-color .3s,transform .3s,box-shadow .3s}
+.fc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cc,var(--accent)) 50%,transparent);opacity:.5}
+.fc:nth-child(1){--cc:var(--accent)}.fc:nth-child(2){--cc:var(--purple)}.fc:nth-child(3){--cc:var(--accent3)}.fc:nth-child(4){--cc:var(--warn)}.fc:nth-child(5){--cc:var(--accent2)}.fc:nth-child(6){--cc:var(--accent)}
+.fc:hover{border-color:var(--cc,var(--accent));transform:translateY(-4px);box-shadow:0 14px 36px var(--sh)}
+.fi-icon{width:42px;height:42px;border-radius:9px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.14);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px}
+.fc:nth-child(2) .fi-icon{background:rgba(157,111,255,.06);border-color:rgba(157,111,255,.15)}
+.fc:nth-child(3) .fi-icon{background:rgba(0,255,157,.06);border-color:rgba(0,255,157,.15)}
+.fc:nth-child(4) .fi-icon{background:rgba(255,184,0,.06);border-color:rgba(255,184,0,.15)}
+.fc:nth-child(5) .fi-icon{background:rgba(255,45,107,.06);border-color:rgba(255,45,107,.15)}
+.ft{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--white);margin-bottom:7px}
+.fd-text{font-size:13px;color:var(--text2);line-height:1.7}
+.ftag{display:inline-block;margin-top:12px;padding:3px 9px;border-radius:4px;font-family:var(--fm);font-size:10px;letter-spacing:1px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.14);color:var(--accent)}
+.fc:nth-child(2) .ftag{background:rgba(157,111,255,.06);border-color:rgba(157,111,255,.15);color:var(--purple)}
+.fc:nth-child(3) .ftag{background:rgba(0,255,157,.06);border-color:rgba(0,255,157,.15);color:var(--accent3)}
+.fc:nth-child(4) .ftag{background:rgba(255,184,0,.06);border-color:rgba(255,184,0,.15);color:var(--warn)}
+.fc:nth-child(5) .ftag{background:rgba(255,45,107,.06);border-color:rgba(255,45,107,.15);color:var(--accent2)}
+
+/* HOW IT WORKS */
+.how{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.how-in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.steps{display:flex;flex-direction:column}
+.step{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--border);opacity:.5;transition:opacity .3s}
+.step:last-child{border-bottom:none}.step:hover{opacity:1}
+.snum{width:32px;height:32px;border-radius:7px;flex-shrink:0;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:12px;color:var(--accent)}
+.st{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px}
+.sd{font-size:13px;color:var(--text2);line-height:1.6}
+.rw{height:360px;border-radius:14px;border:1px solid var(--border);background:var(--card);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.rw::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(0,212,255,.05),transparent 60%)}
+.radar{position:relative;width:210px;height:210px}
+.rr{position:absolute;border-radius:50%;border:1px solid rgba(0,212,255,.12);top:50%;left:50%;transform:translate(-50%,-50%)}
+.rr:nth-child(1){width:52px;height:52px}.rr:nth-child(2){width:104px;height:104px}.rr:nth-child(3){width:156px;height:156px}.rr:nth-child(4){width:210px;height:210px}
+.rsw{position:absolute;top:50%;left:50%;width:105px;height:2px;transform-origin:0 50%;background:linear-gradient(90deg,rgba(0,212,255,.8),transparent);animation:sw 3s linear infinite}
+@keyframes sw{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.rdot{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--accent3);box-shadow:0 0 6px var(--accent3);animation:db 2s ease-in-out infinite}
+.rdot:nth-child(5){top:28%;left:57%;animation-delay:.3s}
+.rdot:nth-child(6){top:62%;left:23%;animation-delay:.9s;background:var(--accent2);box-shadow:0 0 6px var(--accent2)}
+.rdot:nth-child(7){top:68%;left:62%;animation-delay:1.5s}
+.rdot:nth-child(8){top:22%;left:33%;animation-delay:.6s;background:var(--warn);box-shadow:0 0 6px var(--warn)}
+@keyframes db{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.2;transform:scale(.5)}}
+.rlbl{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-family:var(--fm);font-size:10px;color:var(--accent);letter-spacing:2px;white-space:nowrap}
+
+/* ===== LIVE MONITOR SECTION ===== */
+.monitor-section{background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.monitor-inner{max-width:1100px;margin:0 auto}
+.control-panel{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:1.8rem;margin-bottom:2rem;box-shadow:0 10px 40px var(--sh)}
+.cp-header{display:flex;align-items:center;gap:10px;margin-bottom:1.4rem}
+.cp-header .stag{margin-bottom:0}
+.input-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:1.2rem}
+.pg-input{flex:1;min-width:200px;padding:.9rem 1.1rem;background:var(--inp);border:1px solid var(--inp-b);border-radius:8px;color:var(--white);font-size:.97rem;font-family:var(--fb);transition:border-color .2s,box-shadow .2s}
+.pg-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,255,.15)}
+.scan-btn{background:linear-gradient(135deg,rgba(0,212,255,.18),rgba(157,111,255,.12));border:1px solid rgba(0,212,255,.45);color:var(--white);padding:.9rem 2.2rem;border-radius:8px;font-family:var(--fd);font-weight:700;font-size:1rem;letter-spacing:1.5px;cursor:pointer;transition:all .2s;text-transform:uppercase;box-shadow:0 0 20px rgba(0,212,255,.1)}
+.scan-btn:hover{box-shadow:0 0 36px rgba(0,212,255,.25);border-color:rgba(0,212,255,.7);transform:translateY(-2px)}
+.scan-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.scan-btn.stop{background:linear-gradient(135deg,rgba(239,68,68,.18),rgba(239,68,68,.08));border-color:rgba(239,68,68,.45);box-shadow:0 0 20px rgba(239,68,68,.1)}
+.scan-btn.stop:hover{box-shadow:0 0 36px rgba(239,68,68,.25);border-color:rgba(239,68,68,.7)}
+
+/* AUTH GATE */
+.auth-gate{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 2rem;text-align:center;position:relative}
+.gate-lock{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(157,111,255,.06));border:1px solid rgba(0,212,255,.2);display:flex;align-items:center;justify-content:center;font-size:2.4rem;margin-bottom:1.8rem;position:relative;box-shadow:0 0 40px rgba(0,212,255,.1)}
+.gate-lock::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:1px dashed rgba(0,212,255,.15);animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.gate-title{font-family:var(--fd);font-size:1.8rem;font-weight:800;color:var(--white);margin-bottom:.7rem}
+.gate-sub{font-size:.95rem;color:var(--text2);max-width:420px;line-height:1.7;margin-bottom:2rem}
+.gate-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.gate-blur{position:relative;filter:blur(6px);pointer-events:none;opacity:.35;user-select:none;margin-top:2rem}
+
+/* USER BADGE (nav - logged in state) */
+.user-badge{display:none;align-items:center;gap:8px;padding:6px 14px;border-radius:8px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);color:var(--white);font-size:13px;font-family:var(--fm)}
+.user-badge .u-dot{width:7px;height:7px;border-radius:50%;background:var(--accent3);animation:bl 1.5s ease-in-out infinite}
+.user-badge.show{display:flex}
+.btn-logout{padding:7px 14px;border-radius:6px;font-size:13px;background:transparent;border:1px solid rgba(239,68,68,.35);color:#ef4444;cursor:pointer;font-family:var(--fb);transition:all .2s}
+.btn-logout:hover{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.6)}
+
+/* DASHBOARD GRID */
+<<<<<<< HEAD
+<<<<<<< HEAD
+.dashboard{display:grid;gap:1.4rem;grid-template-columns:1fr 1fr;opacity:0;pointer-events:none;max-height:0;overflow:hidden;transition:opacity .4s ease,max-height .4s ease}
+.dashboard.active{opacity:1;pointer-events:auto;max-height:2000px;overflow:visible}
+=======
+.dashboard{display:none;gap:1.4rem;grid-template-columns:1fr 1fr;animation:fu .5s ease both}
+.dashboard.active{display:grid}
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+.dashboard{display:grid;gap:1.4rem;grid-template-columns:1fr 1fr;opacity:0;pointer-events:none;max-height:0;overflow:hidden;transition:opacity .4s ease,max-height .4s ease}
+.dashboard.active{opacity:1;pointer-events:auto;max-height:2000px;overflow:visible}
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color .25s,transform .25s}
+.stat-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.stat-title{color:var(--text2);font-size:.88rem;letter-spacing:1px;text-transform:uppercase;font-family:var(--fm);margin-bottom:.5rem}
+.stat-value{font-family:var(--fm);font-size:2rem;font-weight:700;color:var(--white);margin-bottom:.25rem}
+.stat-sub{font-size:.88rem;color:var(--text2)}
+
+/* RISK SCALE */
+.risk-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.8rem;text-align:center;grid-column:1/-1}
+.scale-bar{height:28px;background:linear-gradient(to right,#10b981 0%,#f59e0b 45%,#ef4444 100%);border-radius:999px;margin:1.1rem 0;position:relative;overflow:hidden;box-shadow:0 0 20px rgba(0,0,0,.3)}
+.scale-indicator{position:absolute;top:50%;transform:translateY(-50%);width:4px;height:200%;background:white;box-shadow:0 0 10px rgba(255,255,255,.8);transition:left .45s ease}
+.scale-labels{display:flex;justify-content:space-between;font-family:var(--fm);font-size:.9rem;margin-top:.6rem}
+.scale-labels .low{color:#10b981}.scale-labels .med{color:#f59e0b}.scale-labels .high{color:#ef4444}
+.risk-info{margin-top:.9rem;font-size:1rem;color:var(--text)}
+
+/* LIVE GRAPH PLACEHOLDER */
+.live-graph-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;height:280px;grid-column:1/-1;display:flex;flex-direction:column}
+.lg-title{font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--text2);text-transform:uppercase;margin-bottom:1rem}
+.lg-body{flex:1;display:flex;align-items:center;justify-content:center;border:1px dashed var(--border2);border-radius:8px;color:var(--text2);flex-direction:column;gap:8px;font-size:.9rem}
+.lg-body i{font-size:2rem;color:var(--accent);opacity:.5}
+
+/* PORTS */
+.ports-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;grid-column:1/-1}
+.port-card{background:#0a1824;border:1px solid var(--border2);border-radius:10px;padding:1.2rem;transition:border-color .2s}
+.port-card:hover{border-color:var(--accent)}
+.port-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem}
+.port-number{font-family:var(--fm);font-size:1.4rem;color:var(--accent)}
+.port-status{padding:.25rem .7rem;border-radius:999px;font-size:.8rem;font-family:var(--fm);font-weight:600}
+.open{background:#064e3b;color:#6ee7b7}.closed{background:#7f1d1d;color:#fca5a5}.filter{background:#78350f;color:#fbbf24}
+
+/* ABOUT */
+.about-in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.about-pts{display:flex;flex-direction:column;gap:14px;margin-top:20px}
+.ap{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--text)}
+.ap-dot{width:6px;height:6px;border-radius:50%;background:var(--accent3);margin-top:7px;flex-shrink:0}
+.tech-stack{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.tc{padding:14px;border-radius:9px;background:var(--card);border:1px solid var(--border);text-align:center;font-family:var(--fm);font-size:11px;color:var(--text2);letter-spacing:1px;transition:border-color .2s}
+.tc:hover{border-color:var(--accent);color:var(--accent)}
+
+/* CTA */
+.cta-section{background:var(--surface);border-top:1px solid var(--border)}
+.cta-in{max-width:700px;margin:0 auto;text-align:center}
+.cta-in .stitle{margin-bottom:14px}
+
+/* FOOTER */
+footer{position:relative;z-index:1;text-align:center;padding:3rem 1rem 2rem;color:var(--text2);font-size:.88rem;border-top:1px solid var(--border)}
+.footer-nav{display:flex;justify-content:center;gap:24px;margin-bottom:1.2rem;flex-wrap:wrap}
+.footer-nav a{color:var(--text2);font-size:13px;text-decoration:none;transition:color .2s}
+.footer-nav a:hover{color:var(--accent)}
+
+/* AUTH MODAL */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.open{opacity:1;pointer-events:all}
+.amodal{background:var(--modal);border:1px solid var(--border2);border-radius:16px;padding:2.2rem;width:min(460px,95vw);position:relative;animation:fu .3s ease}
+.mclose{position:absolute;top:14px;right:16px;background:transparent;border:none;color:var(--text2);font-size:18px;cursor:pointer;line-height:1;transition:color .2s}
+.mclose:hover{color:var(--white)}
+.alo{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:1.5rem}
+.alo-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,rgba(0,212,255,.16),rgba(157,111,255,.14));border:1px solid rgba(0,212,255,.35);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:12px;color:var(--accent);font-weight:700}
+.alo-name{font-family:var(--fd);font-size:17px;font-weight:800;color:var(--white);letter-spacing:2px}
+.atabs{display:flex;background:var(--inp);border-radius:8px;padding:4px;margin-bottom:1.6rem}
+.atab{flex:1;padding:9px;border:none;border-radius:6px;background:transparent;color:var(--text2);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;font-family:var(--fb)}
+.atab.active{background:var(--surface2);color:var(--white);box-shadow:0 2px 8px var(--sh)}
+.awel{font-size:13px;color:var(--text2);text-align:center;margin-bottom:1.4rem;line-height:1.5}
+.apanel{display:none}.apanel.active{display:block}
+.fg2{margin-bottom:1rem}
+.flbl{display:block;font-family:var(--fm);font-size:10px;letter-spacing:1.5px;color:var(--text2);margin-bottom:6px;text-transform:uppercase}
+.finput-wrap{position:relative}
+.finput{width:100%;padding:.85rem 1rem;background:var(--inp);border:1px solid var(--inp-b);border-radius:8px;color:var(--white);font-size:.95rem;font-family:var(--fb);transition:border-color .2s,box-shadow .2s}
+.finput:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,255,.12)}
+.fpass-toggle{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:transparent;border:none;cursor:pointer;font-size:15px;color:var(--text2);line-height:1}
+.frow{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.4rem}
+.fcheck{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2);cursor:pointer}
+.flink{font-size:13px;color:var(--accent);background:none;border:none;cursor:pointer;font-family:var(--fb)}
+.flink:hover{text-decoration:underline}
+.pws{display:none;margin-bottom:1rem}.pws.show{display:block}
+.pb-row{display:flex;gap:4px;margin-bottom:6px}
+.pb{flex:1;height:3px;border-radius:2px;background:var(--border);transition:background .3s}
+.pw-lbl-row{display:flex;justify-content:flex-end}
+.pw-lbl{font-family:var(--fm);font-size:10px;color:var(--text2);transition:color .3s}
+.btn-auth{width:100%;padding:1rem;border-radius:8px;background:linear-gradient(135deg,rgba(0,212,255,.2),rgba(157,111,255,.15));border:1px solid rgba(0,212,255,.45);color:var(--white);font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:2px;cursor:pointer;transition:all .2s;margin-bottom:1.2rem;box-shadow:0 0 20px rgba(0,212,255,.1)}
+.btn-auth:hover{box-shadow:0 0 36px rgba(0,212,255,.22);border-color:rgba(0,212,255,.7)}
+.for{display:flex;align-items:center;gap:12px;margin-bottom:1.2rem;font-size:12px;color:var(--text2)}
+.for::before,.for::after{content:'';flex:1;height:1px;background:var(--border2)}
+.soc-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.2rem}
+.btn-soc{padding:9px;border-radius:7px;background:var(--inp);border:1px solid var(--inp-b);color:var(--text);font-size:12px;display:flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;transition:all .2s;font-family:var(--fb)}
+.btn-soc:hover{border-color:var(--border2);color:var(--white)}
+.btn-soc svg{width:14px;height:14px}
+.terms{font-size:11px;color:var(--text2);text-align:center;line-height:1.6}
+.terms a{color:var(--accent);text-decoration:none}
+
+/* FORGOT MODAL */
+.fmodal{background:var(--modal);border:1px solid var(--border2);border-radius:16px;padding:2.2rem;width:min(400px,95vw);position:relative;animation:fu .3s ease;text-align:center}
+.fmod-t{font-family:var(--fd);font-size:20px;font-weight:800;color:var(--white);margin-bottom:8px}
+.fmod-s{font-size:13px;color:var(--text2);margin-bottom:1.6rem;line-height:1.6}
+.btn-back{background:transparent;border:none;color:var(--text2);font-size:13px;cursor:pointer;font-family:var(--fb);transition:color .2s}
+.btn-back:hover{color:var(--accent)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  nav{padding:0 20px}.nav-c{display:none}
+  .fg{grid-template-columns:1fr}
+  .how-in,.about-in{grid-template-columns:1fr;gap:40px}
+  .stats{overflow-x:auto}.si{padding:18px 24px}
+  section{padding:72px 24px}
+  .dashboard{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-orbs"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
+<div class="bg-grid"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon">PG</div>
+    <span data-i18n="brand">PacketGuard</span>
+  </a>
+  <div class="nav-c">
+    <a href="#features" data-i18n="nav.features">Features</a>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <a href="/monitor" data-i18n="nav.monitor">Live Monitor</a>
+=======
+    <a href="#monitor" data-i18n="nav.monitor">Live Monitor</a>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+    <a href="/monitor" data-i18n="nav.monitor">Live Monitor</a>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+    <a href="#how" data-i18n="nav.how">How It Works</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+  </div>
+  <div class="nav-r">
+    <div class="lang-sw">
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <button class="lang-btn" onclick="toggleLang()"><i class="fa-solid fa-globe"></i> <span id="lc">EN</span> ▾</button>
+      <div class="lang-dd" id="ldd">
+        <div class="lang-opt active" onclick="setLang('en')">US English</div>
+        <div class="lang-opt" onclick="setLang('ar')">AR العربية</div>
+        <div class="lang-opt" onclick="setLang('fr')">FR Français</div>
+=======
+      <button class="lang-btn" onclick="toggleLang()"><i class="fa-solid fa-globe"></i> <span id="lc">EN</span> ▾</button>
+      <div class="lang-dd" id="ldd">
+        <button class="lang-opt active" onclick="setLang('en')">US English</button>
+        <button class="lang-opt" onclick="setLang('ar')">AR العربية</button>
+        <button class="lang-opt" onclick="setLang('fr')">FR Français</button>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+      </div>
+    </div>
+    <div class="ndiv"></div>
+    <button class="theme-btn" id="tbtn" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button>
+<<<<<<< HEAD
+=======
+      <button class="lang-btn" onclick="toggleLang()">🌐 <span id="lc">EN</span> ▾</button>
+      <div class="lang-dd" id="ldd">
+        <div class="lang-opt active" onclick="setLang('en')">🇺🇸 English</div>
+        <div class="lang-opt" onclick="setLang('ar')">🇸🇦 العربية</div>
+        <div class="lang-opt" onclick="setLang('fr')">🇫🇷 Français</div>
+      </div>
+    </div>
+    <div class="ndiv"></div>
+    <button class="theme-btn" id="tbtn" onclick="toggleTheme()">🌙</button>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+    <div id="nav-auth-btns">
+      <button class="btn-nl" onclick="openAuth('login')" data-i18n="nav.login">Log In</button>
+      <button class="btn-ns" onclick="openAuth('signup')" data-i18n="nav.signup">Sign Up</button>
+    </div>
+    <div id="nav-user" style="display:none;align-items:center;gap:10px">
+      <div class="user-badge show"><div class="u-dot"></div><span id="nav-username">User</span></div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <a href="/dashboard" style="padding:7px 16px;border-radius:6px;font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:1px;color:var(--accent);text-decoration:none;border:1px solid rgba(0,212,255,.35);background:rgba(0,212,255,.07);transition:all .2s;white-space:nowrap" onmouseover="this.style.background='rgba(0,212,255,.18)'" onmouseout="this.style.background='rgba(0,212,255,.07)'"><i class="fa-solid fa-chart-line" style="margin-right:6px"></i>Full Dashboard</a>
+=======
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+      <a href="/dashboard" style="padding:7px 16px;border-radius:6px;font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:1px;color:var(--accent);text-decoration:none;border:1px solid rgba(0,212,255,.35);background:rgba(0,212,255,.07);transition:all .2s;white-space:nowrap" onmouseover="this.style.background='rgba(0,212,255,.18)'" onmouseout="this.style.background='rgba(0,212,255,.07)'" onfocus="this.style.background='rgba(0,212,255,.18)'" onblur="this.style.background='rgba(0,212,255,.07)'"><i class="fa-solid fa-chart-line" style="margin-right:6px"></i>Full Dashboard</a>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+      <button class="btn-logout" onclick="handleLogout()">Log Out</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="h-badge"><div class="bdot"></div><span data-i18n="hero.badge">REAL-TIME THREAT INTELLIGENCE</span></div>
+  <h1 class="h-title">
+    <span class="glow">PacketGuard</span>
+    <span class="sub" data-i18n="hero.tagline">Network Guardian</span>
+  </h1>
+  <p class="h-desc" data-i18n="hero.desc">Advanced network threat detection powered by machine learning. Monitor every device, detect every anomaly, protect your network in real time.</p>
+  <div class="h-actions">
+    <button class="btn-p" onclick="openAuth('signup')">
+      <i class="fa-solid fa-shield-halved"></i>
+      <span data-i18n="hero.cta">GET STARTED FREE</span>
+    </button>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <a class="btn-o" href="/monitor" onclick="handleMonitorNavClick(event)">
+=======
+    <a class="btn-o" href="#monitor" onclick="handleMonitorNavClick(event)">
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+    <a class="btn-o" href="/monitor" onclick="handleMonitorNavClick(event)">
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+      <i class="fa-solid fa-radar"></i>
+      <span data-i18n="hero.monitor">Try Live Monitor</span>
+    </a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="si"><span class="sn">2.4<span>M+</span></span><div class="sl" data-i18n="stats.threats">Threats Detected</div></div>
+  <div class="si"><span class="sn">20<span>s</span></span><div class="sl" data-i18n="stats.scan">Scan Interval</div></div>
+  <div class="si"><span class="sn">12<span>+</span></span><div class="sl" data-i18n="stats.types">Attack Types</div></div>
+  <div class="si"><span class="sn">24/7</span><div class="sl" data-i18n="stats.monitor">Live Monitoring</div></div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="fi">
+    <div class="fh reveal">
+      <div class="stag" data-i18n="feat.tag">Capabilities</div>
+      <div class="stitle" data-i18n="feat.title">Everything you need to<br/>secure your network</div>
+      <div class="ssub" data-i18n="feat.sub">Built from the ground up for real-time threat detection with powerful ML-driven anomaly analysis.</div>
+    </div>
+    <div class="fg">
+      <div class="fc reveal"><div class="fi-icon">🔍</div><div class="ft" data-i18n="f1.t">Live Network Scanner</div><div class="fd-text" data-i18n="f1.d">Automatically discovers all devices every 20 seconds.</div><div class="ftag">ARP • Scapy</div></div>
+      <div class="fc reveal"><div class="fi-icon">🧠</div><div class="ft" data-i18n="f2.t">ML Anomaly Detection</div><div class="fd-text" data-i18n="f2.d">Isolation Forest learns your normal traffic patterns and flags outliers in real time.</div><div class="ftag">Isolation Forest</div></div>
+      <div class="fc reveal"><div class="fi-icon">🚨</div><div class="ft" data-i18n="f3.t">Real-Time Alerts</div><div class="fd-text" data-i18n="f3.d">Instant push notifications for HIGH and CRITICAL threats.</div><div class="ftag">Push • Visual</div></div>
+      <div class="fc reveal"><div class="fi-icon">📦</div><div class="ft" data-i18n="f4.t">Packet Capture Engine</div><div class="fd-text" data-i18n="f4.d">Deep packet inspection via Scapy. Monitors TCP, UDP, ICMP traffic.</div><div class="ftag">TCP • UDP • ICMP</div></div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div class="fc reveal"><div class="fi-icon">⚔</div><div class="ft" data-i18n="f5.t">Multi-Vector Detection</div><div class="fd-text" data-i18n="f5.d">Simultaneous detection of port scans, SYN floods, brute force, DNS tunneling.</div><div class="ftag">Multi-Vector</div></div>
+=======
+      <div class="fc reveal"><div class="fi-icon">⚔️</div><div class="ft" data-i18n="f5.t">Multi-Vector Detection</div><div class="fd-text" data-i18n="f5.d">Simultaneous detection of port scans, SYN floods, brute force, DNS tunneling.</div><div class="ftag">Multi-Vector</div></div>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+      <div class="fc reveal"><div class="fi-icon">⚔</div><div class="ft" data-i18n="f5.t">Multi-Vector Detection</div><div class="fd-text" data-i18n="f5.d">Simultaneous detection of port scans, SYN floods, brute force, DNS tunneling.</div><div class="ftag">Multi-Vector</div></div>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+      <div class="fc reveal"><div class="fi-icon">📊</div><div class="ft" data-i18n="f6.t">Analytics Dashboard</div><div class="fd-text" data-i18n="f6.d">Interactive charts, severity breakdowns, live alert feeds. Auto-refreshes every 5s.</div><div class="ftag">Live Charts</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE MONITOR SECTION -->
+<section id="monitor" class="monitor-section">
+  <div class="monitor-inner">
+    <div class="fh reveal" style="text-align:center;margin-bottom:2rem">
+      <div class="stag" data-i18n="monitor.tag">Live Demo</div>
+      <div class="stitle" data-i18n="monitor.title">Live Network Monitor</div>
+      <div class="ssub" style="max-width:500px;margin:0 auto" data-i18n="monitor.sub">Real-time packet monitoring with ML-powered threat analysis — available to authenticated users.</div>
+    </div>
+
+    <!-- AUTH GATE (shown when logged out) -->
+    <div id="monitor-gate" class="reveal">
+      <div class="auth-gate">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <div class="gate-lock"><i class="fa-solid fa-lock"></i></div>
+=======
+        <div class="gate-lock">🔒</div>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+        <div class="gate-lock"><i class="fa-solid fa-lock"></i></div>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+        <div class="gate-title">Secure Access Required</div>
+        <div class="gate-sub">The Live Monitor is a sensitive security tool. Please log in or create a free account to access real-time network monitoring and threat detection.</div>
+        <div class="gate-actions">
+          <button class="btn-p" onclick="openAuth('signup')">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Create Free Account</span>
+          </button>
+          <button class="btn-o" onclick="openAuth('login')">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span>Log In</span>
+          </button>
+        </div>
+        <!-- Blurred preview of the dashboard -->
+        <div class="gate-blur">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:800px;margin:0 auto;pointer-events:none">
+            <div class="stat-card"><div class="stat-title">Monitored Target</div><div class="stat-value" style="font-size:1.3rem">192.168.1.1</div><div class="stat-sub">Active monitoring session</div></div>
+            <div class="stat-card"><div class="stat-title">Total Packets Captured</div><div class="stat-value">24,891</div><div class="stat-sub">Since session started</div></div>
+            <div class="stat-card"><div class="stat-title">Live Traffic Rate</div><div class="stat-value">48 <small>pkt/s</small></div><div class="stat-sub">12.3 KB/s &nbsp;•&nbsp; +8.2%</div></div>
+            <div class="stat-card"><div class="stat-title">Suspicious Packets</div><div class="stat-value" style="color:#f59e0b">7</div><div class="stat-sub">Flagged by anomaly detector</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FULL MONITOR (shown when logged in) -->
+    <div id="monitor-panel" style="display:none">
+
+      <!-- Session info bar -->
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;padding:.9rem 1.2rem;background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.12);border-radius:10px">
+        <div style="display:flex;align-items:center;gap:10px;font-family:var(--fm);font-size:12px;color:var(--text2)">
+          <div style="width:7px;height:7px;border-radius:50%;background:var(--accent3);animation:bl 1.5s ease-in-out infinite"></div>
+          AUTHENTICATED SESSION &nbsp;—&nbsp; <span id="session-user" style="color:var(--accent)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4732342235073726242c22332032263523692e28">[email&#160;protected]</a></span>
+        </div>
+        <div style="font-family:var(--fm);font-size:11px;color:var(--text2)" id="session-time">Session started: --</div>
+      </div>
+
+      <!-- CONTROL PANEL -->
+      <div class="control-panel">
+        <div class="input-row">
+          <input type="text" class="pg-input" id="targetIp" placeholder="Target IP / Range (e.g. 192.168.1.0/24)" value="192.168.1.1"/>
+          <select class="pg-input" id="scanType">
+            <option>Quick Scan (top 100 ports)</option>
+            <option selected>Standard (top 1000 ports)</option>
+            <option>Full (1–65535)</option>
+          </select>
+          <select class="pg-input" id="scanMode">
+            <option>Monitor only</option>
+            <option>Scan + Monitor</option>
+          </select>
+        </div>
+        <button class="scan-btn" id="startBtn" onclick="toggleMonitor()">
+          <i class="fa-solid fa-play"></i> <span id="btnLabel">Start Protection</span>
+        </button>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <a id="fullDashBtn" href="/dashboard" style="display:none;margin-top:12px;padding:10px 22px;border-radius:8px;font-family:var(--fd);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;color:var(--white);background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(157,111,255,.12));border:1px solid rgba(0,212,255,.4);box-shadow:0 0 20px rgba(0,212,255,.1);transition:all .25s"><i class="fa-solid fa-chart-line" style="margin-right:8px"></i>Open Full Dashboard</a>
+=======
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+        <a id="fullDashBtn" href="/dashboard" style="display:none;margin-top:12px;padding:10px 22px;border-radius:8px;font-family:var(--fd);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;color:var(--white);background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(157,111,255,.12));border:1px solid rgba(0,212,255,.4);box-shadow:0 0 20px rgba(0,212,255,.1);transition:all .25s"><i class="fa-solid fa-chart-line" style="margin-right:8px"></i>Open Full Dashboard</a>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+      </div>
+
+      <!-- DASHBOARD -->
+      <div class="dashboard" id="dashboard">
+        <div class="stat-card">
+          <div class="stat-title">Monitored Target</div>
+          <div class="stat-value" id="deviceIp" style="font-size:1.4rem">192.168.1.1</div>
+<<<<<<< HEAD
+          <div class="stat-sub">Active monitoring session</div>
+=======
+          <div class="stat-sub">Active monitoring session &nbsp;•&nbsp; <span id="captureBadge" style="font-family:var(--fm);font-size:.85rem;color:#6a8aaa">○ IDLE</span></div>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Total Packets Captured</div>
+          <div class="stat-value" id="totalPackets">0</div>
+          <div class="stat-sub">Since session started</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Live Traffic Rate</div>
+          <div class="stat-value" id="pps">0 <small style="font-size:.9rem">pkt/s</small></div>
+          <div class="stat-sub"><span id="bytesSec">0 KB/s</span> &nbsp;•&nbsp; <span id="change">+0%</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Suspicious Packets</div>
+          <div class="stat-value" id="suspCount" style="color:#f59e0b">0</div>
+          <div class="stat-sub">Flagged by anomaly detector</div>
+        </div>
+        <div class="risk-card">
+          <div class="stat-title">Malicious Traffic Risk Level</div>
+          <div class="scale-bar"><div class="scale-indicator" id="riskIndicator" style="left:15%"></div></div>
+          <div class="scale-labels"><span class="low">Safe</span><span class="med">Warning</span><span class="high">Critical</span></div>
+          <div class="risk-info">Current Risk: <strong id="riskLevel" style="color:#10b981">Low</strong></div>
+        </div>
+        <div class="live-graph-card">
+          <div class="lg-title">Live Traffic Flow — Packets & Bandwidth</div>
+          <div class="lg-body"><i class="fa-solid fa-wave-square"></i><span>Real-time Chart.js visualization active in production build</span></div>
+        </div>
+        <div class="ports-grid" id="portsArea"></div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <div style="grid-column:1/-1;display:flex;justify-content:center;padding-top:.5rem">
+          <a href="/dashboard" style="display:inline-flex;align-items:center;gap:10px;padding:1rem 2.4rem;border-radius:10px;font-family:var(--fd);font-weight:700;font-size:1rem;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:var(--white);background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(157,111,255,.12));border:1px solid rgba(0,212,255,.4);box-shadow:0 0 24px rgba(0,212,255,.12);transition:all .25s" onmouseover="this.style.boxShadow='0 0 40px rgba(0,212,255,.3)';this.style.borderColor='rgba(0,212,255,.7)'" onmouseout="this.style.boxShadow='0 0 24px rgba(0,212,255,.12)';this.style.borderColor='rgba(0,212,255,.4)'"><i class="fa-solid fa-chart-line"></i> Open Full Dashboard</a>
+        </div>
+=======
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+        <div style="grid-column:1/-1;display:flex;justify-content:center;padding-top:.5rem">
+          <a href="/dashboard" style="display:inline-flex;align-items:center;gap:10px;padding:1rem 2.4rem;border-radius:10px;font-family:var(--fd);font-weight:700;font-size:1rem;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:var(--white);background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(157,111,255,.12));border:1px solid rgba(0,212,255,.4);box-shadow:0 0 24px rgba(0,212,255,.12);transition:all .25s" onmouseover="this.style.boxShadow='0 0 40px rgba(0,212,255,.3)';this.style.borderColor='rgba(0,212,255,.7)'" onmouseout="this.style.boxShadow='0 0 24px rgba(0,212,255,.12)';this.style.borderColor='rgba(0,212,255,.4)'" onfocus="this.style.boxShadow='0 0 40px rgba(0,212,255,.3)';this.style.borderColor='rgba(0,212,255,.7)'" onblur="this.style.boxShadow='0 0 24px rgba(0,212,255,.12)';this.style.borderColor='rgba(0,212,255,.4)'"><i class="fa-solid fa-chart-line"></i> Open Full Dashboard</a>
+        </div>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="how">
+  <div class="how-in">
+    <div class="reveal">
+      <div class="stag" data-i18n="how.tag">Process</div>
+      <div class="stitle" data-i18n="how.title">How PacketGuard<br/>works</div>
+      <div class="steps">
+        <div class="step"><div class="snum">01</div><div><div class="st" data-i18n="s1.t">Network Discovery</div><div class="sd" data-i18n="s1.d">ARP scans discover every active device on the subnet, including sleeping phones and IoT devices.</div></div></div>
+        <div class="step"><div class="snum">02</div><div><div class="st" data-i18n="s2.t">Packet Capture</div><div class="sd" data-i18n="s2.d">Scapy captures live packets and feeds them through rule-based and ML-based detection pipelines.</div></div></div>
+        <div class="step"><div class="snum">03</div><div><div class="st" data-i18n="s3.t">Threat Analysis</div><div class="sd" data-i18n="s3.d">Each packet is scored by 4 detectors: Port Scan, SYN Flood, High Rate, and Isolation Forest.</div></div></div>
+        <div class="step"><div class="snum">04</div><div><div class="st" data-i18n="s4.t">Alert & Visualize</div><div class="sd" data-i18n="s4.d">Confirmed threats are logged, classified by severity, and pushed to the dashboard as notifications.</div></div></div>
+      </div>
+    </div>
+    <div class="rw reveal">
+      <div class="radar">
+        <div class="rr"></div><div class="rr"></div><div class="rr"></div><div class="rr"></div>
+        <div class="rsw"></div>
+        <div class="rdot"></div><div class="rdot"></div><div class="rdot"></div><div class="rdot"></div>
+      </div>
+      <div class="rlbl" data-i18n="radar.lbl">NETWORK SCAN ACTIVE</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-in">
+    <div class="reveal">
+      <div class="stag" data-i18n="about.tag">About</div>
+      <div class="stitle" data-i18n="about.title">Built as a graduation project in network security</div>
+      <div class="ssub" data-i18n="about.sub">PacketGuard combines classical intrusion detection with modern ML to deliver a complete monitoring solution.</div>
+      <div class="about-pts">
+        <div class="ap"><div class="ap-dot"></div><span data-i18n="a1">Real-time packet analysis using Python and Scapy for deep network visibility</span></div>
+        <div class="ap"><div class="ap-dot"></div><span data-i18n="a2">Isolation Forest ML model trained on network traffic to detect anomalies</span></div>
+        <div class="ap"><div class="ap-dot"></div><span data-i18n="a3">Flask-powered REST API serving a live updating web dashboard</span></div>
+        <div class="ap"><div class="ap-dot"></div><span data-i18n="a4">Supports all device types — phones, laptops, smart devices, routers</span></div>
+        <div class="ap"><div class="ap-dot"></div><span data-i18n="a5">Runs on Windows with administrator privileges for full packet capture</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="stag" data-i18n="tech.tag">Tech Stack</div>
+      <div class="tech-stack">
+        <div class="tc">Python</div><div class="tc">Scapy</div><div class="tc">Flask</div>
+        <div class="tc">Scikit-learn</div><div class="tc">Chart.js</div><div class="tc">SQLite</div>
+        <div class="tc">JavaScript</div><div class="tc">REST API</div><div class="tc">ARP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-nav">
+    <a href="#features" data-i18n="nav.features">Features</a>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+    <a href="/monitor" data-i18n="nav.monitor">Live Monitor</a>
+    <a href="#how" data-i18n="nav.how">How It Works</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="/dashboard" data-i18n="footer.dash">Dashboard</a>
+<<<<<<< HEAD
+=======
+    <a href="#monitor" data-i18n="nav.monitor">Live Monitor</a>
+    <a href="#how" data-i18n="nav.how">How It Works</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#" onclick="openAuth('login')" data-i18n="footer.dash">Dashboard</a>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+  </div>
+  <p>PacketGuard © 2026 — Network Threat Detection</p>
+</footer>
+
+<!-- AUTH MODAL -->
+<div class="overlay" id="auth-overlay">
+  <div class="amodal">
+    <button class="mclose" onclick="closeAuth()">✕</button>
+    <div class="alo"><div class="alo-icon">PG</div><div class="alo-name">PacketGuard</div></div>
+    <div class="atabs">
+      <button class="atab active" id="tab-login" onclick="switchTab('login')" data-i18n="nav.login">Log In</button>
+      <button class="atab" id="tab-signup" onclick="switchTab('signup')" data-i18n="nav.signup">Sign Up</button>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="apanel active" id="panel-login">
+      <div class="awel" data-i18n="login.welcome">Welcome back! Log in to access your dashboard.</div>
+      <div class="fg2">
+<<<<<<< HEAD
+        <label class="flbl" data-i18n="form.email">EMAIL ADDRESS</label>
+        <input type="email" class="finput" id="l-email" data-i18n-ph="form.email.ph" placeholder="you@example.com"/>
+      </div>
+      <div class="fg2">
+        <label class="flbl" data-i18n="form.password">PASSWORD</label>
+        <div class="finput-wrap">
+          <input type="password" class="finput" id="l-pass" data-i18n-ph="form.pass.ph" placeholder="Enter your password"/>
+<<<<<<< HEAD
+          <button class="fpass-toggle" onclick="togglePass('l-pass',this)"><i class="fa-solid fa-eye"></i></button>
+=======
+          <button class="fpass-toggle" onclick="togglePass('l-pass',this)">👁</button>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+        <label class="flbl" for="l-email" data-i18n="form.email">EMAIL ADDRESS</label>
+        <input type="email" class="finput" id="l-email" data-i18n-ph="form.email.ph" placeholder="you@example.com"/>
+      </div>
+      <div class="fg2">
+        <label class="flbl" for="l-pass" data-i18n="form.password">PASSWORD</label>
+        <div class="finput-wrap">
+          <input type="password" class="finput" id="l-pass" data-i18n-ph="form.pass.ph" placeholder="Enter your password"/>
+          <button class="fpass-toggle" onclick="togglePass('l-pass',this)"><i class="fa-solid fa-eye"></i></button>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+        </div>
+      </div>
+      <div class="frow">
+        <label class="fcheck"><input type="checkbox"/> <span data-i18n="form.remember">Remember me</span></label>
+        <button class="flink" onclick="openForgot()" data-i18n="form.forgot">Forgot password?</button>
+      </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div id="login-error" style="display:none;color:#ff4d4d;background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);border-radius:8px;padding:.7rem 1rem;font-size:13px;font-family:var(--fm);margin-bottom:1rem;text-align:center"></div>
+=======
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+      <div id="login-error" style="display:none;color:#ff4d4d;background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);border-radius:8px;padding:.7rem 1rem;font-size:13px;font-family:var(--fm);margin-bottom:1rem;text-align:center"></div>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+      <button class="btn-auth" onclick="handleLogin()" data-i18n="nav.login">LOG IN</button>
+      <div class="for" data-i18n="form.or">or continue with</div>
+      <div class="soc-row">
+        <button class="btn-soc" onclick="socialAuth('Google')"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</button>
+        <button class="btn-soc" onclick="socialAuth('GitHub')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</button>
+      </div>
+    </div>
+
+    <!-- SIGNUP -->
+    <div class="apanel" id="panel-signup">
+      <div class="awel" data-i18n="signup.welcome">Create your free account to get started.</div>
+      <div class="fg2">
+<<<<<<< HEAD
+        <label class="flbl" data-i18n="form.name">FULL NAME</label>
+        <input type="text" class="finput" id="s-name" data-i18n-ph="form.name.ph" placeholder="Your full name"/>
+      </div>
+      <div class="fg2">
+        <label class="flbl" data-i18n="form.email">EMAIL ADDRESS</label>
+        <input type="email" class="finput" id="s-email" data-i18n-ph="form.email.ph" placeholder="you@example.com"/>
+      </div>
+      <div class="fg2">
+        <label class="flbl" data-i18n="form.password">PASSWORD</label>
+        <div class="finput-wrap">
+          <input type="password" class="finput" id="s-pass" data-i18n-ph="form.newpass.ph" placeholder="Create a strong password" oninput="checkStrength(this.value)"/>
+<<<<<<< HEAD
+          <button class="fpass-toggle" onclick="togglePass('s-pass',this)"><i class="fa-solid fa-eye"></i></button>
+=======
+          <button class="fpass-toggle" onclick="togglePass('s-pass',this)">👁</button>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+        <label class="flbl" for="s-name" data-i18n="form.name">FULL NAME</label>
+        <input type="text" class="finput" id="s-name" data-i18n-ph="form.name.ph" placeholder="Your full name"/>
+      </div>
+      <div class="fg2">
+        <label class="flbl" for="s-email" data-i18n="form.email">EMAIL ADDRESS</label>
+        <input type="email" class="finput" id="s-email" data-i18n-ph="form.email.ph" placeholder="you@example.com"/>
+      </div>
+      <div class="fg2">
+        <label class="flbl" for="s-pass" data-i18n="form.password">PASSWORD</label>
+        <div class="finput-wrap">
+          <input type="password" class="finput" id="s-pass" data-i18n-ph="form.newpass.ph" placeholder="Create a strong password" oninput="checkStrength(this.value)"/>
+          <button class="fpass-toggle" onclick="togglePass('s-pass',this)"><i class="fa-solid fa-eye"></i></button>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+        </div>
+      </div>
+      <div class="pws" id="pws">
+        <div class="pb-row"><div class="pb" id="pb1"></div><div class="pb" id="pb2"></div><div class="pb" id="pb3"></div><div class="pb" id="pb4"></div></div>
+        <div class="pw-lbl-row"><span class="pw-lbl" id="pwlbl"></span></div>
+      </div>
+      <button class="btn-auth" onclick="handleSignup()" data-i18n="nav.signup" style="margin-bottom:.8rem">SIGN UP</button>
+      <div class="for" data-i18n="form.or">or continue with</div>
+      <div class="soc-row">
+        <button class="btn-soc" onclick="socialAuth('Google')"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</button>
+        <button class="btn-soc" onclick="socialAuth('GitHub')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</button>
+      </div>
+      <p class="terms" data-i18n="form.terms">By signing up, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- FORGOT PASSWORD MODAL -->
+<div class="overlay" id="forgot-overlay">
+  <div class="fmodal">
+    <button class="mclose" onclick="closeForgot()">✕</button>
+    <div class="alo" style="margin-bottom:18px"><div class="alo-icon">PG</div><div class="alo-name">PacketGuard</div></div>
+    <div class="fmod-t" data-i18n="forgot.title">Reset Password</div>
+    <div class="fmod-s" data-i18n="forgot.sub">Enter your email and we'll send you a reset link.</div>
+    <div class="fg2">
+<<<<<<< HEAD
+      <label class="flbl" data-i18n="form.email">EMAIL ADDRESS</label>
+=======
+      <label class="flbl" for="f-email" data-i18n="form.email">EMAIL ADDRESS</label>
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+      <input type="email" class="finput" id="f-email" placeholder="you@example.com"/>
+    </div>
+    <button class="btn-auth" onclick="handleForgot()" data-i18n="forgot.btn">SEND RESET LINK</button>
+    <button class="btn-back" onclick="closeForgot();openAuth('login')">← <span data-i18n="forgot.back">Back to Login</span></button>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ====== i18n ======
+const T={
+  en:{brand:'PacketGuard','nav.features':'Features','nav.how':'How It Works','nav.about':'About','nav.monitor':'Live Monitor','nav.login':'Log In','nav.signup':'Sign Up','hero.badge':'REAL-TIME THREAT INTELLIGENCE','hero.tagline':'Network Guardian','hero.desc':'Advanced network threat detection powered by machine learning. Monitor every device, detect every anomaly, protect your network in real time.','hero.cta':'GET STARTED FREE','hero.monitor':'Try Live Monitor','stats.threats':'Threats Detected','stats.scan':'Scan Interval','stats.types':'Attack Types','stats.monitor':'Live Monitoring','feat.tag':'Capabilities','feat.title':'Everything you need to<br/>secure your network','feat.sub':'Built from the ground up for real-time threat detection with powerful ML-driven anomaly analysis.','f1.t':'Live Network Scanner','f1.d':'Automatically discovers all devices every 20 seconds. Identifies phones, laptops, routers, and IoT.','f2.t':'ML Anomaly Detection','f2.d':'Isolation Forest learns your normal traffic patterns and flags outliers in real time.','f3.t':'Real-Time Alerts','f3.d':'Instant push notifications for HIGH and CRITICAL threats. Visual popups keep you informed.','f4.t':'Packet Capture Engine','f4.d':'Deep packet inspection via Scapy. Monitors TCP, UDP, ICMP traffic.','f5.t':'Multi-Vector Detection','f5.d':'Simultaneous detection of port scans, SYN floods, brute force, DNS tunneling.','f6.t':'Analytics Dashboard','f6.d':'Interactive charts, severity breakdowns, live alert feeds. Auto-refreshes every 5 seconds.','monitor.tag':'Live Demo','monitor.title':'Try the Monitor Now','monitor.sub':'Enter a target IP and start simulated packet monitoring with real-time threat analysis.','how.tag':'Process','how.title':'How PacketGuard<br/>works','s1.t':'Network Discovery','s1.d':'ARP scans discover every active device on the subnet, including sleeping phones and IoT devices.','s2.t':'Packet Capture','s2.d':'Scapy captures live packets and feeds them through rule-based and ML-based detection pipelines.','s3.t':'Threat Analysis','s3.d':'Each packet is scored by 4 detectors: Port Scan, SYN Flood, High Rate, and Isolation Forest.','s4.t':'Alert & Visualize','s4.d':'Confirmed threats are logged, classified by severity, and pushed to the dashboard as notifications.','radar.lbl':'NETWORK SCAN ACTIVE','about.tag':'About','about.title':'Built as a graduation project in network security','about.sub':'PacketGuard combines classical intrusion detection with modern ML to deliver a complete monitoring solution.','a1':'Real-time packet analysis using Python and Scapy for deep network visibility','a2':'Isolation Forest ML model trained on network traffic to detect anomalies','a3':'Flask-powered REST API serving a live updating web dashboard','a4':'Supports all device types — phones, laptops, smart devices, routers','a5':'Runs on Windows with administrator privileges for full packet capture','tech.tag':'Tech Stack','cta.title':'Ready to protect<br/>your network?','cta.sub':'Create your free account and start detecting threats in real time.','cta.btn':'CREATE FREE ACCOUNT','footer.dash':'Dashboard','login.welcome':'Welcome back! Log in to access your dashboard.','signup.welcome':'Create your free account to get started.','form.email':'EMAIL ADDRESS','form.email.ph':'you@example.com','form.password':'PASSWORD','form.pass.ph':'Enter your password','form.newpass.ph':'Create a strong password','form.name':'FULL NAME','form.name.ph':'Your full name','form.remember':'Remember me','form.forgot':'Forgot password?','form.or':'or continue with','form.terms':'By signing up, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>','forgot.title':'Reset Password','forgot.sub':"Enter your email and we'll send you a reset link.",'forgot.btn':'SEND RESET LINK','forgot.back':'Back to Login','pw.weak':'Weak','pw.fair':'Fair','pw.good':'Good','pw.strong':'Strong'},
+  ar:{brand:'PacketGuard','nav.features':'المميزات','nav.how':'كيف يعمل','nav.about':'عن المشروع','nav.monitor':'المراقبة الحية','nav.login':'تسجيل الدخول','nav.signup':'إنشاء حساب','hero.badge':'كشف التهديدات في الوقت الفعلي','hero.tagline':'حارس الشبكة','hero.desc':'كشف متقدم لتهديدات الشبكة مدعوم بالذكاء الاصطناعي. راقب كل جهاز، اكتشف كل شذوذ، احمِ شبكتك.','hero.cta':'ابدأ مجاناً','hero.monitor':'جرب المراقبة','stats.threats':'تهديد مكتشف','stats.scan':'فترة الفحص','stats.types':'أنواع الهجمات','stats.monitor':'مراقبة مستمرة','feat.tag':'الإمكانيات','feat.title':'كل ما تحتاجه لتأمين<br/>شبكتك','feat.sub':'مبني للكشف الفوري عن التهديدات مع تحليل الشذوذ بالذكاء الاصطناعي.','f1.t':'فحص الشبكة المباشر','f1.d':'يكتشف تلقائياً جميع الأجهزة كل 20 ثانية.','f2.t':'كشف الشذوذ بالذكاء الاصطناعي','f2.d':'تتعلم خوارزمية Isolation Forest أنماط حركة المرور وترصد الشذوذ.','f3.t':'تنبيهات فورية','f3.d':'إشعارات فورية للتهديدات عالية الخطورة.','f4.t':'محرك التقاط الحزم','f4.d':'فحص عميق للحزم باستخدام Scapy. يراقب TCP وUDP وICMP.','f5.t':'كشف متعدد المتجهات','f5.d':'كشف متزامن لفحص المنافذ وهجمات SYN والقوة الغاشمة.','f6.t':'لوحة تحليلات','f6.d':'مخططات تفاعلية وتغذية تنبيهات مباشرة.','monitor.tag':'تجربة مباشرة','monitor.title':'جرب المراقبة الآن','monitor.sub':'أدخل IP المستهدف وابدأ مراقبة الحزم المحاكاة مع تحليل التهديدات.','how.tag':'العملية','how.title':'كيف يعمل<br/>PacketGuard','s1.t':'اكتشاف الشبكة','s1.d':'تكتشف فحوصات ARP جميع الأجهزة النشطة بما في ذلك الهواتف النائمة.','s2.t':'التقاط الحزم','s2.d':'يلتقط Scapy حزم الشبكة ويغذيها عبر خطوط الكشف.','s3.t':'تحليل التهديدات','s3.d':'تسجيل كل حزمة بواسطة 4 أدوات: فحص المنافذ، SYN، معدل عالٍ، ونموذج ML.','s4.t':'التنبيه والتصور','s4.d':'تُسجَّل التهديدات وتُصنَّف حسب الخطورة وتُرسَل للوحة القيادة.','radar.lbl':'فحص الشبكة نشط','about.tag':'عن المشروع','about.title':'مشروع تخرج في أمن الشبكات','about.sub':'يجمع PacketGuard بين تقنيات كشف التسلل الكلاسيكية والتعلم الآلي.','a1':'تحليل الحزم في الوقت الفعلي باستخدام Python وScapy','a2':'نموذج Isolation Forest لاكتشاف الشذوذ الإحصائي','a3':'واجهة REST مدعومة بـ Flask تخدم لوحة ويب متحدثة','a4':'يدعم جميع أنواع الأجهزة — هواتف، أجهزة محمولة، راوترات','a5':'يعمل على Windows بامتيازات المسؤول','tech.tag':'التقنيات','cta.title':'مستعد لحماية<br/>شبكتك؟','cta.sub':'أنشئ حسابك المجاني وابدأ في كشف التهديدات.','cta.btn':'إنشاء حساب مجاني','footer.dash':'لوحة التحكم','login.welcome':'مرحباً بعودتك! سجّل الدخول للوصول للوحة.','signup.welcome':'أنشئ حسابك المجاني للبدء.','form.email':'البريد الإلكتروني','form.email.ph':'example@mail.com','form.password':'كلمة المرور','form.pass.ph':'أدخل كلمة المرور','form.newpass.ph':'أنشئ كلمة مرور قوية','form.name':'الاسم الكامل','form.name.ph':'اسمك الكامل','form.remember':'تذكرني','form.forgot':'نسيت كلمة المرور؟','form.or':'أو المتابعة باستخدام','form.terms':'بالتسجيل توافق على <a href="#">الشروط</a> و<a href="#">الخصوصية</a>','forgot.title':'إعادة تعيين كلمة المرور','forgot.sub':'أدخل بريدك وسنرسل رابط إعادة التعيين.','forgot.btn':'إرسال الرابط','forgot.back':'العودة لتسجيل الدخول','pw.weak':'ضعيفة','pw.fair':'مقبولة','pw.good':'جيدة','pw.strong':'قوية'},
+  fr:{brand:'PacketGuard','nav.features':'Fonctionnalités','nav.how':'Fonctionnement','nav.about':'À propos','nav.monitor':'Moniteur','nav.login':'Connexion','nav.signup':'Inscription','hero.badge':'DÉTECTION DE MENACES EN TEMPS RÉEL','hero.tagline':'Gardien du Réseau','hero.desc':'Détection avancée des menaces réseau propulsée par ML. Surveillez chaque appareil, protégez votre réseau.','hero.cta':'COMMENCER GRATUITEMENT','hero.monitor':'Essayer le Moniteur','stats.threats':'Menaces Détectées','stats.scan':'Intervalle Scan','stats.types':"Types d'Attaques",'stats.monitor':'Surveillance Continue','feat.tag':'Capacités','feat.title':'Tout pour sécuriser<br/>votre réseau','feat.sub':'Conçu pour la détection en temps réel avec analyse par ML.','f1.t':'Scanner Réseau Live','f1.d':'Découvre tous les appareils toutes les 20s.','f2.t':'Détection ML','f2.d':'Isolation Forest signale les anomalies en temps réel.','f3.t':'Alertes Temps Réel','f3.d':'Notifications instantanées pour menaces HIGH et CRITICAL.','f4.t':'Capture de Paquets','f4.d':'Inspection profonde via Scapy. Surveille TCP, UDP, ICMP.','f5.t':'Détection Multi-Vecteurs','f5.d':'Détection simultanée de scans, floods SYN, brute force.','f6.t':'Tableau de Bord','f6.d':'Graphiques interactifs, alertes en direct. Actualisation toutes les 5 secondes.','monitor.tag':'Démo Live','monitor.title':'Essayez le Moniteur','monitor.sub':'Entrez une IP cible et démarrez la surveillance simulée.','how.tag':'Processus','how.title':'Comment fonctionne<br/>PacketGuard','s1.t':'Découverte Réseau','s1.d':'Les scans ARP découvrent tous les appareils actifs.','s2.t':'Capture de Paquets','s2.d':'Scapy capture les paquets via pipelines règles et ML.','s3.t':'Analyse des Menaces','s3.d':'Chaque paquet est évalué: Scan ports, SYN Flood, Débit, Forest.','s4.t':'Alerte & Visualisation','s4.d':'Menaces enregistrées, classées et envoyées au tableau de bord.','radar.lbl':'SCAN RÉSEAU ACTIF','about.tag':'À Propos','about.title':"Projet de fin d'études en sécurité réseau",'about.sub':'PacketGuard combine détection classique et ML moderne.','a1':'Analyse temps réel avec Python et Scapy','a2':'Modèle Isolation Forest entraîné sur le trafic réseau','a3':'API REST Flask servant un tableau de bord en direct','a4':'Supporte tous les types: téléphones, laptops, IoT, routeurs','a5':'Fonctionne sous Windows avec privilèges admin','tech.tag':'Stack Technique','cta.title':'Prêt à protéger<br/>votre réseau ?','cta.sub':'Créez votre compte gratuit et commencez à détecter les menaces.','cta.btn':'CRÉER UN COMPTE GRATUIT','footer.dash':'Tableau de bord','login.welcome':'Bon retour ! Connectez-vous.','signup.welcome':'Créez votre compte gratuit.','form.email':'ADRESSE E-MAIL','form.email.ph':'vous@exemple.com','form.password':'MOT DE PASSE','form.pass.ph':'Votre mot de passe','form.newpass.ph':'Créez un mot de passe fort','form.name':'NOM COMPLET','form.name.ph':'Votre nom complet','form.remember':'Se souvenir','form.forgot':'Mot de passe oublié ?','form.or':'ou continuer avec','form.terms':'En vous inscrivant vous acceptez nos <a href="#">CGU</a> et <a href="#">Confidentialité</a>','forgot.title':'Réinitialiser','forgot.sub':'Entrez votre e-mail et nous vous enverrons un lien.','forgot.btn':'ENVOYER LE LIEN','forgot.back':'Retour à la connexion','pw.weak':'Faible','pw.fair':'Acceptable','pw.good':'Bon','pw.strong':'Fort'}
+};
+
+let lang='en';
+function t(k){return T[lang][k]||T.en[k]||k}
+function applyT(){
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=t(el.getAttribute('data-i18n'));if(v)el.innerHTML=v});
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const v=t(el.getAttribute('data-i18n-ph'));if(v)el.placeholder=v});
+}
+function setLang(l){
+  lang=l;
+  document.getElementById('lc').textContent=l.toUpperCase();
+  document.querySelectorAll('.lang-opt').forEach(o=>o.classList.remove('active'));
+  document.querySelector(`.lang-opt[onclick="setLang('${l}')"]`)?.classList.add('active');
+  closeLang();applyT();
+  try{localStorage.setItem('pg-lang',l)}catch(e){}
+}
+function toggleLang(){document.getElementById('ldd').classList.toggle('open')}
+function closeLang(){document.getElementById('ldd').classList.remove('open')}
+document.addEventListener('click',e=>{if(!e.target.closest('.lang-sw'))closeLang()});
+
+// Theme
+let dark=true;
+function toggleTheme(){
+  dark=!dark;
+  document.documentElement.setAttribute('data-theme',dark?'dark':'light');
+<<<<<<< HEAD
+<<<<<<< HEAD
+  document.getElementById('tbtn').innerHTML=dark?'<i class="fa-solid fa-moon"></i>':'<i class="fa-solid fa-sun"></i>';
+=======
+  document.getElementById('tbtn').textContent=dark?'🌙':'☀️';
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+  document.getElementById('tbtn').innerHTML=dark?'<i class="fa-solid fa-moon"></i>':'<i class="fa-solid fa-sun"></i>';
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+  try{localStorage.setItem('pg-theme',dark?'dark':'light')}catch(e){}
+}
+
+// Auth
+function openAuth(tab){document.getElementById('auth-overlay').classList.add('open');switchTab(tab);document.body.style.overflow='hidden'}
+function closeAuth(){document.getElementById('auth-overlay').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('auth-overlay').addEventListener('click',e=>{if(e.target===document.getElementById('auth-overlay'))closeAuth()});
+function switchTab(tab){
+  document.querySelectorAll('.atab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.apanel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  document.getElementById('panel-'+tab).classList.add('active');
+}
+function openForgot(){closeAuth();document.getElementById('forgot-overlay').classList.add('open');document.body.style.overflow='hidden'}
+function closeForgot(){document.getElementById('forgot-overlay').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('forgot-overlay').addEventListener('click',e=>{if(e.target===document.getElementById('forgot-overlay'))closeForgot()});
+<<<<<<< HEAD
+<<<<<<< HEAD
+function togglePass(id,ico){const i=document.getElementById(id);if(i.type==='password'){i.type='text';ico.innerHTML='<i class="fa-solid fa-eye-slash"></i>'}else{i.type='password';ico.innerHTML='<i class="fa-solid fa-eye"></i>'}}
+=======
+function togglePass(id,ico){const i=document.getElementById(id);if(i.type==='password'){i.type='text';ico.textContent='🙈'}else{i.type='password';ico.textContent='👁'}}
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+function togglePass(id,ico){const i=document.getElementById(id);if(i.type==='password'){i.type='text';ico.innerHTML='<i class="fa-solid fa-eye-slash"></i>'}else{i.type='password';ico.innerHTML='<i class="fa-solid fa-eye"></i>'}}
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+function checkStrength(v){
+  const el=document.getElementById('pws');if(!v){el.classList.remove('show');return}
+  el.classList.add('show');let s=0;
+  if(v.length>=8)s++;if(/[A-Z]/.test(v))s++;if(/[0-9]/.test(v))s++;if(/[^A-Za-z0-9]/.test(v))s++;
+  const cols=['','#ff2d6b','#ffb800','#00d4ff','#00ff9d'];
+  const lbls=[t('pw.weak'),t('pw.weak'),t('pw.fair'),t('pw.good'),t('pw.strong')];
+  ['pb1','pb2','pb3','pb4'].forEach((id,i)=>{document.getElementById(id).style.background=i<s?cols[s]:'var(--border)'});
+  const lbl=document.getElementById('pwlbl');lbl.textContent=lbls[s];lbl.style.color=cols[s]||'var(--text2)';
+}
+// ====== SESSION STATE ======
+let currentUser = null;
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+function setLoggedIn(name, email) {
+  currentUser = { name, email };
+  // Nav swap
+  document.getElementById('nav-auth-btns').style.display = 'none';
+  const navUser = document.getElementById('nav-user');
+  navUser.style.display = 'flex';
+  document.getElementById('nav-username').textContent = name || email;
+  // Reveal monitor
+  document.getElementById('monitor-gate').style.display = 'none';
+  const panel = document.getElementById('monitor-panel');
+  panel.style.display = 'block';
+  panel.style.animation = 'fu .5s ease both';
+  document.getElementById('session-user').textContent = email;
+  document.getElementById('session-time').textContent = 'Session started: ' + new Date().toLocaleTimeString();
+}
+
+function handleLogout() {
+  if(monitoring) { monitoring=false; clearInterval(monitorInterval); }
+  currentUser = null;
+  document.getElementById('nav-auth-btns').style.display = 'flex';
+  document.getElementById('nav-user').style.display = 'none';
+  document.getElementById('monitor-gate').style.display = 'block';
+  document.getElementById('monitor-panel').style.display = 'none';
+  document.getElementById('dashboard').classList.remove('active');
+  totalPackets=0; suspicious=0; risk=15;
+<<<<<<< HEAD
+=======
+// Check if already logged in on page load
+(async function(){
+  try {
+    const res = await fetch('/api/auth/me');
+    if (res.ok) {
+      const data = await res.json();
+      if (data.success && data.user) {
+        currentUser = data.user;
+        document.getElementById('nav-auth-btns').style.display = 'none';
+        const navUser = document.getElementById('nav-user');
+        navUser.style.display = 'flex';
+        document.getElementById('nav-username').textContent = data.user.name;
+      }
+    }
+  } catch(e) {}
+})();
+
+function handleLogout() {
+  fetch('/api/auth/logout', { method: 'POST' }).finally(() => {
+    currentUser = null;
+    window.location.reload();
+  });
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+}
+
+function handleMonitorNavClick(e) {
+  if (!currentUser) {
+    e.preventDefault();
+    openAuth('login');
+  }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+  // If logged in, href="/monitor" will navigate normally
+}
+
+async function _authFetch(url, body){
+  // Try with full headers first. If that throws (CORS/network), try plain text fallback.
+  const payload = JSON.stringify(body);
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {'Content-Type': 'application/json'},
+      body: payload
+    });
+    return await res.json();
+  } catch(err) {
+    console.error('[authFetch] primary fetch failed:', err.name, err.message, url);
+    // Fallback: try without explicit Content-Type (avoids CORS preflight for some configs)
+    try {
+      const res2 = await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: payload
+      });
+      return await res2.json();
+    } catch(err2) {
+      console.error('[authFetch] fallback fetch also failed:', err2.name, err2.message);
+      throw new Error('Network error: ' + err.message + ' | Is the Flask server running on port 5000?');
+    }
+  }
+}
+
+async function handleLogin(){
+  const e=document.getElementById('l-email').value,p=document.getElementById('l-pass').value;
+  const errEl=document.getElementById('login-error');
+  errEl.style.display='none';
+  if(!e||!p){errEl.textContent='Please fill in all fields.';errEl.style.display='block';return}
+  const btn=document.querySelector('#panel-login .btn-auth');
+  if(btn){btn.disabled=true;btn.textContent='Logging in...';}
+  try{
+    const data = await _authFetch('/api/auth/login', {email:e, password:p});
+    if(data.success){ window.location.href='/monitor'; }
+    else{ errEl.textContent=data.error||'Invalid email or password.';errEl.style.display='block'; }
+  }catch(err){
+    errEl.textContent=err.message||'Connection error. Is Flask running on port 5000?';
+    errEl.style.display='block';
+    console.error('[login]', err);
+  } finally {
+    if(btn){btn.disabled=false;btn.textContent='LOG IN';}
+  }
+}
+async function handleSignup(){
+  const n=document.getElementById('s-name').value,e=document.getElementById('s-email').value,p=document.getElementById('s-pass').value;
+  if(!n||!e||!p){alert('Please fill in all fields.');return}
+  try{
+    const data = await _authFetch('/api/auth/register', {name:n, email:e, password:p});
+    if(data.success){ window.location.href='/monitor'; }
+    else{ alert(data.error||'Sign up failed. Please try again.'); }
+  }catch(err){ alert(err.message||'Connection error. Please try again.'); }
+}
+function handleForgot(){const e=document.getElementById('f-email').value;if(!e){alert('Please enter your email.');return}alert('📧 Reset link would be sent to: '+e);closeForgot()}
+function socialAuth(p){
+  alert('Social login is not available. Please use email and password.');
+}
+
+<<<<<<< HEAD
+=======
+}
+
+async function handleLogin(){
+  const email = document.getElementById('l-email').value.trim();
+  const pass  = document.getElementById('l-pass').value;
+  if(!email||!pass){ alert('Please fill in all fields.'); return; }
+
+  const btn = document.querySelector('#panel-login .btn-auth');
+  btn.textContent = 'LOGGING IN...'; btn.disabled = true;
+
+  try {
+    const res  = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ email, password: pass })
+    });
+    const data = await res.json();
+    if (data.success) {
+      closeAuth();
+      window.location.href = '/monitor';
+    } else {
+      alert(data.error || 'Login failed.');
+      btn.textContent = 'LOG IN'; btn.disabled = false;
+    }
+  } catch(e) {
+    alert('Connection error. Is the server running?');
+    btn.textContent = 'LOG IN'; btn.disabled = false;
+  }
+}
+
+async function handleSignup(){
+  const name  = document.getElementById('s-name').value.trim();
+  const email = document.getElementById('s-email').value.trim();
+  const pass  = document.getElementById('s-pass').value;
+  if(!name||!email||!pass){ alert('Please fill in all fields.'); return; }
+
+  const btn = document.querySelector('#panel-signup .btn-auth');
+  btn.textContent = 'CREATING...'; btn.disabled = true;
+
+  try {
+    const res  = await fetch('/api/auth/register', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ name, email, password: pass })
+    });
+    const data = await res.json();
+    if (data.success) {
+      closeAuth();
+      window.location.href = '/monitor';
+    } else {
+      alert(data.error || 'Registration failed.');
+      btn.textContent = 'SIGN UP'; btn.disabled = false;
+    }
+  } catch(e) {
+    alert('Connection error. Is the server running?');
+    btn.textContent = 'SIGN UP'; btn.disabled = false;
+  }
+}
+
+function handleForgot(){
+  const e=document.getElementById('f-email').value;
+  if(!e){alert('Please enter your email.');return}
+  alert('📧 Reset link would be sent to: '+e); closeForgot();
+}
+
+function socialAuth(p){ alert('🔗 OAuth with '+p+' — ready for backend integration!'); }
+
+
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+// ====== LIVE MONITOR ======
+let monitoring=false, totalPackets=0, suspicious=0, risk=15, monitorInterval=null;
+
+function toggleMonitor(){
+=======
+// ====== LIVE MONITOR ======
+let monitoring=false, totalPackets=0, suspicious=0, risk=15, monitorInterval=null;
+
+function _setCaptureBadge(running){
+  let badge=document.getElementById('captureBadge');
+  if(!badge) return;
+  badge.textContent=running?'● CAPTURING':'○ IDLE';
+  badge.style.color=running?'#00ff9d':'#6a8aaa';
+}
+
+async function toggleMonitor(){
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+  const btn=document.getElementById('startBtn');
+  const lbl=document.getElementById('btnLabel');
+  const dashboard=document.getElementById('dashboard');
+
+  if(!monitoring){
+    monitoring=true;
+    btn.classList.add('stop');
+    lbl.textContent='Stop Protection';
+    btn.querySelector('i').className='fa-solid fa-stop';
+    document.getElementById('deviceIp').textContent=document.getElementById('targetIp').value||'192.168.1.1';
+    dashboard.classList.add('active');
+<<<<<<< HEAD
+<<<<<<< HEAD
+    document.getElementById('fullDashBtn').style.display='inline-flex';
+=======
+    dashboard.style.display='grid';
+    window.scrollTo({top:dashboard.offsetTop-120,behavior:'smooth'});
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+
+    // Populate fake ports if "Scan + Monitor" mode
+    if(document.getElementById('scanMode').value==='Scan + Monitor'){
+      renderPorts();
+    }
+    monitorInterval=setInterval(updateStats,1800);
+=======
+    document.getElementById('fullDashBtn').style.display='inline-flex';
+
+    if(document.getElementById('scanMode').value==='Scan + Monitor'){
+      renderPorts();
+    }
+
+    // Tell the backend to start packet capture
+    try{
+      await fetch('/api/monitor/start',{method:'POST',credentials:'include'});
+    }catch(e){console.warn('monitor/start error:',e);}
+
+    monitorInterval=setInterval(updateStats,1800);
+    updateStats();
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+  } else {
+    monitoring=false;
+    btn.classList.remove('stop');
+    lbl.textContent='Start Protection';
+    btn.querySelector('i').className='fa-solid fa-play';
+    clearInterval(monitorInterval);
+<<<<<<< HEAD
+  }
+}
+
+function updateStats(){
+  if(!monitoring)return;
+  const newPackets=Math.floor(Math.random()*120)+30;
+  totalPackets+=newPackets;
+  const pps=Math.floor(newPackets/1.8);
+  const bytesSec=(pps*(Math.random()*800+200)/1024).toFixed(1);
+  const changePct=(Math.random()*40-20).toFixed(1);
+
+  document.getElementById('totalPackets').textContent=totalPackets.toLocaleString();
+  document.getElementById('pps').innerHTML=`${pps} <small style="font-size:.9rem">pkt/s</small>`;
+  document.getElementById('bytesSec').textContent=`${bytesSec} KB/s`;
+  const chEl=document.getElementById('change');
+  chEl.textContent=changePct>=0?`+${changePct}%`:`${changePct}%`;
+  chEl.style.color=changePct>=0?'#10b981':'#ef4444';
+
+  if(Math.random()>.85){suspicious+=Math.floor(Math.random()*3)+1;risk=Math.min(100,risk+8)}
+  else if(Math.random()>.4){risk=Math.max(0,risk-3)}
+
+  document.getElementById('suspCount').textContent=suspicious;
+  document.getElementById('riskIndicator').style.left=`${risk}%`;
+
+  let level='Low',color='#10b981';
+  if(risk>70){level='Critical';color='#ef4444'}
+  else if(risk>35){level='Warning';color='#f59e0b'}
+  const rl=document.getElementById('riskLevel');
+  rl.textContent=level;rl.style.color=color;
+=======
+    _setCaptureBadge(false);
+
+    try{
+      await fetch('/api/monitor/stop',{method:'POST',credentials:'include'});
+    }catch(e){console.warn('monitor/stop error:',e);}
+  }
+}
+
+async function updateStats(){
+  if(!monitoring)return;
+  try{
+    const[liveRes,statsRes]=await Promise.all([fetch('/api/live_state'),fetch('/api/stats')]);
+    if(!liveRes.ok||!statsRes.ok)return;
+    const live=await liveRes.json();
+    const stats=await statsRes.json();
+
+    _setCaptureBadge(live.running||false);
+    const pkts=live.total_packets||0;
+    const pps=Math.round(live.rate||0);
+    const bpsSec=((live.bytes_per_sec||0)/1024).toFixed(1);
+    const delta=pkts-totalPackets;
+    const changePct=totalPackets>0?((delta/totalPackets)*100).toFixed(1):'0.0';
+    totalPackets=pkts;
+
+    document.getElementById('totalPackets').textContent=pkts.toLocaleString();
+    document.getElementById('pps').innerHTML=`${pps} <small style="font-size:.9rem">pkt/s</small>`;
+    document.getElementById('bytesSec').textContent=`${bpsSec} KB/s`;
+    const chEl=document.getElementById('change');
+    const cpNum=Number(changePct);
+    chEl.textContent=cpNum>=0?`+${changePct}%`:`${changePct}%`;
+    chEl.style.color=cpNum>=0?'#10b981':'#ef4444';
+
+    suspicious=stats.total_alerts||live.alerts_total||0;
+    document.getElementById('suspCount').textContent=suspicious;
+
+    const sev=stats.severity_count||{};
+    const crit=sev.CRITICAL||0,high=sev.HIGH||0;
+    risk=crit>0?Math.min(100,75+crit*2):high>0?Math.min(70,40+high):suspicious>0?Math.min(35,15+suspicious):15;
+
+    document.getElementById('riskIndicator').style.left=`${risk}%`;
+    let level='Low',color='#10b981';
+    if(risk>70){level='Critical';color='#ef4444'}
+    else if(risk>35){level='Warning';color='#f59e0b'}
+    const rl=document.getElementById('riskLevel');
+    rl.textContent=level;rl.style.color=color;
+  }catch(e){console.warn('updateStats:',e);}
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+}
+
+function renderPorts(){
+  const portData=[
+    {port:22,service:'SSH',status:'open'},{port:80,service:'HTTP',status:'open'},
+    {port:443,service:'HTTPS',status:'open'},{port:23,service:'Telnet',status:'closed'},
+    {port:3306,service:'MySQL',status:'filter'},{port:8080,service:'HTTP-Alt',status:'open'}
+  ];
+  const area=document.getElementById('portsArea');
+  area.innerHTML='';
+  portData.forEach(p=>{
+    const card=document.createElement('div');
+    card.className='port-card';
+    card.innerHTML=`<div class="port-header"><span class="port-number">${p.port}</span><span class="port-status ${p.status}">${p.status.toUpperCase()}</span></div><div style="font-family:var(--fm);font-size:.85rem;color:var(--text2)">${p.service}</div>`;
+    area.appendChild(card);
+  });
+}
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.08+'s';obs.observe(el)});
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+<<<<<<< HEAD
+<<<<<<< HEAD
+  a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'auto'})}});
+=======
+  a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'})}});
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+  a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'auto'})}});
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+});
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.borderBottomColor=window.scrollY>50?'var(--border2)':'var(--border)';
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeAuth();closeForgot()}});
+
+// Init
+(function(){
+  let sl='en',st='dark';
+  try{sl=localStorage.getItem('pg-lang')||'en';st=localStorage.getItem('pg-theme')||'dark'}catch(e){}
+  dark=st==='dark';
+  document.documentElement.setAttribute('data-theme',st);
+<<<<<<< HEAD
+<<<<<<< HEAD
+  document.getElementById('tbtn').innerHTML=dark?'<i class="fa-solid fa-moon"></i>':'<i class="fa-solid fa-sun"></i>';
+=======
+  document.getElementById('tbtn').textContent=dark?'🌙':'☀️';
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+  document.getElementById('tbtn').innerHTML=dark?'<i class="fa-solid fa-moon"></i>':'<i class="fa-solid fa-sun"></i>';
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+  setLang(sl);
+})();
+</script>
+</body>
+<<<<<<< HEAD
+<<<<<<< HEAD
+</html>
+
+=======
+</html>
+>>>>>>> 32ec94c197df011701a41008123c09d1b7019b4b
+=======
+</html>
+
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)

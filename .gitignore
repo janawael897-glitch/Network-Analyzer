@@ -1,0 +1,86 @@
+<<<<<<< HEAD
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.csv
+*.pkl
+*.joblib
+.env
+node_modules/
+dist/
+build/
+*.db
+*.zip
+data/
+datasets/
+*.pcap
+*.pcapng
+=======
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# Databases
+*.db
+*.sqlite3
+
+# ML models
+models/
+*.pkl
+*.joblib
+*.h5
+
+# Dataset files
+dataset/
+data/
+*.csv
+*.zip
+*.pcap
+*.pcapng
+*.cap
+
+# Environment
+.env
+
+# Build
+dist/
+build/
+
+# IDE
+.vscode/
+.claude/
+
+# Large local files
+GeoLite2-City.mmdb
+
+# Runtime files
+alerts.json
+alert_count.json
+blocked_ips.json
+incidents.json
+live_state.json
+network_devices.json
+packet_count.json
+scan_history.json
+whitelist.json
+ip_whitelist.json
+
+# Logs
+network_analyzer.log
+train_ml.log.monitor.pid
+*.tmp
+email_config.json
+code/.monitor.pid
+>>>>>>> 943b830 (Added AI IDS modules and ML pipeline)
+code/env

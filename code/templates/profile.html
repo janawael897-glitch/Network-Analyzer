@@ -1,0 +1,2085 @@
+﻿<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+
+
+<script>
+
+
+/* Theme early-init — must run before CSS renders to prevent flash */
+
+
+(function(){
+
+
+  var t = localStorage.getItem('pg_theme');
+
+
+  if(t === 'light') document.documentElement.setAttribute('data-theme','light');
+
+
+})();
+
+
+</script>
+
+
+<meta charset="UTF-8">
+
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+<title>My Profile — PacketGuard</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+
+<style>
+
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+
+:root{
+
+
+  --bg:#07090f;--surface:#0d1117;--surface2:#111827;--surface3:#161f30;
+
+
+  --border:rgba(0,200,255,.12);--border2:rgba(0,200,255,.22);
+
+
+  --accent:#00c8ff;--accent2:#ff2d55;--accent3:#00ff88;--purple:#9d6fff;--gold:#f5a623;
+
+
+  --text:#e2e8f0;--dim:#4b6070;--dim2:#64748b;
+
+
+  --mono:'JetBrains Mono',monospace;--sans:'Inter',sans-serif;
+
+
+  --glow:0 0 20px rgba(0,200,255,.15);
+
+
+}
+
+
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;display:flex;flex-direction:column;font-size:14px;line-height:1.6}
+
+
+
+
+
+/* ── LIGHT MODE ── */
+
+
+[data-theme="light"]{
+
+
+  --bg:#eef2f7;--surface:#ffffff;--surface2:#f4f7fb;--surface3:#e8f0f8;
+
+
+  --border:rgba(0,122,170,.12);--border2:rgba(0,122,170,.22);
+
+
+  --accent:#007aaa;--accent2:#cc1133;--accent3:#007744;--purple:#6622bb;--gold:#cc8800;
+
+
+  --text:#1a2f48;--dim:#8aaabb;--dim2:#5a7a98;
+
+
+  --glow:0 0 20px rgba(0,122,170,.1);
+
+
+}
+
+
+[data-theme="light"] body{background:var(--bg)}
+
+
+[data-theme="light"] .card{background:var(--surface);border-color:rgba(0,122,170,.12);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+
+
+[data-theme="light"] .card::before{background:linear-gradient(90deg,transparent,rgba(0,122,170,.3),transparent)}
+
+
+[data-theme="light"] .card-label{color:var(--dim2)}
+
+
+[data-theme="light"] .card-label::after{background:rgba(0,122,170,.15)}
+
+
+[data-theme="light"] .stat-box{background:var(--surface2);border-color:rgba(0,122,170,.12)}
+
+
+[data-theme="light"] .stat-val{color:var(--accent)}
+
+
+[data-theme="light"] .snav-btn{color:var(--dim2)}
+
+
+[data-theme="light"] .snav-btn:hover{color:var(--text);background:var(--surface2);border-color:rgba(0,122,170,.2)}
+
+
+[data-theme="light"] .snav-btn.active{color:var(--accent);background:rgba(0,122,170,.07);border-color:rgba(0,122,170,.2)}
+
+
+[data-theme="light"] .snav-btn.danger-btn{color:var(--accent2) !important;border-color:rgba(204,17,51,.2) !important;background:rgba(204,17,51,.04) !important}
+
+
+[data-theme="light"] .field input{background:var(--surface2);border-color:rgba(0,122,170,.15);color:var(--text)}
+
+
+[data-theme="light"] .field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,122,170,.08)}
+
+
+[data-theme="light"] .field input[readonly]{color:var(--dim2);background:var(--surface3)}
+
+
+[data-theme="light"] .field label{color:var(--dim2)}
+
+
+[data-theme="light"] .field .hint{color:var(--dim)}
+
+
+[data-theme="light"] .pw-bar-wrap{background:rgba(0,0,0,.08)}
+
+
+[data-theme="light"] .pw-eye{color:var(--dim2)}
+
+
+[data-theme="light"] .info-table tr{border-bottom-color:rgba(0,122,170,.1)}
+
+
+[data-theme="light"] .info-table td:first-child{color:var(--dim2)}
+
+
+[data-theme="light"] .avatar-ring{background:linear-gradient(135deg,rgba(0,122,170,.08),rgba(102,34,187,.06));border-color:rgba(0,122,170,.3);color:var(--accent);box-shadow:0 0 20px rgba(0,122,170,.1)}
+
+
+[data-theme="light"] .online-dot{border-color:var(--surface)}
+
+
+[data-theme="light"] footer{border-top-color:rgba(0,122,170,.12);color:var(--dim)}
+
+
+[data-theme="light"] .toast.success{background:#e8f8ef;border-color:rgba(0,119,68,.3);color:#007744}
+
+
+[data-theme="light"] .toast.error{background:#fdeef1;border-color:rgba(204,17,51,.3);color:#cc1133}
+
+
+[data-theme="light"] .toast.info{background:#e8f4fb;border-color:rgba(0,122,170,.3);color:#007aaa}
+
+
+
+
+
+/* ── HEADER ── */
+
+
+/* === HEADER — matches dashboard exactly === */
+
+
+header{display:flex;align-items:center;gap:16px;padding:14px 28px;
+
+
+  background:rgba(8,12,20,.96);border-bottom:1px solid var(--border2);
+
+
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+
+
+  position:sticky;top:0;z-index:100}
+
+
+.logo-mark{width:38px;height:38px;border-radius:8px;
+
+
+  background:linear-gradient(135deg,rgba(0,200,255,.12),rgba(176,96,255,.12));
+
+
+  border:1px solid rgba(0,200,255,.28);display:flex;align-items:center;justify-content:center;
+
+
+  font-size:15px;font-weight:700;font-family:var(--mono);color:var(--accent);
+
+
+  box-shadow:0 0 18px rgba(0,200,255,.2),inset 0 0 10px rgba(0,200,255,.05);
+
+
+  animation:pulse-logo 3s ease-in-out infinite;letter-spacing:1px;flex-shrink:0}
+
+
+@keyframes pulse-logo{
+
+
+  0%,100%{box-shadow:0 0 12px rgba(0,200,255,.18),inset 0 0 10px rgba(0,200,255,.05)}
+
+
+  50%{box-shadow:0 0 28px rgba(0,200,255,.45),inset 0 0 16px rgba(0,200,255,.1)}}
+
+
+.logo-text{line-height:1;text-decoration:none;display:flex;flex-direction:column;gap:2px}
+
+
+.logo-text .logo-title{font-size:22px;font-weight:700;letter-spacing:4px;color:var(--accent);
+
+
+  text-transform:uppercase;text-shadow:0 0 22px rgba(0,200,255,.45);line-height:1}
+
+
+.logo-text span{font-size:11px;font-family:var(--mono);color:var(--dim2);letter-spacing:2px}
+
+
+[data-theme="light"] .logo-mark{background:linear-gradient(135deg,rgba(0,122,170,.2),rgba(102,34,187,.15));border-color:rgba(0,122,170,.3);color:#007aaa}
+
+
+/* nav links — pill style */
+
+
+.nav-links{display:flex;align-items:center;gap:8px;margin-left:auto}
+
+
+.nav-link{padding:6px 16px;border-radius:20px;font-family:var(--mono);font-size:11px;font-weight:700;
+
+
+  color:#6a8aaa;cursor:pointer;text-decoration:none;letter-spacing:.5px;transition:all .18s;
+
+
+  border:1px solid rgba(255,255,255,.1);background:transparent}
+
+
+.nav-link:hover{color:#c8d8e8;border-color:rgba(0,212,255,.35);background:rgba(0,212,255,.06)}
+
+
+.nav-link.active{color:var(--accent);border-color:var(--accent);background:rgba(0,200,255,.08);
+
+
+  box-shadow:0 0 12px rgba(0,200,255,.15)}
+
+
+.nav-link.purple{color:#b060ff;border-color:#b060ff;background:rgba(176,96,255,.08)}
+
+
+.nav-link.purple:hover{box-shadow:0 0 12px rgba(176,96,255,.2)}
+
+
+/* icon buttons */
+
+
+.hdr-icon-btn{width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.04);
+
+
+  border:1px solid rgba(255,255,255,.08);color:#6a8aaa;cursor:pointer;display:flex;
+
+
+  align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+
+
+.hdr-icon-btn:hover{background:rgba(0,200,255,.08);border-color:rgba(0,200,255,.3);color:#00c8ff}
+
+
+.hdr-icon-btn.hdr-icon-danger:hover{background:rgba(255,45,85,.07);border-color:rgba(255,45,85,.3);color:#ff2d55}
+
+
+[data-theme="light"] .hdr-icon-btn{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.1);color:#4a6a88}
+
+
+[data-theme="light"] .hdr-icon-btn:hover{background:rgba(0,122,170,.1);border-color:rgba(0,122,170,.3);color:var(--accent)}
+
+
+[data-theme="light"] header{background:rgba(255,255,255,.97) !important;border-bottom-color:var(--border2) !important}
+
+
+
+
+
+/* ── LAYOUT ── */
+
+
+.page{flex:1;max-width:1000px;margin:0 auto;width:100%;padding:32px 20px;display:grid;grid-template-columns:260px 1fr;gap:20px;align-items:start}
+
+
+@media(max-width:740px){.page{grid-template-columns:1fr}}
+
+
+
+
+
+/* ── CARD ── */
+
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden}
+
+
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+
+
+.card-label{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--dim2);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+
+
+.card-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+
+
+
+
+/* ── SIDEBAR ── */
+
+
+.avatar-wrap{display:flex;flex-direction:column;align-items:center;margin-bottom:20px}
+
+
+.avatar-ring{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,rgba(0,200,255,.1),rgba(157,111,255,.1));border:1px solid rgba(0,200,255,.25);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-family:var(--mono);font-weight:800;font-size:32px;color:var(--accent);position:relative;box-shadow:var(--glow)}
+
+
+.online-dot{position:absolute;bottom:5px;right:5px;width:12px;height:12px;border-radius:50%;background:var(--accent3);border:2px solid var(--surface);animation:pulse 2s infinite}
+
+
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,255,136,.4)}50%{box-shadow:0 0 0 5px rgba(0,255,136,0)}}
+
+
+.user-name{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;text-align:center;letter-spacing:.5px}
+
+
+.user-email{font-family:var(--mono);font-size:10px;color:var(--dim2);text-align:center;margin-bottom:12px;word-break:break-all}
+
+
+.role-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+
+
+.role-badge.admin{background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.3);color:var(--accent)}
+
+
+.role-badge.analyst{background:rgba(176,96,255,.08);border:1px solid rgba(176,96,255,.3);color:var(--purple)}
+
+
+.role-badge.viewer{background:rgba(0,255,136,.06);border:1px solid rgba(0,255,136,.25);color:#00ff88}
+
+
+.role-badge.user{background:rgba(176,96,255,.08);border:1px solid rgba(176,96,255,.3);color:var(--purple)}
+
+
+
+
+
+/* ── STAT BOXES ── */
+
+
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+
+
+.stat-box{background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:12px 10px;text-align:center}
+
+
+.stat-val{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--accent);margin-bottom:3px}
+
+
+.stat-lbl{font-family:var(--mono);font-size:8px;color:var(--dim2);letter-spacing:2px;text-transform:uppercase}
+
+
+
+
+
+/* ── SIDEBAR ACTIONS ── */
+
+
+.sidebar-nav{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+
+
+.snav-btn{width:100%;padding:10px 14px;border-radius:8px;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:1.5px;cursor:pointer;transition:all .2s;text-align:left;display:flex;align-items:center;gap:10px;border:1px solid transparent;background:transparent;color:var(--dim2)}
+
+
+.snav-btn:hover{color:var(--text);background:var(--surface2);border-color:var(--border)}
+
+
+.snav-btn.active{color:var(--accent);background:rgba(0,200,255,.07);border-color:rgba(0,200,255,.2)}
+
+
+.snav-btn.danger-btn{color:var(--accent2)!important;border-color:rgba(255,45,85,.2)!important;background:rgba(255,45,85,.04)!important}
+
+
+.snav-btn .ico{width:16px;text-align:center;font-size:13px}
+
+
+
+
+
+/* ── TABS ── */
+
+
+.section{display:none}.section.active{display:block}
+
+
+
+
+
+/* ── FORM ELEMENTS ── */
+
+
+.field{margin-bottom:16px}
+
+
+.field label{display:block;font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:2.5px;color:var(--dim2);text-transform:uppercase;margin-bottom:7px}
+
+
+.field input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:var(--mono);font-size:12px;color:var(--text);outline:none;transition:border-color .2s}
+
+
+.field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,200,255,.08)}
+
+
+.field input[readonly]{color:var(--dim2);cursor:not-allowed}
+
+
+.field .hint{font-family:var(--mono);font-size:9px;color:var(--dim);margin-top:5px;letter-spacing:.5px}
+
+
+
+
+
+/* ── BUTTONS ── */
+
+
+.btn{padding:10px 22px;border-radius:8px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:2px;cursor:pointer;transition:all .2s;border:none;text-transform:uppercase}
+
+
+.btn-primary{background:linear-gradient(135deg,rgba(0,200,255,.15),rgba(157,111,255,.15));border:1px solid rgba(0,200,255,.35);color:var(--accent)}
+
+
+.btn-primary:hover{background:linear-gradient(135deg,rgba(0,200,255,.25),rgba(157,111,255,.25));box-shadow:var(--glow)}
+
+
+.btn-danger{background:rgba(255,45,85,.08);border:1px solid rgba(255,45,85,.3);color:var(--accent2)}
+
+
+.btn-danger:hover{background:rgba(255,45,85,.15)}
+
+
+
+
+
+/* ── PW STRENGTH ── */
+
+
+.pw-bar-wrap{height:3px;background:var(--surface3);border-radius:4px;margin-top:6px;overflow:hidden}
+
+
+.pw-bar{height:100%;width:0;border-radius:4px;transition:width .3s,background .3s}
+
+
+.pw-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+
+.pw-input-wrap{position:relative}
+
+
+.pw-input-wrap input{width:100%;padding-right:40px}
+
+
+.pw-eye{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--dim2);font-size:13px;padding:2px}
+
+
+
+
+
+/* ── INFO TABLE ── */
+
+
+.info-table{width:100%;border-collapse:collapse}
+
+
+.info-table tr{border-bottom:1px solid var(--border)}
+
+
+.info-table tr:last-child{border-bottom:none}
+
+
+.info-table td{padding:11px 6px;font-family:var(--mono);font-size:11px}
+
+
+.info-table td:first-child{color:var(--dim2);font-size:10px;letter-spacing:1px;width:38%}
+
+
+.info-table td:last-child{color:var(--text);font-weight:500}
+
+
+.badge-val{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:12px;font-size:9px;font-weight:700;letter-spacing:1.5px}
+
+
+.badge-val.green{background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.25);color:var(--accent3)}
+
+
+.badge-val.blue{background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.25);color:var(--accent)}
+
+
+.badge-val.purple{background:rgba(157,111,255,.08);border:1px solid rgba(157,111,255,.25);color:var(--purple)}
+
+
+.badge-val.red{background:rgba(255,45,85,.08);border:1px solid rgba(255,45,85,.25);color:var(--accent2)}
+
+
+
+
+
+/* ── MESSAGE ── */
+
+
+.msg{font-family:var(--mono);font-size:10px;margin-top:10px;min-height:16px;letter-spacing:.5px}
+
+
+
+
+
+/* ── TOAST ── */
+
+
+.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:8px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:1px;opacity:0;transform:translateY(10px);transition:all .3s;z-index:999;pointer-events:none;max-width:320px}
+
+
+.toast.show{opacity:1;transform:translateY(0)}
+
+
+.toast.success{background:#0d2b1a;border:1px solid rgba(0,255,136,.35);color:var(--accent3)}
+
+
+.toast.error{background:#2b0d14;border:1px solid rgba(255,45,85,.35);color:var(--accent2)}
+
+
+.toast.info{background:#0d1d2b;border:1px solid rgba(0,200,255,.35);color:var(--accent)}
+
+
+
+
+
+footer{text-align:center;padding:20px;font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:2px;border-top:1px solid var(--border)}
+
+
+
+
+
+/* ── RBAC Role Badge (dashboard) ── */
+
+
+.dash-role-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+
+
+.dash-role-badge.admin{background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.3);color:#00c8ff}
+
+
+.dash-role-badge.analyst{background:rgba(176,96,255,.08);border:1px solid rgba(176,96,255,.3);color:#b060ff}
+
+
+.dash-role-badge.viewer,.dash-role-badge.user{background:rgba(0,255,136,.06);border:1px solid rgba(0,255,136,.25);color:#00ff88}
+
+
+.admin-only-btn{display:none}
+
+
+
+
+
+
+
+
+/* === EXTRA LIGHT MODE OVERRIDES === */
+
+
+[data-theme="light"] select{background:var(--surface2) !important;border-color:var(--border) !important;color:var(--text) !important}
+
+
+[data-theme="light"] .card{box-shadow:0 2px 12px rgba(0,0,0,.06) !important}
+
+
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+
+
+<header>
+
+
+  <div class="logo-mark">PG</div>
+
+
+  <a class="logo-text" href="/">
+
+
+    <div class="logo-title">PacketGuard</div>
+
+
+    <span>Network Threat Detection System</span>
+
+
+  </a>
+
+
+  <div class="nav-links">
+
+
+    <a href="/dashboard" class="nav-link">Dashboard</a>
+
+
+    <a href="/monitor"   class="nav-link">Monitor</a>
+
+
+    <a href="/hunt"      class="nav-link purple">Threat Hunt</a>
+
+
+    <a href="/profile"   class="nav-link active">Profile</a>
+
+
+    <!-- divider -->
+
+
+    <div style="width:1px;height:22px;background:rgba(255,255,255,.08);margin:0 6px"></div>
+
+
+    <!-- theme toggle -->
+
+
+    <button class="hdr-icon-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Light/Dark">
+
+
+      <svg id="theme-icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+
+
+      <svg id="theme-icon-sun"  width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+
+
+    </button>
+
+
+    <!-- logout -->
+
+
+    <button class="hdr-icon-btn hdr-icon-danger" onclick="doLogout()" title="Log Out">
+
+
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+
+
+    </button>
+
+
+  </div>
+
+
+</header>
+
+
+
+
+
+<div class="page">
+
+
+
+
+
+  <!-- ── SIDEBAR ── -->
+
+
+  <div class="card" style="padding:20px">
+
+
+    <div class="card-label">Identity</div>
+
+
+    <div class="avatar-wrap">
+
+
+      <div class="avatar-ring">
+
+
+        <span id="avatar-letter">?</span>
+
+
+        <span class="online-dot"></span>
+
+
+      </div>
+
+
+      <div class="user-name"  id="prof-name">Loading…</div>
+
+
+      <div class="user-email" id="prof-email">—</div>
+
+
+      <div class="role-badge user" id="role-badge">—</div>
+
+
+    </div>
+
+
+
+
+
+    <div class="stat-grid">
+
+
+      <div class="stat-box">
+
+
+        <div class="stat-val" id="stat-joined">—</div>
+
+
+        <div class="stat-lbl">Joined</div>
+
+
+      </div>
+
+
+      <div class="stat-box">
+
+
+        <div class="stat-val" id="stat-lastlogin">—</div>
+
+
+        <div class="stat-lbl">Last Login</div>
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="sidebar-nav">
+
+
+      <button class="snav-btn active" onclick="showSection('edit',this)"><span class="ico"><i class="fa-solid fa-pen"></i></span>Edit Profile</button>
+
+
+      <button class="snav-btn" onclick="showSection('password',this)"><span class="ico"><i class="fa-solid fa-key"></i></span>Change Password</button>
+
+
+      <button class="snav-btn" onclick="showSection('info',this)"><span class="ico"><i class="fa-solid fa-circle-info"></i></span>Account Info</button>
+
+
+      <button class="snav-btn" id="nav-btn-requests" style="display:none" onclick="showSection('requests',this);loadAccountRequests()"><span class="ico"><i class="fa-solid fa-user-clock"></i></span>Account Requests<span class="badge-val blue" id="requests-badge" style="display:none;margin-left:auto">0</span></button>
+
+
+      <button class="snav-btn danger-btn" onclick="doLogout()"><span class="ico"><i class="fa-solid fa-power-off"></i></span>Log Out</button>
+
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+  <!-- ── MAIN PANEL ── -->
+
+
+  <div style="display:flex;flex-direction:column;gap:20px">
+
+
+
+
+
+    <!-- EDIT PROFILE -->
+
+
+    <div class="card section active" id="section-edit">
+
+
+      <div class="card-label">Edit Profile</div>
+
+
+      <div class="field">
+
+
+        <label>Display Name</label>
+
+
+        <input type="text" id="edit-name" placeholder="Your full name" maxlength="60">
+
+
+      </div>
+
+
+      <div class="field">
+
+
+        <label>Email Address <span id="email-readonly-label" style="color:var(--dim);font-size:8px">(READ-ONLY)</span></label>
+
+
+        <input type="email" id="edit-email" readonly>
+
+
+        <div class="hint" id="email-hint">// Email cannot be changed. Contact admin if needed.</div>
+
+
+      </div>
+
+
+      <div class="field">
+
+
+        <label>Role <span style="color:var(--dim);font-size:8px">(READ-ONLY)</span></label>
+
+
+        <input type="text" id="edit-role" readonly>
+
+
+      </div>
+
+
+      <button class="btn btn-primary" onclick="saveProfile()"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+
+
+      <div class="msg" id="edit-msg"></div>
+
+
+    </div>
+
+
+
+
+
+    <!-- CHANGE PASSWORD -->
+
+
+    <div class="card section" id="section-password">
+
+
+      <div class="card-label">Change Password</div>
+
+
+      <div class="field">
+
+
+        <label>Current Password</label>
+
+
+        <div class="pw-input-wrap">
+
+
+          <input type="password" id="pw-current" placeholder="Enter current password">
+
+
+          <button class="pw-eye" onclick="togglePw('pw-current',this)"><i class="fa-solid fa-eye"></i></button>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="pw-fields">
+
+
+        <div class="field">
+
+
+          <label>New Password</label>
+
+
+          <div class="pw-input-wrap">
+
+
+            <input type="password" id="pw-new" placeholder="8+ chars, upper, lower, number, special" oninput="checkPwStrength(this.value)">
+
+
+            <button class="pw-eye" onclick="togglePw('pw-new',this)"><i class="fa-solid fa-eye"></i></button>
+
+
+          </div>
+
+
+          <div class="pw-bar-wrap"><div class="pw-bar" id="pw-strength"></div></div>
+
+
+        </div>
+
+
+        <div class="field">
+
+
+          <label>Confirm Password</label>
+
+
+          <div class="pw-input-wrap">
+
+
+            <input type="password" id="pw-confirm" placeholder="Repeat new password">
+
+
+            <button class="pw-eye" onclick="togglePw('pw-confirm',this)"><i class="fa-solid fa-eye"></i></button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <button class="btn btn-primary" onclick="changePassword()"><i class="fa-solid fa-lock"></i> Update Password</button>
+
+
+      <div class="msg" id="pw-msg"></div>
+
+
+    </div>
+
+
+
+
+
+    <!-- ACCOUNT INFO -->
+
+
+    <div class="card section" id="section-info">
+
+
+      <div class="card-label">Account Info</div>
+
+
+      <table class="info-table">
+
+
+        <tr><td>USER ID</td><td><span class="badge-val blue" id="info-id">—</span></td></tr>
+
+
+        <tr><td>FULL NAME</td><td id="info-name">—</td></tr>
+
+
+        <tr><td>EMAIL</td><td id="info-email" style="word-break:break-all">—</td></tr>
+
+
+        <tr><td>ROLE</td><td><span class="badge-val purple" id="info-role">—</span></td></tr>
+
+
+        <tr><td>ACCESS LEVEL</td><td><span class="badge-val green" id="info-access">—</span></td></tr>
+
+
+        <tr><td>ACCOUNT CREATED</td><td id="info-created">—</td></tr>
+
+
+        <tr><td>LAST LOGIN</td><td id="info-lastlogin">—</td></tr>
+
+
+      </table>
+
+
+    </div>
+
+
+    <!-- ACCOUNT REQUESTS (admin only) -->
+
+
+    <div class="card section" id="section-requests">
+
+
+      <div class="card-label">Pending Account Requests <button onclick="loadAccountRequests()" style="margin-left:auto;background:transparent;border:1px solid var(--border);color:var(--dim2);font-family:var(--mono);font-size:9px;letter-spacing:1px;padding:3px 10px;border-radius:6px;cursor:pointer">&#8635; REFRESH</button></div>
+
+
+      <table class="info-table" style="border-collapse:collapse">
+
+
+        <thead>
+
+
+          <tr style="border-bottom:1px solid var(--border)">
+
+
+            <th style="text-align:left;padding:8px 6px;font-family:var(--mono);font-size:9px;letter-spacing:1px;color:var(--dim2)">NAME</th>
+
+
+            <th style="text-align:left;padding:8px 6px;font-family:var(--mono);font-size:9px;letter-spacing:1px;color:var(--dim2)">EMAIL</th>
+
+
+            <th style="text-align:left;padding:8px 6px;font-family:var(--mono);font-size:9px;letter-spacing:1px;color:var(--dim2)">ROLE</th>
+
+
+            <th style="text-align:left;padding:8px 6px;font-family:var(--mono);font-size:9px;letter-spacing:1px;color:var(--dim2)">SUBMITTED</th>
+
+
+            <th style="text-align:right;padding:8px 6px;font-family:var(--mono);font-size:9px;letter-spacing:1px;color:var(--dim2)">ACTION</th>
+
+
+          </tr>
+
+
+        </thead>
+
+
+        <tbody id="requests-tbody">
+
+
+          <tr><td colspan="5" style="text-align:center;color:var(--dim);padding:16px">Loading…</td></tr>
+
+
+        </tbody>
+
+
+      </table>
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+<div class="toast" id="toast"></div>
+
+
+<!-- ACCOUNT REQUEST REVIEW MODAL -->
+
+
+<div id="request-review-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:9999;align-items:center;justify-content:center">
+
+
+  <div class="card" style="max-width:480px;width:90%;padding:28px;margin:0">
+
+
+    <div class="card-label" id="request-review-title">Review Account Request</div>
+
+
+    <div id="request-review-body" style="margin-bottom:18px"></div>
+
+
+    <div class="field">
+
+
+      <label>Admin Note (optional)</label>
+
+
+      <input type="text" id="request-review-note" placeholder="Decision rationale or follow-up action…">
+
+
+    </div>
+
+
+    <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:8px">
+
+
+      <button class="btn" style="background:transparent;border:1px solid var(--border);color:var(--dim2)" onclick="closeRequestReviewModal()">Cancel</button>
+
+
+      <button class="btn btn-primary" id="request-review-confirm-btn" onclick="confirmRequestReview()">Confirm</button>
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+<footer>PacketGuard &copy; 2025 — Network Threat Detection System</footer>
+
+
+
+
+
+<script>
+
+
+let _user = null;
+
+
+
+
+
+// ── Section switcher ──────────────────────────────────────────────
+
+
+function showSection(name, btn) {
+
+
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+
+
+  document.querySelectorAll('.snav-btn').forEach(b => b.classList.remove('active'));
+
+
+  document.getElementById('section-' + name).classList.add('active');
+
+
+  if (btn) btn.classList.add('active');
+
+
+}
+
+
+
+
+
+// ── Toast ─────────────────────────────────────────────────────────
+
+
+let _toastTimer;
+
+
+function toast(msg, type='info') {
+
+
+  const t = document.getElementById('toast');
+
+
+  t.textContent = msg;
+
+
+  t.className = 'toast show ' + type;
+
+
+  clearTimeout(_toastTimer);
+
+
+  _toastTimer = setTimeout(() => t.classList.remove('show'), 3500);
+
+
+}
+
+
+
+
+
+// ── Load profile ──────────────────────────────────────────────────
+
+
+async function loadProfile() {
+
+
+  try {
+
+
+    const r = await fetch('/api/auth/profile', {credentials: 'include'});
+
+
+    if (r.status === 401) {
+
+
+      // Not logged in — redirect to home
+
+
+      window.location.href = '/';
+
+
+      return;
+
+
+    }
+
+
+    if (!r.ok) {
+
+
+      toast('Server error (' + r.status + '). Try refreshing.', 'error');
+
+
+      return;
+
+
+    }
+
+
+    const d = await r.json();
+
+
+    if (!d.success) { window.location.href = '/'; return; }
+
+
+    _user = d.user;
+
+
+    renderProfile(_user);
+
+
+  } catch(e) {
+
+
+    console.error('Profile load error:', e);
+
+
+    toast('Could not reach server. Check Flask is running.', 'error');
+
+
+  }
+
+
+}
+
+
+
+
+
+function renderProfile(u) {
+
+
+  const initial = (u.name || u.email || '?')[0].toUpperCase();
+
+
+  document.getElementById('avatar-letter').textContent = initial;
+
+
+  document.getElementById('prof-name').textContent     = u.name  || '—';
+
+
+  document.getElementById('prof-email').textContent    = u.email || '—';
+
+
+  document.getElementById('edit-name').value           = u.name  || '';
+
+
+  document.getElementById('edit-email').value          = u.email || '';
+
+
+  const roleLabels = {admin:'Administrator', analyst:'Analyst', viewer:'Viewer'};
+
+
+  document.getElementById('edit-role').value = roleLabels[u.role] || u.role.charAt(0).toUpperCase()+u.role.slice(1);
+
+
+
+
+
+  const rb = document.getElementById('role-badge');
+
+
+  const roleEmoji = {admin:'⚡ ADMIN', analyst:'🔍 ANALYST', viewer:'👁 VIEWER'};
+
+
+  rb.textContent = roleEmoji[u.role] || u.role.toUpperCase();
+
+
+  rb.className   = 'role-badge ' + (u.role || 'analyst');
+
+
+  // Set global role var
+
+
+  window._userRole = u.role;
+
+
+  window._sessionUser = u;
+
+  // Account Requests nav is admin-only
+  const reqBtn = document.getElementById('nav-btn-requests');
+  if (reqBtn) {
+    if (u.role === 'admin') { reqBtn.style.display = ''; loadAccountRequests(); }
+    else reqBtn.style.display = 'none';
+  }
+
+  // Admins can change their own email
+  const emailInput = document.getElementById('edit-email');
+  const emailHint  = document.getElementById('email-hint');
+  const emailLabel = document.getElementById('email-readonly-label');
+  if (u.role === 'admin') {
+    if (emailInput)  { emailInput.removeAttribute('readonly'); emailInput.style.opacity='1'; }
+    if (emailHint)   emailHint.textContent = '// Admins can update their email address.';
+    if (emailLabel)  emailLabel.style.display = 'none';
+  } else {
+    if (emailInput)  emailInput.setAttribute('readonly', '');
+    if (emailHint)   emailHint.textContent = '// Email cannot be changed. Contact admin if needed.';
+    if (emailLabel)  emailLabel.style.display = '';
+  }
+
+
+
+
+
+  document.getElementById('stat-joined').textContent    = u.created_at ? fmtDate(u.created_at) : '—';
+
+
+  document.getElementById('stat-lastlogin').textContent = u.last_login  ? fmtDate(u.last_login)  : 'First visit';
+
+
+
+
+
+  document.getElementById('info-id').textContent       = '#' + u.id;
+
+
+  document.getElementById('info-name').textContent     = u.name;
+
+
+  document.getElementById('info-email').textContent    = u.email;
+
+
+  const roleDisplay = {admin:'ADMINISTRATOR', analyst:'ANALYST', viewer:'VIEWER'};
+
+
+  document.getElementById('info-role').textContent = roleDisplay[u.role] || u.role.toUpperCase();
+
+
+  const accessEl = document.getElementById('info-access');
+
+
+  if(accessEl) accessEl.closest('tr').style.display = 'none';
+
+
+  document.getElementById('info-created').textContent  = u.created_at ? fmtFull(u.created_at) : '—';
+
+
+  document.getElementById('info-lastlogin').textContent= u.last_login  ? fmtFull(u.last_login)  : '—';
+
+
+}
+
+
+
+
+
+function fmtDate(iso) {
+
+
+  if (!iso) return '—';
+
+
+  const d = new Date(iso + (iso.includes('Z') || iso.includes('+') ? '' : 'Z'));
+
+
+  const diff = Math.floor((Date.now() - d) / 86400000);
+
+
+  if (diff === 0) return 'Today';
+
+
+  if (diff === 1) return 'Yesterday';
+
+
+  if (diff < 30)  return diff + 'd ago';
+
+
+  if (diff < 365) return Math.floor(diff/30) + 'mo ago';
+
+
+  return Math.floor(diff/365) + 'yr ago';
+
+
+}
+
+
+
+
+
+function fmtFull(iso) {
+
+
+  if (!iso) return '—';
+
+
+  const d = new Date(iso + (iso.includes('Z') || iso.includes('+') ? '' : 'Z'));
+
+
+  return d.toLocaleString('en-GB', {dateStyle:'medium', timeStyle:'short'});
+
+
+}
+
+
+
+
+
+// ── Save profile ──────────────────────────────────────────────────
+
+
+async function saveProfile() {
+
+
+  const name = document.getElementById('edit-name').value.trim();
+
+
+  const msg  = document.getElementById('edit-msg');
+
+
+  if (!name || name.length < 2) { msg.textContent = '// Name must be at least 2 characters'; msg.style.color='var(--accent2)'; return; }
+
+
+  msg.textContent = '// Saving…'; msg.style.color = 'var(--dim2)';
+
+
+  try {
+
+
+    const r = await fetch('/api/auth/profile/update', {
+
+
+      method:'POST', credentials:'include',
+
+
+      headers:{'Content-Type':'application/json'},
+
+
+      body: JSON.stringify(window._userRole === 'admin'
+        ? {name, email: document.getElementById('edit-email').value.trim()}
+        : {name})
+
+
+    });
+
+
+    const d = await r.json();
+
+
+    if (d.success) {
+
+
+      _user.name = name;
+      if (d.new_email) _user.email = d.new_email;
+
+
+      renderProfile(_user);
+
+
+      msg.textContent = '// Profile updated successfully';
+
+
+      msg.style.color = 'var(--accent3)';
+
+
+      toast('Profile updated', 'success');
+
+
+    } else {
+
+
+      msg.textContent = '// Error: ' + (d.error || 'Unknown error');
+
+
+      msg.style.color = 'var(--accent2)';
+
+
+    }
+
+
+  } catch(e) { msg.textContent = '// Network error'; msg.style.color = 'var(--accent2)'; }
+
+
+}
+
+
+
+
+
+// ── Password ──────────────────────────────────────────────────────
+
+
+function togglePw(id, btn) {
+
+
+  const el = document.getElementById(id);
+
+
+  const show = el.type === 'password';
+
+
+  el.type = show ? 'text' : 'password';
+
+
+  btn.innerHTML = show ? '<i class="fa-solid fa-eye-slash"></i>' : '<i class="fa-solid fa-eye"></i>';
+
+
+}
+
+
+
+
+
+function checkPwStrength(pw) {
+
+
+  let s = 0;
+
+
+  if (pw.length >= 6) s++;
+
+
+  if (pw.length >= 10) s++;
+
+
+  if (/[A-Z]/.test(pw)) s++;
+
+
+  if (/[0-9]/.test(pw)) s++;
+
+
+  if (/[^A-Za-z0-9]/.test(pw)) s++;
+
+
+  const bar = document.getElementById('pw-strength');
+
+
+  bar.style.width = (s / 5 * 100) + '%';
+
+
+  bar.style.background = ['#ff2d55','#ff9500','#ffcc00','#00c8ff','#00ff88'][s-1] || '#333';
+
+
+}
+
+
+
+
+
+async function changePassword() {
+
+
+  const cur = document.getElementById('pw-current').value.trim();
+
+
+  const npw = document.getElementById('pw-new').value.trim();
+
+
+  const con = document.getElementById('pw-confirm').value.trim();
+
+
+  const msg = document.getElementById('pw-msg');
+
+
+  if (!cur || !npw || !con) { msg.textContent = '// All fields required'; msg.style.color='var(--accent2)'; return; }
+
+
+  if (npw !== con)          { msg.textContent = '// Passwords do not match'; msg.style.color='var(--accent2)'; return; }
+
+
+  const pwOk = npw.length>=8 && /[A-Z]/.test(npw) && /[a-z]/.test(npw) && /[0-9]/.test(npw) && /[^A-Za-z0-9]/.test(npw);
+
+
+  if (!pwOk) { msg.textContent = '// Password must be 8+ chars with uppercase, lowercase, number, and special character'; msg.style.color='var(--accent2)'; return; }
+
+
+  if (cur === npw)          { msg.textContent = '// Must differ from current password'; msg.style.color='var(--accent2)'; return; }
+
+
+  msg.textContent = '// Updating…'; msg.style.color = 'var(--dim2)';
+
+
+  try {
+
+
+    const r = await fetch('/api/auth/change-password', {
+
+
+      method:'POST', credentials:'include',
+
+
+      headers:{'Content-Type':'application/json'},
+
+
+      body: JSON.stringify({current_password:cur, new_password:npw, confirm_password:con})
+
+
+    });
+
+
+    const d = await r.json();
+
+
+    if (d.success) {
+
+
+      msg.textContent = '// Password changed successfully';
+
+
+      msg.style.color = 'var(--accent3)';
+
+
+      document.getElementById('pw-current').value = '';
+
+
+      document.getElementById('pw-new').value = '';
+
+
+      document.getElementById('pw-confirm').value = '';
+
+
+      document.getElementById('pw-strength').style.width = '0';
+
+
+      toast('Password updated', 'success');
+
+
+    } else {
+
+
+      msg.textContent = '// Error: ' + (d.error || 'Unknown error');
+
+
+      msg.style.color = 'var(--accent2)';
+
+
+    }
+
+
+  } catch(e) { msg.textContent = '// Network error'; msg.style.color = 'var(--accent2)'; }
+
+
+}
+
+
+
+
+
+// ── Account Requests (admin) ────────────────────────────────────────
+
+
+function escapeHtml(s) {
+
+
+  return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+
+}
+
+
+async function loadAccountRequests() {
+
+
+  if (window._userRole !== 'admin') return;
+
+
+  const tbody = document.getElementById('requests-tbody');
+
+
+  try {
+
+
+    const r = await fetch('/api/auth/account-requests', {credentials:'include'});
+
+
+    const d = await r.json();
+
+
+    if (!d.success) return;
+
+
+    const pending = d.requests.filter(x => x.status === 'pending');
+
+
+    const badge = document.getElementById('requests-badge');
+
+
+    if (badge) { badge.textContent = pending.length; badge.style.display = pending.length ? '' : 'none'; }
+
+
+    window._accountRequests = d.requests;
+
+
+    if (!d.requests.length) {
+
+
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--dim);padding:16px">No account requests.</td></tr>';
+
+
+      return;
+
+
+    }
+
+
+    const statusColor = {pending:'blue', approved:'green', rejected:'red'};
+
+
+    tbody.innerHTML = d.requests.map(req => {
+
+
+      const actions = req.status === 'pending'
+        ? `<button class="btn btn-primary" style="padding:4px 10px;font-size:9px" onclick="openRequestReviewModal(${req.id},'approve')">Approve</button> `
+          + `<button class="btn btn-danger" style="padding:4px 10px;font-size:9px" onclick="openRequestReviewModal(${req.id},'reject')">Reject</button>`
+        : `<span class="badge-val ${statusColor[req.status] || 'blue'}">${req.status.toUpperCase()}</span>`;
+
+
+      return `<tr>
+        <td>${escapeHtml(req.name)}</td>
+        <td style="word-break:break-all">${escapeHtml(req.email)}</td>
+        <td>${escapeHtml(req.role)}</td>
+        <td>${fmtDate(req.submitted_at)}</td>
+        <td style="text-align:right">${actions}</td>
+      </tr>`;
+
+
+    }).join('');
+
+
+  } catch(e) { console.error('Account requests load error:', e); }
+
+
+}
+
+
+let _pendingReview = null;
+
+function openRequestReviewModal(id, action) {
+
+
+  const req = (window._accountRequests || []).find(r => r.id === id);
+
+
+  if (!req) return;
+
+
+  _pendingReview = {id, action};
+
+
+  const isApprove = action === 'approve';
+
+
+  const title  = document.getElementById('request-review-title');
+
+
+  const body   = document.getElementById('request-review-body');
+
+
+  const note   = document.getElementById('request-review-note');
+
+
+  const confirmBtn = document.getElementById('request-review-confirm-btn');
+
+
+  title.textContent     = isApprove ? 'Approve Account Request' : 'Reject Account Request';
+
+
+  title.style.color     = isApprove ? 'var(--accent3)' : 'var(--accent2)';
+
+
+  body.innerHTML = `<table class="info-table"><tr><td>NAME</td><td>${escapeHtml(req.name)}</td></tr>`
+    + `<tr><td>EMAIL</td><td style="word-break:break-all">${escapeHtml(req.email)}</td></tr>`
+    + `<tr><td>REQUESTED ROLE</td><td>${escapeHtml(req.role)}</td></tr>`
+    + `<tr><td>SUBMITTED</td><td>${fmtFull(req.submitted_at)}</td></tr></table>`;
+
+
+  note.value = '';
+
+
+  confirmBtn.textContent   = isApprove ? 'Approve' : 'Reject';
+
+
+  confirmBtn.className     = 'btn ' + (isApprove ? 'btn-primary' : 'btn-danger');
+
+
+  document.getElementById('request-review-modal').style.display = 'flex';
+
+
+}
+
+function closeRequestReviewModal() {
+
+
+  document.getElementById('request-review-modal').style.display = 'none';
+
+
+  _pendingReview = null;
+
+
+}
+
+async function confirmRequestReview() {
+
+
+  if (!_pendingReview) return;
+
+
+  const {id, action} = _pendingReview;
+
+
+  const note = document.getElementById('request-review-note').value.trim();
+
+
+  const btn  = document.getElementById('request-review-confirm-btn');
+
+
+  btn.disabled = true;
+
+
+  try {
+
+
+    const r = await fetch(`/api/auth/account-requests/${id}/review`, {
+
+
+      method:'POST', credentials:'include',
+
+
+      headers:{'Content-Type':'application/json'},
+
+
+      body: JSON.stringify({action, note})
+
+
+    });
+
+
+    const d = await r.json();
+
+
+    if (d.success) {
+
+
+      toast(action === 'approve' ? 'Account approved' : 'Request rejected', action === 'approve' ? 'success' : 'error');
+
+
+      closeRequestReviewModal();
+
+
+      loadAccountRequests();
+
+
+    } else {
+
+
+      toast('Error: ' + (d.error || 'Unknown error'), 'error');
+
+
+    }
+
+
+  } catch(e) { toast('Network error', 'error'); }
+
+
+  finally { btn.disabled = false; }
+
+
+}
+
+
+// ── Logout ────────────────────────────────────────────────────────
+
+
+function doLogout() {
+
+
+  fetch('/api/auth/logout', {method:'POST', credentials:'include'})
+
+
+    .finally(() => window.location.href = '/');
+
+
+}
+
+
+
+
+
+document.addEventListener('keydown', e => {
+
+
+  if (e.key === 'Enter' && document.activeElement.closest('#section-edit'))     saveProfile();
+
+
+  if (e.key === 'Enter' && document.activeElement.closest('#section-password')) changePassword();
+
+
+  if (e.key === 'Escape' && document.getElementById('request-review-modal').style.display === 'flex') closeRequestReviewModal();
+
+
+});
+
+
+document.getElementById('request-review-modal').addEventListener('click', e => {
+
+
+  if (e.target === e.currentTarget) closeRequestReviewModal();
+
+
+});
+
+
+
+
+
+loadProfile();
+
+
+
+
+
+// ── Theme toggle ──────────────────────────────────────────────────
+
+
+function toggleTheme(){
+
+
+  var h = document.documentElement;
+
+
+  var isLight = h.getAttribute('data-theme') === 'light';
+
+
+  if(isLight){
+
+
+    h.removeAttribute('data-theme');
+
+
+    localStorage.setItem('pg_theme','dark');
+
+
+  } else {
+
+
+    h.setAttribute('data-theme','light');
+
+
+    localStorage.setItem('pg_theme','light');
+
+
+  }
+
+
+  syncThemeIcon();
+
+
+  try{ new BroadcastChannel('pg_theme').postMessage(isLight?'dark':'light'); }catch(e){}
+
+
+}
+
+
+function syncThemeIcon(){
+
+
+  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
+
+  var moon = document.getElementById('theme-icon-moon');
+
+
+  var sun  = document.getElementById('theme-icon-sun');
+
+
+  if(moon) moon.style.display = isLight ? 'none' : '';
+
+
+  if(sun)  sun.style.display  = isLight ? '' : 'none';
+
+
+}
+
+
+document.addEventListener('DOMContentLoaded', syncThemeIcon);
+
+
+// Sync theme across all open tabs instantly
+
+
+(function(){
+
+
+  try{
+
+
+    var bc = new BroadcastChannel('pg_theme');
+
+
+    window._pgThemeBC = bc;
+
+
+    bc.onmessage = function(e){
+
+
+      var h = document.documentElement;
+
+
+      if(e.data === 'light'){
+
+
+        h.setAttribute('data-theme','light');
+
+
+        localStorage.setItem('pg_theme','light');
+
+
+      } else {
+
+
+        h.removeAttribute('data-theme');
+
+
+        localStorage.setItem('pg_theme','dark');
+
+
+      }
+
+
+      if(typeof syncThemeIcon === 'function') syncThemeIcon();
+
+
+      if(typeof renderStats === 'function' && window._lastStats) try{ renderStats(window._lastStats); }catch(e){}
+
+
+      if(typeof renderAlerts === 'function' && window._cachedAlerts) try{ renderAlerts(window._cachedAlerts); }catch(e){}
+
+
+      if(typeof renderMLAlerts === 'function' && window._cachedML) try{ renderMLAlerts(window._cachedML); }catch(e){}
+
+
+      if(typeof renderDevices === 'function' && window._cachedDevices) try{ renderDevices(window._cachedDevices); }catch(e){}
+
+
+    };
+
+
+  }catch(e){}
+
+
+})();
+
+
+</script>
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+

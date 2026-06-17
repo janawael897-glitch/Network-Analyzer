@@ -1,0 +1,6109 @@
+﻿<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+
+
+
+
+
+<head>
+
+
+
+
+
+<script>
+
+
+
+
+
+/* Theme early-init */
+
+
+
+
+
+(function(){
+
+
+
+
+
+  var t = localStorage.getItem('pg_theme');
+
+
+
+
+
+  if(t === 'light') document.documentElement.setAttribute('data-theme','light');
+
+
+
+
+
+})();
+
+
+
+
+
+</script>
+
+
+
+
+
+<meta charset="UTF-8"/>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+
+
+<title>PacketGuard - Live Monitor</title>
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+
+
+
+
+<style>
+
+
+
+
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+
+
+
+
+:root{
+
+
+
+
+
+  --bg:#020508;--surface:#060c14;--surface2:#0a1520;
+
+
+
+
+
+  --border:#0f2035;--border2:#1a3050;
+
+
+
+
+
+  --accent:#00d4ff;--accent2:#ff2d6b;--accent3:#00ff9d;--warn:#ffb800;
+
+
+
+
+
+  --text:#b8cfe8;--text2:#6a8aaa;--white:#e8f4ff;
+
+
+
+
+
+  --card:rgba(6,12,20,0.95);--danger:#ef4444;
+
+
+
+
+
+  --fm:'Share Tech Mono',monospace;--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif;
+
+
+
+
+
+}
+
+
+
+
+
+html{scroll-behavior:auto}
+
+
+
+
+
+body{background:var(--bg);color:var(--text);font-family:var(--fb);overflow-x:hidden;min-height:100vh}
+
+
+
+
+
+
+
+
+
+
+
+/* BG */
+
+
+
+
+
+.bg-orbs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+
+
+
+
+
+.orb{position:absolute;border-radius:50%;filter:blur(100px);animation:od 20s ease-in-out infinite alternate}
+
+
+
+
+
+.orb1{width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,255,.055),transparent 70%);top:-200px;left:-100px}
+
+
+
+
+
+.orb2{width:500px;height:500px;background:radial-gradient(circle,rgba(0,255,157,.04),transparent 70%);bottom:-100px;right:-100px;animation-delay:-10s}
+
+
+
+
+
+@keyframes od{0%{transform:translate(0,0)}100%{transform:translate(30px,25px)}}
+
+
+
+
+
+.bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;
+
+
+
+
+
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+
+
+
+
+
+  background-size:50px 50px;opacity:.35;
+
+
+
+
+
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
+
+
+
+
+
+
+
+
+
+
+
+/* NAV */
+
+
+
+
+
+/* === NAV — matches dashboard exactly === */
+
+
+
+
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:16px;
+
+
+
+
+
+  padding:14px 28px;background:rgba(8,12,20,.96);border-bottom:1px solid var(--border2);
+
+
+
+
+
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+
+
+
+
+
+.logo-mark{width:38px;height:38px;border-radius:8px;
+
+
+
+
+
+  background:linear-gradient(135deg,rgba(0,200,255,.12),rgba(176,96,255,.12));
+
+
+
+
+
+  border:1px solid rgba(0,200,255,.28);display:flex;align-items:center;justify-content:center;
+
+
+
+
+
+  font-size:15px;font-weight:700;font-family:var(--fm);color:var(--accent);
+
+
+
+
+
+  box-shadow:0 0 18px rgba(0,200,255,.2),inset 0 0 10px rgba(0,200,255,.05);
+
+
+
+
+
+  animation:pulse-logo 3s ease-in-out infinite;letter-spacing:1px;flex-shrink:0}
+
+
+
+
+
+@keyframes pulse-logo{
+
+
+
+
+
+  0%,100%{box-shadow:0 0 12px rgba(0,200,255,.18),inset 0 0 10px rgba(0,200,255,.05)}
+
+
+
+
+
+  50%{box-shadow:0 0 28px rgba(0,200,255,.45),inset 0 0 16px rgba(0,200,255,.1)}}
+
+
+
+
+
+.logo-text{line-height:1}
+
+
+
+
+
+.logo-text h1{font-size:22px;font-weight:700;letter-spacing:4px;color:var(--accent);
+
+
+
+
+
+  text-transform:uppercase;text-shadow:0 0 22px rgba(0,200,255,.45);margin:0}
+
+
+
+
+
+.logo-text span{font-size:11px;font-family:var(--fm);color:var(--text2);letter-spacing:2px}
+
+
+
+
+
+[data-theme="light"] .logo-mark{background:linear-gradient(135deg,rgba(0,122,170,.2),rgba(102,34,187,.15));border-color:rgba(0,122,170,.3);color:#007aaa}
+
+
+
+
+
+.nav-r{display:flex;align-items:center;gap:8px;margin-left:auto}
+
+
+
+
+
+.nav-link{padding:6px 16px;border-radius:20px;font-family:var(--fm);font-size:11px;font-weight:700;
+
+
+
+
+
+  color:#6a8aaa;cursor:pointer;text-decoration:none;letter-spacing:.5px;transition:all .18s;
+
+
+
+
+
+  border:1px solid rgba(255,255,255,.1);background:transparent}
+
+
+
+
+
+.nav-link:hover{color:#c8d8e8;border-color:rgba(0,212,255,.35);background:rgba(0,212,255,.06)}
+
+
+
+
+
+.nav-link.active{color:var(--accent);border-color:var(--accent);background:rgba(0,200,255,.08);
+
+
+
+
+
+  box-shadow:0 0 12px rgba(0,200,255,.15)}
+
+
+
+
+
+.nav-link.purple{color:#b060ff;border-color:#b060ff;background:rgba(176,96,255,.08)}
+
+
+
+
+
+.nav-link.purple:hover{box-shadow:0 0 12px rgba(176,96,255,.2)}
+
+
+
+
+
+.hdr-icon-btn{width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.04);
+
+
+
+
+
+  border:1px solid rgba(255,255,255,.08);color:#6a8aaa;cursor:pointer;display:flex;
+
+
+
+
+
+  align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+
+
+
+
+
+.hdr-icon-btn:hover{background:rgba(0,200,255,.08);border-color:rgba(0,200,255,.3);color:#00c8ff}
+
+
+
+
+
+.hdr-icon-btn.hdr-icon-danger:hover{background:rgba(255,45,85,.07);border-color:rgba(255,45,85,.3);color:#ff2d55}
+
+
+
+
+
+[data-theme="light"] .hdr-icon-btn{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.1);color:#4a6a88}
+
+
+
+
+
+[data-theme="light"] .hdr-icon-btn:hover{background:rgba(0,122,170,.1);border-color:rgba(0,122,170,.3);color:var(--accent)}
+
+
+
+
+
+
+
+
+
+
+
+/* MAIN */
+
+
+
+
+
+main{position:relative;z-index:1;padding:100px 40px 60px;max-width:1100px;margin:0 auto}
+
+
+
+
+
+
+
+
+
+
+
+/* HERO */
+
+
+
+
+
+.hero{text-align:center;margin-bottom:3rem;animation:fu .6s ease both}
+
+
+
+
+
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+
+
+
+
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:20px;
+
+
+
+
+
+  background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.18);
+
+
+
+
+
+  font-family:var(--fm);font-size:11px;color:var(--accent);letter-spacing:2px;margin-bottom:1.4rem}
+
+
+
+
+
+.hero-badge .bdot{width:6px;height:6px;border-radius:50%;background:var(--accent3);animation:bl 1.5s ease-in-out infinite}
+
+
+
+
+
+.hero h1{font-family:var(--fd);font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:1rem}
+
+
+
+
+
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+
+
+
+
+.hero p{font-size:1rem;color:var(--text2);max-width:520px;margin:0 auto}
+
+
+
+
+
+
+
+
+
+
+
+/* CONTROL PANEL */
+
+
+
+
+
+.panel{background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:2rem;
+
+
+
+
+
+  box-shadow:0 20px 60px rgba(0,0,0,.5);margin-bottom:2rem;animation:fu .6s .1s ease both;position:relative;overflow:hidden}
+
+
+
+
+
+.panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+
+
+
+
+
+  background:linear-gradient(90deg,transparent,rgba(0,212,255,.3),transparent)}
+
+
+
+
+
+.panel-title{font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--accent);margin-bottom:1.4rem;
+
+
+
+
+
+  display:flex;align-items:center;gap:8px}
+
+
+
+
+
+.panel-title::before{content:'';width:16px;height:1px;background:var(--accent)}
+
+
+
+
+
+
+
+
+
+
+
+.start-btn{width:100%;padding:1rem;border-radius:10px;font-family:var(--fd);font-weight:700;font-size:1rem;
+
+
+
+
+
+  letter-spacing:2px;cursor:pointer;transition:all .25s;text-transform:uppercase;
+
+
+
+
+
+  background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(0,255,157,.08));
+
+
+
+
+
+  border:1px solid rgba(0,212,255,.4);color:var(--white);
+
+
+
+
+
+  box-shadow:0 0 30px rgba(0,212,255,.1)}
+
+
+
+
+
+.start-btn:hover{box-shadow:0 0 50px rgba(0,212,255,.25);border-color:rgba(0,212,255,.7);transform:translateY(-2px)}
+
+
+
+
+
+.start-btn.running{background:linear-gradient(135deg,rgba(239,68,68,.15),rgba(239,68,68,.08));
+
+
+
+
+
+  border-color:rgba(239,68,68,.4);box-shadow:0 0 30px rgba(239,68,68,.1);
+
+
+
+
+
+  animation:pulse-danger 2s ease-in-out infinite}
+
+
+
+
+
+.start-btn.running:hover{box-shadow:0 0 50px rgba(239,68,68,.25);border-color:rgba(239,68,68,.7)}
+
+
+
+
+
+@keyframes pulse-danger{
+
+
+
+
+
+  0%,100%{box-shadow:0 0 30px rgba(239,68,68,.1)}
+
+
+
+
+
+  50%{box-shadow:0 0 60px rgba(239,68,68,.35),0 0 120px rgba(239,68,68,.1)}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* DASHBOARD STATS */
+
+
+
+
+
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:1.5rem;animation:fu .6s .2s ease both}
+
+
+
+
+
+.stat-card{background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:1.4rem;
+
+
+
+
+
+  transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
+
+
+
+
+
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+
+
+
+
+
+  background:linear-gradient(90deg,transparent,var(--accent-line,rgba(0,212,255,.25)),transparent)}
+
+
+
+
+
+.stat-card:hover{border-color:rgba(0,212,255,.3);transform:translateY(-3px)}
+
+
+
+
+
+.stat-card:nth-child(2){--accent-line:rgba(0,255,157,.25)}
+
+
+
+
+
+.stat-card:nth-child(3){--accent-line:rgba(255,184,0,.25)}
+
+
+
+
+
+.stat-card:nth-child(4){--accent-line:rgba(239,68,68,.25)}
+
+
+
+
+
+.stat-label{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--text2);margin-bottom:.8rem;text-transform:uppercase}
+
+
+
+
+
+.stat-val{font-family:var(--fm);font-size:2rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:.4rem}
+
+
+
+
+
+.stat-val small{font-size:.9rem;color:var(--text2)}
+
+
+
+
+
+.stat-sub{font-size:.85rem;color:var(--text2)}
+
+
+
+
+
+
+
+
+
+
+
+/* RISK SCALE */
+
+
+
+
+
+.risk-card{background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:1.6rem;
+
+
+
+
+
+  margin-bottom:1.5rem;animation:fu .6s .25s ease both}
+
+
+
+
+
+.risk-title{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--text2);margin-bottom:1.2rem;text-transform:uppercase}
+
+
+
+
+
+.scale-bar{height:14px;border-radius:999px;
+
+
+
+
+
+  background:linear-gradient(to right,#10b981 0%,#f59e0b 50%,#ef4444 100%);
+
+
+
+
+
+  position:relative;margin-bottom:.8rem;box-shadow:0 0 20px rgba(0,0,0,.3)}
+
+
+
+
+
+.scale-indicator{position:absolute;top:50%;transform:translate(-50%,-50%);
+
+
+
+
+
+  width:5px;height:200%;background:white;border-radius:2px;
+
+
+
+
+
+  box-shadow:0 0 10px rgba(255,255,255,.8);transition:left .6s cubic-bezier(.34,1.56,.64,1)}
+
+
+
+
+
+.scale-labels{display:flex;justify-content:space-between;font-family:var(--fm);font-size:11px;margin-bottom:.8rem}
+
+
+
+
+
+.scale-labels .low{color:#10b981}.scale-labels .med{color:#f59e0b}.scale-labels .high{color:#ef4444}
+
+
+
+
+
+.risk-info{font-family:var(--fm);font-size:12px;color:var(--text2);text-align:center}
+
+
+
+
+
+
+
+
+
+
+
+/* BOTTOM BAR */
+
+
+
+
+
+.bottom-bar{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;
+
+
+
+
+
+  padding:1.2rem 1.6rem;background:var(--card);border:1px solid var(--border2);border-radius:12px;
+
+
+
+
+
+  animation:fu .6s .4s ease both}
+
+
+
+
+
+.bb-info{font-family:var(--fm);font-size:11px;color:var(--text2)}
+
+
+
+
+
+.bb-info span{color:var(--accent)}
+
+
+
+
+
+.btn-full-dash{padding:10px 24px;border-radius:8px;font-family:var(--fd);font-weight:700;font-size:13px;
+
+
+
+
+
+  letter-spacing:1.5px;background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(157,111,255,.1));
+
+
+
+
+
+  border:1px solid rgba(0,212,255,.4);color:var(--white);cursor:pointer;transition:all .2s;text-decoration:none;
+
+
+
+
+
+  display:inline-flex;align-items:center;gap:8px}
+
+
+
+
+
+.btn-full-dash:hover{box-shadow:0 0 30px rgba(0,212,255,.2);transform:translateY(-2px)}
+
+
+
+
+
+
+
+
+
+
+
+/* Pill group */
+
+
+
+
+
+.pill-group{display:flex;gap:4px;background:rgba(0,0,0,.3);padding:4px;border-radius:8px;border:1px solid var(--border)}
+
+
+
+
+
+.pill{padding:6px 14px;border-radius:5px;font-family:var(--fm);font-size:11px;color:var(--text2);
+
+
+
+
+
+  background:transparent;border:none;cursor:pointer;transition:all .18s;letter-spacing:.5px;white-space:nowrap}
+
+
+
+
+
+.pill:hover{color:var(--text);background:rgba(255,255,255,.04)}
+
+
+
+
+
+.pill.active{background:rgba(0,212,255,.14);color:var(--accent);box-shadow:0 0 12px rgba(0,212,255,.15)}
+
+
+
+
+
+
+
+
+
+
+
+/* Terminal log */
+
+
+
+
+
+.term-line{display:flex;gap:8px;align-items:baseline;padding:2px 0;border-bottom:1px solid rgba(255,255,255,.03);animation:fu .3s ease both}
+
+
+
+
+
+.term-line:last-child{border-bottom:none}
+
+
+
+
+
+.term-ts{color:var(--text2);font-size:9px;min-width:52px}
+
+
+
+
+
+.term-icon{width:14px;text-align:center}
+
+
+
+
+
+.term-txt{color:var(--text);font-size:10px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+
+
+
+
+
+
+
+
+
+
+/* Theme toggle */
+
+
+
+
+
+.btn-theme{padding:7px 12px;border-radius:6px;font-size:14px;background:transparent;
+
+
+
+
+
+  border:1px solid var(--border2);color:var(--text2);cursor:pointer;transition:all .2s;line-height:1}
+
+
+
+
+
+.btn-theme:hover{border-color:var(--accent);color:var(--accent)}
+
+
+
+
+
+
+
+
+
+
+
+/* DASHBOARD always visible */
+
+
+
+
+
+#live-dashboard{display:block}
+
+
+
+
+
+#live-dashboard.show #dash-waiting{display:none}
+
+
+
+
+
+#dash-waiting{
+
+
+
+
+
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+
+
+
+
+
+  padding:3rem 2rem;gap:1rem;color:var(--text2);font-family:var(--fm);font-size:13px;
+
+
+
+
+
+  letter-spacing:1px;text-align:center;
+
+
+
+
+
+}
+
+
+
+
+
+#dash-waiting .wait-icon{font-size:2.5rem;color:var(--border2);margin-bottom:.5rem}
+
+
+
+
+
+.stats-grid,.risk-card,.bottom-bar,#portsSection{
+
+
+
+
+
+  opacity:0;pointer-events:none;transition:opacity .4s ease;
+
+
+
+
+
+}
+
+
+
+
+
+#live-dashboard.show .stats-grid,
+
+
+
+
+
+#live-dashboard.show .risk-card,
+
+
+
+
+
+#live-dashboard.show .bottom-bar,
+
+
+
+
+
+#live-dashboard.show #portsSection{
+
+
+
+
+
+  opacity:1;pointer-events:auto;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Port scanner */
+
+
+
+
+
+.ps-filter-btn{padding:4px 12px;border-radius:4px;font-family:var(--fm);font-size:10px;letter-spacing:1px;
+
+
+
+
+
+  background:transparent;border:1px solid var(--border2);color:var(--text2);cursor:pointer;transition:all .15s}
+
+
+
+
+
+.ps-filter-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+
+
+
+
+.ps-filter-active{background:rgba(0,212,255,.1);border-color:rgba(0,212,255,.4);color:var(--accent)}
+
+
+
+
+
+#ps-tbody tr{border-bottom:1px solid var(--border);transition:background .12s}
+
+
+
+
+
+#ps-tbody tr:hover{background:rgba(0,212,255,.03)}
+
+
+
+
+
+#ps-tbody tr:last-child{border-bottom:none}
+
+
+
+
+
+.ps-risk-high{color:#ef4444}.ps-risk-med{color:var(--warn)}.ps-risk-low{color:var(--accent3)}.ps-risk-none{color:var(--text2)}
+
+
+
+
+
+.ps-badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:1px}
+
+
+
+
+
+.ps-open{background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.25)}
+
+
+
+
+
+.ps-filtered{background:rgba(255,184,0,.08);color:var(--warn);border:1px solid rgba(255,184,0,.2)}
+
+
+
+
+
+.ps-closed{background:rgba(255,255,255,.03);color:var(--text2);border:1px solid var(--border)}
+
+
+
+
+
+
+
+
+
+
+
+/* Light theme */
+
+
+
+
+
+[data-theme="light"]{
+
+
+
+
+
+  --bg:#eef2f7;--surface:#ffffff;--surface2:#f0f4f9;
+
+
+
+
+
+  --border:#ccd8e4;--border2:#b0c4d8;
+
+
+
+
+
+  --text:#1a2f48;--text2:#5a7a9a;--white:#1a2f48;
+
+
+
+
+
+  --card:rgba(255,255,255,0.98);--accent:#0077aa;--accent3:#007744;
+
+
+
+
+
+  --warn:#cc8800;
+
+
+
+
+
+}
+
+
+
+
+
+[data-theme="light"] body{background:var(--bg)}
+
+
+
+
+
+[data-theme="light"] body::before{opacity:.3}
+
+
+
+
+
+[data-theme="light"] nav{background:rgba(255,255,255,.97);border-bottom:1px solid var(--border2)}
+
+
+
+
+
+[data-theme="light"] #mon-session-timer{background:rgba(0,122,170,.06);border-color:rgba(0,122,170,.2)}
+
+
+
+
+
+[data-theme="light"] .panel{background:#ffffff;border-color:var(--border);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+
+
+
+
+
+[data-theme="light"] .stat-card{background:#ffffff;border-color:var(--border);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+
+
+
+
+
+[data-theme="light"] .stat-val{color:var(--text)}
+
+
+
+
+
+[data-theme="light"] .start-btn{background:linear-gradient(135deg,rgba(0,119,170,.12),rgba(0,170,102,.08));border-color:rgba(0,119,170,.4)}
+
+
+
+
+
+[data-theme="light"] .pg-input{background:#f4f7fb;border-color:var(--border);color:var(--text)}
+
+
+
+
+
+[data-theme="light"] .bottom-bar{background:#ffffff;border-color:var(--border);box-shadow:0 2px 8px rgba(0,0,0,.05)}
+
+
+
+
+
+[data-theme="light"] .risk-card{background:#ffffff;border-color:var(--border);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+
+
+
+
+
+[data-theme="light"] .pill-group{background:rgba(0,0,0,.04);border-color:var(--border)}
+
+
+
+
+
+[data-theme="light"] .pill:hover{background:rgba(0,119,170,.06);color:var(--text)}
+
+
+
+
+
+[data-theme="light"] .pill.active{background:rgba(0,119,170,.12);color:var(--accent);box-shadow:none}
+
+
+
+
+
+[data-theme="light"] .term-line{border-bottom-color:rgba(0,0,0,.06)}
+
+
+
+
+
+[data-theme="light"] #terminal-log{background:rgba(0,0,0,.04) !important;border-color:var(--border) !important}
+
+
+
+
+
+[data-theme="light"] .term-ts{color:var(--text2)}
+
+
+
+
+
+[data-theme="light"] .term-txt{color:var(--text)}
+
+
+
+
+
+[data-theme="light"] .ps-closed{background:rgba(0,0,0,.03);color:var(--text2);border-color:var(--border)}
+
+
+
+
+
+[data-theme="light"] #ps-tbody tr:hover{background:rgba(0,119,170,.04)}
+
+
+
+
+
+[data-theme="light"] #ps-tbody tr{border-bottom-color:var(--border)}
+
+
+
+
+
+[data-theme="light"] .ps-filter-btn{border-color:var(--border);color:var(--text2)}
+
+
+
+
+
+[data-theme="light"] .ps-filter-active{background:rgba(0,119,170,.1);border-color:rgba(0,119,170,.4);color:var(--accent)}
+
+
+
+
+
+[data-theme="light"] table thead th{background:rgba(0,0,0,.03);color:var(--text2);border-bottom-color:var(--border)}
+
+
+
+
+
+[data-theme="light"] .btn-theme{border-color:var(--border);color:var(--text2)}
+
+
+
+
+
+[data-theme="light"] .scale-bar{box-shadow:0 0 10px rgba(0,0,0,.1)}
+
+
+
+
+
+[data-theme="light"] .scale-indicator{background:#1a2f48;box-shadow:0 0 6px rgba(0,0,0,.3)}
+
+
+
+
+
+[data-theme="light"] #dash-waiting{color:var(--text2)}
+
+
+
+
+
+/* IP input wrapper */
+
+
+
+
+
+[data-theme="light"] #ip-wrap{background:#ffffff !important;border-color:var(--border2) !important;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+
+
+
+
+
+[data-theme="light"] #ip-wrap input{color:var(--text) !important}
+
+
+
+
+
+/* Terminal log */
+
+
+
+
+
+[data-theme="light"] #terminal-log{background:rgba(0,0,0,.03) !important;border-color:var(--border) !important}
+
+
+
+
+
+/* Port scan target bar */
+
+
+
+
+
+[data-theme="light"] #ps-target-bar{background:rgba(0,0,0,.03) !important;border-bottom-color:var(--border) !important}
+
+
+
+
+
+/* Port scan search input */
+
+
+
+
+
+[data-theme="light"] #ps-search{background:#ffffff !important;border-color:var(--border) !important;color:var(--text) !important}
+
+
+
+
+
+/* Port table header row */
+
+
+
+
+
+[data-theme="light"] #ps-tbody+thead tr, [data-theme="light"] table tr[style*="background:rgba(0,0,0,.4)"]{background:rgba(0,0,0,.03) !important}
+
+
+
+
+
+/* Port table footer */
+
+
+
+
+
+[data-theme="light"] [style*="background:rgba(0,0,0,.25)"]{background:rgba(0,0,0,.03) !important}
+
+
+
+
+
+[data-theme="light"] [style*="background:rgba(0,0,0,.3)"]{background:rgba(0,0,0,.04) !important}
+
+
+
+
+
+[data-theme="light"] [style*="background:rgba(0,0,0,.4)"]{background:rgba(0,0,0,.04) !important}
+
+
+
+
+
+[data-theme="light"] [style*="background:rgba(4,10,18"]{background:#ffffff !important}
+
+
+
+
+
+</style>
+
+
+
+
+
+</head>
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+<div class="bg-orbs"><div class="orb orb1"></div><div class="orb orb2"></div></div>
+
+
+
+
+
+<div class="bg-grid"></div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- NAV -->
+
+
+
+
+
+<nav>
+
+
+
+
+
+  <div class="logo-mark">PG</div>
+
+
+
+
+
+  <div class="logo-text">
+
+
+
+
+
+    <h1>PacketGuard</h1>
+
+
+
+
+
+    <span>Network Threat Detection System</span>
+
+
+
+
+
+  </div>
+
+
+
+
+
+  <div class="nav-r">
+
+
+
+
+
+    <!-- nav session timer (shown when monitoring active) -->
+
+
+
+
+
+    <div id="mon-session-timer" style="display:none;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;background:rgba(0,200,255,.05);border:1px solid rgba(0,200,255,.18);font-family:var(--fm);font-size:10px;color:#00c8ff;letter-spacing:.5px">
+
+
+
+
+
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+
+
+
+
+
+      <span id="mon-timer-val">00:00</span>
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <a class="nav-link" href="/dashboard">Dashboard</a>
+
+
+
+
+
+    <a class="nav-link active" href="/monitor">Monitor</a>
+    <a class="nav-link purple" href="/hunt">Threat Hunt</a>
+
+
+
+
+
+    <!-- divider -->
+
+
+
+
+
+    <div style="width:1px;height:22px;background:rgba(255,255,255,.08);margin:0 2px"></div>
+
+
+
+
+
+    <!-- user pill -->
+
+
+
+
+
+    <div style="display:flex;align-items:center;gap:7px;padding:5px 12px 5px 8px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)">
+
+
+
+
+
+      <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#00c8ff,#0066aa);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;font-family:var(--fm)" id="mon-avatar">?</div>
+
+
+
+
+
+      <span style="font-family:var(--fm);font-size:11px;font-weight:600;color:#c8d8e8" id="nav-username">User</span>
+
+
+
+
+
+      <span id="mon-role-badge"></span>
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <!-- divider -->
+
+
+
+
+
+    <div style="width:1px;height:22px;background:rgba(255,255,255,.08);margin:0 2px"></div>
+
+
+
+
+
+    <!-- theme -->
+
+
+
+
+
+    <button class="hdr-icon-btn" id="theme-btn" onclick="toggleTheme()" title="Toggle theme">
+
+
+
+
+
+      <svg id="theme-icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+
+
+
+
+
+      <svg id="theme-icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+
+
+
+
+
+    </button>
+
+
+
+
+
+    <!-- logout -->
+
+
+
+
+
+    <button class="hdr-icon-btn hdr-icon-danger" onclick="handleLogout()" title="Log Out">
+
+
+
+
+
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+
+
+
+
+
+    </button>
+
+
+
+
+
+  </div>
+
+
+
+
+
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+<main>
+
+
+
+
+
+  <!-- HERO -->
+
+
+
+
+
+  <div class="hero">
+
+
+
+
+
+    <div class="hero-badge"><div class="bdot"></div>LIVE NETWORK MONITOR</div>
+
+
+
+
+
+    <h1>Start <span>Protecting</span> Your Network</h1>
+
+
+
+
+
+    <p>Scan your router for open ports and monitor live network traffic in real time.</p>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- CONTROL PANEL -->
+
+
+
+
+
+  <div class="panel">
+
+
+
+
+
+    <div class="panel-title">// MONITOR CONFIGURATION</div>
+
+
+
+
+
+
+
+
+
+
+
+    <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:1.4rem">
+
+
+
+
+
+      <!-- IP input -->
+
+
+
+
+
+      <div style="display:flex;align-items:center;gap:12px;background:rgba(4,10,18,.8);border:1px solid var(--border2);border-radius:8px;padding:.9rem 1.1rem;transition:border-color .2s,box-shadow .2s" id="ip-wrap">
+
+
+
+
+
+        <i class="fa-solid fa-crosshairs" style="color:var(--text2);font-size:13px;flex-shrink:0"></i>
+
+
+
+
+
+        <input type="text" id="targetIp" placeholder="Target IP / Range  (e.g. 192.168.1.0/24)" value=""
+
+
+
+
+
+          style="flex:1;background:transparent;border:none;outline:none;color:var(--white);font-size:.95rem;font-family:var(--fb)"/>
+
+
+
+
+
+        <div id="threat-badge" style="display:flex;align-items:center;gap:6px;font-family:var(--fm);font-size:10px;color:var(--accent3);letter-spacing:1.5px;flex-shrink:0">
+
+
+
+
+
+          <span id="threat-dot" style="width:7px;height:7px;border-radius:50%;background:var(--accent3);animation:bl 1.5s ease-in-out infinite;display:inline-block;box-shadow:0 0 6px var(--accent3)"></span>
+
+
+
+
+
+          <span id="threat-label">SAFE</span>
+
+
+
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+      <input type="hidden" id="scanType" value="Standard (top 1000 ports)"/>
+
+
+
+
+
+
+
+
+
+
+
+    <button class="start-btn" id="startBtn" onclick="toggleMonitor()">
+
+
+
+
+
+      <i class="fa-solid fa-play" id="startIcon"></i>&nbsp;&nbsp;<span id="startLabel">START PROTECTION</span>
+
+
+
+
+
+      <span id="btn-timer" style="display:none;margin-left:16px;font-size:.75rem;opacity:.7;font-family:var(--fm)" id="btn-session-time"></span>
+
+
+
+
+
+    </button>
+
+
+
+
+
+    <div id="terminal-log" style="display:none;margin-top:1rem;background:rgba(0,0,0,.4);
+
+
+
+
+
+      border:1px solid var(--border2);border-radius:8px;padding:10px 14px;
+
+
+
+
+
+      font-family:var(--fm);font-size:11px;color:var(--text2);max-height:80px;overflow:hidden">
+
+
+
+
+
+      <div style="color:var(--accent3);font-size:9px;letter-spacing:2px;margin-bottom:6px">// LIVE EVENT LOG</div>
+
+
+
+
+
+      <div id="term-feed"></div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- LIVE DASHBOARD -->
+
+
+
+
+
+  <div id="live-dashboard">
+
+
+
+
+
+
+
+
+
+
+
+    <!-- WAITING STATE -->
+
+
+
+
+
+    <div id="dash-waiting">
+
+
+
+
+
+      <div class="wait-icon"><i class="fa-solid fa-shield"></i></div>
+
+
+
+
+
+      <div>Click <strong style="color:var(--accent)">START PROTECTION</strong> to begin live monitoring</div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- STAT CARDS -->
+
+
+
+
+
+    <div class="stats-grid">
+
+
+
+
+
+      <div class="stat-card">
+
+
+
+
+
+        <div class="stat-label">Monitored Target</div>
+
+
+
+
+
+        <div class="stat-val" id="d-ip" style="font-size:1.2rem">—</div>
+
+
+
+
+
+        <div class="stat-sub" id="d-session">Session not started</div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+      <div class="stat-card">
+
+
+
+
+
+        <div class="stat-label">Packets Captured</div>
+
+
+
+
+
+        <div class="stat-val" id="d-packets">0</div>
+
+
+
+
+
+        <div class="stat-sub">Since session started</div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+      <div class="stat-card">
+
+
+
+
+
+        <div class="stat-label">Live Traffic Rate</div>
+
+
+
+
+
+        <div class="stat-val" id="d-pps">0 <small>pkt/s</small></div>
+
+
+
+
+
+        <div class="stat-sub"><span id="d-kbs">0 KB/s</span> &nbsp;•&nbsp; <span id="d-change">+0%</span></div>
+
+
+
+
+
+        <canvas id="sparkline" width="180" height="36" style="display:block;margin-top:8px;opacity:.7"></canvas>
+
+
+
+
+
+      </div>
+
+
+
+
+
+      <div class="stat-card">
+
+
+
+
+
+        <div class="stat-label">Suspicious Packets</div>
+
+
+
+
+
+        <div class="stat-val" id="d-susp" style="color:#f59e0b">0</div>
+
+
+
+
+
+        <div class="stat-sub">Flagged by anomaly detector</div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- RISK SCALE -->
+
+
+
+
+
+    <div class="risk-card">
+
+
+
+
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem">
+
+
+
+
+
+        <div class="risk-title" style="margin-bottom:0">Malicious Traffic Risk Level</div>
+
+
+
+
+
+        <div style="display:flex;align-items:center;gap:12px">
+
+
+
+
+
+          <div style="font-family:var(--fm);font-size:10px;color:var(--text2);letter-spacing:1px">
+
+
+
+
+
+            SESSION <span id="session-timer" style="color:var(--accent)">00:00:00</span>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <div id="risk-pulse" style="width:10px;height:10px;border-radius:50%;background:var(--accent3);
+
+
+
+
+
+            box-shadow:0 0 8px var(--accent3);animation:bl 1.5s ease-in-out infinite"></div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+      <div class="scale-bar" style="position:relative;overflow:visible">
+
+
+
+
+
+        <div class="scale-indicator" id="riskIndicator" style="left:15%"></div>
+
+
+
+
+
+        <div id="risk-glow" style="position:absolute;top:50%;left:15%;transform:translate(-50%,-50%);
+
+
+
+
+
+          width:24px;height:24px;border-radius:50%;background:rgba(16,185,129,.2);
+
+
+
+
+
+          box-shadow:0 0 15px rgba(16,185,129,.4);transition:left .5s ease,background .5s,box-shadow .5s;pointer-events:none"></div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+      <div class="scale-labels"><span class="low">Safe</span><span class="med">Warning</span><span class="high">Critical</span></div>
+
+
+
+
+
+      <div class="risk-info">Current Risk: <strong id="riskLevel" style="color:#10b981">Low</strong> &nbsp;•&nbsp; <span id="d-susp2">0</span> suspicious packets &nbsp;•&nbsp; Risk Score: <strong id="risk-pct" style="color:var(--text2)">15%</strong></div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- PORT SCAN RESULTS — always shown after START PROTECTION -->
+
+
+
+
+
+    <div id="portsSection" style="margin-top:1.2rem">
+
+
+
+
+
+      <div class="panel" style="border-color:rgba(0,212,255,.2);padding:0;overflow:hidden">
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Header -->
+
+
+
+
+
+        <div style="padding:14px 20px;border-bottom:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between">
+
+
+
+
+
+          <div class="panel-title" style="margin:0">// PORT SCAN RESULTS</div>
+
+
+
+
+
+          <div style="display:flex;align-items:center;gap:16px">
+
+
+
+
+
+            <span id="ps-meta" style="font-family:var(--fm);font-size:10px;color:var(--text2);letter-spacing:1px"></span>
+
+
+
+
+
+            <button id="ps-rescan-btn" onclick="runPortScan()"
+
+
+
+
+
+              style="padding:5px 14px;border-radius:5px;font-family:var(--fm);font-size:10px;letter-spacing:1px;
+
+
+
+
+
+                     background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.3);color:var(--accent);cursor:pointer;transition:all .2s">
+
+
+
+
+
+              <i class="fa-solid fa-rotate-right"></i>&nbsp; RESCAN
+
+
+
+
+
+            </button>
+
+
+
+
+
+          </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Target info bar -->
+
+
+
+
+
+        <div id="ps-target-bar" style="background:rgba(0,0,0,.3);border-bottom:1px solid var(--border);
+
+
+
+
+
+          padding:8px 20px;display:flex;align-items:center;gap:20px;font-family:var(--fm);font-size:11px;flex-wrap:wrap">
+
+
+
+
+
+          <div style="display:flex;align-items:center;gap:8px">
+
+
+
+
+
+            <span style="width:7px;height:7px;border-radius:50%;background:var(--accent3);display:inline-block;box-shadow:0 0 5px var(--accent3)"></span>
+
+
+
+
+
+            <span style="color:var(--text2);letter-spacing:1px">TARGET</span>
+
+
+
+
+
+            <span id="ps-target-ip" style="color:var(--accent3);font-weight:700">—</span>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <div style="color:var(--border2)">|</div>
+
+
+
+
+
+          <div><span style="color:var(--text2);letter-spacing:1px">SCAN TYPE</span>&nbsp;
+
+
+
+
+
+            <span id="ps-scan-label" style="color:var(--accent)">—</span></div>
+
+
+
+
+
+          <div style="color:var(--border2)">|</div>
+
+
+
+
+
+          <div><span style="color:var(--text2);letter-spacing:1px">COMPLETED</span>&nbsp;
+
+
+
+
+
+            <span id="ps-time" style="color:var(--text)">—</span></div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Stat cards row -->
+
+
+
+
+
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border2)">
+
+
+
+
+
+          <div style="padding:14px 20px;border-right:1px solid var(--border2)">
+
+
+
+
+
+            <div style="font-family:var(--fm);font-size:10px;letter-spacing:1.5px;color:var(--text2);margin-bottom:4px">OPEN PORTS</div>
+
+
+
+
+
+            <div id="ps-cnt-open" style="font-family:var(--fm);font-size:1.6rem;font-weight:700;color:#ef4444;line-height:1">—</div>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <div style="padding:14px 20px;border-right:1px solid var(--border2)">
+
+
+
+
+
+            <div style="font-family:var(--fm);font-size:10px;letter-spacing:1.5px;color:var(--text2);margin-bottom:4px">CLOSED PORTS</div>
+
+
+
+
+
+            <div id="ps-cnt-closed" style="font-family:var(--fm);font-size:1.6rem;font-weight:700;color:var(--text2);line-height:1">—</div>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <div style="padding:14px 20px;border-right:1px solid var(--border2)">
+
+
+
+
+
+            <div style="font-family:var(--fm);font-size:10px;letter-spacing:1.5px;color:var(--text2);margin-bottom:4px">FILTERED</div>
+
+
+
+
+
+            <div id="ps-cnt-filtered" style="font-family:var(--fm);font-size:1.6rem;font-weight:700;color:var(--warn);line-height:1">—</div>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <div style="padding:14px 20px">
+
+
+
+
+
+            <div style="font-family:var(--fm);font-size:10px;letter-spacing:1.5px;color:var(--text2);margin-bottom:4px">TOTAL SCANNED</div>
+
+
+
+
+
+            <div id="ps-cnt-total" style="font-family:var(--fm);font-size:1.6rem;font-weight:700;color:var(--accent);line-height:1">—</div>
+
+
+
+
+
+          </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Filter buttons -->
+
+
+
+
+
+        <div style="padding:10px 20px;border-bottom:1px solid var(--border2);display:flex;gap:8px;align-items:center">
+
+
+
+
+
+          <input id="ps-search" type="text" placeholder="Search port, service, risk..." oninput="psRenderTable()" style="flex:1;max-width:260px;background:rgba(0,0,0,.3);border:1px solid var(--border2);border-radius:4px;padding:4px 10px;font-family:var(--fm);font-size:11px;color:var(--text);outline:none;letter-spacing:.5px"/> <span style="font-family:var(--fm);font-size:10px;color:var(--text2);letter-spacing:1px;margin-right:4px">FILTER:</span>
+
+
+
+
+
+          <button class="ps-filter-btn ps-filter-active" data-filter="all"      onclick="psSetFilter(this)">ALL</button>
+
+
+
+
+
+          <button class="ps-filter-btn"                  data-filter="open"     onclick="psSetFilter(this)">OPEN ONLY</button>
+
+
+
+
+
+          <button class="ps-filter-btn"                  data-filter="filtered" onclick="psSetFilter(this)">FILTERED ONLY</button>
+
+
+
+
+
+          <button class="ps-filter-btn"                  data-filter="high"     onclick="psSetFilter(this)">HIGH RISK</button>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Scanning state -->
+
+
+
+
+
+        <div id="ps-scanning" style="display:none;padding:2.5rem;text-align:center;font-family:var(--fm);font-size:12px;color:var(--text2);letter-spacing:1px">
+
+
+
+
+
+          <i class="fa-solid fa-circle-notch fa-spin" style="font-size:1.8rem;color:var(--accent);display:block;margin-bottom:1rem"></i>
+
+
+
+
+
+          SCANNING PORTS ON <span id="ps-scanning-ip" style="color:var(--accent3)">—</span> ...
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Port table -->
+
+
+
+
+
+        <div id="ps-table-wrap" style="overflow-x:auto">
+
+
+
+
+
+          <table style="width:100%;border-collapse:collapse;font-family:var(--fm);font-size:12px">
+
+
+
+
+
+            <thead>
+
+
+
+
+
+              <tr style="background:rgba(0,0,0,.4);border-bottom:1px solid var(--border2)">
+
+
+
+
+
+                <th style="padding:9px 16px;font-size:10px;letter-spacing:1.5px;color:var(--text2);text-align:left;white-space:nowrap">PORT</th>
+
+
+
+
+
+                <th style="padding:9px 16px;font-size:10px;letter-spacing:1.5px;color:var(--text2);text-align:left">STATUS</th>
+
+
+
+
+
+                <th style="padding:9px 16px;font-size:10px;letter-spacing:1.5px;color:var(--text2);text-align:left">PROTOCOL</th>
+
+
+
+
+
+                <th style="padding:9px 16px;font-size:10px;letter-spacing:1.5px;color:var(--text2);text-align:left">SERVICE</th>
+
+
+
+
+
+                <th style="padding:9px 16px;font-size:10px;letter-spacing:1.5px;color:var(--text2);text-align:left">DESCRIPTION</th>
+
+
+
+
+
+                <th style="padding:9px 16px;font-size:10px;letter-spacing:1.5px;color:var(--text2);text-align:left">RISK</th>
+
+
+
+
+
+              </tr>
+
+
+
+
+
+            </thead>
+
+
+
+
+
+            <tbody id="ps-tbody"></tbody>
+
+
+
+
+
+          </table>
+
+
+
+
+
+          <div id="ps-empty" style="display:none;padding:2.5rem;text-align:center;font-family:var(--fm);font-size:12px;color:var(--text2)">
+
+
+
+
+
+            <i class="fa-solid fa-shield-check" style="font-size:1.5rem;color:var(--accent3);display:block;margin-bottom:.5rem"></i>
+
+
+
+
+
+            No open or filtered ports detected
+
+
+
+
+
+          </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Footer -->
+
+
+
+
+
+        <div style="padding:9px 20px;border-top:1px solid var(--border2);background:rgba(0,0,0,.25);
+
+
+
+
+
+          display:flex;justify-content:space-between;font-family:var(--fm);font-size:10px;color:var(--text2);letter-spacing:1px">
+
+
+
+
+
+          <span>ENGINE: TCP CONNECT SCAN &nbsp;|&nbsp; PARALLEL THREADS: 100</span>
+
+
+
+
+
+          <span>SHOWING <b id="ps-showing" style="color:var(--accent)">0</b> ENTRIES</span>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- BOTTOM BAR -->
+
+
+
+
+
+    <div class="bottom-bar">
+
+
+
+
+
+      <div class="bb-info">Session active on <span id="bb-ip">—</span> &nbsp;•&nbsp; Runtime: <span id="bb-runtime">00:00</span></div>
+
+
+
+
+
+      <a class="btn-full-dash" id="dashBtn" href="/dashboard"><i class="fa-solid fa-chart-line"></i> Open Full Dashboard</a>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+// â”€â”€ Session guard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+// Auto-fill network range from detected interface
+(async function(){
+  try {
+    const ni = await (await fetch('/api/network_info')).json();
+    if (ni) {
+      window._networkRange = ni.network_range || '';
+      window._gatewayIp   = ni.gateway_ip    || '';
+      window._localIp     = ni.local_ip      || '';
+      var inp = document.getElementById('targetIp');
+      if (inp && !inp.value) inp.value = ni.network_range || ni.gateway_ip || '';
+    }
+  } catch(e) {}
+})();
+
+
+
+
+
+
+
+
+
+
+
+// Load real username + role from session
+
+
+
+
+
+fetch('/api/auth/me', { credentials: 'include' })
+
+
+
+
+
+  .then(function(r){ return r.json(); })
+
+
+
+
+
+  .then(function(d){
+
+
+
+
+
+    if (d && d.user) {
+
+
+
+
+
+      const u = d.user;
+
+
+
+
+
+      // Name: prefer name, then display_name, then strip email domain
+
+
+
+
+
+      const name = u.name || u.display_name || (u.email||u.username||'User').split('@')[0];
+
+
+
+
+
+      const initials = name.split(' ').map(function(w){return w[0];}).join('').toUpperCase().slice(0,2);
+
+
+
+
+
+      const role = (u.role||'analyst').toLowerCase();
+
+
+
+
+
+
+
+
+
+
+
+      var el = document.getElementById('nav-username');
+
+
+
+
+
+      if (el) el.textContent = name;
+
+
+
+
+
+
+
+
+
+
+
+      var av = document.getElementById('mon-avatar');
+
+
+
+
+
+      if (av) av.textContent = initials;
+
+
+
+
+
+
+
+
+
+
+
+      var badge = document.getElementById('mon-role-badge');
+
+
+
+
+
+      if (badge) {
+
+
+
+
+
+        if (role==='admin'||role==='administrator') {
+
+
+
+
+
+          badge.textContent = '⚡ ADMIN';
+
+
+
+
+
+          badge.style.cssText = 'background:rgba(255,165,0,.15);color:#ffaa00;border:1px solid rgba(255,165,0,.3);font-family:var(--fm);font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:.5px';
+
+
+
+
+
+        } else {
+
+
+
+
+
+          badge.textContent = '🔍 ANALYST';
+
+
+
+
+
+          badge.style.cssText = 'background:rgba(0,212,255,.1);color:var(--accent);border:1px solid rgba(0,212,255,.25);font-family:var(--fm);font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:.5px';
+
+
+
+
+
+        }
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+      // Show nav session timer
+
+
+
+
+
+      var tw = document.getElementById('mon-session-timer');
+
+
+
+
+
+      if (tw) tw.style.display = 'flex';
+
+
+
+
+
+    }
+
+
+
+
+
+  }).catch(function(){});
+
+
+
+
+
+
+
+
+
+
+
+function handleLogout() {
+
+
+
+
+
+  fetch('/api/auth/logout', { method: 'POST' }).finally(() => { window.location.href = '/'; });
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ Pill selector â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+function setPill(el, groupId) {
+
+
+
+
+
+  document.querySelectorAll('#' + groupId + ' .pill').forEach(function(p){ p.classList.remove('active'); });
+
+
+
+
+
+  el.classList.add('active');
+
+
+
+
+
+  if (groupId === 'scanTypePills') document.getElementById('scanType').value = el.dataset.value;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ Sparkline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+var sparkData = new Array(30).fill(0);
+
+
+
+
+
+function updateSparkline(rate) {
+
+
+
+
+
+  sparkData.push(rate);
+
+
+
+
+
+  if (sparkData.length > 30) sparkData.shift();
+
+
+
+
+
+  var canvas = document.getElementById('sparkline');
+
+
+
+
+
+  if (!canvas) return;
+
+
+
+
+
+  var ctx = canvas.getContext('2d');
+
+
+
+
+
+  var W = canvas.width, H = canvas.height;
+
+
+
+
+
+  ctx.clearRect(0, 0, W, H);
+
+
+
+
+
+  var max = Math.max.apply(null, sparkData.concat([1]));
+
+
+
+
+
+  var step = W / (sparkData.length - 1);
+
+
+
+
+
+  var grad = ctx.createLinearGradient(0, 0, 0, H);
+
+
+
+
+
+  grad.addColorStop(0, 'rgba(0,212,255,.5)');
+
+
+
+
+
+  grad.addColorStop(1, 'rgba(0,212,255,.02)');
+
+
+
+
+
+  ctx.beginPath();
+
+
+
+
+
+  sparkData.forEach(function(v, i) {
+
+
+
+
+
+    var x = i * step;
+
+
+
+
+
+    var y = H - (v / max) * (H - 4) - 2;
+
+
+
+
+
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+
+
+
+
+
+  });
+
+
+
+
+
+  ctx.strokeStyle = 'rgba(0,212,255,.9)';
+
+
+
+
+
+  ctx.lineWidth = 1.5;
+
+
+
+
+
+  ctx.stroke();
+
+
+
+
+
+  ctx.lineTo(W, H); ctx.lineTo(0, H); ctx.closePath();
+
+
+
+
+
+  ctx.fillStyle = grad;
+
+
+
+
+
+  ctx.fill();
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ Terminal log â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+var TERM_ICONS = { info: '●', warn: '▲', ok: '✓', err: '✗' };
+
+
+
+
+
+function termLog(msg, type) {
+
+
+
+
+
+  type = type || 'info';
+
+
+
+
+
+  var feed = document.getElementById('term-feed');
+
+
+
+
+
+  if (!feed) return;
+
+
+
+
+
+  var now = new Date();
+
+
+
+
+
+  var ts = now.toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit',second:'2-digit'});
+
+
+
+
+
+  var iconColor = type==='ok'?'#00ff9d':type==='warn'?'#ffb800':type==='err'?'#ff2d55':'#00d4ff';
+
+
+
+
+
+  var div = document.createElement('div');
+
+
+
+
+
+  div.className = 'term-line';
+
+
+
+
+
+  div.innerHTML = '<span class="term-ts">'+ts+'</span><span class="term-icon" style="color:'+iconColor+'">'+(TERM_ICONS[type]||'●')+'</span><span class="term-txt">'+msg+'</span>';
+
+
+
+
+
+  feed.prepend(div);
+
+
+
+
+
+  while (feed.children.length > 3) feed.removeChild(feed.lastChild);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ Session timer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+var sessionStart = null;
+
+
+
+
+
+function updateSessionTimer() {
+
+
+
+
+
+  if (!sessionStart) return;
+
+
+
+
+
+  var s = Math.floor((Date.now() - sessionStart) / 1000);
+
+
+
+
+
+  var h = String(Math.floor(s/3600)).padStart(2,'0');
+
+
+
+
+
+  var m = String(Math.floor((s%3600)/60)).padStart(2,'0');
+
+
+
+
+
+  var sec = String(s%60).padStart(2,'0');
+
+
+
+
+
+  var fmt = h+':'+m+':'+sec;
+
+
+
+
+
+  var el = document.getElementById('session-timer');
+
+
+
+
+
+  if (el) el.textContent = fmt;
+
+
+
+
+
+  var el2 = document.getElementById('btn-session-time');
+
+
+
+
+
+  if (el2) el2.textContent = fmt;
+
+
+
+
+
+  // Also update the nav timer pill (mm:ss format)
+
+
+
+
+
+  var navT = document.getElementById('mon-timer-val');
+
+
+
+
+
+  if (navT) navT.textContent = m+':'+sec;
+
+
+
+
+
+}
+
+
+
+
+
+setInterval(updateSessionTimer, 1000);
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ Threat badge â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+function updateThreatBadge(risk) {
+
+
+
+
+
+  var dot = document.getElementById('threat-dot');
+
+
+
+
+
+  var label = document.getElementById('threat-label');
+
+
+
+
+
+  if (!dot || !label) return;
+
+
+
+
+
+  if (risk > 70) {
+
+
+
+
+
+    dot.style.background = '#ef4444'; dot.style.boxShadow = '0 0 8px #ef4444';
+
+
+
+
+
+    label.textContent = 'THREAT'; label.style.color = '#ef4444';
+
+
+
+
+
+  } else if (risk > 35) {
+
+
+
+
+
+    dot.style.background = '#f59e0b'; dot.style.boxShadow = '0 0 8px #f59e0b';
+
+
+
+
+
+    label.textContent = 'WARN'; label.style.color = '#f59e0b';
+
+
+
+
+
+  } else {
+
+
+
+
+
+    dot.style.background = 'var(--accent3)'; dot.style.boxShadow = '0 0 6px var(--accent3)';
+
+
+
+
+
+    label.textContent = 'SAFE'; label.style.color = 'var(--accent3)';
+
+
+
+
+
+  }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ Live monitoring â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+var monitoring = false, monInterval = null;
+
+
+
+
+
+var startTime = null;
+
+
+
+
+
+
+
+
+
+
+
+async function toggleMonitor() {
+
+
+
+
+
+  var btn   = document.getElementById('startBtn');
+
+
+
+
+
+  var icon  = document.getElementById('startIcon');
+
+
+
+
+
+  var label = document.getElementById('startLabel');
+
+
+
+
+
+  var dash  = document.getElementById('live-dashboard');
+
+
+
+
+
+
+
+
+
+
+
+  if (!monitoring) {
+
+
+
+
+
+    monitoring = true;
+
+
+
+
+
+    startTime  = Date.now();
+
+
+
+
+
+    btn.classList.add('running');
+
+
+
+
+
+    icon.className = 'fa-solid fa-stop';
+
+
+
+
+
+    label.textContent = 'STOP PROTECTION';
+
+
+
+
+
+
+
+
+
+
+
+    var ip = document.getElementById('targetIp').value;
+    if (!ip) {
+      try {
+        const ni = await (await fetch('/api/network_info')).json();
+        if (ni) {
+          window._networkRange = ni.network_range || '';
+          window._gatewayIp   = ni.gateway_ip    || '';
+          document.getElementById('targetIp').value = ni.network_range || ni.gateway_ip || '';
+        }
+      } catch(e) {}
+      ip = document.getElementById('targetIp').value || window._networkRange || window._gatewayIp || '192.168.1.0/24';
+    }
+
+
+
+
+
+    var gwSuffix = window._gatewayIp ? ' (GW: ' + window._gatewayIp + ')' : '';
+
+
+
+
+
+    document.getElementById('d-ip').textContent      = ip;
+
+
+
+
+
+    document.getElementById('d-session').textContent = 'Active monitoring session';
+
+
+
+
+
+    document.getElementById('bb-ip').textContent     = ip;
+
+
+
+
+
+
+
+
+
+
+
+    dash.classList.add('show');
+
+
+
+
+
+    sessionStart = Date.now();
+
+
+
+
+
+    document.getElementById('terminal-log').style.display = 'block';
+
+
+
+
+
+    document.getElementById('btn-timer').style.display = 'inline';
+
+
+
+
+
+    var navTW = document.getElementById('mon-session-timer');
+
+
+
+
+
+    if (navTW) navTW.style.display = 'flex';
+
+
+
+
+
+    termLog('Monitoring started on ' + ip, 'ok');
+
+
+
+
+
+    termLog('Port scan starting...', 'info');
+
+
+
+
+
+
+
+
+
+
+
+    // Auto-run port scan on start
+
+
+
+
+
+    runPortScan();
+
+
+
+
+
+
+
+
+
+
+
+    updateLiveState();
+
+
+
+
+
+    monInterval = setInterval(updateLiveState, 2000);
+
+
+
+
+
+    setInterval(updateRuntime, 1000);
+
+
+
+
+
+
+
+
+
+
+
+  } else {
+
+
+
+
+
+    monitoring = false;
+
+
+
+
+
+    sessionStart = null;
+
+
+
+
+
+    btn.classList.remove('running');
+
+
+
+
+
+    icon.className = 'fa-solid fa-play';
+
+
+
+
+
+    label.textContent = 'START PROTECTION';
+
+
+
+
+
+    document.getElementById('d-session').textContent = 'Session stopped';
+
+
+
+
+
+    document.getElementById('btn-timer').style.display = 'none';
+
+
+
+
+
+    var navTW2 = document.getElementById('mon-session-timer');
+
+
+
+
+
+    if (navTW2) { navTW2.style.display = 'none'; }
+
+
+
+
+
+    termLog('Session stopped', 'warn');
+
+
+
+
+
+    clearInterval(monInterval);
+
+
+
+
+
+  }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ Real data from /api/live_state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+async function updateLiveState() {
+
+
+
+
+
+  if (!monitoring) return;
+
+
+
+
+
+  try {
+
+
+
+
+
+    var res  = await fetch('/api/live_state');
+
+
+
+
+
+    var data = await res.json();
+
+
+
+
+
+
+
+
+
+
+
+    var pkts = data.total_packets || 0;
+
+
+
+
+
+    document.getElementById('d-packets').textContent = pkts.toLocaleString();
+
+
+
+
+
+
+
+
+
+
+
+    var rate = data.rate || 0;
+
+
+
+
+
+    var bps  = data.bytes_per_sec || 0;
+
+    var kbs  = bps > 1048576 ? (bps/1048576).toFixed(1) + ' MB/s' : bps > 1024 ? (bps/1024).toFixed(1) + ' KB/s' : bps.toFixed(0) + ' B/s';
+
+
+
+
+
+    document.getElementById('d-pps').innerHTML = rate.toFixed(1) + ' <small>pkt/s</small>';
+
+
+
+
+
+    document.getElementById('d-kbs').textContent = kbs;
+
+
+
+
+
+
+
+
+
+
+
+    var susp = (data.alerts_total || 0) + (data.ml_total || 0);
+
+
+
+
+
+    document.getElementById('d-susp').textContent  = susp;
+
+
+
+
+
+    document.getElementById('d-susp2').textContent = susp;
+
+
+
+
+
+
+
+
+
+
+
+    // Real risk score weighted by actual severity from /api/stats
+
+    var risk = 15;
+
+    try {
+
+      var sr = await fetch('/api/stats');
+
+      var sd = await sr.json();
+
+      var sev = sd.severity_count  || {};
+
+      var typ = sd.alerts_by_type  || {};
+
+      var rawScore = ((sev.CRITICAL||0)*10) + ((sev.HIGH||0)*5) +
+
+                     ((sev.MEDIUM||0)*1)    + ((sev.LOW||0)*0.1) +
+
+                     ((sd.total_ml_alerts||0)*3) +
+
+                     ((typ.PORT_SCAN||0)>0  ? 15 : 0) +
+
+                     ((typ.SYN_FLOOD||0)>0  ? 20 : 0);
+
+      risk = susp > 0 ? Math.min(100, Math.max(5, Math.round(rawScore))) : 5;
+
+    } catch(_re) {
+
+      risk = susp > 20 ? 90 : susp > 10 ? 65 : susp > 4 ? 40 : susp > 0 ? 25 : 15;
+
+    }
+
+
+
+
+
+
+
+    document.getElementById('riskIndicator').style.left = risk + '%';
+
+
+
+
+
+    var level = 'Low', color = '#10b981';
+
+
+
+
+
+    if (risk > 70)      { level = 'Critical'; color = '#ef4444'; }
+
+
+
+
+
+    else if (risk > 35) { level = 'Warning';  color = '#f59e0b'; }
+
+
+
+
+
+    var rl = document.getElementById('riskLevel');
+
+
+
+
+
+    rl.textContent = level; rl.style.color = color;
+
+
+
+
+
+
+
+
+
+
+
+    var chEl = document.getElementById('d-change');
+
+
+
+
+
+    chEl.textContent = data.running ? '● LIVE' : '‹ Idle';
+
+
+
+
+
+    chEl.style.color = data.running ? '#10b981' : '#6b7280';
+
+
+
+
+
+
+
+
+
+
+
+    updateSparkline(rate);
+
+
+
+
+
+    updateThreatBadge(risk);
+
+
+
+
+
+
+
+
+
+
+
+    var glow = document.getElementById('risk-glow');
+
+
+
+
+
+    if (glow) {
+
+
+
+
+
+      glow.style.left = risk + '%';
+
+
+
+
+
+      var gc = risk > 70 ? 'rgba(239,68,68,.35)' : risk > 35 ? 'rgba(245,158,11,.3)' : 'rgba(16,185,129,.2)';
+
+
+
+
+
+      var gs = risk > 70 ? '0 0 20px rgba(239,68,68,.5)' : risk > 35 ? '0 0 15px rgba(245,158,11,.4)' : '0 0 12px rgba(16,185,129,.4)';
+
+
+
+
+
+      glow.style.background = gc; glow.style.boxShadow = gs;
+
+
+
+
+
+    }
+
+
+
+
+
+    var rp = document.getElementById('risk-pct');
+
+
+
+
+
+    if (rp) rp.textContent = risk + '%';
+
+
+
+
+
+
+
+
+
+
+
+  } catch(e) {
+
+
+
+
+
+    document.getElementById('d-change').textContent = 'Offline';
+
+
+
+
+
+    document.getElementById('d-change').style.color = '#6b7280';
+
+
+
+
+
+  }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function updateRuntime() {
+
+
+
+
+
+  if (!monitoring || !startTime) return;
+
+
+
+
+
+  var s   = Math.floor((Date.now() - startTime) / 1000);
+
+
+
+
+
+  var m   = String(Math.floor(s / 60)).padStart(2,'0');
+
+
+
+
+
+  var sec = String(s % 60).padStart(2,'0');
+
+
+
+
+
+  document.getElementById('bb-runtime').textContent = m + ':' + sec;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ Port Scanner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+var _psAllPorts = [];
+
+
+
+
+
+var _psFilter   = 'all';
+
+
+
+
+
+
+
+
+
+
+
+var PS_RISK = {
+
+
+
+
+
+  21:'HIGH',22:'HIGH',23:'HIGH',25:'MED',53:'MED',67:'LOW',68:'LOW',
+
+
+
+
+
+  80:'HIGH',110:'LOW',123:'LOW',135:'MED',137:'MED',139:'MED',143:'LOW',
+
+
+
+
+
+  161:'MED',389:'MED',443:'LOW',445:'HIGH',465:'LOW',514:'MED',
+
+
+
+
+
+  587:'LOW',631:'LOW',636:'LOW',993:'LOW',995:'LOW',1080:'HIGH',
+
+
+
+
+
+  1194:'LOW',1433:'HIGH',1723:'MED',2049:'MED',2083:'LOW',2222:'MED',
+
+
+
+
+
+  3306:'HIGH',3389:'HIGH',4444:'HIGH',5000:'MED',5432:'HIGH',
+
+
+
+
+
+  5900:'HIGH',5985:'HIGH',6379:'HIGH',6881:'MED',7547:'HIGH',
+
+
+
+
+
+  8080:'MED',8443:'LOW',8888:'MED',9200:'HIGH',27017:'HIGH'
+
+
+
+
+
+};
+
+
+
+
+
+var PS_DESC = {
+
+
+
+
+
+  21:'File Transfer Protocol — unencrypted',22:'Secure Shell — remote admin access',
+
+
+
+
+
+  23:'Telnet — unencrypted remote login (legacy)',25:'Mail relay (SMTP)',
+
+
+
+
+
+  53:'Domain Name System resolver',67:'DHCP Server',68:'DHCP Client',
+
+
+
+
+
+  80:'HTTP — web admin interface (unencrypted)',110:'POP3 mail retrieval',
+
+
+
+
+
+  123:'Network Time Protocol',135:'Microsoft RPC endpoint',
+
+
+
+
+
+  137:'NetBIOS Name Service',139:'NetBIOS session service',
+
+
+
+
+
+  143:'IMAP mail access',161:'SNMP — network management',
+
+
+
+
+
+  389:'LDAP directory service',443:'HTTPS — secure web interface',
+
+
+
+
+
+  445:'SMB — Windows file sharing',465:'SMTPS secure mail',
+
+
+
+
+
+  514:'Syslog daemon',587:'SMTP mail submission',631:'IPP printing',
+
+
+
+
+
+  636:'LDAPS secure directory',993:'IMAPS secure mail',995:'POP3S secure mail',
+
+
+
+
+
+  1080:'SOCKS proxy',1194:'OpenVPN',1433:'Microsoft SQL Server',
+
+
+
+
+
+  1723:'PPTP VPN',2049:'NFS network filesystem',2083:'cPanel web hosting',
+
+
+
+
+
+  2222:'SSH alternate port',3306:'MySQL database',3389:'RDP — Remote Desktop',
+
+
+
+
+
+  4444:'Metasploit default listener',5000:'UPnP service',5432:'PostgreSQL database',
+
+
+
+
+
+  5900:'VNC remote desktop',5985:'WinRM remote management',
+
+
+
+
+
+  6379:'Redis in-memory database',6881:'BitTorrent',7547:'TR-069 ISP management',
+
+
+
+
+
+  8080:'HTTP alternate / admin panel',8443:'HTTPS alternate interface',
+
+
+
+
+
+  8888:'HTTP alternate port',9200:'Elasticsearch API',27017:'MongoDB database'
+
+
+
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+function psRiskLabel(risk) {
+
+
+
+
+
+  if (risk === 'HIGH') return '<span class="ps-risk-high">&#x26A0; HIGH</span>';
+
+
+
+
+
+  if (risk === 'MED')  return '<span class="ps-risk-med">~ MEDIUM</span>';
+
+
+
+
+
+  if (risk === 'LOW')  return '<span class=”ps-risk-low”>✓ LOW</span>';
+
+
+
+
+
+  return '<span class="ps-risk-none">— NONE</span>';
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function psSetFilter(btn) {
+
+
+
+
+
+  document.querySelectorAll('.ps-filter-btn').forEach(function(b){ b.classList.remove('ps-filter-active'); });
+
+
+
+
+
+  btn.classList.add('ps-filter-active');
+
+
+
+
+
+  _psFilter = btn.getAttribute('data-filter');
+
+
+
+
+
+  psRenderTable();
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function psRenderTable() {
+
+
+
+
+
+  var tbody   = document.getElementById('ps-tbody');
+
+
+
+
+
+  var empty   = document.getElementById('ps-empty');
+
+
+
+
+
+  var showing = document.getElementById('ps-showing');
+
+
+
+
+
+  if (!tbody) return;
+
+
+
+
+
+
+
+
+
+
+
+  var q = (document.getElementById("ps-search")||{}).value||""; q=q.toLowerCase(); var rows = _psAllPorts.filter(function(p) { if(q){var s=(p.port+" ")+(p.service||"")+" "+(PS_RISK[p.port]||"LOW")+" "+(PS_DESC[p.port]||""); if(s.toLowerCase().indexOf(q)===-1)return false;}
+
+
+
+
+
+    if (_psFilter === 'open')     return p.status === 'open';
+
+
+
+
+
+    if (_psFilter === 'filtered') return p.status === 'filtered';
+
+
+
+
+
+    if (_psFilter === 'high')     return (PS_RISK[p.port] || '') === 'HIGH' && p.status !== 'closed';
+
+
+
+
+
+    return p.status === 'open' || p.status === 'filtered';
+
+
+
+
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+  if (rows.length === 0) {
+
+
+
+
+
+    tbody.innerHTML = '';
+
+
+
+
+
+    if (empty) empty.style.display = 'block';
+
+
+
+
+
+    if (showing) showing.textContent = '0';
+
+
+
+
+
+    return;
+
+
+
+
+
+  }
+
+
+
+
+
+  if (empty) empty.style.display = 'none';
+
+
+
+
+
+  if (showing) showing.textContent = rows.length;
+
+
+
+
+
+
+
+
+
+
+
+  tbody.innerHTML = rows.map(function(p) {
+
+
+
+
+
+    var risk  = PS_RISK[p.port] || 'LOW';
+
+
+
+
+
+    var desc  = PS_DESC[p.port] || 'Custom / unknown service';
+
+
+
+
+
+    var badge = p.status === 'open'
+
+
+
+
+
+      ? '<span class="ps-badge ps-open">OPEN</span>'
+
+
+
+
+
+      : p.status === 'filtered'
+
+
+
+
+
+        ? '<span class="ps-badge ps-filtered">FILTERED</span>'
+
+
+
+
+
+        : '<span class="ps-badge ps-closed">CLOSED</span>';
+
+
+
+
+
+    var portCol = '<span style="font-family:var(--fm);font-size:13px;font-weight:700;color:var(--accent)">' + p.port + '</span>';
+
+
+
+
+
+    return '<tr>' +
+
+
+
+
+
+      '<td style="padding:9px 16px">' + portCol + '</td>' +
+
+
+
+
+
+      '<td style="padding:9px 16px">' + badge + '</td>' +
+
+
+
+
+
+      '<td style="padding:9px 16px;color:var(--text2);font-size:11px">TCP</td>' +
+
+
+
+
+
+      '<td style="padding:9px 16px;color:var(--white);font-weight:700">' + (p.service || 'unknown') + '</td>' +
+
+
+
+
+
+      '<td style="padding:9px 16px;color:var(--text2);font-size:11px">' + desc + '</td>' +
+
+
+
+
+
+      '<td style="padding:9px 16px">' + psRiskLabel(risk) + '</td>' +
+
+
+
+
+
+      '</tr>';
+
+
+
+
+
+  }).join('');
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+async function runPortScan() {
+
+
+
+
+
+  var rawIp    = document.getElementById('targetIp').value.trim() || '127.0.0.1';
+
+
+
+
+
+  var scanType = document.getElementById('scanType').value || 'Standard (top 1000 ports)';
+
+
+
+
+
+  var scanning = document.getElementById('ps-scanning');
+
+
+
+
+
+  var tableWrap= document.getElementById('ps-table-wrap');
+
+
+
+
+
+
+
+
+
+
+
+  var targetIp = rawIp.replace(/\/\d+$/, '') || window._gatewayIp;
+
+
+
+
+
+
+
+
+
+
+
+  if (scanning)  scanning.style.display = 'block';
+
+
+
+
+
+  if (tableWrap) tableWrap.style.display = 'none';
+
+
+
+
+
+  var scanIpEl = document.getElementById('ps-scanning-ip');
+
+
+
+
+
+  if (scanIpEl) scanIpEl.textContent = targetIp;
+
+
+
+
+
+  document.getElementById('ps-target-ip').textContent = targetIp;
+
+
+
+
+
+  document.getElementById('ps-scan-label').textContent = scanType;
+
+
+
+
+
+
+
+
+
+
+
+  try {
+
+
+
+
+
+    var res  = await fetch('/api/ports', {
+
+
+
+
+
+      method: 'POST',
+
+
+
+
+
+      headers: {'Content-Type': 'application/json'},
+
+
+
+
+
+      body: JSON.stringify({ target: targetIp, scan_type: scanType })
+
+
+
+
+
+    });
+
+
+
+
+
+    var data = await res.json();
+
+
+
+
+
+
+
+
+
+
+
+    if (scanning)  scanning.style.display = 'none';
+
+
+
+
+
+    if (tableWrap) tableWrap.style.display = 'block';
+
+
+
+
+
+
+
+
+
+
+
+    if (!data.success) {
+
+
+
+
+
+      document.getElementById('ps-tbody').innerHTML =
+
+
+
+
+
+        '<tr><td colspan="6" style="padding:2rem;text-align:center;color:#ef4444;font-family:var(--fm)">' +
+
+
+
+
+
+        '<i class="fa-solid fa-circle-exclamation"></i> ' + (data.error || 'Scan failed') + '</td></tr>';
+
+
+
+
+
+      return;
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    _psAllPorts = data.ports || [];
+
+
+
+
+
+    _psAllPorts.sort(function(a, b) {
+
+
+
+
+
+      var order = {open:0, filtered:1, closed:2};
+
+
+
+
+
+      if ((order[a.status]||2) !== (order[b.status]||2)) return (order[a.status]||2) - (order[b.status]||2);
+
+
+
+
+
+      return a.port - b.port;
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+    var openCount     = _psAllPorts.filter(function(p){ return p.status === 'open';     }).length;
+
+
+
+
+
+    var filteredCount = _psAllPorts.filter(function(p){ return p.status === 'filtered'; }).length;
+
+
+
+
+
+    var closedCount   = (data.total_scanned || _psAllPorts.length) - openCount - filteredCount;
+
+
+
+
+
+
+
+
+
+
+
+    document.getElementById('ps-cnt-open').textContent     = openCount;
+
+
+
+
+
+    document.getElementById('ps-cnt-closed').textContent   = closedCount > 0 ? closedCount.toLocaleString() : '—';
+
+
+
+
+
+    document.getElementById('ps-cnt-filtered').textContent = filteredCount;
+
+
+
+
+
+    document.getElementById('ps-cnt-total').textContent    = (data.total_scanned || _psAllPorts.length).toLocaleString();
+
+
+
+
+
+    document.getElementById('ps-time').textContent         = new Date().toLocaleTimeString('en-GB');
+
+
+
+
+
+
+
+
+
+
+
+    var metaEl = document.getElementById('ps-meta');
+
+
+
+
+
+    if (metaEl) metaEl.textContent = data.duration_s ? 'DURATION: ' + data.duration_s.toFixed(1) + 's' : '';
+
+
+
+
+
+
+
+
+
+
+
+    psRenderTable();
+
+
+
+
+
+    termLog('Port scan complete — ' + openCount + ' open port(s) on ' + targetIp, 'ok');
+
+
+
+
+
+
+
+
+
+
+
+  } catch(err) {
+
+
+
+
+
+    if (scanning)  scanning.style.display = 'none';
+
+
+
+
+
+    if (tableWrap) tableWrap.style.display = 'block';
+
+
+
+
+
+    document.getElementById('ps-tbody').innerHTML =
+
+
+
+
+
+      '<tr><td colspan="6" style="padding:2rem;text-align:center;color:#ef4444;font-family:var(--fm)">Connection error: ' + err.message + '</td></tr>';
+
+
+
+
+
+  }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ Auto-start if backend already running â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+(function autoStartIfRunning() {
+
+
+
+
+
+  fetch('/api/live_state')
+
+
+
+
+
+    .then(function(r){ return r.json(); })
+
+
+
+
+
+    .then(function(data) {
+
+
+
+
+
+      if (data.running && !monitoring) {
+
+
+
+
+
+        var btn   = document.getElementById('startBtn');
+
+
+
+
+
+        var icon  = document.getElementById('startIcon');
+
+
+
+
+
+        var label = document.getElementById('startLabel');
+
+
+
+
+
+        var dash  = document.getElementById('live-dashboard');
+
+
+
+
+
+        if (btn)   btn.classList.add('running');
+
+
+
+
+
+        if (icon)  icon.className = 'fa-solid fa-stop';
+
+
+
+
+
+        if (label) label.textContent = 'STOP PROTECTION';
+
+
+
+
+
+        if (dash)  dash.classList.add('show');
+
+
+
+
+
+        monitoring = true;
+
+
+        sessionStart = Date.now() - ((data.runtime_seconds || 0) * 1000);
+
+        var navTW = document.getElementById('mon-session-timer');
+
+        if (navTW) navTW.style.display = 'flex';
+
+        updateSessionTimer();
+
+
+
+        startTime  = Date.now();
+
+
+
+
+
+        var ip = document.getElementById('targetIp').value || '192.168.1.0/24';
+
+
+
+
+
+        var d_ip = document.getElementById('d-ip');
+
+
+
+
+
+        if (d_ip) d_ip.textContent = ip;
+
+
+
+
+
+        var d_sess = document.getElementById('d-session');
+
+
+
+
+
+        if (d_sess) d_sess.textContent = 'Active monitoring session';
+
+
+
+
+
+        document.getElementById('terminal-log').style.display = 'block';
+
+
+
+
+
+        runPortScan();
+
+
+
+
+
+        updateLiveState();
+
+
+
+
+
+        monInterval = setInterval(updateLiveState, 2000);
+
+
+
+
+
+        setInterval(updateRuntime, 1000);
+
+
+
+
+
+      }
+
+
+
+
+
+    })
+
+
+
+
+
+    .catch(function(){});
+
+
+
+
+
+})();
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ WebSocket â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+(function initWebSocket() {
+
+
+
+
+
+  var script = document.createElement('script');
+
+
+
+
+
+  script.src = '/socket.io/socket.io.js';
+
+
+
+
+
+  script.onload = function() {
+
+
+
+
+
+    var socket = io({ transports: ['websocket', 'polling'] });
+
+
+
+
+
+    var dot = document.createElement('span');
+
+
+
+
+
+    dot.id = 'ws-dot';
+
+
+
+
+
+    dot.style.cssText = 'display:inline-block;width:8px;height:8px;border-radius:50%;background:#6b7280;margin-left:8px;vertical-align:middle;transition:background .3s';
+
+
+
+
+
+    var hdr = document.querySelector('nav');
+
+
+
+
+
+    if (hdr) hdr.appendChild(dot);
+
+
+
+
+
+    socket.on('connect',    function(){ dot.style.background='#10b981'; });
+
+
+
+
+
+    socket.on('disconnect', function(){ dot.style.background='#ef4444'; });
+
+
+
+
+
+    socket.on('live_stats', function(data) {
+
+
+
+
+
+      if (!monitoring) return;
+
+
+
+
+
+      var pkts = data.total_packets || 0;
+
+
+
+
+
+      var el = document.getElementById('d-packets');
+
+
+
+
+
+      if (el) el.textContent = pkts.toLocaleString();
+
+
+
+
+
+      var rate = data.rate || 0;
+
+
+
+
+
+      var ppsEl = document.getElementById('d-pps');
+
+
+
+
+
+      if (ppsEl) ppsEl.innerHTML = rate.toFixed(1) + ' <small>pkt/s</small>';
+
+
+
+
+
+    });
+
+
+
+
+
+  };
+
+
+
+
+
+  document.head.appendChild(script);
+
+
+
+
+
+})();
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ Theme toggle â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+function toggleTheme() {
+
+
+
+
+
+  var h = document.documentElement;
+
+
+
+
+
+  var isLight = h.getAttribute('data-theme') === 'light';
+
+
+
+
+
+  if(isLight){ h.removeAttribute('data-theme'); localStorage.setItem('pg_theme','dark'); }
+
+
+
+
+
+  else { h.setAttribute('data-theme','light'); localStorage.setItem('pg_theme','light'); }
+
+
+
+
+
+  syncThemeIcon();
+
+
+
+
+
+  try{ new BroadcastChannel('pg_theme').postMessage(isLight?'dark':'light'); }catch(e){}
+
+
+
+
+
+}
+
+
+
+
+
+function syncThemeIcon(){
+
+
+
+
+
+  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
+
+
+
+
+  var moon = document.getElementById('theme-icon-moon');
+
+
+
+
+
+  var sun  = document.getElementById('theme-icon-sun');
+
+
+
+
+
+  if(moon) moon.style.display = isLight ? 'none' : 'block';
+
+
+
+
+
+  if(sun)  sun.style.display  = isLight ? 'block' : 'none';
+
+
+
+
+
+}
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', syncThemeIcon);
+
+
+
+
+
+(function(){
+
+
+
+
+
+  try{
+
+
+
+
+
+    var bc = new BroadcastChannel('pg_theme');
+
+
+
+
+
+    bc.onmessage = function(e){
+
+
+
+
+
+      var h = document.documentElement;
+
+
+
+
+
+      if(e.data==='light'){ h.setAttribute('data-theme','light'); localStorage.setItem('pg_theme','light'); }
+
+
+
+
+
+      else { h.removeAttribute('data-theme'); localStorage.setItem('pg_theme','dark'); }
+
+
+
+
+
+      syncThemeIcon();
+
+
+
+
+
+    };
+
+
+
+
+
+  }catch(e){}
+
+
+
+
+
+})();
+
+
+
+
+
+
+
+
+
+
+
+// â”€â”€ IP wrap focus â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+
+
+
+
+(function(){
+
+
+
+
+
+  var inp = document.getElementById('targetIp');
+
+
+
+
+
+  var wrap = document.getElementById('ip-wrap');
+
+
+
+
+
+  if (inp && wrap) {
+
+
+
+
+
+    inp.addEventListener('focus', function(){ wrap.style.borderColor='var(--accent)'; wrap.style.boxShadow='0 0 0 3px rgba(0,212,255,.12)'; });
+
+
+
+
+
+    inp.addEventListener('blur',  function(){ wrap.style.borderColor=''; wrap.style.boxShadow=''; });
+
+
+
+
+
+  }
+
+
+
+
+
+})();
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

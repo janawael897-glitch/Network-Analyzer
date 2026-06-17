@@ -1,0 +1,42 @@
+# PacketGuard Configuration
+
+# ── GeoIP offline database (optional, no account needed) ──────────
+# Without this, ip-api.com is used automatically (no key, 1000 req/min).
+# For offline mode (faster, no internet needed):
+#   1. Go to: https://db-ip.com/db/download/ip-to-city-lite
+#   2. Choose MMDB format → click Download (no account needed)
+#   3. Extract the .gz → rename the file to: GeoLite2-City.mmdb
+#   4. Place it at: d:\network-analyzer-project jeeeeeeeeee\GeoLite2-City.mmdb
+#   5. Run: pip install geoip2
+#   6. Restart app.py — dashboard badge shows "db-ip offline"
+# (No env var needed — the system auto-detects any .mmdb file)
+
+# ── SMTP (Gmail App Password) ─────────────────────────────
+SMTP_EMAIL=packetguard.sys@gmail.com
+SMTP_PASSWORD=xcqn nfhq izup bahy
+
+# ── Flask Session ─────────────────────────────────────────
+# Generate a new key: python -c "import secrets; print(secrets.token_hex(32))"
+SECRET_KEY=c5319282b05865d9eeac39f9de076e77698f30561bdc6f9e3cf78399e0876aa7
+
+# ── ARP Spoofing (LAN traffic capture) ────────────────────
+# Set to true to automatically start ARP spoofing on app start.
+# REQUIRES: app running as Administrator + Npcap installed.
+# Set to false to disable (manual start from dashboard only).
+ARP_SPOOF_AUTO=true
+
+# ── Resend.com Email API (HTTPS port 443 — works when SMTP is blocked) ────
+# Gmail SMTP ports 587/465 are blocked by this machine's firewall/ISP.
+# Fix: sign up free at https://resend.com → Dashboard → API Keys → Create Key
+# Then paste the key (starts with "re_") below and restart the app.
+RESEND_API_KEY=
+RESEND_FROM_EMAIL=PacketGuard <onboarding@resend.dev>
+
+# ── Capture Engine ────────────────────────────────────────
+# Options: tshark | scapy  (default: tshark)
+# tshark requires Wireshark: winget install WiresharkFoundation.Wireshark
+CAPTURE_ENGINE=tshark
+
+# ── Google OAuth (only needed if Google login is used) ─────
+GOOGLE_CLIENT_ID=YOUR_GOOGLE_CLIENT_ID
+GOOGLE_CLIENT_SECRET=YOUR_GOOGLE_CLIENT_SECRET

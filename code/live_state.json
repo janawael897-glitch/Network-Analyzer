@@ -1,0 +1,11 @@
+{
+  "total_packets": 0,
+  "rate": 0.0,
+  "bytes_total": 0,
+  "runtime_seconds": 0,
+  "running": false,
+  "protocols": {},
+  "top_ips": {},
+  "recent_alerts": [],
+  "last_updated": null
+}

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PacketGuard — Network Threat Detection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+[data-theme="dark"]{
+  --bg:#020508;--surface:#060c14;--surface2:#0a1520;
+  --border:#0f2035;--border2:#1a3050;
+  --accent:#00d4ff;--accent2:#ff2d6b;--accent3:#00ff9d;--warn:#ffb800;--purple:#9d6fff;
+  --text:#b8cfe8;--text2:#6a8aaa;--white:#e8f4ff;
+  --card:rgba(6,12,20,0.92);--modal:#060e18;--inp:#040a12;--inp-b:#1a3050;--sh:rgba(0,0,0,.65);
+}
+[data-theme="light"]{
+  --bg:#f0f4f8;--surface:#ffffff;--surface2:#f8fafc;
+  --border:#d0dce8;--border2:#b8ccde;
+  --accent:#0088cc;--accent2:#e0145a;--accent3:#00aa66;--warn:#e09000;--purple:#6a3fcc;
+  --text:#2a4060;--text2:#6a8aaa;--white:#0a1525;
+  --card:rgba(255,255,255,.96);--modal:#ffffff;--inp:#f4f8fc;--inp-b:#c0d4e8;--sh:rgba(0,0,0,.12);
+}
+:root{--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--fm:'Share Tech Mono',monospace;--fa:'Tajawal',sans-serif;}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);overflow-x:hidden;line-height:1.6;transition:background .3s,color .3s}
+[lang="ar"] *{font-family:var(--fa),var(--fb)}
+
+.bg-orbs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);animation:od 18s ease-in-out infinite alternate}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,rgba(0,212,255,.06),transparent 70%);top:-250px;left:-150px}
+.orb2{width:500px;height:500px;background:radial-gradient(circle,rgba(157,111,255,.05),transparent 70%);top:40%;right:-100px;animation-delay:-8s}
+.orb3{width:400px;height:400px;background:radial-gradient(circle,rgba(0,255,157,.04),transparent 70%);bottom:-100px;left:35%;animation-delay:-15s}
+[data-theme="light"] .orb1{background:radial-gradient(circle,rgba(0,136,204,.07),transparent 70%)}
+[data-theme="light"] .orb2{background:radial-gradient(circle,rgba(106,63,204,.05),transparent 70%)}
+@keyframes od{0%{transform:translate(0,0) scale(1)}100%{transform:translate(40px,30px) scale(1.1)}}
+.bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.4;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:66px;background:rgba(2,5,8,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background .3s}
+[data-theme="light"] nav{background:rgba(240,244,248,.93)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:18px;font-weight:800;color:var(--white);letter-spacing:2px;text-transform:uppercase;text-decoration:none}
+.nav-logo-icon{width:32px;height:32px;border-radius:7px;flex-shrink:0;background:linear-gradient(135deg,rgba(0,212,255,.16),rgba(157,111,255,.14));border:1px solid rgba(0,212,255,.35);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:11px;color:var(--accent);font-weight:700;box-shadow:0 0 14px rgba(0,212,255,.2)}
+.nav-c{display:flex;align-items:center;gap:30px}
+.nav-c a{font-size:14px;font-weight:500;color:var(--text2);text-decoration:none;transition:color .2s}
+.nav-c a:hover{color:var(--accent)}
+.nav-r{display:flex;align-items:center;gap:10px}
+/* Lang */
+.lang-sw{position:relative}
+.lang-btn{display:flex;align-items:center;gap:6px;padding:7px 11px;border-radius:6px;cursor:pointer;background:transparent;border:1px solid var(--border2);color:var(--text2);font-size:12px;font-family:var(--fm);transition:all .2s}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+.lang-dd{position:absolute;top:calc(100% + 8px);right:0;background:var(--modal);border:1px solid var(--border2);border-radius:8px;overflow:hidden;min-width:130px;box-shadow:0 12px 40px var(--sh);display:none;z-index:200}
+.lang-dd.open{display:block;animation:ddin .2s ease}
+@keyframes ddin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.lang-opt{display:flex;align-items:center;gap:10px;padding:10px 16px;cursor:pointer;font-size:13px;color:var(--text);transition:background .15s}
+.lang-opt:hover{background:rgba(0,212,255,.06)}
+.lang-opt.active{color:var(--accent)}
+/* Theme */
+.theme-btn{width:34px;height:34px;border-radius:7px;cursor:pointer;background:transparent;border:1px solid var(--border2);color:var(--text2);font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.ndiv{width:1px;height:18px;background:var(--border2);margin:0 2px}
+.btn-nl{padding:7px 16px;border-radius:6px;font-size:13px;font-weight:500;background:transparent;border:1px solid var(--border2);color:var(--text);cursor:pointer;transition:all .2s;font-family:var(--fb)}
+.btn-nl:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ns{padding:7px 16px;border-radius:6px;font-size:13px;font-weight:600;background:linear-gradient(135deg,rgba(0,212,255,.14),rgba(157,111,255,.1));border:1px solid rgba(0,212,255,.4);color:var(--white);cursor:pointer;transition:all .2s;font-family:var(--fb);box-shadow:0 0 14px rgba(0,212,255,.1)}
+.btn-ns:hover{box-shadow:0 0 24px rgba(0,212,255,.22);border-color:rgba(0,212,255,.6)}
+
+/* HERO */
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 40px 80px}
+.h-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:20px;margin-bottom:28px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);font-family:var(--fm);font-size:11px;color:var(--accent);letter-spacing:2px;animation:fu .7s ease both}
+.bdot{width:6px;height:6px;border-radius:50%;background:var(--accent3);animation:bl 1.5s ease-in-out infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
+.h-title{font-family:var(--fd);font-size:clamp(52px,9vw,106px);font-weight:800;line-height:.92;letter-spacing:-3px;color:var(--white);animation:fu .7s .1s ease both}
+.h-title .glow{color:var(--accent);text-shadow:0 0 50px rgba(0,212,255,.5),0 0 100px rgba(0,212,255,.2)}
+.h-title .sub{display:block;font-size:clamp(34px,5vw,64px);background:linear-gradient(135deg,var(--text) 0%,var(--text2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-1px;margin-top:6px}
+.h-desc{max-width:540px;font-size:16px;font-weight:300;color:var(--text2);margin:26px auto 42px;line-height:1.75;animation:fu .7s .2s ease both}
+.h-actions{display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap;animation:fu .7s .3s ease both}
+.btn-p{display:inline-flex;align-items:center;gap:10px;padding:13px 30px;border-radius:8px;background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(157,111,255,.1));border:1px solid rgba(0,212,255,.4);color:var(--white);font-family:var(--fd);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;cursor:pointer;box-shadow:0 0 26px rgba(0,212,255,.14);transition:all .3s}
+.btn-p:hover{box-shadow:0 0 46px rgba(0,212,255,.3);border-color:rgba(0,212,255,.7);transform:translateY(-2px)}
+.btn-o{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:8px;background:transparent;border:1px solid var(--border2);color:var(--text2);font-size:14px;text-decoration:none;cursor:pointer;transition:all .3s}
+.btn-o:hover{border-color:rgba(0,212,255,.3);color:var(--text)}
+
+/* STATS */
+.stats{position:relative;z-index:1;display:flex;justify-content:center;padding:0 40px 80px;animation:fu .7s .4s ease both}
+.si{text-align:center;padding:22px 42px;border:1px solid var(--border);background:var(--card);backdrop-filter:blur(10px)}
+.si:first-child{border-radius:10px 0 0 10px}
+.si:last-child{border-radius:0 10px 10px 0}
+.si+.si{border-left:none}
+.sn{font-family:var(--fm);font-size:28px;color:var(--white);display:block}
+.sn span{font-size:15px;color:var(--accent)}
+.sl{font-size:11px;color:var(--text2);letter-spacing:1px;margin-top:3px;text-transform:uppercase}
+
+/* SECTIONS */
+section{position:relative;z-index:1;padding:96px 60px}
+.stag{display:inline-flex;align-items:center;gap:8px;font-family:var(--fm);font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+.stag::before{content:'//';opacity:.5}
+.stitle{font-family:var(--fd);font-size:clamp(28px,3.8vw,44px);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:13px}
+.ssub{font-size:15px;color:var(--text2);max-width:460px;line-height:1.7}
+
+/* FEATURES */
+.fi{max-width:1200px;margin:0 auto}
+.fh{margin-bottom:52px}
+.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fc{padding:26px;border-radius:12px;background:var(--card);border:1px solid var(--border);position:relative;overflow:hidden;transition:border-color .3s,transform .3s,box-shadow .3s}
+.fc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cc,var(--accent)) 50%,transparent);opacity:.5}
+.fc:nth-child(1){--cc:var(--accent)}.fc:nth-child(2){--cc:var(--purple)}.fc:nth-child(3){--cc:var(--accent3)}.fc:nth-child(4){--cc:var(--warn)}.fc:nth-child(5){--cc:var(--accent2)}.fc:nth-child(6){--cc:var(--accent)}
+.fc:hover{border-color:var(--cc,var(--accent));transform:translateY(-4px);box-shadow:0 14px 36px var(--sh)}
+.fi-icon{width:42px;height:42px;border-radius:9px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.14);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px}
+.fc:nth-child(2) .fi-icon{background:rgba(157,111,255,.06);border-color:rgba(157,111,255,.15)}
+.fc:nth-child(3) .fi-icon{background:rgba(0,255,157,.06);border-color:rgba(0,255,157,.15)}
+.fc:nth-child(4) .fi-icon{background:rgba(255,184,0,.06);border-color:rgba(255,184,0,.15)}
+.fc:nth-child(5) .fi-icon{background:rgba(255,45,107,.06);border-color:rgba(255,45,107,.15)}
+.ft{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--white);margin-bottom:7px}
+.fd{font-size:13px;color:var(--text2);line-height:1.7}
+.ftag{display:inline-block;margin-top:12px;padding:3px 9px;border-radius:4px;font-family:var(--fm);font-size:10px;letter-spacing:1px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.14);color:var(--accent)}
+.fc:nth-child(2) .ftag{background:rgba(157,111,255,.06);border-color:rgba(157,111,255,.15);color:var(--purple)}
+.fc:nth-child(3) .ftag{background:rgba(0,255,157,.06);border-color:rgba(0,255,157,.15);color:var(--accent3)}
+.fc:nth-child(4) .ftag{background:rgba(255,184,0,.06);border-color:rgba(255,184,0,.15);color:var(--warn)}
+.fc:nth-child(5) .ftag{background:rgba(255,45,107,.06);border-color:rgba(255,45,107,.15);color:var(--accent2)}
+
+/* HOW */
+.how{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.how-in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.steps{display:flex;flex-direction:column}
+.step{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--border);opacity:.5;transition:opacity .3s}
+.step:last-child{border-bottom:none}.step:hover{opacity:1}
+.snum{width:32px;height:32px;border-radius:7px;flex-shrink:0;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:12px;color:var(--accent)}
+.st{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px}
+.sd{font-size:13px;color:var(--text2);line-height:1.6}
+.rw{height:360px;border-radius:14px;border:1px solid var(--border);background:var(--card);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.rw::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(0,212,255,.05),transparent 60%)}
+.radar{position:relative;width:210px;height:210px}
+.rr{position:absolute;border-radius:50%;border:1px solid rgba(0,212,255,.12);top:50%;left:50%;transform:translate(-50%,-50%)}
+.rr:nth-child(1){width:52px;height:52px}.rr:nth-child(2){width:104px;height:104px}.rr:nth-child(3){width:156px;height:156px}.rr:nth-child(4){width:210px;height:210px}
+.rsw{position:absolute;top:50%;left:50%;width:105px;height:2px;transform-origin:0 50%;background:linear-gradient(90deg,rgba(0,212,255,.8),transparent);animation:sw 3s linear infinite}
+@keyframes sw{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.rdot{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--accent3);box-shadow:0 0 6px var(--accent3);animation:db 2s ease-in-out infinite}
+.rdot:nth-child(5){top:28%;left:57%;animation-delay:.3s}
+.rdot:nth-child(6){top:62%;left:23%;animation-delay:.9s;background:var(--accent2);box-shadow:0 0 6px var(--accent2)}
+.rdot:nth-child(7){top:68%;left:62%;animation-delay:1.5s}
+.rdot:nth-child(8){top:22%;left:33%;animation-delay:.6s;background:var(--warn);box-shadow:0 0 6px var(--warn)}
+@keyframes db{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.2;transform:scale(.5)}}
+.rlbl{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-family:var(--fm);font-size:10px;color:var(--accent);letter-spacing:2px;opacity:.6}
+
+/* ABOUT */
+.ab-in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start}
+.ab-list{margin-top:26px;display:flex;flex-direction:column;gap:11px}
+.ab-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text2);line-height:1.6}
+.ab-item::before{content:'▸';color:var(--accent);flex-shrink:0;margin-top:3px;font-size:11px}
+.tc{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:26px;position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent) 50%,transparent);opacity:.35}
+.tstack{display:flex;flex-direction:column;gap:9px;margin-top:18px}
+.tr{display:flex;align-items:center;justify-content:space-between;padding:9px 13px;border-radius:7px;background:rgba(0,212,255,.025);border:1px solid var(--border)}
+.tn{font-family:var(--fm);font-size:12px;color:var(--text);letter-spacing:.5px}
+.tt{flex:1;margin:0 13px;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.tf{height:100%;border-radius:2px;animation:grow 1.5s ease both}
+@keyframes grow{from{width:0}to{width:var(--w)}}
+.tp{font-family:var(--fm);font-size:11px;color:var(--text2)}
+
+/* CTA */
+.cta{text-align:center;padding:96px 40px;border-top:1px solid var(--border)}
+.cta-g{width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,.1),transparent 70%);margin:0 auto 34px;display:flex;align-items:center;justify-content:center;position:relative}
+.cta-g::before,.cta-g::after{content:'';position:absolute;border-radius:50%;border:1px solid rgba(0,212,255,.1);animation:pr 2.5s ease-in-out infinite}
+.cta-g::before{inset:-18px}.cta-g::after{inset:-36px;animation-delay:.6s}
+@keyframes pr{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.4}}
+.cta-icon{font-size:50px;position:relative;z-index:1}
+.cta-t{font-family:var(--fd);font-size:clamp(28px,3.8vw,44px);font-weight:800;color:var(--white);margin-bottom:13px;line-height:1.1}
+.cta-s{font-size:15px;color:var(--text2);margin-bottom:34px;line-height:1.7;max-width:440px;margin-left:auto;margin-right:auto}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:26px 52px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;background:var(--surface)}
+.fl{font-family:var(--fd);font-size:14px;font-weight:800;color:var(--text2);letter-spacing:2px}
+.fc2{font-size:11px;color:var(--text2);opacity:.5;font-family:var(--fm)}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:12px;color:var(--text2);text-decoration:none;opacity:.5;transition:opacity .2s}
+.flinks a:hover{opacity:1}
+
+/* AUTH MODAL */
+.overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}
+.overlay.open{display:flex;animation:fi .22s ease}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+.amodal{background:var(--modal);border:1px solid var(--border2);border-radius:16px;width:100%;max-width:430px;overflow:hidden;box-shadow:0 28px 72px var(--sh),0 0 0 1px rgba(0,212,255,.05);animation:mi .28s cubic-bezier(.2,1.3,.4,1) both;position:relative}
+@keyframes mi{from{opacity:0;transform:scale(.93) translateY(18px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.mclose{position:absolute;top:14px;right:18px;width:30px;height:30px;border-radius:7px;background:transparent;border:1px solid var(--border2);color:var(--text2);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:10}
+.mclose:hover{border-color:var(--accent2);color:var(--accent2)}
+.atabs{display:flex;border-bottom:1px solid var(--border)}
+.atab{flex:1;padding:16px;font-size:14px;font-weight:600;background:transparent;border:none;cursor:pointer;color:var(--text2);font-family:var(--fb);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+.atab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.abody{padding:28px}
+.apanel{display:none}.apanel.active{display:block;animation:fu .28s ease}
+.alo{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.alo-icon{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,rgba(0,212,255,.14),rgba(157,111,255,.1));border:1px solid rgba(0,212,255,.3);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:12px;color:var(--accent);font-weight:700}
+.alo-name{font-family:var(--fd);font-size:17px;font-weight:800;color:var(--white);letter-spacing:1px}
+.awelcome{font-size:13px;color:var(--text2);margin-bottom:24px}
+.fg2{margin-bottom:16px}
+.flbl{display:block;font-size:11px;font-weight:500;color:var(--text2);margin-bottom:6px;letter-spacing:.5px}
+.finput{width:100%;padding:11px 15px;border-radius:7px;background:var(--inp);border:1px solid var(--inp-b);color:var(--white);font-size:14px;font-family:var(--fb);transition:border-color .2s,box-shadow .2s;outline:none}
+.finput:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,255,.1)}
+.finput::placeholder{color:var(--text2);opacity:.5}
+.iw{position:relative}
+.iico{position:absolute;right:13px;top:50%;transform:translateY(-50%);color:var(--text2);font-size:14px;cursor:pointer;transition:color .2s}
+.iico:hover{color:var(--accent)}
+.frow{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.cblbl{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;color:var(--text2)}
+.cblbl input{display:none}
+.cbbox{width:17px;height:17px;border-radius:4px;border:1px solid var(--inp-b);background:var(--inp);display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.cblbl input:checked+.cbbox{background:var(--accent);border-color:var(--accent)}
+.cblbl input:checked+.cbbox::after{content:'✓';font-size:10px;color:#000;font-weight:700}
+.flnk{font-size:13px;color:var(--accent);text-decoration:none;opacity:.8;transition:opacity .2s}
+.flnk:hover{opacity:1}
+.btn-auth{width:100%;padding:12px;border-radius:7px;font-size:14px;font-weight:700;background:linear-gradient(135deg,rgba(0,212,255,.16),rgba(157,111,255,.1));border:1px solid rgba(0,212,255,.4);color:var(--white);cursor:pointer;font-family:var(--fd);letter-spacing:1px;text-transform:uppercase;box-shadow:0 0 18px rgba(0,212,255,.1);transition:all .22s}
+.btn-auth:hover{box-shadow:0 0 30px rgba(0,212,255,.24);border-color:rgba(0,212,255,.7);transform:translateY(-1px)}
+.adiv{display:flex;align-items:center;gap:11px;margin:18px 0}
+.adiv::before,.adiv::after{content:'';flex:1;height:1px;background:var(--border2)}
+.adiv span{font-size:12px;color:var(--text2);white-space:nowrap}
+.srow{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.btn-soc{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px;border-radius:7px;font-size:13px;font-weight:500;background:var(--inp);border:1px solid var(--inp-b);color:var(--text);cursor:pointer;font-family:var(--fb);transition:all .2s}
+.btn-soc:hover{border-color:var(--accent);color:var(--white)}
+.btn-soc svg{width:15px;height:15px;flex-shrink:0}
+.pws{margin-top:5px;display:none}.pws.show{display:block}
+.pwbars{display:flex;gap:4px;margin-bottom:3px}
+.pwb{height:3px;flex:1;border-radius:2px;background:var(--border);transition:background .3s}
+.pwlbl{font-size:11px;color:var(--text2)}
+.terms{font-size:12px;color:var(--text2);text-align:center;margin-top:14px;line-height:1.6}
+.terms a{color:var(--accent);text-decoration:none;opacity:.8}
+.terms a:hover{opacity:1}
+
+/* FORGOT MODAL */
+.fmodal{background:var(--modal);border:1px solid var(--border2);border-radius:16px;width:100%;max-width:390px;padding:32px;box-shadow:0 28px 72px var(--sh);animation:mi .28s cubic-bezier(.2,1.3,.4,1) both;position:relative}
+.fmod-t{font-family:var(--fd);font-size:21px;font-weight:800;color:var(--white);margin-bottom:7px}
+.fmod-s{font-size:13px;color:var(--text2);margin-bottom:22px;line-height:1.6}
+.btn-back{display:flex;align-items:center;gap:6px;background:none;border:none;color:var(--text2);font-size:13px;cursor:pointer;margin-top:14px;padding:0;font-family:var(--fb);transition:color .2s}
+.btn-back:hover{color:var(--accent)}
+
+/* Animations */
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+[dir="rtl"] .nav-logo,[dir="rtl"] .alo{flex-direction:row-reverse}
+[dir="rtl"] .mclose{right:auto;left:18px}
+[dir="rtl"] .lang-dd{right:auto;left:0}
+[dir="rtl"] .ab-item::before{content:'◂'}
+
+@media(max-width:960px){
+  nav{padding:0 18px}.nav-c{display:none}
+  section{padding:70px 22px}
+  .fg{grid-template-columns:1fr}
+  .how-in,.ab-in{grid-template-columns:1fr;gap:44px}
+  .rw{display:none}
+  .stats{flex-wrap:wrap;padding:0 20px 56px}
+  .si{flex:1;min-width:120px}
+  footer{flex-direction:column;gap:11px;text-align:center;padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="bg-orbs"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
+<div class="bg-grid"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo"><div class="nav-logo-icon">PG</div><span data-i18n="brand">PacketGuard</span></a>
+  <div class="nav-c">
+    <a href="#features" data-i18n="nav.features">Features</a>
+    <a href="#how" data-i18n="nav.how">How It Works</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+  </div>
+  <div class="nav-r">
+    <div class="lang-sw">
+      <button class="lang-btn" onclick="toggleLang()">🌐 <span id="lc">EN</span> ▾</button>
+      <div class="lang-dd" id="ldd">
+        <div class="lang-opt active" onclick="setLang('en')">🇬🇧 English</div>
+        <div class="lang-opt" onclick="setLang('ar')">🇸🇦 العربية</div>
+        <div class="lang-opt" onclick="setLang('fr')">🇫🇷 Français</div>
+      </div>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()" id="tbtn">🌙</button>
+    <div class="ndiv"></div>
+    <button class="btn-nl" onclick="openAuth('login')" data-i18n="nav.login">Log In</button>
+    <button class="btn-ns" onclick="openAuth('signup')" data-i18n="nav.signup">Sign Up</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="h-badge"><div class="bdot"></div><span data-i18n="hero.badge">REAL-TIME THREAT INTELLIGENCE</span></div>
+  <h1 class="h-title"><span class="glow">PacketGuard</span><span class="sub" data-i18n="hero.tagline">Network Guardian</span></h1>
+  <p class="h-desc" data-i18n="hero.desc">Advanced network threat detection powered by machine learning. Monitor every device, detect every anomaly, protect your network in real time.</p>
+  <div class="h-actions">
+    <button class="btn-p" onclick="window.location.href='/dashboard'"><span data-i18n="hero.cta">GET STARTED FREE</span> →</button>
+    <a href="#features" class="btn-o">↓ <span data-i18n="hero.explore">Explore Features</span></a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats reveal">
+  <div class="si"><span class="sn">795<span>+</span></span><div class="sl" data-i18n="stats.threats">Threats Detected</div></div>
+  <div class="si"><span class="sn">20<span>s</span></span><div class="sl" data-i18n="stats.scan">Scan Interval</div></div>
+  <div class="si"><span class="sn">5<span>+</span></span><div class="sl" data-i18n="stats.types">Attack Types</div></div>
+  <div class="si"><span class="sn">24<span>/7</span></span><div class="sl" data-i18n="stats.monitor">Live Monitoring</div></div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="fi">
+    <div class="fh reveal">
+      <div class="stag" data-i18n="feat.tag">Capabilities</div>
+      <h2 class="stitle" data-i18n="feat.title">Everything you need to<br/>secure your network</h2>
+      <p class="ssub" data-i18n="feat.sub">Built from the ground up for real-time threat detection with powerful ML-driven anomaly analysis.</p>
+    </div>
+    <div class="fg">
+      <div class="fc reveal"><div class="fi-icon">🔍</div><div class="ft" data-i18n="f1.t">Live Network Scanner</div><div class="fd" data-i18n="f1.d">Automatically discovers all devices every 20 seconds. Identifies phones, laptops, routers, and IoT devices by vendor and MAC address.</div><span class="ftag">AUTO-SCAN</span></div>
+      <div class="fc reveal"><div class="fi-icon">🧠</div><div class="ft" data-i18n="f2.t">ML Anomaly Detection</div><div class="fd" data-i18n="f2.d">Isolation Forest learns your normal traffic patterns and flags outliers in real time — catching attacks rule-based systems miss.</div><span class="ftag">ISOLATION FOREST</span></div>
+      <div class="fc reveal"><div class="fi-icon">⚡</div><div class="ft" data-i18n="f3.t">Real-Time Alerts</div><div class="fd" data-i18n="f3.d">Instant push notifications for HIGH and CRITICAL threats. Visual popups keep you informed without interrupting your workflow.</div><span class="ftag">LIVE ALERTS</span></div>
+      <div class="fc reveal"><div class="fi-icon">📡</div><div class="ft" data-i18n="f4.t">Packet Capture Engine</div><div class="fd" data-i18n="f4.d">Deep packet inspection via Scapy. Monitors TCP, UDP, ICMP traffic and detects port scans, SYN floods, and abnormal sizes.</div><span class="ftag">SCAPY ENGINE</span></div>
+      <div class="fc reveal"><div class="fi-icon">🛡️</div><div class="ft" data-i18n="f5.t">Multi-Vector Detection</div><div class="fd" data-i18n="f5.d">Simultaneous detection of port scans, SYN floods, brute force, DNS tunneling, and high packet rate anomalies.</div><span class="ftag">5 ATTACK TYPES</span></div>
+      <div class="fc reveal"><div class="fi-icon">📊</div><div class="ft" data-i18n="f6.t">Analytics Dashboard</div><div class="fd" data-i18n="f6.d">Interactive charts, severity breakdowns, live alert feeds, and device monitoring. Auto-refreshes every 5 seconds.</div><span class="ftag">LIVE DASHBOARD</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-in">
+    <div>
+      <div class="stag reveal" data-i18n="how.tag">Process</div>
+      <h2 class="stitle reveal" data-i18n="how.title">How PacketGuard<br/>works</h2>
+      <div class="steps">
+        <div class="step reveal"><div class="snum">01</div><div><div class="st" data-i18n="s1.t">Network Discovery</div><div class="sd" data-i18n="s1.d">ARP scans discover every active device on the subnet, including sleeping phones and IoT devices.</div></div></div>
+        <div class="step reveal"><div class="snum">02</div><div><div class="st" data-i18n="s2.t">Packet Capture</div><div class="sd" data-i18n="s2.d">Scapy captures live packets and feeds them through rule-based and ML-based detection pipelines.</div></div></div>
+        <div class="step reveal"><div class="snum">03</div><div><div class="st" data-i18n="s3.t">Threat Analysis</div><div class="sd" data-i18n="s3.d">Each packet is scored by 4 detectors: Port Scan, SYN Flood, High Rate, and Isolation Forest.</div></div></div>
+        <div class="step reveal"><div class="snum">04</div><div><div class="st" data-i18n="s4.t">Alert & Visualize</div><div class="sd" data-i18n="s4.d">Confirmed threats are logged, classified by severity, and pushed to the dashboard as notifications.</div></div></div>
+      </div>
+    </div>
+    <div class="rw reveal">
+      <div class="radar">
+        <div class="rr"></div><div class="rr"></div><div class="rr"></div><div class="rr"></div>
+        <div class="rsw"></div>
+        <div class="rdot"></div><div class="rdot"></div><div class="rdot"></div><div class="rdot"></div>
+      </div>
+      <div class="rlbl" data-i18n="radar.lbl">NETWORK SCAN ACTIVE</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="ab-in">
+    <div class="reveal">
+      <div class="stag" data-i18n="about.tag">About</div>
+      <h2 class="stitle" data-i18n="about.title">Built as a graduation project in network security</h2>
+      <p class="ssub" data-i18n="about.sub">PacketGuard combines classical intrusion detection with modern ML to deliver a complete monitoring solution.</p>
+      <div class="ab-list">
+        <div class="ab-item" data-i18n="a1">Real-time packet analysis using Python and Scapy for deep network visibility</div>
+        <div class="ab-item" data-i18n="a2">Isolation Forest ML model trained on network traffic to detect anomalies</div>
+        <div class="ab-item" data-i18n="a3">Flask-powered REST API serving a live updating web dashboard</div>
+        <div class="ab-item" data-i18n="a4">Supports all device types — phones, laptops, smart devices, routers</div>
+        <div class="ab-item" data-i18n="a5">Runs on Windows with administrator privileges for full packet capture</div>
+      </div>
+    </div>
+    <div class="tc reveal">
+      <div class="stag" data-i18n="tech.tag">Tech Stack</div>
+      <div class="tstack">
+        <div class="tr"><span class="tn">Python</span><div class="tt"><div class="tf" style="--w:95%;background:var(--accent)"></div></div><span class="tp">95%</span></div>
+        <div class="tr"><span class="tn">Scapy</span><div class="tt"><div class="tf" style="--w:85%;background:var(--purple)"></div></div><span class="tp">85%</span></div>
+        <div class="tr"><span class="tn">Flask</span><div class="tt"><div class="tf" style="--w:80%;background:var(--accent3)"></div></div><span class="tp">80%</span></div>
+        <div class="tr"><span class="tn">Scikit-learn</span><div class="tt"><div class="tf" style="--w:75%;background:var(--warn)"></div></div><span class="tp">75%</span></div>
+        <div class="tr"><span class="tn">HTML/CSS/JS</span><div class="tt"><div class="tf" style="--w:90%;background:var(--accent2)"></div></div><span class="tp">90%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta reveal">
+  <div class="cta-g"><div class="cta-icon">🛡️</div></div>
+  <h2 class="cta-t" data-i18n="cta.title">Ready to protect<br/>your network?</h2>
+  <p class="cta-s" data-i18n="cta.sub">Create your free account and start detecting threats in real time.</p>
+  <button class="btn-p" onclick="openAuth('signup')" style="font-size:14px;padding:14px 38px"><span data-i18n="cta.btn">CREATE FREE ACCOUNT</span> →</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">PACKETGUARD</div>
+  <div class="fc2">© 2026 — Network Threat Detection — Graduation Project</div>
+  <div class="flinks">
+    <a href="#features" data-i18n="nav.features">Features</a>
+    <a href="#how" data-i18n="nav.how">How It Works</a>
+    <a href="/dashboard" data-i18n="footer.dash">Dashboard</a>
+  </div>
+</footer>
+
+<!-- AUTH MODAL -->
+<div class="overlay" id="auth-overlay">
+  <div class="amodal">
+    <button class="mclose" onclick="closeAuth()">✕</button>
+    <div class="atabs">
+      <button class="atab active" id="tab-login" onclick="switchTab('login')" data-i18n="nav.login">Log In</button>
+      <button class="atab" id="tab-signup" onclick="switchTab('signup')" data-i18n="nav.signup">Sign Up</button>
+    </div>
+    <div class="abody">
+      <!-- LOGIN -->
+      <div class="apanel active" id="panel-login">
+        <div class="alo"><div class="alo-icon">PG</div><div class="alo-name">PacketGuard</div></div>
+        <p class="awelcome" data-i18n="login.welcome">Welcome back! Log in to access your dashboard.</p>
+        <div class="fg2">
+          <label class="flbl" data-i18n="form.email">EMAIL ADDRESS</label>
+          <input type="email" class="finput" id="l-email" data-i18n-ph="form.email.ph" placeholder="you@example.com"/>
+        </div>
+        <div class="fg2">
+          <label class="flbl" data-i18n="form.password">PASSWORD</label>
+          <div class="iw">
+            <input type="password" class="finput" id="l-pass" data-i18n-ph="form.pass.ph" placeholder="Enter your password"/>
+            <span class="iico" onclick="togglePass('l-pass',this)">👁</span>
+          </div>
+        </div>
+        <div class="frow">
+          <label class="cblbl"><input type="checkbox" id="remember"/><span class="cbbox"></span><span data-i18n="form.remember">Remember me</span></label>
+          <a href="#" class="flnk" onclick="openForgot()" data-i18n="form.forgot">Forgot password?</a>
+        </div>
+        <button class="btn-auth" onclick="handleLogin()" data-i18n="nav.login">LOG IN</button>
+        <div class="adiv"><span data-i18n="form.or">or continue with</span></div>
+        <div class="srow">
+          <button class="btn-soc" onclick="socialAuth('google')"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</button>
+          <button class="btn-soc" onclick="socialAuth('github')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</button>
+        </div>
+      </div>
+      <!-- SIGNUP -->
+      <div class="apanel" id="panel-signup">
+        <div class="alo"><div class="alo-icon">PG</div><div class="alo-name">PacketGuard</div></div>
+        <p class="awelcome" data-i18n="signup.welcome">Create your free account to get started.</p>
+        <div class="fg2">
+          <label class="flbl" data-i18n="form.name">FULL NAME</label>
+          <input type="text" class="finput" id="s-name" data-i18n-ph="form.name.ph" placeholder="Your full name"/>
+        </div>
+        <div class="fg2">
+          <label class="flbl" data-i18n="form.email">EMAIL ADDRESS</label>
+          <input type="email" class="finput" id="s-email" data-i18n-ph="form.email.ph" placeholder="you@example.com"/>
+        </div>
+        <div class="fg2">
+          <label class="flbl" data-i18n="form.password">PASSWORD</label>
+          <div class="iw">
+            <input type="password" class="finput" id="s-pass" data-i18n-ph="form.newpass.ph" placeholder="Create a strong password" oninput="checkStrength(this.value)"/>
+            <span class="iico" onclick="togglePass('s-pass',this)">👁</span>
+          </div>
+          <div class="pws" id="pws">
+            <div class="pwbars"><div class="pwb" id="pb1"></div><div class="pwb" id="pb2"></div><div class="pwb" id="pb3"></div><div class="pwb" id="pb4"></div></div>
+            <div class="pwlbl" id="pwlbl"></div>
+          </div>
+        </div>
+        <button class="btn-auth" onclick="handleSignup()" data-i18n="nav.signup">CREATE ACCOUNT</button>
+        <div class="adiv"><span data-i18n="form.or">or continue with</span></div>
+        <div class="srow">
+          <button class="btn-soc" onclick="socialAuth('google')"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</button>
+          <button class="btn-soc" onclick="socialAuth('github')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</button>
+        </div>
+        <p class="terms" data-i18n="form.terms">By signing up, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FORGOT PASSWORD MODAL -->
+<div class="overlay" id="forgot-overlay">
+  <div class="fmodal">
+    <button class="mclose" onclick="closeForgot()">✕</button>
+    <div class="alo" style="margin-bottom:18px"><div class="alo-icon">PG</div><div class="alo-name">PacketGuard</div></div>
+    <div class="fmod-t" data-i18n="forgot.title">Reset Password</div>
+    <div class="fmod-s" data-i18n="forgot.sub">Enter your email and we'll send you a reset link.</div>
+    <div class="fg2">
+      <label class="flbl" data-i18n="form.email">EMAIL ADDRESS</label>
+      <input type="email" class="finput" id="f-email" placeholder="you@example.com"/>
+    </div>
+    <button class="btn-auth" onclick="handleForgot()" data-i18n="forgot.btn">SEND RESET LINK</button>
+    <button class="btn-back" onclick="closeForgot();openAuth('login')">← <span data-i18n="forgot.back">Back to Login</span></button>
+  </div>
+</div>
+
+<script>
+const T={
+  en:{brand:'PacketGuard','nav.features':'Features','nav.how':'How It Works','nav.about':'About','nav.login':'Log In','nav.signup':'Sign Up','hero.badge':'REAL-TIME THREAT INTELLIGENCE','hero.tagline':'Network Guardian','hero.desc':'Advanced network threat detection powered by machine learning. Monitor every device, detect every anomaly, protect your network in real time.','hero.cta':'GET STARTED FREE','hero.explore':'Explore Features','stats.threats':'Threats Detected','stats.scan':'Scan Interval','stats.types':'Attack Types','stats.monitor':'Live Monitoring','feat.tag':'Capabilities','feat.title':'Everything you need to<br/>secure your network','feat.sub':'Built from the ground up for real-time threat detection with powerful ML-driven anomaly analysis.','f1.t':'Live Network Scanner','f1.d':'Automatically discovers all devices every 20 seconds. Identifies phones, laptops, routers, and IoT devices by vendor and MAC address.','f2.t':'ML Anomaly Detection','f2.d':'Isolation Forest learns your normal traffic patterns and flags outliers in real time — catching attacks rule-based systems miss.','f3.t':'Real-Time Alerts','f3.d':'Instant push notifications for HIGH and CRITICAL threats. Visual popups keep you informed without interrupting your workflow.','f4.t':'Packet Capture Engine','f4.d':'Deep packet inspection via Scapy. Monitors TCP, UDP, ICMP traffic and detects port scans, SYN floods, and abnormal sizes.','f5.t':'Multi-Vector Detection','f5.d':'Simultaneous detection of port scans, SYN floods, brute force, DNS tunneling, and high packet rate anomalies.','f6.t':'Analytics Dashboard','f6.d':'Interactive charts, severity breakdowns, live alert feeds, and device monitoring. Auto-refreshes every 5 seconds.','how.tag':'Process','how.title':'How PacketGuard<br/>works','s1.t':'Network Discovery','s1.d':'ARP scans discover every active device on the subnet, including sleeping phones and IoT devices.','s2.t':'Packet Capture','s2.d':'Scapy captures live packets and feeds them through rule-based and ML-based detection pipelines.','s3.t':'Threat Analysis','s3.d':'Each packet is scored by 4 detectors: Port Scan, SYN Flood, High Rate, and Isolation Forest.','s4.t':'Alert & Visualize','s4.d':'Confirmed threats are logged, classified by severity, and pushed to the dashboard as notifications.','radar.lbl':'NETWORK SCAN ACTIVE','about.tag':'About','about.title':'Built as a graduation project in network security','about.sub':'PacketGuard combines classical intrusion detection with modern ML to deliver a complete monitoring solution.','a1':'Real-time packet analysis using Python and Scapy for deep network visibility','a2':'Isolation Forest ML model trained on network traffic to detect anomalies','a3':'Flask-powered REST API serving a live updating web dashboard','a4':'Supports all device types — phones, laptops, smart devices, routers','a5':'Runs on Windows with administrator privileges for full packet capture','tech.tag':'Tech Stack','cta.title':'Ready to protect<br/>your network?','cta.sub':'Create your free account and start detecting threats in real time.','cta.btn':'CREATE FREE ACCOUNT','footer.dash':'Dashboard','login.welcome':'Welcome back! Log in to access your dashboard.','signup.welcome':'Create your free account to get started.','form.email':'EMAIL ADDRESS','form.email.ph':'you@example.com','form.password':'PASSWORD','form.pass.ph':'Enter your password','form.newpass.ph':'Create a strong password','form.name':'FULL NAME','form.name.ph':'Your full name','form.remember':'Remember me','form.forgot':'Forgot password?','form.or':'or continue with','form.terms':'By signing up, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>','forgot.title':'Reset Password','forgot.sub':"Enter your email and we'll send you a reset link.",'forgot.btn':'SEND RESET LINK','forgot.back':'Back to Login','pw.weak':'Weak','pw.fair':'Fair','pw.good':'Good','pw.strong':'Strong'},
+  ar:{brand:'PacketGuard','nav.features':'المميزات','nav.how':'كيف يعمل','nav.about':'عن المشروع','nav.login':'تسجيل الدخول','nav.signup':'إنشاء حساب','hero.badge':'كشف التهديدات في الوقت الفعلي','hero.tagline':'حارس الشبكة','hero.desc':'كشف متقدم لتهديدات الشبكة مدعوم بالذكاء الاصطناعي. راقب كل جهاز، اكتشف كل شذوذ، احمِ شبكتك في الوقت الفعلي.','hero.cta':'ابدأ مجاناً','hero.explore':'استكشف المميزات','stats.threats':'تهديد مكتشف','stats.scan':'فترة الفحص','stats.types':'أنواع الهجمات','stats.monitor':'مراقبة مستمرة','feat.tag':'الإمكانيات','feat.title':'كل ما تحتاجه لتأمين<br/>شبكتك','feat.sub':'مبني من الصفر لاكتشاف التهديدات في الوقت الفعلي مع تحليل الشذوذ بالذكاء الاصطناعي.','f1.t':'فحص الشبكة المباشر','f1.d':'يكتشف تلقائياً جميع الأجهزة كل 20 ثانية. يتعرف على الهواتف والأجهزة والراوترات وأجهزة إنترنت الأشياء.','f2.t':'كشف الشذوذ بالذكاء الاصطناعي','f2.d':'تتعلم خوارزمية Isolation Forest أنماط حركة المرور وترصد الشذوذ في الوقت الفعلي.','f3.t':'تنبيهات فورية','f3.d':'إشعارات فورية للتهديدات عالية الخطورة. نوافذ مرئية تبقيك على اطلاع دون مقاطعة عملك.','f4.t':'محرك التقاط الحزم','f4.d':'فحص عميق للحزم باستخدام Scapy. يراقب TCP وUDP وICMP ويكتشف فحص المنافذ وفيضان SYN.','f5.t':'كشف متعدد المتجهات','f5.d':'كشف متزامن لفحص المنافذ وهجمات SYN والقوة الغاشمة ونفق DNS وشذوذ معدل الحزم.','f6.t':'لوحة تحليلات','f6.d':'مخططات تفاعلية وتفصيل حسب الخطورة وتغذية تنبيهات مباشرة. تتحدث كل 5 ثوانٍ.','how.tag':'العملية','how.title':'كيف يعمل<br/>PacketGuard','s1.t':'اكتشاف الشبكة','s1.d':'تكتشف فحوصات ARP جميع الأجهزة النشطة بما في ذلك الهواتف النائمة.','s2.t':'التقاط الحزم','s2.d':'يلتقط Scapy حزم الشبكة ويغذيها عبر خطوط الكشف المبنية على القواعد والذكاء الاصطناعي.','s3.t':'تحليل التهديدات','s3.d':'تسجيل كل حزمة بواسطة 4 أدوات: فحص المنافذ، SYN، معدل عالٍ، ونموذج ML.','s4.t':'التنبيه والتصور','s4.d':'تُسجَّل التهديدات وتُصنَّف حسب الخطورة وتُرسَل للوحة القيادة.','radar.lbl':'فحص الشبكة نشط','about.tag':'عن المشروع','about.title':'مشروع تخرج في أمن الشبكات','about.sub':'يجمع PacketGuard بين تقنيات كشف التسلل الكلاسيكية والتعلم الآلي لتقديم حل مراقبة متكامل.','a1':'تحليل الحزم في الوقت الفعلي باستخدام Python وScapy','a2':'نموذج Isolation Forest لاكتشاف الشذوذ الإحصائي','a3':'واجهة REST مدعومة بـ Flask تخدم لوحة ويب متحدثة','a4':'يدعم جميع أنواع الأجهزة — هواتف، أجهزة محمولة، راوترات','a5':'يعمل على Windows بامتيازات المسؤول','tech.tag':'التقنيات','cta.title':'مستعد لحماية<br/>شبكتك؟','cta.sub':'أنشئ حسابك المجاني وابدأ في كشف التهديدات.','cta.btn':'إنشاء حساب مجاني','footer.dash':'لوحة التحكم','login.welcome':'مرحباً بعودتك! سجّل الدخول للوصول للوحة.','signup.welcome':'أنشئ حسابك المجاني للبدء.','form.email':'البريد الإلكتروني','form.email.ph':'example@mail.com','form.password':'كلمة المرور','form.pass.ph':'أدخل كلمة المرور','form.newpass.ph':'أنشئ كلمة مرور قوية','form.name':'الاسم الكامل','form.name.ph':'اسمك الكامل','form.remember':'تذكرني','form.forgot':'نسيت كلمة المرور؟','form.or':'أو المتابعة باستخدام','form.terms':'بالتسجيل توافق على <a href="#">الشروط</a> و<a href="#">الخصوصية</a>','forgot.title':'إعادة تعيين كلمة المرور','forgot.sub':'أدخل بريدك وسنرسل رابط إعادة التعيين.','forgot.btn':'إرسال الرابط','forgot.back':'العودة لتسجيل الدخول','pw.weak':'ضعيفة','pw.fair':'مقبولة','pw.good':'جيدة','pw.strong':'قوية'},
+  fr:{brand:'PacketGuard','nav.features':'Fonctionnalités','nav.how':'Fonctionnement','nav.about':'À propos','nav.login':'Connexion','nav.signup':'Inscription','hero.badge':'DÉTECTION DE MENACES EN TEMPS RÉEL','hero.tagline':'Gardien du Réseau','hero.desc':'Détection avancée des menaces réseau propulsée par ML. Surveillez chaque appareil, détectez chaque anomalie, protégez votre réseau en temps réel.','hero.cta':'COMMENCER GRATUITEMENT','hero.explore':'Explorer','stats.threats':'Menaces Détectées','stats.scan':'Intervalle Scan','stats.types':'Types d\'Attaques','stats.monitor':'Surveillance Continue','feat.tag':'Capacités','feat.title':'Tout pour sécuriser<br/>votre réseau','feat.sub':'Conçu pour la détection en temps réel avec analyse d\'anomalies par ML.','f1.t':'Scanner Réseau Live','f1.d':'Découvre tous les appareils toutes les 20s. Identifie téléphones, laptops, routeurs et IoT.','f2.t':'Détection ML','f2.d':'Isolation Forest apprend vos schémas normaux et signale les anomalies en temps réel.','f3.t':'Alertes Temps Réel','f3.d':'Notifications instantanées pour menaces HIGH et CRITICAL. Popups visuelles non intrusives.','f4.t':'Capture de Paquets','f4.d':'Inspection profonde via Scapy. Surveille TCP, UDP, ICMP et détecte scans et floods.','f5.t':'Détection Multi-Vecteurs','f5.d':'Détection simultanée de scans, floods SYN, brute force, DNS tunneling et débits anormaux.','f6.t':'Tableau de Bord','f6.d':'Graphiques interactifs, alertes en direct et monitoring. Actualisation toutes les 5 secondes.','how.tag':'Processus','how.title':'Comment fonctionne<br/>PacketGuard','s1.t':'Découverte Réseau','s1.d':'Les scans ARP découvrent tous les appareils actifs, y compris les téléphones en veille.','s2.t':'Capture de Paquets','s2.d':'Scapy capture les paquets et les traite via pipelines règles et ML simultanément.','s3.t':'Analyse des Menaces','s3.d':'Chaque paquet est évalué: Scan ports, SYN Flood, Débit élevé, Isolation Forest.','s4.t':'Alerte & Visualisation','s4.d':'Menaces confirmées enregistrées, classées et envoyées au tableau de bord.','radar.lbl':'SCAN RÉSEAU ACTIF','about.tag':'À Propos','about.title':'Projet de fin d\'études en sécurité réseau','about.sub':'PacketGuard combine détection classique et ML moderne pour une solution complète.','a1':'Analyse temps réel avec Python et Scapy pour visibilité réseau approfondie','a2':'Modèle Isolation Forest entraîné sur le trafic réseau','a3':'API REST Flask servant un tableau de bord mis à jour en direct','a4':'Supporte tous les types: téléphones, laptops, IoT, routeurs','a5':'Fonctionne sous Windows avec privilèges admin','tech.tag':'Stack Technique','cta.title':'Prêt à protéger<br/>votre réseau ?','cta.sub':'Créez votre compte gratuit et commencez à détecter les menaces.','cta.btn':'CRÉER UN COMPTE GRATUIT','footer.dash':'Tableau de bord','login.welcome':'Bon retour ! Connectez-vous pour accéder à votre tableau.','signup.welcome':'Créez votre compte gratuit pour commencer.','form.email':'ADRESSE E-MAIL','form.email.ph':'vous@exemple.com','form.password':'MOT DE PASSE','form.pass.ph':'Votre mot de passe','form.newpass.ph':'Créez un mot de passe fort','form.name':'NOM COMPLET','form.name.ph':'Votre nom complet','form.remember':'Se souvenir','form.forgot':'Mot de passe oublié ?','form.or':'ou continuer avec','form.terms':'En vous inscrivant vous acceptez nos <a href="#">CGU</a> et <a href="#">Confidentialité</a>','forgot.title':'Réinitialiser','forgot.sub':'Entrez votre e-mail et nous vous enverrons un lien.','forgot.btn':'ENVOYER LE LIEN','forgot.back':'Retour à la connexion','pw.weak':'Faible','pw.fair':'Acceptable','pw.good':'Bon','pw.strong':'Fort'}
+};
+
+let lang='en';
+function t(k){return T[lang][k]||T.en[k]||k}
+function applyT(){
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=t(el.getAttribute('data-i18n'));if(v)el.innerHTML=v});
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const v=t(el.getAttribute('data-i18n-ph'));if(v)el.placeholder=v});
+}
+function setLang(l){
+  lang=l;
+  document.getElementById('lc').textContent=l.toUpperCase();
+  document.querySelectorAll('.lang-opt').forEach(o=>o.classList.remove('active'));
+  document.querySelector(`.lang-opt[onclick="setLang('${l}')"]`)?.classList.add('active');
+  closeLang();applyT();
+  try{localStorage.setItem('pg-lang',l)}catch(e){}
+}
+function toggleLang(){document.getElementById('ldd').classList.toggle('open')}
+function closeLang(){document.getElementById('ldd').classList.remove('open')}
+document.addEventListener('click',e=>{if(!e.target.closest('.lang-sw'))closeLang()});
+
+let dark=true;
+function toggleTheme(){
+  dark=!dark;
+  document.documentElement.setAttribute('data-theme',dark?'dark':'light');
+  document.getElementById('tbtn').textContent=dark?'🌙':'☀️';
+  try{localStorage.setItem('pg-theme',dark?'dark':'light')}catch(e){}
+}
+
+function openAuth(tab){
+  document.getElementById('auth-overlay').classList.add('open');
+  switchTab(tab);document.body.style.overflow='hidden';
+}
+function closeAuth(){document.getElementById('auth-overlay').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('auth-overlay').addEventListener('click',e=>{if(e.target===document.getElementById('auth-overlay'))closeAuth()});
+function switchTab(tab){
+  document.querySelectorAll('.atab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.apanel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  document.getElementById('panel-'+tab).classList.add('active');
+}
+function openForgot(){closeAuth();document.getElementById('forgot-overlay').classList.add('open');document.body.style.overflow='hidden'}
+function closeForgot(){document.getElementById('forgot-overlay').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('forgot-overlay').addEventListener('click',e=>{if(e.target===document.getElementById('forgot-overlay'))closeForgot()});
+
+function togglePass(id,ico){const i=document.getElementById(id);if(i.type==='password'){i.type='text';ico.textContent='🙈'}else{i.type='password';ico.textContent='👁'}}
+
+function checkStrength(v){
+  const el=document.getElementById('pws');
+  if(!v){el.classList.remove('show');return}
+  el.classList.add('show');
+  let s=0;
+  if(v.length>=8)s++;if(/[A-Z]/.test(v))s++;if(/[0-9]/.test(v))s++;if(/[^A-Za-z0-9]/.test(v))s++;
+  const cols=['','#ff2d6b','#ffb800','#00d4ff','#00ff9d'];
+  const lbls=[t('pw.weak'),t('pw.weak'),t('pw.fair'),t('pw.good'),t('pw.strong')];
+  ['pb1','pb2','pb3','pb4'].forEach((id,i)=>{
+    const b=document.getElementById(id);
+    b.style.background=i<s?cols[s]:'var(--border)';
+  });
+  const lbl=document.getElementById('pwlbl');
+  lbl.textContent=lbls[s];lbl.style.color=cols[s]||'var(--text2)';
+}
+
+function handleLogin(){
+  const e=document.getElementById('l-email').value,p=document.getElementById('l-pass').value;
+  if(!e||!p){alert('Please fill in all fields.');return}
+  // TODO: Connect to backend
+  closeAuth();
+  window.location.href='/dashboard';
+}
+function handleSignup(){
+  const n=document.getElementById('s-name').value,e=document.getElementById('s-email').value,p=document.getElementById('s-pass').value;
+  if(!n||!e||!p){alert('Please fill in all fields.');return}
+  // TODO: Connect to backend
+  closeAuth();
+  window.location.href='/dashboard';
+}
+function handleForgot(){
+  const e=document.getElementById('f-email').value;
+  if(!e){alert('Please enter your email.');return}
+  alert('📧 Reset link would be sent to: '+e);closeForgot();
+}
+function socialAuth(p){alert('🔗 OAuth with '+p+' — ready for backend integration!')}
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.08+'s';obs.observe(el)});
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}});
+});
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.borderBottomColor=window.scrollY>50?'var(--border2)':'var(--border)';
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeAuth();closeForgot()}});
+
+// Init
+(function(){
+  let sl='en',st='dark';
+  try{sl=localStorage.getItem('pg-lang')||'en';st=localStorage.getItem('pg-theme')||'dark'}catch(e){}
+  dark=st==='dark';
+  document.documentElement.setAttribute('data-theme',st);
+  document.getElementById('tbtn').textContent=dark?'🌙':'☀️';
+  setLang(sl);
+})();
+</script>
+</body>
+</html>
